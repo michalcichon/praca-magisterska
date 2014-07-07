@@ -1,2 +1,11 @@
+syntax: glob
+ 
 *.aux
+*.bbl
+*.blg
+*.brf
 *.log
+*.out
+*.synctex.gz
+*.thm
+*.toc
