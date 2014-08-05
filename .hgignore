@@ -1,5 +1,7 @@
 syntax: glob
 
+praca_magisterska.pdf
+
 ~$*.xlsx
  
 *.aux
@@ -11,4 +13,3 @@ syntax: glob
 *.synctex.gz
 *.thm
 *.toc
-*.pdf
