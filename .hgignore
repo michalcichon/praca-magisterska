@@ -11,3 +11,4 @@ syntax: glob
 *.synctex.gz
 *.thm
 *.toc
+*.pdf
