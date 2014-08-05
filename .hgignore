@@ -1,5 +1,7 @@
 syntax: glob
 
+praca_magisterska.pdf
+
 ~$*.xlsx
  
 *.aux

@@ -1,11 +1,32 @@
 \chapter*{Wstęp}
+
+%TODO TEN WSTEP WYMAGA POPRAWEK
 \addcontentsline{toc}{chapter}{Wstęp}
-Obecnie jednym z największych wyzwań przed którymi stoi współczesna informatyka jest przetwarzanie dużych ilości danych. Coraz częściej dane te nie reprezentują informacji liczbowych lub tekstowych, ale 
+Jednym z największych wyzwań, przed którymi stoi współczesna informatyka, jest przetwarzanie dużych ilości danych. Coraz częściej dane te nie reprezentują informacji liczbowych lub tekstowych, ale zawierają pewien rodzaj obrazu. 
+
+Dobrą ilustracją tego zjawiska jest przykład przeglądarki internetowej Google, gdzie początkowo kładziony był nacisk na wyszukiwanie danych tekstowych, a obecnie obrazy są bardzo dynamicznie rozwijanym zasobem, którego indeksowanie w latach 2001-2010 zwiększyło się z 250 mln do ponad 10 mld.\cite{Google2010} 
+
+Obrazy cyfrowe mają szereg zastosowań, od bardzo prozaicznych takich jak reprezentacja amatorskich zdjęć wykonanych cyfrowym aparatem fotograficznym, do bardzo zaawansowanych takich jak chociażby diagnostyka medyczna, gdzie informacja zawarta na zdjęciu jest kluczowa i niekiedy decyduje o ludzkim życiu.
+
+Zarządzając dużym zbiorem obrazów często posługujemy się opisem słownym. Opis taki, w~formie nazwy pliku, metadanych EXIF\footnote{EXIF - Exchangeable Image File Format, najpopularniejszy standard metadanych dla plików ze zdjęciami cyfrowymi} lub rekordu w bazie danych, daje nam pewne wyobrażenie o tym co znajduje się na obrazie. Wyobrażenie to może być jednak mylne, lub niedostateczne, by pozwalało nam na poprawne jego zidentyfikowanie.
+
+Pomoc w rozwiązaniu tego problemu daje nam teoria rozpoznawania obrazów, stosunkowo nowa, ale bardzo szybko rozwijająca się gałąź informatyki, która daje nam narzędzia umożliwiające takie przetwarzanie obrazów by możliwe stało się rozpoznanie przynależności obrazu do pewnej klasy.\cite{Tad91}
+
+%TODO NAPISAĆ O CRIB (Wyszukiwanie informacji w dużych zbiorach obrazów)
 
 \section*{Cel pracy}
 \addcontentsline{toc}{section}{Cel pracy}
-Celem pracy jest stworzenie silnika do kategoryzacji obrazów.
+
+%TODO KONIECZNIE TRZEBA TO ZMIENIĆ - wstęp nieproporcjonalnie za długi w stosunku
+%TODO do faktycznego celu pracy, domeny (2) też są nienajlepsze
+Stworzenie systemu informatycznego, który pomógłby skategoryzować obrazy na podstawie ich zawartości mogłoby okazać się bardzo pomocne w takich dziedzinach gospodarki jak marketing, dziennikarstwo i mass media, gdzie znalezienie odpowiedniej ilustracji do prezentowanych danych jest często kluczowe. W medycynie, zastosowanie opisywanych tutaj technik mogłoby okazać się pomocne przy automatycznym diagnozowaniu różnych chorób na podstawie analizy obrazów z tomografii komputerowej.
+
+Celem pracy jest stworzenie silnika kategoryzacyjnego, który na podstawie danych wyekstratowanych z obrazu będzie w stanie przyporządkować obraz do najbardziej odpowiedniej kategorii.
 
 \section*{Przykłady implementacji}
 \addcontentsline{toc}{section}{Przykłady implementacji}
-gdfgdgsd
+Napisać o:
+
+- http://imagga.com/solutions/categorization-api.html
+
+- http://googleblog.blogspot.com/2010/07/ooh-ahh-google-images-presents-nicer.html (problem z tulipanem)
