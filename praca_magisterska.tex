@@ -36,6 +36,20 @@
    \clearpage
 }
 
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+\newenvironment{packed_list}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
 
 
 \begin{document}
@@ -172,6 +186,8 @@ Na kolejnych dwóch stronach proszę dołączyć kolejno recenzje pracy popełni
 \bibitem{Google2010} Smith N., \emph{Ooh! Ahh! Google Images presents a nicer way to surf the visual web}, Google Official Blog, 2010, http://googleblog.blogspot.com/2010/07/ooh-ahh-google-images-presents-nicer.html [dostęp 05.08.2014]
 
 \bibitem{Tad91} Tadeusiewicz R., Flasiński M., \emph{Rozpoznawanie obrazów}, Warszawa: Państwowe Wydawnictwo Naukowe, 1991, ISBN 83-01-10558-5
+
+\bibitem{LZLM06} Liu Y., Zhang D., Lu G., Ma W-Y., \emph{A survey of content-based image retrieval with high-level semantics}, 2006 
  
 \end{thebibliography} 
 %%%%%%%%%%%%% end %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
