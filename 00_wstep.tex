@@ -1,6 +1,5 @@
 \chapter*{Wstęp}
 
-%TODO TEN WSTEP WYMAGA POPRAWEK
 \addcontentsline{toc}{chapter}{Wstęp}
 Jednym z największych wyzwań, przed którymi stoi współczesna informatyka, jest przetwarzanie dużych ilości danych. Coraz częściej dane te nie reprezentują informacji liczbowych lub tekstowych, ale zawierają pewien rodzaj obrazu. 
 
@@ -12,7 +11,6 @@ Zarządzając dużym zbiorem obrazów często posługujemy się opisem słownym.
 
 Pomoc w rozwiązaniu tego problemu daje nam teoria rozpoznawania obrazów, stosunkowo nowa, ale bardzo szybko rozwijająca się gałąź informatyki, która daje nam narzędzia umożliwiające takie przetwarzanie obrazów, by możliwe stało się rozpoznanie przynależności obrazu do pewnej klasy.\cite{Tad91}
 
-%TODO czy to nie jest mylace, ze tematem pracy jest "kategoruyzacja" a de facto poruszam tutaj kwestie kategoryzacji?
 Stworzenie systemu informatycznego, który pomógłby skategoryzować obrazy na podstawie ich zawartości mogłoby okazać się bardzo pomocne w wielu dziedzinach, m.in.:
 \begin{compactitem}
 	\item w diagnostyce medycznej, m.in. do automatycznego diagnozowania różnych chorób\cite{GMM10}\cite{MONTEJO13},
@@ -23,16 +21,11 @@ Stworzenie systemu informatycznego, który pomógłby skategoryzować obrazy na 
 
 Techniki rozpoznania i klasyfikacji mogą znaleźć zastosowanie wszędzie tam, gdzie spodziewamy się uzyskać z dużej ilości obrazów dodatkowe informacje, które dla człowieka nie są widoczne na pierwszy rzut oka lub tam, gdzie mamy podzielić duży zbiór obrazów na podzbiory odpowiadające pewnym ustalonym przez nas cechom.
 
-%TODO czy powyzszym stwierdzeniom nie należy ufać?
-
 \section*{Cel pracy}
 \addcontentsline{toc}{section}{Cel pracy}
 Celem niniejszej pracy jest stworzenie silnika kategoryzacyjnego. Proponowany system miałby za zadanie przypisać dostarczony do niego obraz do odpowiedniej kategorii. W założeniu kategorie powinny zostać zdefiniowane przed uruchomieniem silnika kategoryzacyjnego, a nie tworzone dynamicznie w trakcie jego działania. System nie ma na celu tworzenie nowych kategorii, ale możliwe najdokładniejsze przypisanie nowych obrazów do kategorii zrozumiałych przez człowieka.
 
 W tym miejscu należy uściślić, że pisząc "obraz" mamy tutaj na myśli obraz graficzny, lub też bardziej precyzyjnie, grafikę rastrową. Zastosowanie opisywanych tutaj technik do obrazów innego rodzaju wychodzi poza zakres pracy.
-
-%TODO napisac, ze chodzi tylko o zdjecia, obrazki, a nie ogolnie o obraz czyli wszystko - dzwieki i inne
-%TODO napisac dlaczego zajmuje sie "kategoryzacja" a nie "klasyfikacja"
 
 \section*{Przykłady implementacji}
 \addcontentsline{toc}{section}{Przykłady implementacji}
@@ -43,9 +36,3 @@ Jednym z nich jest PiXiT, czyli oprogramowanie służące do klasyfikacji obraz�
 Innym przykładem podobnej implementacji jest komercyjny produkt Imagga Technologies z Sofii (Bułgaria). Firma ta udostępnia webowe API pozwalające na przypisanie predefiniowanych kategorii do przesłanego zdjęcia. Dostęp do systemu możliwy jest poprzez stronę WWW lub poprzez REST-owe API\cite{IMAGGA}.
 
 Zastosowanie pewnych technik kategoryzacji obrazów widoczny jest również w najnowszej wersji przeglądarki Google. W 2010 roku pojawiło się narzędzie pozwalające na wyszukiwanie obiektów o określonych kolorach\cite{Google2010}.
-
-%Napisać o:
-
-%- http://imagga.com/solutions/categorization-api.html
-
-%- http://googleblog.blogspot.com/2010/07/ooh-ahh-google-images-presents-nicer.html (problem z tulipanem)
