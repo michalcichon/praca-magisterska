@@ -4,7 +4,7 @@
 \addcontentsline{toc}{chapter}{Wstęp}
 Jednym z największych wyzwań, przed którymi stoi współczesna informatyka, jest przetwarzanie dużych ilości danych. Coraz częściej dane te nie reprezentują informacji liczbowych lub tekstowych, ale zawierają pewien rodzaj obrazu. 
 
-Dobrą ilustracją tego zjawiska jest przykład przeglądarki internetowej Google, gdzie początkowo kładziony był nacisk na wyszukiwanie danych tekstowych. Jednak obecnie jednym z najbardziej dynamicznie rozwijanych zasobów są obrazy. Indeksowanie tego zasobu w latach 2001-2010 zwiększyło się z 250 mln do ponad 10 mld.\cite{Google2010}
+Dobrą ilustracją tego zjawiska jest przykład przeglądarki internetowej Google, gdzie początkowo kładziony był nacisk na wyszukiwanie danych tekstowych. Jednak obecnie jednym z najbardziej dynamicznie rozwijanych zasobów są obrazy. Indeksowanie tego zasobu w latach 2001-2010 zwiększyło się z 250 mln do ponad 10 mld i systematycznie rośnie.\cite{Google2010}
 
 Obrazy cyfrowe mają szereg zastosowań, od bardzo prozaicznych takich jak reprezentacja zwykłych zdjęć wykonanych cyfrowym aparatem fotograficznym, do bardzo zaawansowanych takich jak chociażby diagnostyka medyczna, gdzie informacja zawarta na zdjęciu jest kluczowa i niekiedy decyduje o ludzkim życiu.
 
@@ -12,22 +12,22 @@ Zarządzając dużym zbiorem obrazów często posługujemy się opisem słownym.
 
 Pomoc w rozwiązaniu tego problemu daje nam teoria rozpoznawania obrazów, stosunkowo nowa, ale bardzo szybko rozwijająca się gałąź informatyki, która daje nam narzędzia umożliwiające takie przetwarzanie obrazów, by możliwe stało się rozpoznanie przynależności obrazu do pewnej klasy.\cite{Tad91}
 
-Stworzenie systemu informatycznego, który pomógłby skategoryzować obrazy na podstawie ich zawartości mogłoby okazać się bardzo pomocne w wielu dziedzinach gospodarki:
-\begin{packed_list}
-	\item w diagnostyce medycznej, m.in. do automatycznego wykrywania podatności na choroby
-	\item do budowy systemów CBIR (QBIC) służących do zwracania obrazów na podstawie zapytań\cite{LZLM06}
-	%TODO rozszerzyć tę listę
-\end{packed_list}
+Stworzenie systemu informatycznego, który pomógłby skategoryzować obrazy na podstawie ich zawartości mogłoby okazać się bardzo pomocne w wielu dziedzinach, m.in.:
+\begin{compactitem}
+	\item w diagnostyce medycznej, m.in. do automatycznego diagnozowania różnych chorób\cite{GMM10}\cite{MONTEJO13},
+	\item w produkcji przemysłowej, do wykrywania rodzajów defektów\cite{SUVDAA2012}\cite{GLAZER08},
+	\item do budowy systemów CBIR (QBIC) służących do zwracania obrazów na podstawie zapytań\cite{LZLM06},
+	\item w marketingu, m.in. do tworzenia grup docelowych na podstawie oglądanych zdjęć w Internecie\cite{MARKETING12}
+\end{compactitem}
 
-%TODO NAPISAĆ O CRIB (Wyszukiwanie informacji w dużych zbiorach obrazów)
-% przeniesc wstep z cel pracy tutaj
+Techniki rozpoznania i klasyfikacji mogą znaleźć zastosowanie wszędzie tam, gdzie spodziewamy się uzyskać z dużej ilości obrazów dodatkowe informacje, które dla człowieka nie są widoczne na pierwszy rzut oka lub tam, gdzie mamy podzielić duży zbiór obrazów na podzbiory odpowiadające pewnym ustalonym przez nas cechom.
+
+%TODO czy powyzszym stwierdzeniom nie należy ufać?
 
 \section*{Cel pracy}
 \addcontentsline{toc}{section}{Cel pracy}
-
-%TODO KONIECZNIE TRZEBA TO ZMIENIĆ - wstęp nieproporcjonalnie za długi w stosunku
-%TODO do faktycznego celu pracy, domeny (2) też są nienajlepsze
-Celem pracy jest stworzenie silnika kategoryzacyjnego, który na podstawie danych wyekstratowanych z obrazu będzie w stanie przyporządkować obraz do najbardziej odpowiedniej kategorii.
+Celem niniejszej pracy jest stworzenie silnika kategoryzacyjnego. Proponowany system miałby za zadanie 
+%TODO napisac, ze chodzi tylko o zdjecia, obrazki, a nie ogolnie o obraz czyli wszystko - dzwieki i inne
 
 \section*{Przykłady implementacji}
 \addcontentsline{toc}{section}{Przykłady implementacji}

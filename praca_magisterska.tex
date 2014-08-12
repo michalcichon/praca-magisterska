@@ -16,6 +16,7 @@
 \usepackage{moreverb}
 \usepackage{nameref}
 \usepackage{listings}
+\usepackage{paralist}
 \usepackage{url}
 \usepackage[font=footnotesize,labelfont=bf]{caption}
 \geometry{hmargin={2cm, 2cm}, height=10.0in}
@@ -35,22 +36,6 @@
    \vspace*{\stretch{3}}
    \clearpage
 }
-
-\newenvironment{packed_enum}{
-\begin{enumerate}
-  \setlength{\itemsep}{1pt}
-  \setlength{\parskip}{0pt}
-  \setlength{\parsep}{0pt}
-}{\end{enumerate}}
-
-\newenvironment{packed_list}{
-\begin{itemize}
-  \setlength{\itemsep}{1pt}
-  \setlength{\parskip}{0pt}
-  \setlength{\parsep}{0pt}
-}{\end{itemize}}
-
-
 
 \begin{document}
 \nocite{*}
@@ -181,13 +166,24 @@ Na kolejnych dwóch stronach proszę dołączyć kolejno recenzje pracy popełni
 \begin{thebibliography}{100} % 100 is a random guess of the total number of 
 %references 
 
+\bibitem{MARKETING12} Baier D., Daniel I., Frost S., \emph{Image data analysis and classification in marketing}, Advances in Data Analysis and Classification , Volume 6, Issue 4 , December 2012, Pages 253-276, ISSN 1862-5347
+
+\bibitem{GLAZER08} Glazer A., Sipper M., \emph{Evolving an Automatic Defect Classification Tool}, Applications of Evolutionary Computing, Heidelberg: Springer, 2008, Pages 194-203
+
+\bibitem{GMM10} Górriz J. M., Segovia F., Ramírez J., Lassl A., Salas-Gonzalez D., \emph{GMM based SPECT image classification for the diagnosis of Alzheimer’s disease}, Applied Soft Computing, Volume 11, Issue 2, March 2011, Pages 2313-2325, ISSN 1568-4946
+
 \bibitem{HMS01} Hand D., Mannila H. Smyth P., \emph{Eksploracja danych}, Warszawa: Wydawnictwo Naukowo-Techniczne, 2005, ISBN 83-204-3053-4
+
+\bibitem{MONTEJO13} Montejo L.D., Jia J., Kim H. K., Netz U. J., Blaschke S., Müller G. A., Hielscher A. H., \emph{Computer-aided diagnosis of rheumatoid arthritis with optical tomography, Part 2: image classification}, Journal of biomedical optics, Volume 18, Jul 2013, ISSN 1560-2281
 
 \bibitem{Google2010} Smith N., \emph{Ooh! Ahh! Google Images presents a nicer way to surf the visual web}, Google Official Blog, 2010, http://googleblog.blogspot.com/2010/07/ooh-ahh-google-images-presents-nicer.html [dostęp 05.08.2014]
 
+\bibitem{SUVDAA2012} Suvdaa B., Ahn J., Ko J., \emph{Steel Surface Defects Detection and Classification Using SIFT and Voting Strategy}, International Journal of Software Engineering and Its Applications, Volume 6, No. 2, Apri 2012, Pages 161-166
+
+
 \bibitem{Tad91} Tadeusiewicz R., Flasiński M., \emph{Rozpoznawanie obrazów}, Warszawa: Państwowe Wydawnictwo Naukowe, 1991, ISBN 83-01-10558-5
 
-\bibitem{LZLM06} Liu Y., Zhang D., Lu G., Ma W-Y., \emph{A survey of content-based image retrieval with high-level semantics}, 2006 
+\bibitem{LZLM06} Liu Y., Zhang D., Lu G., Ma W-Y., \emph{A survey of content-based image retrieval with high-level semantics}, Pattern Recognition, Volume 40, Issue 1, January 2007, Pages 262-282, ISSN 0031-3203
  
 \end{thebibliography} 
 %%%%%%%%%%%%% end %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
