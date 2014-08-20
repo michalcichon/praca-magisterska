@@ -6,13 +6,11 @@ Problem kategoryzacji obrazów wpisuje się w dziedzinę rozpoznawania obrazów.
 
 Uczenie maszynowe jest zagadnieniem interdyscyplinarnym z pogranicza informatyki, statystyki i sztucznej inteligencji, które zajmuje się tworzeniem systemów mogących doskonalić się za pomocą dostarczanych danych.
 
-Systemy te ulegają nieustannej modyfikacji, zmieniają swoje wewnętrzne parametry po to by osiągnąć korzyści takie jak zwiększenie efektywności lub wydajności działania. Ważną cechą jest to, że jakkolwiek zmiany te zachodzą na podstawie czynników zewnętrznych to jednak dokonują się w systemie autonomicznie. System, który się uczy zmienia sam siebie na lepsze.\cite{CICHOSZ00}
+Systemy te ulegają nieustannej modyfikacji, zmieniają swoje wewnętrzne parametry po to by osiągnąć korzyści takie jak zwiększenie efektywności lub wydajności działania. Ważną cechą jest to, że jakkolwiek zmiany te zachodzą na podstawie czynników zewnętrznych to jednak dokonują się w systemie autonomicznie. System, który się uczy zmienia sam siebie na lepsze\cite{CICHOSZ00}.
 
 \section{Uczenie nadzorowane i nienadzorowane}
 
-W uczeniu maszynowym możemy wyróżnić dwa zasadnicze podejścia: uczenie nadzorowane i nienadzorowane. Różnica pomiędzy nimi polega na obecności w uczeniu nadzorowanym tzw. nauczyciela, który stanowi źródło informacji trenującej. Na rys. \ref{fig:supervised-learning} przedstawiono schemat uczenia maszynowego z użyciem nauczyciela.
-
-Uczeń otrzymuje od nauczyciela informację o tym jakiej odpowiedzi oczekuje
+W uczeniu maszynowym możemy wyróżnić dwa zasadnicze podejścia: uczenie nadzorowane i nienadzorowane. Różnica pomiędzy nimi polega na obecności w uczeniu nadzorowanym tzw. nauczyciela, który stanowi źródło informacji trenującej. Posługując się analogiczną terminologią, system który podlega nauce określa się jako ucznia. Na rys. \ref{fig:supervised-learning} przedstawiono schemat uczenia maszynowego z użyciem nauczyciela.
 
 \begin{figure}[h]
 	\centering
@@ -20,6 +18,16 @@ Uczeń otrzymuje od nauczyciela informację o tym jakiej odpowiedzi oczekuje
 	\caption{Uczenie maszynowe z nauczycielem \cite{CICHOSZ00}}
 	\label{fig:supervised-learning}
 \end{figure}
+
+Uczeń otrzymuje od nauczyciela informację o tym jakiego komunikatu wyjściowego oczekuje w odpowiedzi na przykładowe informacje wejściowe, które mogą być dostarczone np. w formie wektorów. Na podstawie przykładów, system ma wyuczyć się reagowania na dane w odpowiedni, pożądany sposób.
+
+%Uczenie nadzorowane przydaje się szczególnie do rozwiązania problemów związanych z klasyfikacją.
+
+Inaczej jest w przypadku uczenia nienadzorowanego, gdzie nie występuje rola nauczyciela, a co za tym idzie, do systemu nie trafiają informacje instruktażowe. Wówczas dostępne są jedynie wektory wejściowe i na ich obserwacji uczeń ma nauczyć się odpowiednich odpowiedzi\cite{CICHOSZ00}.
+%TODO napisac o zastosowaniu.. gdzies to bylo napisane
+%TODO napisac co sie bardziej nadaje do rozwiazania problemy pracy mgr
+
+Rzeczywiste dane wejściowe mogą się różnic od przykładowych danych służących do wytrenowania systemu. Umiejętność udzielania poprawnej odpowiedzi na komunikaty, które różnią się od przykładowych danych określamy jako generalizacja\cite{BISHOP06}.
 
 \section{Rozpoznawanie obrazów}
 %TODO ????
