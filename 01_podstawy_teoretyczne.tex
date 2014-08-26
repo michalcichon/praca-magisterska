@@ -23,11 +23,20 @@ Uczeń otrzymuje od nauczyciela informację o tym jakiego komunikatu wyjścioweg
 
 W zależności od typu odpowiedzi możemy wyróżnić dwa typowe rodzaje problemów, które stara się rozwiązać uczenie nadzorowane. Jeśli system ma przyporządkować do wektora wejściowego pojedynczą kategorię pochodzącą ze skończonego i dyskretnego zbioru kategorii, wówczas określamy ten problem jako problem kategoryzacji. Natomiast w przypadku przyporządkowywania odpowiedzi składającej się z jednej lub więcej zmiennych ciągłych, mówimy o problemie regresji.\cite{BISHOP06} Proces działania maszyny realizującej uczenie nadzorowane możemy podzielić na dwa etapy: etap treningu lub też nauki oraz etap polegający na rozwiązywania przynależności nowych wektorów wejściowych, który często określa się jako testowanie lub walidację.
 
-W uczeniu nienadzorowanym nie występuje rola nauczyciela, a co za tym idzie, do systemu nie trafiają informacje treningowe. Dostępne są jedynie wektory wejściowe i na podstawie ich obserwacji system ma nauczyć się odpowiednich odpowiedzi.\cite{CICHOSZ00} Podejście to zatem nie polega przyporządkowaniu wektorów do ustalonych wcześniej kategorii, lecz na wyznaczeniu ukrytej struktury w danych, które są nieopisane.\cite{VALPOLA} Podejście to wykorzystywane jest m.in. do rozwiązywania problemu klasteryzacji (\emph{ang. clustering}), który polega na znajdowaniu grup podobnych obiektów wśród danych wejściowych. Ponadto uczenie nadzorowane wykorzystywane jest to określania rozkładu danych w przestrzeni wejściowej, co nazywamy szacowaniem rozkładu (\emph{ang. density estimation}) lub do rzutowania danych z przestrzeni wielowymiarowej do trójwymiarowej w celu dokonania wizualizacji.\cite{BISHOP06}
+W uczeniu nienadzorowanym nie występuje rola nauczyciela, a co za tym idzie, do systemu nie trafiają informacje treningowe. Dostępne są jedynie wektory wejściowe i na podstawie ich obserwacji system ma nauczyć się odpowiednich odpowiedzi.\cite{CICHOSZ00} Podejście to nie polega zatem na przyporządkowaniu wektorów do ustalonych wcześniej kategorii, lecz na wyznaczeniu ukrytej struktury w danych, które są nieopisane.\cite{VALPOLA} Wykorzystywane jest m.in. do rozwiązywania problemu klasteryzacji (\emph{ang. clustering}), który polega na znajdowaniu grup podobnych obiektów wśród danych wejściowych. Ponadto uczenie nienadzorowane wykorzystywane jest to określania rozkładu danych w przestrzeni wejściowej, co nazywamy szacowaniem rozkładu (\emph{ang. density estimation}) lub do rzutowania danych z przestrzeni wielowymiarowej do trójwymiarowej w celu dokonania wizualizacji.\cite{BISHOP06}
+
+Na rys. \ref{fig:unsupervised-learning} przedstawiono uproszczony schemat mechanizmu uczenia nienadzorowanego. Algorytm uczący dokonuje podziału zestawu danych na klastry, które następnie muszą zostać zinterpretowane przez człowieka. W zaprezentowanym przykładzie klastry zostały nazwane na podstawie analizy ich zawartości. W rzeczywistych problemach zadanie nadania etykiet wytworzonym klastrom może okazać się trudne i może wymagać dostrojenia parametrów algorytmu by identyfikacja klastrów była możliwa.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{graphics/01_podstawy_teoretyczne/unsupervised-learning.pdf}
+	\caption{Uczenie maszynowe nienadzorowane \cite{CASEY}}
+	\label{fig:unsupervised-learning}
+\end{figure}
 
 Rzeczywiste dane wejściowe mogą się różnić od przykładowych danych służących do wytrenowania systemu. Umiejętność udzielania poprawnej odpowiedzi na komunikaty, które różnią się od przykładowych danych określamy jako generalizacja.\cite{BISHOP06} 
 
-Ze względu na specyfikę problemu, należałoby stwierdzić, że właściwym podejściem do zautomatyzowania procesu kategoryzacji zdjęć jest uczenie nadzorowane.
+Ze względu na specyfikę problemu, należałoby stwierdzić, że właściwym podejściem do zautomatyzowania procesu kategoryzacji zdjęć jest uczenie nadzorowane. \highlight{Odwołać się do artykułów.}
 
 \section{Rozpoznawanie obrazów}
 ...
