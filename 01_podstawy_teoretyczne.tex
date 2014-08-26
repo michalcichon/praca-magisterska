@@ -19,11 +19,11 @@ W uczeniu maszynowym możemy wyróżnić dwa zasadnicze podejścia: uczenie nadz
 	\label{fig:supervised-learning}
 \end{figure}
 
-Uczeń otrzymuje od nauczyciela informację o tym jakiego komunikatu wyjściowego oczekuje w odpowiedzi na przykładowe informacje wejściowe. Mogą być one dostarczone np. w formie wektorów składających się z danych oraz poprawnej odpowiedzi. Na podstawie przykładów, system ma wyuczyć się reagowania na dane w odpowiedni, pożądany sposób. Odpowiedź systemu należy do pewnego znanego zbioru klas.
+Uczeń otrzymuje od nauczyciela informację o tym jakiego komunikatu wyjściowego oczekuje w odpowiedzi na przykładowe informacje wejściowe. Mogą być one dostarczone np. w formie par składających się z wektorów danych oraz poprawnej odpowiedzi. Na podstawie przykładów, system ma wyuczyć się przyporządkowywania danych do odpowiednich odpowiedzi.
 
-Inaczej jest w przypadku uczenia nienadzorowanego, gdzie nie występuje rola nauczyciela, a co za tym idzie, do systemu nie trafiają informacje instruktażowe. Wówczas dostępne są jedynie wektory wejściowe i na ich obserwacji uczeń ma nauczyć się odpowiednich odpowiedzi.\cite{CICHOSZ00}
-%TODO napisac o zastosowaniu.. gdzies to bylo napisane
-%TODO napisac co sie bardziej nadaje do rozwiazania problemy pracy mgr
+W zależności od typu odpowiedzi możemy wyróżnić dwa typowe rodzaje problemów, które stara się rozwiązać uczenie nadzorowane. Jeśli system ma odpowiedzieć pojedynczą kategorią pochodzącą ze skończonego i dyskretnego zbioru kategorii, wówczas określamy ten problem jako problem kategoryzacji. Natomiast w przypadku odpowiedzi składającej się z jednej lub więcej zmiennych ciągłych, mówimy o problemie regresji.\cite{BISHOP06}
+
+W uczeniu nienadzorowanym nie występuje rola nauczyciela, a co za tym idzie, do systemu nie trafiają informacje instruktażowe. Wówczas dostępne są jedynie wektory wejściowe i na ich obserwacji uczeń ma nauczyć się odpowiednich odpowiedzi.\cite{CICHOSZ00}
 
 Rzeczywiste dane wejściowe mogą się różnić od przykładowych danych służących do wytrenowania systemu. Umiejętność udzielania poprawnej odpowiedzi na komunikaty, które różnią się od przykładowych danych określamy jako generalizacja.\cite{BISHOP06}
 
