@@ -21,7 +21,7 @@ W uczeniu maszynowym możemy wyróżnić dwa zasadnicze podejścia: uczenie nadz
 
 Uczeń otrzymuje od nauczyciela informację o tym jakiego komunikatu wyjściowego oczekuje w odpowiedzi na przykładowe informacje wejściowe. Mogą być one dostarczone np. w formie par składających się z wektorów danych oraz poprawnej odpowiedzi: $(x_{i}, y_{i})$. Na podstawie przykładów, system ma wyuczyć się przyporządkowywania danych do odpowiednich odpowiedzi. Innymi słowy, ma nauczyć się takiej funkcji $f$, dla której $f(x_{i})=y_{i}$, dla każdego $i$. Przykładami w uczeniu maszynowym mogą być różne obiekty, takie jak przedmioty, osoby, obserwacje.
 
-Każdy przykład określany jest przez skończony oraz niepusty zbiór atrybutów $A=\lbrace a_{i}, a_{2}, ..., a_{n}\rbrace$. Atrybuty ze względu na rodzaj dziedziny możemy podzielić na: 
+Każdy przykład określany jest przez skończony oraz niepusty zbiór atrybutów $A=\lbrace a_{i}, a_{2}, \cdots, a_{n}\rbrace$. Atrybuty ze względu na rodzaj dziedziny możemy podzielić na: 
 \begin{compactitem}
 	\item nominalne, tj. takie, których dziedziny są zbiorami nieuporządkowanymi - dla dwóch wartości możliwe jest określenie jedynie czy są równe czy nierówne,
 	\item porządkowe, dla których dziedziny są zbiorami uporządkowanymi, czyli możliwe jest określenie relacji porządku liniowego na zbiorze wartości,
@@ -59,7 +59,7 @@ x_n
 \end{bmatrix}
 \end{equation}
 
-Zbiór wzorców charakteryzujący się podobnymi wektorami cech nazywamy klasą wzorców i oznaczamy jako $\omega_1, \omega_2, ..., \omega_{W}$, gdzie dolny indeks określa numer klasy, a $W$ określa ilość klas. Jako rozpoznanie wzorca $\omega$ określa się przyporządkowanie wzorcowi jego klasy: $\overrightarrow{x} \rightarrow \omega$.
+Zbiór wzorców charakteryzujący się podobnymi wektorami cech nazywamy klasą wzorców i oznaczamy jako $\omega_1, \omega_2, \cdots, \omega_{W}$, gdzie dolny indeks określa numer klasy, a $W$ określa ilość klas. Jako rozpoznanie wzorca $\omega$ określa się przyporządkowanie wzorcowi jego klasy: $\overrightarrow{x} \rightarrow \omega$. Przestrzeń wektorów cech $X$ zostaje przekształcona w przestrzeń klas wzorców $\Omega$.
 
 W systemach analizy obrazów możemy oprócz rozpoznania zdefiniować również dwa inne pojęcia: identyfikację oraz weryfikację. Gdy nie dysponujemy opisami klas wzorców, a jedynie przechowujemy wzorce referencyjne, celem systemu jest porównanie aktualnego wzorca z bazą referencyjną. Jeśli na podstawie określonej odległości pomiędzy parami wzorców system jest w stanie dokonać wyboru dokładnie jednego wzorca referencyjnego, to określamy takie rozwiązanie jako identyfikację. Natomiast jeśli możemy wybrać przynajmniej jeden ze wzorców referencyjnych to określamy takie rozwiązanie jako weryfikację.
 
@@ -69,19 +69,47 @@ W przypadku dużych i skomplikowanych obiektów, takich jak obrazy, proces uczen
 Wyselekcjonowane cechy powinny się charakteryzować następującymi właściwościami\cite{STRUMIL}:
 
 \begin{compactitem}
-	\item dyskryminacja - cechy powinny przyjmować jak najbardziej różne wartości dla obiektów z różnych klas,
-	\item niezawodność - cechy powinny przyjmować podobne wartości dla wszystkich obiektów danej klasy,
-	\item niezależność - cechy powinny nie być ze sobą skorelowane,
-	\item małoliczność - im mniejsza liczba cech tym złożoność systemu jest mniejsza.
+	\item \emph{dyskryminacja} - cechy powinny przyjmować jak najbardziej odmienne wartości dla obiektów z różnych klas,
+	\item \emph{niezawodność} - cechy powinny przyjmować podobne wartości dla wszystkich obiektów danej klasy,
+	\item \emph{niezależność} - cechy powinny nie być ze sobą skorelowane,
+	\item \emph{małoliczność} - im mniejsza liczba cech tym złożoność systemu jest mniejsza.
 \end{compactitem}
 
-Po poprawnej selekcji cech, możliwe powinno się stać stworzenie takiego modelu, w którym cechy nie dające informacji potrzebnej do klasyfikacji lub takie, które są nadmiarowe lub pogarszają jakość klasyfikacji zostały wyeliminowane.
+Wzór \ref{correlation} przedstawia współczynnik korelacji cech $x$ i $y$. Jeśli współczynnik korelacji jest bliski $1$ lub $-1$ to cechy $x$ i $y$ są ze sobą silnie skorelowane i należy jedną z nich odrzucić.
 
+\begin{equation} 
+\label{correlation} 
+\hat{\sigma}_{xy}
+= \frac{
+	\frac{1}{P}\sum\limits_{i=1}^P(x_i-\mu_x)(y_i-\mu_y)
+}
+{
+	\hat{\sigma}_x\hat{\sigma}_y
+}
+\end{equation}
+
+Gdzie $P$ - liczba klasyfikowanych obiektów, $\mu$ - wartość średnia, $\sigma$ - odchylenie standardowe zbioru cech.
+
+Miarę separacji można określić jako:
+
+\begin{equation}
+	\hat{D}_xjk = \frac{|\mu_xj - \mu_xk|}{\sqrt{\hat{\sigma}^2_xj \hat{\sigma}^2_xk}}
+\end{equation}
+
+Duża wartość tej miary świadczy o dobrej separacji pomiędzy klasami $j$ i $k$.
+
+Badanie jakości klasyfikacji dla wszystkich możliwych kombinacji podzbioru cech dla dużej liczby $N$ wszystkich cech jest bardzo kosztowne, dlatego w praktyce zbiór cech często dobierany jest intuicyjnie.
+
+Po poprawnej selekcji cech, możliwe powinno się stać stworzenie takiego modelu, w którym cechy nie dające informacji potrzebnej do klasyfikacji lub takie, które są nadmiarowe lub pogarszają jakość klasyfikacji zostały wyeliminowane. Dążymy przy tym do osiągnięcia najmniejszego możliwego wektora cech. Opierając się na mniejszym, mniej wymiarowym wektorze cech, potrzeba mniej przykładów do osiągnięcia dobrych wyników klasyfikacji.
+
+%TODO definicja korelacji i inne statystyczne
 
 \section{Ekstrakcja cech}
 %TODO problem ograniczania wielkosci wektora cech
 %TODO podac przyklady z literatury jak robiono ekstrakcje poprzednio
-...
+Obrazy w formie map bitowych reprezentowane są w pamięci komputera w postaci macierzy pikseli.
+
+
 
 \section{Klasyfikacja}
 %TODO wymienic rozne rodzaje klasyfikatorow
