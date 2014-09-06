@@ -47,7 +47,7 @@ Dane wejściowe z etapu walidacji mogą się różnić od przykładowych danych 
 \section{Rozpoznawanie wzorców}
 Celem rozpoznawania wzorców (\emph{ang. pattern recognition}) jest stworzenie symbolicznego opisu dla zawartości jedno lub wielowymiarowego sygnału cyfrowego takiego jak np. cyfrowy obraz graficzny, sygnał mowy, lub obraz z kamery, a następnie przyporządkowanie do niego klasy lub instancji klasy. Opis ten może być zrealizowany w różnej formie: funkcji, obiektów, ruchu, wyrazów lub struktur.
 
-Wzorcem nazywamy zbiór cech, który tworzy ilościowy oraz jakościowy opis obiektu. Wzorzec zapisujemy najczęściej jako wektory, ciągi lub drzewa. Wzór \ref{pattern_vector} przedstawia wektor wzorca, gdzie $x_{i}$ reprezentuje $i$-tą cechę, a $n$ oznacza ilość wszystkich cech powiązanych ze wzorcem.\cite{GONZALES01}
+Wzorcem nazywamy zbiór cech, który tworzy ilościowy oraz jakościowy opis obiektu. Wzorzec zapisujemy najczęściej jako wektory, ciągi lub drzewa. Wzór \ref{pattern_vector} przedstawia wektor cech, gdzie $x_{i}$ reprezentuje $i$-tą cechę, a $n$ oznacza ilość wszystkich cech powiązanych ze wzorcem.\cite{GONZALES01}
 
 \begin{equation} 
 \label{pattern_vector} 
@@ -62,7 +62,7 @@ x_n
 Zbiór wzorców charakteryzujący się podobnymi wektorami cech nazywamy klasą wzorców i oznaczamy jako $\omega_1, \omega_2, ..., \omega_{W}$, gdzie dolny indeks określa numer klasy, a $W$ określa ilość klas. Jako rozpoznanie wzorca $\omega$ określa się przyporządkowanie wzorcowi jego klasy: $x \rightarrow \omega$.
 
 
-W systemach analizy sygnałów możemy oprócz rozpoznania zdefiniować również dwa inne pojęcia: identyfikację oraz weryfikację. Zazwyczaj gdy nie dysponujemy opisami klas wzorców, a jedynie przechowujemy wzorce referencyjne, celem systemu jest porównanie aktualnego wzorca z bazą referencyjną. Jeśli na podstawie określonej odległości pomiędzy parami wzorców system jest w stanie dokonać wyboru dokładnie jednego wzorca referencyjnego, to określamy takie rozwiązanie jako identyfikację. Natomiast jeśli możemy wybrać przynajmniej jeden ze wzorców referencyjnych to określamy takie rozwiązanie jako weryfikację.
+W systemach analizy sygnałów możemy oprócz rozpoznania zdefiniować również dwa inne pojęcia: identyfikację oraz weryfikację. Gdy nie dysponujemy opisami klas wzorców, a jedynie przechowujemy wzorce referencyjne, celem systemu jest porównanie aktualnego wzorca z bazą referencyjną. Jeśli na podstawie określonej odległości pomiędzy parami wzorców system jest w stanie dokonać wyboru dokładnie jednego wzorca referencyjnego, to określamy takie rozwiązanie jako identyfikację. Natomiast jeśli możemy wybrać przynajmniej jeden ze wzorców referencyjnych to określamy takie rozwiązanie jako weryfikację.
 
 
 
