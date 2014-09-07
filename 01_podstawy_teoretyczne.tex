@@ -157,18 +157,41 @@ W celu wykrycia lokalnych ekstremów, punkty są porównywane z sąsiadami w oto
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.4]{graphics/01_podstawy_teoretyczne/sift-gaussian-min-max.pdf}
-	\caption{Porównanie punktu z sąsiadami. \cite{LOWE04}}
+	\caption{Porównanie punktu z sąsiadami \cite{LOWE04}}
 	\label{fig:sift-gaussian-min-max}
 \end{figure}
 
 Po znalezieniu kandydatów następuje lokalizacja punktów kluczowych. Proces ten odbywa się poprzez interpolację ekstremów dla kandydatów wyznaczonych w poprzednim punkcie za pomocą funkcji kwadratowej 3D:
-
 \begin{equation} 
 \label{sift_3d} 
 D(x) = D + \frac{\partial D^T}{\partial x} x + \frac{1}{2}x^T \frac{\partial^2 D}{\partial x^2} x
 \end{equation}
 
+Dokładne położenie ekstremum wyznacza się na podstawie pochodnej funkcji $D(x)$:
+\begin{equation} 
+\label{sift_pochodna_D} 
+\hat{x} = -\frac{\partial^2 D^-1}{\partial x^2}\frac{\partial D}{\partial x}
+\end{equation}
 
+Wartość funkcji w punkcie ekstremum służy do odrzucania niestabilnych punktów ze względu na mały kontrast. Wzór można uzyskać poprzez podstawienie wzoru \ref{sift_pochodna_D} do \ref{sift_3d}:
+\begin{equation} 
+\label{sift_Dx} 
+D(\hat{x}) = D + \frac{1}{2} \frac{\partial D^T}{\partial x} \hat{x}
+\end{equation}
+
+Funkcja DOG będzie mieć dużą odpowiedź wzdłuż krawędzi. Punkty ekstremum będące odpowiedzią wzdłuż krawędzi na obrazie są odrzucane na podstawie warunku \ref{sift_warunek}:
+\begin{equation} 
+\label{sift_warunek} 
+\frac{\Tr(\boldsymbol{H})^2}{\Det(\boldsymbol{H})} < \frac{(r+1)^2}{r}
+\end{equation} gdzie Hessian:
+\begin{equation} 
+\label{sift_hessian} 
+\boldsymbol{H} = 
+	\begin{bmatrix}
+		D_{xx} & D_{xy} \\
+		D_{xy} & D_{yy}
+	\end{bmatrix}
+\end{equation}
 
 \subsection{SURF - Speeded Up Robust Features}
 
