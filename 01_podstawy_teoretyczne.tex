@@ -141,7 +141,9 @@ D(x, y, \sigma) = [G(x, y, k\sigma) - G(x, y, \sigma)] \ast I(x, y)
 D(x, y, \sigma) = L(x, y, k\sigma) - L(x, y, \sigma)
 \end{equation}
 
-Na rys. \ref{fig:sift-gaussian-to-dog} przedstawiono wydajny sposób konstruowania $D(x, y, \sigma)$. Obraz wejściowy fitrowany jest filtrem Gaussa w różnych skalach rozdzielonych stałym współczynnikiem $k$, a następnie na obliczane są obrazy różnicowe DOG. Procedurę powtarza się próbkując obraz gaussowski poprzez usunięcie co drugiego wiersza i kolumny obrazu.
+Na rys. \ref{fig:sift-gaussian-to-dog} przedstawiono efektywny sposób konstruowania $D(x, y, \sigma)$. Obraz wejściowy fitrowany jest filtrem Gaussa w różnych skalach rozdzielonych stałym współczynnikiem $k$, a następnie na obliczane są obrazy różnicowe DOG. Każda oktawa jest dzielona na liczbę całkowitą $s$, określającą liczbę interwałów, więc $k=2^{1/s}$. Należy zatem wyprodukować $s+3$ obrazy dla każdej oktawy, tak aby końcowe ekstremum pokrywało całą oktawę. Procedurę powtarza się próbkując obraz gaussowski poprzez usunięcie co drugiego wiersza i kolumny obrazu.\cite{LOWE04}
+
+
 
 \begin{figure}[h]
 	\centering
