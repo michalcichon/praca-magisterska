@@ -64,7 +64,7 @@ Zbiór wzorców charakteryzujący się podobnymi wektorami cech nazywamy klasą 
 W systemach analizy obrazów możemy oprócz rozpoznania zdefiniować również dwa inne pojęcia: identyfikację oraz weryfikację. Gdy nie dysponujemy opisami klas wzorców, a jedynie przechowujemy wzorce referencyjne, celem systemu jest porównanie aktualnego wzorca z bazą referencyjną. Jeśli na podstawie określonej odległości pomiędzy parami wzorców system jest w stanie dokonać wyboru dokładnie jednego wzorca referencyjnego, to określamy takie rozwiązanie jako identyfikację. Natomiast jeśli możemy wybrać przynajmniej jeden ze wzorców referencyjnych to określamy takie rozwiązanie jako weryfikację.
 
 \section{Selekcja cech}
-W przypadku dużych i skomplikowanych obiektów, takich jak obrazy, proces uczenia może okazać się bardzo skomplikowany i czasochłonny. Konieczne jest przeprowadzenie procesu selekcji cech obrazu, który polega na znalezieniu podzbioru cech opisujących obiekt w najlepszy sposób i zapewniający najwyższą jakość modelu klasyfikacji.
+W przypadku dużych i skomplikowanych obiektów, takich jak obrazy, proces uczenia może okazać się bardzo skomplikowany i czasochłonny. Konieczne jest przeprowadzenie procesu selekcji cech obrazu, który polega na znalezieniu podzbioru cech opisujących obiekt w najlepszy sposób i zapewniający najwyższą jakość modelu klasyfikacji. Celem selekcji cech jest redukcja wymiarów przestrzeni cech, zwiększenie szybkości działania algorytmu uczącego, zwiększenie dokładności klasyfikacji oraz osiągnięcie łatwiejszych do zrozumienia rezultatów uczenia.\cite{MOTODA98}
 
 Wyselekcjonowane cechy powinny się charakteryzować następującymi właściwościami\cite{STRUMIL}:
 
@@ -79,13 +79,7 @@ Wzór \ref{correlation} przedstawia współczynnik korelacji cech $x$ i $y$. Je�
 
 \begin{equation} 
 \label{correlation} 
-\hat{\sigma}_{xy}
-= \frac{
-	\frac{1}{P}\sum\limits_{i=1}^P(x_i-\mu_x)(y_i-\mu_y)
-}
-{
-	\hat{\sigma}_x\hat{\sigma}_y
-}
+\hat{\sigma}_{xy}= \frac{\frac{1}{P}\sum\limits_{i=1}^P(x_i-\mu_x)(y_i-\mu_y)}{ \hat{\sigma}_x\hat{\sigma}_y }
 \end{equation}
 
 Gdzie $P$ - liczba klasyfikowanych obiektów, $\mu$ - wartość średnia, $\sigma$ - odchylenie standardowe zbioru cech.
@@ -98,7 +92,7 @@ Miarę separacji można określić jako:
 
 Duża wartość tej miary świadczy o dobrej separacji pomiędzy klasami $j$ i $k$.
 
-Badanie jakości klasyfikacji dla wszystkich możliwych kombinacji podzbioru cech dla dużej liczby $N$ wszystkich cech jest bardzo kosztowne, dlatego w praktyce zbiór cech często dobierany jest intuicyjnie.
+Badanie jakości klasyfikacji dla wszystkich możliwych kombinacji podzbioru cech dla dużej liczby $N$ wszystkich cech jest bardzo kosztowne, dlatego w praktyce zbiór cech często dobierany jest intuicyjnie.\cite{STRUMIL}
 
 Po poprawnej selekcji cech, możliwe powinno się stać stworzenie takiego modelu, w którym cechy nie dające informacji potrzebnej do klasyfikacji lub takie, które są nadmiarowe lub pogarszają jakość klasyfikacji zostały wyeliminowane. Dążymy przy tym do osiągnięcia najmniejszego możliwego wektora cech. Opierając się na mniejszym, mniej wymiarowym wektorze cech, potrzeba mniej przykładów do osiągnięcia dobrych wyników klasyfikacji.
 
