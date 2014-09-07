@@ -208,6 +208,10 @@ Na podstawie orientacji punktów, w otoczeniu punktu kluczowego budowany jest hi
 
 Przyjmuje się, że histogram posiada 36 pól, a dokładne położenie maksimum interpoluje się za pomocą paraboli korzystając z wartości sąsiednich histogramu.
 
+SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia 16x16 dla danego punktu kluczowego. Obszar ten jest dzielony na regiony 4x4, w których również wyznacza się wypadkowe histogramy orientacji. W każdym obszarze dla 8 orientacji wyznacza się wypadkowy moduł gradientu na podstawie modułów poszczególnych punktów.
+
+W rezultacie deskryptor 
+
 \subsection{SURF - Speeded Up Robust Features}
 
 \subsection{GIST}
