@@ -122,14 +122,33 @@ Działanie algorytmu rozpoczyna się od wyszukiwania potencjalnych punktów popr
 \begin{equation} 
 \label{sift_scale_space} 
 L(x, y, \sigma) = G(x, y, \sigma) \ast I(x, y)
+\end{equation} gdzie $G(x, y, \sigma)$ - Gaussian, $I(x, y)$ obraz wejściowy, $\ast$ - operator splotu.
+\begin{equation} 
+\label{sift_gaussian} 
+G(x, y, \sigma) = \frac{1}{2\pi\sigma^2}e^{-(x^2+y^2)/2\sigma^2}
+\end{equation} 
+
+Różnicowy filtr Gaussa (DOG) dla dwóch skali rozdzielonych współczynnikiem $k$ można zapisać jako:
+\begin{equation} 
+\label{sift_dog} 
+G(x, y, k\sigma) - G(x, y, \sigma) 
+\end{equation} 
+
+Stąd wynik spotu obrazu z filtrem DOG można zapisać jako:
+\begin{equation} 
+\label{sift_splot} 
+D(x, y, \sigma) = [G(x, y, k\sigma) - G(x, y, \sigma)] \ast I(x, y)
+D(x, y, \sigma) = L(x, y, k\sigma) - L(x, y, \sigma)
 \end{equation}
 
-gdzie $G(x, y, \sigma)$ - Gaussian, $I(x, y)$ obraz wejściowy, $\ast$ - operator splotu.
+Wykrywanie 	
 
-
-
-%ekstrakcję punktów kluczowych, które są niezależne od skali. Umożliwia to 
-
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{graphics/01_podstawy_teoretyczne/sift-gaussian-to-dog.pdf}
+	\caption{Proces tworzenia różnicy Gaussianów \cite{LOWE04}}
+	\label{fig:sift-gaussian-to-dog}
+\end{figure}
 
 \subsection{SURF - Speeded Up Robust Features}
 
