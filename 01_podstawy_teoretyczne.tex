@@ -137,20 +137,38 @@ G(x, y, k\sigma) - G(x, y, \sigma)
 Stąd wynik spotu obrazu z filtrem DOG można zapisać jako:
 \begin{equation} 
 \label{sift_splot} 
-D(x, y, \sigma) = [G(x, y, k\sigma) - G(x, y, \sigma)] \ast I(x, y)
-D(x, y, \sigma) = L(x, y, k\sigma) - L(x, y, \sigma)
+	\begin{gathered}
+		D(x, y, \sigma) = [G(x, y, k\sigma) - G(x, y, \sigma)] \ast I(x, y) \\
+		D(x, y, \sigma) = L(x, y, k\sigma) - L(x, y, \sigma)
+	\end{gathered}
 \end{equation}
 
 Na rys. \ref{fig:sift-gaussian-to-dog} przedstawiono efektywny sposób konstruowania $D(x, y, \sigma)$. Obraz wejściowy fitrowany jest filtrem Gaussa w różnych skalach rozdzielonych stałym współczynnikiem $k$, a następnie na obliczane są obrazy różnicowe DOG. Każda oktawa jest dzielona na liczbę całkowitą $s$, określającą liczbę interwałów, więc $k=2^{1/s}$. Należy zatem wyprodukować $s+3$ obrazy dla każdej oktawy, tak aby końcowe ekstremum pokrywało całą oktawę. Procedurę powtarza się próbkując obraz gaussowski poprzez usunięcie co drugiego wiersza i kolumny obrazu.\cite{LOWE04}
 
-
-
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{graphics/01_podstawy_teoretyczne/sift-gaussian-to-dog.pdf}
+	\includegraphics[scale=0.4]{graphics/01_podstawy_teoretyczne/sift-gaussian-to-dog.pdf}
 	\caption{Proces tworzenia różnicy Gaussianów \cite{LOWE04}}
 	\label{fig:sift-gaussian-to-dog}
 \end{figure}
+
+W celu wykrycia lokalnych ekstremów, punkty są porównywane z sąsiadami w otoczeniu 3x3x3, tj. po dziewięć sąsiadów w skalach poniżej i powyżej oraz z ośmioma sąsiadami w aktualnej skali. Punkt jest przyjmowany jako kandydat na punkt kluczowy tylko wówczas gdy ma wartość mniejszą lub większą od wszystkich 26 punktów sąsiednich.\cite{LOWE04} Rys. \ref{fig:sift-gaussian-min-max} przedstawia porównanie punktu, oznaczonego na schemacie za pomocą "X", z punktami sąsiednimi.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{graphics/01_podstawy_teoretyczne/sift-gaussian-min-max.pdf}
+	\caption{Porównanie punktu z sąsiadami. \cite{LOWE04}}
+	\label{fig:sift-gaussian-min-max}
+\end{figure}
+
+Po znalezieniu kandydatów następuje lokalizacja punktów kluczowych. Proces ten odbywa się poprzez interpolację ekstremów dla kandydatów wyznaczonych w poprzednim punkcie za pomocą funkcji kwadratowej 3D:
+
+\begin{equation} 
+\label{sift_3d} 
+D(x) = D + \frac{\partial D^T}{\partial x} x + \frac{1}{2}x^T \frac{\partial^2 D}{\partial x^2} x
+\end{equation}
+
+
 
 \subsection{SURF - Speeded Up Robust Features}
 
