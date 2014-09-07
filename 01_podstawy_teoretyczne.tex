@@ -53,7 +53,6 @@ Wśród dostępnych publikacji na temat kategoryzacji obrazów przeważają rozw
 Celem rozpoznawania wzorców (\emph{ang. pattern recognition}) jest stworzenie symbolicznego opisu dla zawartości jedno lub wielowymiarowego sygnału cyfrowego takiego jak np. cyfrowy obraz graficzny, sygnał mowy, lub obraz z kamery, a następnie przyporządkowanie do niego klasy lub instancji klasy. Opis ten może być zrealizowany w różnej formie: funkcji, obiektów, ruchu, wyrazów lub struktur.
 
 Wzorcem nazywamy zbiór cech, który tworzy ilościowy oraz jakościowy opis obiektu. Wzorce zapisujemy najczęściej jako wektory, ciągi lub drzewa. Wzór \ref{pattern_vector} przedstawia wektor cech, gdzie $x_{i}$ reprezentuje $i$-tą cechę, a $n$ oznacza ilość wszystkich cech powiązanych ze wzorcem.\cite{GONZALES01}
-
 \begin{equation} 
 \label{pattern_vector} 
 \overrightarrow{x}=
@@ -84,7 +83,6 @@ Wyselekcjonowane cechy powinny się charakteryzować następującymi właściwo�
 \end{compactitem}
 
 Wzór \ref{correlation} przedstawia współczynnik korelacji cech $x$ i $y$. Jeśli współczynnik korelacji jest bliski $1$ lub $-1$ to cechy $x$ i $y$ są ze sobą silnie skorelowane i należy jedną z nich odrzucić.
-
 \begin{equation} 
 \label{correlation} 
 \hat{\sigma}_{xy}= \frac{\frac{1}{P}\sum\limits_{i=1}^P(x_i-\mu_x)(y_i-\mu_y)}{ \hat{\sigma}_x\hat{\sigma}_y }
@@ -112,13 +110,25 @@ Obrazy w formie map bitowych reprezentowane są w pamięci komputera w postaci m
 
 Można wyróżnić wiele cech używanych w procesach przetwarzania obrazów, np. rozkład kolorów w formie histogramu, obecność niektórych elementów lub kształtów, liczba występowania podobnych obiektów, wielkość kształtów, morfologia, tekstura.
 
-Wśród popularnych metod ekstrakcji cech, stosowanych do rozwiązania problemu klasyfikacji i kategoryzacji obrazów należy wymienić: SIFT (\emph{ang. Scale-invariant Feature Transform})\cite{SIFT99}, SURF (\emph{ang. Speeded Up Robust Features}), GIST\cite{GIST09}, LBP (\emph{ang. Local Binary Patterns}), HOG (\emph{ang. Histograms of Oriented Gradients}). Poszczególne algorytmy zostały opisane w następnym podrozdziale.
-
 \section{Przegląd algorytmów do ekstrakcji cech}
+
+Wśród popularnych metod ekstrakcji cech, stosowanych do rozwiązania problemu klasyfikacji i kategoryzacji obrazów należy wymienić: SIFT (\emph{ang. Scale-invariant Feature Transform})\cite{SIFT99}, SURF (\emph{ang. Speeded Up Robust Features}), GIST\cite{GIST09}, LBP (\emph{ang. Local Binary Patterns}), HOG (\emph{ang. Histograms of Oriented Gradients}). Poszczególne algorytmy zostały opisane poniżej.
 
 \subsection{SIFT - Scale-invariant Feature Transform}
 
-Algorytm SIFT służy do detekcji oraz opisu lokalnych cech obrazu, został opublikowany przez Dawida Lowe w 1999 roku.
+Algorytm SIFT służy do wykrywania oraz opisu lokalnych cech obrazu, został opublikowany przez Dawida Lowe w 1999 roku. Cechy ekstraktowane przez SIFT są niezależne od położenia, rotacji, skali, zmiany oświetlenia oraz są odporne na zakłócenia. Zastosowanie algorytmu SIFT do rozpoznawania obiektów pozwala na detekcję częściowo zasłoniętych obiektów.
+
+Działanie algorytmu rozpoczyna się od wyszukiwania potencjalnych punktów poprzez przetworzenie obrazu filtrem Gaussa w różnych skalach. Wzór \ref{sift_scale_space} przedstawia postać obrazu po przetworzeniu:
+\begin{equation} 
+\label{sift_scale_space} 
+L(x, y, \sigma) = G(x, y, \sigma) \ast I(x, y)
+\end{equation}
+
+gdzie $G(x, y, \sigma)$ - Gaussian, $I(x, y)$ obraz wejściowy, $\ast$ - operator splotu.
+
+
+
+%ekstrakcję punktów kluczowych, które są niezależne od skali. Umożliwia to 
 
 
 \subsection{SURF - Speeded Up Robust Features}
