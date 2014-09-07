@@ -45,6 +45,7 @@ Dane wejściowe z etapu walidacji mogą się różnić od przykładowych danych 
 %TODO napisac o tym w kontekscie pracy, co raczej sie nadaje a co raczej nie
 
 \section{Rozpoznawanie wzorców}
+
 Celem rozpoznawania wzorców (\emph{ang. pattern recognition}) jest stworzenie symbolicznego opisu dla zawartości jedno lub wielowymiarowego sygnału cyfrowego takiego jak np. cyfrowy obraz graficzny, sygnał mowy, lub obraz z kamery, a następnie przyporządkowanie do niego klasy lub instancji klasy. Opis ten może być zrealizowany w różnej formie: funkcji, obiektów, ruchu, wyrazów lub struktur.
 
 Wzorcem nazywamy zbiór cech, który tworzy ilościowy oraz jakościowy opis obiektu. Wzorce zapisujemy najczęściej jako wektory, ciągi lub drzewa. Wzór \ref{pattern_vector} przedstawia wektor cech, gdzie $x_{i}$ reprezentuje $i$-tą cechę, a $n$ oznacza ilość wszystkich cech powiązanych ze wzorcem.\cite{GONZALES01}
@@ -64,7 +65,8 @@ Zbiór wzorców charakteryzujący się podobnymi wektorami cech nazywamy klasą 
 W systemach analizy obrazów możemy oprócz rozpoznania zdefiniować również dwa inne pojęcia: identyfikację oraz weryfikację. Gdy nie dysponujemy opisami klas wzorców, a jedynie przechowujemy wzorce referencyjne, celem systemu jest porównanie aktualnego wzorca z bazą referencyjną. Jeśli na podstawie określonej odległości pomiędzy parami wzorców system jest w stanie dokonać wyboru dokładnie jednego wzorca referencyjnego, to określamy takie rozwiązanie jako identyfikację. Natomiast jeśli możemy wybrać przynajmniej jeden ze wzorców referencyjnych to określamy takie rozwiązanie jako weryfikację.
 
 \section{Selekcja cech}
-W przypadku dużych i skomplikowanych obiektów, takich jak obrazy, proces uczenia może okazać się bardzo skomplikowany i czasochłonny. Konieczne jest przeprowadzenie procesu selekcji cech obrazu, który polega na znalezieniu podzbioru cech opisujących obiekt w najlepszy sposób i zapewniający najwyższą jakość modelu klasyfikacji. Celem selekcji cech jest redukcja wymiarów przestrzeni cech, zwiększenie szybkości działania algorytmu uczącego, zwiększenie dokładności klasyfikacji oraz osiągnięcie łatwiejszych do zrozumienia rezultatów uczenia.\cite{MOTODA98}
+
+W przypadku dużych i skomplikowanych obiektów, takich jak obrazy, proces uczenia może okazać się bardzo skomplikowany i czasochłonny. Konieczne jest przeprowadzenie procesu selekcji cech obrazu (\emph{ang. feature selection}), który polega na znalezieniu podzbioru cech opisujących obiekt w najlepszy sposób i zapewniający najwyższą jakość modelu klasyfikacji. Celem selekcji cech jest redukcja wymiarów przestrzeni cech, zwiększenie szybkości działania algorytmu uczącego, zwiększenie dokładności klasyfikacji oraz osiągnięcie łatwiejszych do zrozumienia rezultatów uczenia.\cite{MOTODA98}
 
 Wyselekcjonowane cechy powinny się charakteryzować następującymi właściwościami\cite{STRUMIL}:
 
@@ -96,12 +98,13 @@ Badanie jakości klasyfikacji dla wszystkich możliwych kombinacji podzbioru cec
 
 Po poprawnej selekcji cech, możliwe powinno się stać stworzenie takiego modelu, w którym cechy nie dające informacji potrzebnej do klasyfikacji lub takie, które są nadmiarowe lub pogarszają jakość klasyfikacji zostały wyeliminowane. Dążymy przy tym do osiągnięcia najmniejszego możliwego wektora cech. Opierając się na mniejszym, mniej wymiarowym wektorze cech, potrzeba mniej przykładów do osiągnięcia dobrych wyników klasyfikacji.
 
-%TODO definicja korelacji i inne statystyczne
-
 \section{Ekstrakcja cech}
-%TODO problem ograniczania wielkosci wektora cech
-%TODO podac przyklady z literatury jak robiono ekstrakcje poprzednio
-Obrazy w formie map bitowych reprezentowane są w pamięci komputera w postaci macierzy pikseli.
+
+Obrazy w formie map bitowych reprezentowane są w pamięci komputera w postaci macierzy pikseli. Ilość danych jest dla klasyfikacji zbyt duża i zawiera wiele niepotrzebnych informacji. Dlatego przed przystąpieniem do procesu klasyfikacji należy wydobyć z obrazu pewne cechy. Proces przetwarzania obrazu w celu wydobycia cech określa się jako ekstrakcję cech (\emph{ang. feature extraction}).
+
+
+
+
 
 
 
