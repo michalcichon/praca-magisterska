@@ -116,7 +116,7 @@ Wśród popularnych metod ekstrakcji cech, stosowanych do rozwiązania problemu 
 
 \subsection{SIFT - Scale-invariant Feature Transform}
 
-Algorytm SIFT służy do wykrywania oraz opisu lokalnych cech obrazu, został opublikowany przez Dawida Lowe w 1999 roku. Cechy ekstraktowane przez SIFT są niezależne od położenia, rotacji, skali, zmiany oświetlenia oraz są odporne na zakłócenia. Zastosowanie algorytmu SIFT do rozpoznawania obiektów pozwala na detekcję częściowo zasłoniętych obiektów.
+Algorytm SIFT służy do wykrywania oraz opisu lokalnych cech obrazu, został opublikowany przez Dawida Lowe w 1999 roku.\cite{SIFT99} Cechy ekstraktowane przez SIFT są niezależne od położenia, rotacji, skali, zmiany oświetlenia oraz są odporne na zakłócenia. Zastosowanie algorytmu SIFT do rozpoznawania obiektów pozwala na detekcję częściowo zasłoniętych obiektów. Jest to jeden z najpopularniejszych algorytmów do ekstrakcji punktów charakterystycznych.
 
 Działanie algorytmu rozpoczyna się od wyszukiwania potencjalnych punktów poprzez przetworzenie obrazu filtrem Gaussa w różnych skalach. Wzór \ref{sift_scale_space} przedstawia postać obrazu po przetworzeniu:
 \begin{equation} 
@@ -152,7 +152,7 @@ Na rys. \ref{fig:sift-gaussian-to-dog} przedstawiono efektywny sposób konstruow
 	\label{fig:sift-gaussian-to-dog}
 \end{figure}
 
-W celu wykrycia lokalnych ekstremów, punkty są porównywane z sąsiadami w otoczeniu 3x3x3, tj. po dziewięć sąsiadów w skalach poniżej i powyżej oraz z ośmioma sąsiadami w aktualnej skali. Punkt jest przyjmowany jako kandydat na punkt kluczowy tylko wówczas gdy ma wartość mniejszą lub większą od wszystkich 26 punktów sąsiednich.\cite{LOWE04} Rys. \ref{fig:sift-gaussian-min-max} przedstawia porównanie punktu, oznaczonego na schemacie za pomocą "X", z punktami sąsiednimi.
+W celu wykrycia lokalnych ekstremów, punkty są porównywane z sąsiadami w otoczeniu 3x3x3, tj. po dziewięć sąsiadów w skalach poniżej i powyżej oraz z ośmioma sąsiadami w aktualnej skali. Punkt jest przyjmowany jako kandydat na punkt charakterystyczny tylko wówczas gdy ma wartość mniejszą lub większą od wszystkich 26 punktów sąsiednich.\cite{LOWE04} Rys. \ref{fig:sift-gaussian-min-max} przedstawia porównanie punktu, oznaczonego na schemacie za pomocą "X", z punktami sąsiednimi.
 
 \begin{figure}[h]
 	\centering
@@ -161,7 +161,7 @@ W celu wykrycia lokalnych ekstremów, punkty są porównywane z sąsiadami w oto
 	\label{fig:sift-gaussian-min-max}
 \end{figure}
 
-Po znalezieniu kandydatów następuje lokalizacja punktów kluczowych. Proces ten odbywa się poprzez interpolację ekstremów dla kandydatów wyznaczonych w poprzednim punkcie za pomocą funkcji kwadratowej 3D:
+Po znalezieniu kandydatów następuje lokalizacja punktów charakterystycznych. Proces ten odbywa się poprzez interpolację ekstremów dla kandydatów wyznaczonych w poprzednim punkcie za pomocą funkcji kwadratowej 3D:
 \begin{equation} 
 \label{sift_3d} 
 D(x) = D + \frac{\partial D^T}{\partial x} x + \frac{1}{2}x^T \frac{\partial^2 D}{\partial x^2} x
@@ -193,7 +193,7 @@ Funkcja DOG będzie mieć dużą odpowiedź wzdłuż krawędzi. Punkty ekstremum
 	\end{bmatrix}
 \end{equation}
 
-Orientacja punktów wyznaczana jest na podstawie jednego z obrazów gaussowskich, którego skala odpowiada skali danego punktu kluczowego. Dla każdej próbki obrazu $L(x, y)$ obliczne są moduł gradientu $m(x, y)$ oraz orientacja $\theta(x, y)$:
+Orientacja punktów wyznaczana jest na podstawie jednego z obrazów gaussowskich, którego skala odpowiada skali danego punktu charakterystycznego. Dla każdej próbki obrazu $L(x, y)$ obliczne są moduł gradientu $m(x, y)$ oraz orientacja $\theta(x, y)$:
 \begin{equation} 
 \label{sift_gradient_magnitude} 
 m(x, y) = \sqrt{(L(x + 1, y) - L(x - 1, y))^2 + (L(x, y + 1) - L(x, y - 1))^2}
@@ -204,13 +204,13 @@ m(x, y) = \sqrt{(L(x + 1, y) - L(x - 1, y))^2 + (L(x, y + 1) - L(x, y - 1))^2}
 \theta(x, y) = \tan^{-1}((L(x, y + 1) - L(x, y - 1))/L(x + 1, y) - L(x - 1, y)))
 \end{equation}
 
-Na podstawie orientacji punktów, w otoczeniu punktu kluczowego budowany jest histogram orientacji. Maksimum w histogramie i lokalne maksima o wartościach powyżej 80\% największego określają orientację punktu kluczowego.
+Na podstawie orientacji punktów, w otoczeniu punktu charakterystycznego budowany jest histogram orientacji. Maksimum w histogramie i lokalne maksima o wartościach powyżej 80\% największego określają orientację punktu charakterystycznego.
 
 Przyjmuje się, że histogram posiada 36 pól, a dokładne położenie maksimum interpoluje się za pomocą paraboli korzystając z wartości sąsiednich histogramu.
 
-Dzięki temu, że wszystkie cechy punktów kluczowych są mierzone w odniesieniu do tak wyznaczonej orientacji,	opis jest niezależny od rotacji.
+Dzięki temu, że wszystkie cechy punktów charakterystyczne są mierzone w odniesieniu do tak wyznaczonej orientacji,	opis jest niezależny od rotacji.
 
-SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia 16x16 dla danego punktu kluczowego. Obszar ten jest dzielony na podregiony 4x4, w których również wyznacza się wypadkowe histogramy orientacji. W każdym obszarze dla 8 orientacji wyznacza się wypadkowy moduł gradientu na podstawie modułów poszczególnych punktów. Na rys. \ref{fig:sift-descriptor} został przedstawiony przykład wyznaczenia wypadkowego gradientu dla otoczenia 8x8 i podregionów 2x2.
+SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia 16x16 dla danego punktu charakterystycznego. Obszar ten jest dzielony na podregiony 4x4, w których również wyznacza się wypadkowe histogramy orientacji. W każdym obszarze dla 8 orientacji wyznacza się wypadkowy moduł gradientu na podstawie modułów poszczególnych punktów. Na rys. \ref{fig:sift-descriptor} został przedstawiony przykład wyznaczenia wypadkowego gradientu dla otoczenia 8x8 i podregionów 2x2.
 
 \begin{figure}[h]
 	\centering
@@ -219,9 +219,17 @@ SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia 16
 	\label{fig:sift-descriptor}
 \end{figure}
 
-W celu rozpoznania obiektów za pomocą algorytmu SIFT należy najpierw wyznaczyć punkty kluczowe i odpowiadające im wektory cech lokalnych, a następnie dopasować punkty kluczowe z obrazu wejściowego do punktów w bazie wzorców. Do identyfikacji grup dopasowanych punktów, które określają ten sam obiekt wykorzystuje się transformatę Hougha. Weryfikacji cech dokonuje się z wykorzystaniem metody najmniejszych kwadratów. W trakcie obliczeń wyznaczane są parametry związane z transformacją pomiędzy układem związanym z wzorcem a układem związanym z obiektem na badanym obrazie.
+W celu rozpoznania obiektów za pomocą algorytmu SIFT należy najpierw wyznaczyć punkty charakterystyczne i odpowiadające im wektory cech lokalnych, a następnie dopasować punkty charakterystyczne z obrazu wejściowego do punktów w bazie wzorców. Do identyfikacji grup dopasowanych punktów, które określają ten sam obiekt wykorzystuje się transformatę Hougha. Weryfikacji cech dokonuje się z wykorzystaniem metody najmniejszych kwadratów. W trakcie obliczeń wyznaczane są parametry związane z transformacją pomiędzy układem związanym z wzorcem a układem związanym z obiektem na badanym obrazie.
 
 \subsection{SURF - Speeded Up Robust Features}
+
+SURF jest kolejnym algorytmem do wykrywania lokalnych cech obrazu. Został zaproponowany w 2006 roku przez Herberta Bay'a i jest częściowo wzorowany na algorytmie SIFT.\cite{BAY08} Algorytm jest odporny zarówno na zmiany skali jak i zmiany rotacji. Wykorzystywany jest do rozpoznawania obiektów jak i rekonstrukcji scen 3D. Typowa implementacja jest nawet kilka razy szybsza od algorytmu SIFT.\cite{SCHWEIGER09}
+
+W celu optymalizacji działania filtrów splotowych zastosowano obrazy całkowe (\emph{ang. integral images}). Pozycja w obrazie całkowym $I_\sum(\boldsymbol{x})$ w punkcie $\boldsymbol{x}=(x, y)^T$ reprezentuje sumę wszystkich pikseli wejściowego obrazu $I$ wewnątrz prostokąta pomiędzy początkiem układu współrzędnych a $x$.
+\begin{equation} 
+\label{surf_integral_image} 
+I_{\sum}(\boldsymbol{x}) = \sum\limits_{i=0}^{i \leq x} \sum\limits_{j=0}^{j \leq y} I(i,j)
+\end{equation} gdzie $\boldsymbol{x} = (x, y)^T$
 
 \subsection{GIST}
 
