@@ -179,7 +179,7 @@ Wartość funkcji w punkcie ekstremum służy do odrzucania niestabilnych punkt�
 D(\hat{x}) = D + \frac{1}{2} \frac{\partial D^T}{\partial x} \hat{x}
 \end{equation}
 
-Funkcja DOG będzie mieć dużą odpowiedź wzdłuż krawędzi. Punkty ekstremum będące odpowiedzią wzdłuż krawędzi na obrazie są odrzucane na podstawie warunku \ref{sift_warunek}:
+Funkcja DOG będzie mieć dużą odpowiedź wzdłuż krawędzi. Za Harris i Stephens (1988), punkty ekstremum będące odpowiedzią wzdłuż krawędzi na obrazie są odrzucane na podstawie warunku \ref{sift_warunek}:
 \begin{equation} 
 \label{sift_warunek} 
 \frac{\Tr(\boldsymbol{H})^2}{\Det(\boldsymbol{H})} < \frac{(r+1)^2}{r}
@@ -191,7 +191,7 @@ Funkcja DOG będzie mieć dużą odpowiedź wzdłuż krawędzi. Punkty ekstremum
 		D_{xx} & D_{xy} \\
 		D_{xy} & D_{yy}
 	\end{bmatrix}
-\end{equation}
+\end{equation} oraz r jest stosunkiem największej wartości własnej macierzy do najmniejszej.
 
 Orientacja punktów wyznaczana jest na podstawie jednego z obrazów gaussowskich, którego skala odpowiada skali danego punktu charakterystycznego. Dla każdej próbki obrazu $L(x, y)$ obliczne są moduł gradientu $m(x, y)$ oraz orientacja $\theta(x, y)$:
 \begin{equation} 
@@ -225,11 +225,25 @@ W celu rozpoznania obiektów za pomocą algorytmu SIFT należy najpierw wyznaczy
 
 SURF jest kolejnym algorytmem do wykrywania lokalnych cech obrazu. Został zaproponowany w 2006 roku przez Herberta Bay'a i jest częściowo wzorowany na algorytmie SIFT.\cite{BAY08} Algorytm jest odporny zarówno na zmiany skali jak i zmiany rotacji. Wykorzystywany jest do rozpoznawania obiektów jak i rekonstrukcji scen 3D. Typowa implementacja jest nawet kilka razy szybsza od algorytmu SIFT.\cite{SCHWEIGER09}
 
-W celu optymalizacji działania filtrów splotowych zastosowano obrazy całkowe (\emph{ang. integral images}). Pozycja w obrazie całkowym $I_\sum(\boldsymbol{x})$ w punkcie $\boldsymbol{x}=(x, y)^T$ reprezentuje sumę wszystkich pikseli wejściowego obrazu $I$ wewnątrz prostokąta pomiędzy początkiem układu współrzędnych a $x$.
+W celu optymalizacji działania filtrów splotowych zastosowano obrazy całkowe (\emph{ang. integral images}). Pozycja w obrazie całkowym $I_{\Sigma}(\boldsymbol{x})$ w punkcie $\boldsymbol{x}=(x, y)^T$ reprezentuje sumę wszystkich pikseli wejściowego obrazu $I$ wewnątrz prostokąta pomiędzy początkiem układu współrzędnych a $x$.
 \begin{equation} 
 \label{surf_integral_image} 
-I_{\sum}(\boldsymbol{x}) = \sum\limits_{i=0}^{i \leq x} \sum\limits_{j=0}^{j \leq y} I(i,j)
-\end{equation} gdzie $\boldsymbol{x} = (x, y)^T$
+I_{\Sigma}(\boldsymbol{x}) = \sum\limits_{i=0}^{i \leq x} \sum\limits_{j=0}^{j \leq y} I(i,j)
+\end{equation}
+
+Zastosowanie obrazu całkowego (\emph{ang. integral image}) pozwala ograniczyć ilość operacji dla sumowania intensywności oraz uniezależnić czas obliczeń od wielkości filtra.\cite{BAY08}
+
+Ze względów wydajnościowych, wyszukiwanie punktów charakterystycznych oparte zostało na Hessianie. Dla punktu $\boldsymbol{x}=(x, y)$ na obrazie $I$, Hessian $H(\boldsymbol{x}, \sigma)$ w punkcie $\boldsymbol{x}$ i w skali $\sigma$ został zdefiniowany we wzorze \ref{surf_hessian}.
+\begin{equation} 
+\label{surf_hessian} 
+H(\boldsymbol{x}, \sigma) = 
+	\begin{bmatrix}
+		L_{xx}(\boldsymbol{x}, \sigma) & L_{xy}(\boldsymbol{x}, \sigma) \\
+		L_{xy}(\boldsymbol{x}, \sigma) & L_{yy}(\boldsymbol{x}, \sigma)
+	\end{bmatrix}
+\end{equation} gdzie $L_{xx}(\boldsymbol{x}, \sigma)$ - splot drugiej pochodnej Gaussiana $\frac{\partial^2}{\partial x^2} g(\sigma)$ z obrazem $I$ w punkcie $\boldsymbol{x}$.
+
+
 
 \subsection{GIST}
 
