@@ -208,9 +208,18 @@ Na podstawie orientacji punktów, w otoczeniu punktu kluczowego budowany jest hi
 
 Przyjmuje się, że histogram posiada 36 pól, a dokładne położenie maksimum interpoluje się za pomocą paraboli korzystając z wartości sąsiednich histogramu.
 
-SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia 16x16 dla danego punktu kluczowego. Obszar ten jest dzielony na regiony 4x4, w których również wyznacza się wypadkowe histogramy orientacji. W każdym obszarze dla 8 orientacji wyznacza się wypadkowy moduł gradientu na podstawie modułów poszczególnych punktów.
+Dzięki temu, że wszystkie cechy punktów kluczowych są mierzone w odniesieniu do tak wyznaczonej orientacji,	opis jest niezależny od rotacji.
 
-W rezultacie deskryptor 
+SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia 16x16 dla danego punktu kluczowego. Obszar ten jest dzielony na podregiony 4x4, w których również wyznacza się wypadkowe histogramy orientacji. W każdym obszarze dla 8 orientacji wyznacza się wypadkowy moduł gradientu na podstawie modułów poszczególnych punktów. Na rys. \ref{fig:sift-descriptor} został przedstawiony przykład wyznaczenia wypadkowego gradientu dla otoczenia 8x8 i podregionów 2x2.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{graphics/01_podstawy_teoretyczne/sift-desriptor.pdf}
+	\caption{Wyznaczenie deskryptora 2x2 z otoczenia 8x8 \cite{LOWE04}}
+	\label{fig:sift-descriptor}
+\end{figure}
+
+W celu rozpoznania obiektów za pomocą algorytmu SIFT należy najpierw wyznaczyć punkty kluczowe i odpowiadające im wektory cech lokalnych, a następnie dopasować punkty kluczowe z obrazu wejściowego do punktów w bazie wzorców. Do identyfikacji grup dopasowanych punktów, które określają ten sam obiekt wykorzystuje się transformatę Hougha. Weryfikacji cech dokonuje się z wykorzystaniem metody najmniejszych kwadratów. W trakcie obliczeń wyznaczane są parametry związane z transformacją pomiędzy układem związanym z wzorcem a układem związanym z obiektem na badanym obrazie.
 
 \subsection{SURF - Speeded Up Robust Features}
 
