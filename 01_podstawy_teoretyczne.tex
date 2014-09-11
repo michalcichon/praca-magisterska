@@ -243,7 +243,30 @@ H(\boldsymbol{x}, \sigma) =
 	\end{bmatrix}
 \end{equation} gdzie $L_{xx}(\boldsymbol{x}, \sigma)$ - splot drugiej pochodnej Gaussiana $\frac{\partial^2}{\partial x^2} g(\sigma)$ z obrazem $I$ w punkcie $\boldsymbol{x}$.
 
+O ile zastosowanie Gaussianów jest optymalne\cite{LINDENBERG90}, to jednak ma obniżoną powtarzalność przy rotacji dla nieparzystych wielokrotności $\frac{\pi}{2}$. Korzystając z tych obserwacji, w algorytmie SURF zaproponowano przybliżenie oparte na filtrze pudełkowym. Na rys. \ref{fig:surf-box-filters} zostało przedstawione porównanie pochodnej drugiego rzędu w $L_{yy}$ (a), $L_{xy}$ (b), przybliżenie $D_{yy}$ (c) oraz $D_{xy}$ (d).
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.7]{graphics/01_podstawy_teoretyczne/surf-box-filters.pdf}
+	\caption{Porównanie filtra Gaussa z filtrem pudełkowym 9x9 ($\sigma = 1.2$) \cite{BAY08}}
+	\label{fig:surf-box-filters}
+\end{figure}
+
+Wyznacznik przybliżonej wartości Hessiana $H$ można zapisać jako:
+\begin{equation} 
+\label{surf_hessian_det}
+\det(H_{approx}) = D_{xx} D_{yy} - (w D_{xy})^2
+\end{equation}
+
+Waga odpowiedzi filtra $w$ służy do zrównoważenia wyrażenia, dla zachowania energii pomiędzy jądrem Gaussiana a jądrem przybliżonego Gaussiana.
+\begin{equation} 
+\label{surf_hessian_approx_w}
+w = \frac{|L_{xy}(1.2)|_F |D_{yy}(9)|_F}{|L_{yy}(1.2)|_F |D_{xy}(9)|_F} = 0.912... \simeq 0.9
+\end{equation} gdzie $|A|_F$ - norma Froberiusa (wzór \ref{surf_froberius}).
+\begin{equation} 
+\label{surf_froberius}
+|A|_F = \sqrt{\sum\limits_{i=1}^m \sum\limits_{j=1}^n |a_{ij}|^2}
+\end{equation}
 
 \subsection{GIST}
 
