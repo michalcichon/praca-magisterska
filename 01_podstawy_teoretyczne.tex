@@ -86,9 +86,7 @@ Wzór \ref{correlation} przedstawia współczynnik korelacji cech $x$ i $y$. Je�
 \begin{equation} 
 \label{correlation} 
 \hat{\sigma}_{xy}= \frac{\frac{1}{P}\sum\limits_{i=1}^P(x_i-\mu_x)(y_i-\mu_y)}{ \hat{\sigma}_x\hat{\sigma}_y }
-\end{equation}
-
-Gdzie $P$ - liczba klasyfikowanych obiektów, $\mu$ - wartość średnia, $\sigma$ - odchylenie standardowe zbioru cech.
+\end{equation} gdzie $P$ - liczba klasyfikowanych obiektów, $\mu$ - wartość średnia, $\sigma$ - odchylenie standardowe zbioru cech.
 
 Miarę separacji można określić jako:
 
@@ -128,7 +126,7 @@ L(x, y, \sigma) = G(x, y, \sigma) \ast I(x, y)
 G(x, y, \sigma) = \frac{1}{2\pi\sigma^2}e^{-(x^2+y^2)/2\sigma^2}
 \end{equation} 
 
-W celu optymalnego wykrywania stabilnych punktów charakterystycznych, zaproponowano użycie ekstremum przestrzeni skal dla funkcji DOG (\emph{ang. difference-of-Gaussian}) w splocie z obrazem, oznaczonej jako $D(x, y, \sigma)$.
+W celu optymalnego wykrywania stabilnych punktów charakterystycznych, zaproponowano użycie ekstremum przestrzeni skal dla funkcji DOG (\emph{ang. difference-of-Gaussian}) w splocie z obrazem, oznaczone jako $D(x, y, \sigma)$.
 
 Różnicowy filtr Gaussa (DOG) dla dwóch skal rozdzielonych współczynnikiem $k$ można zapisać jako:
 \begin{equation} 
@@ -195,7 +193,7 @@ Funkcja DOG będzie mieć dużą odpowiedź wzdłuż krawędzi. Za Harris i Step
 		D_{xx} & D_{xy} \\
 		D_{xy} & D_{yy}
 	\end{bmatrix}
-\end{equation} oraz r jest stosunkiem największej wartości własnej macierzy do najmniejszej.
+\end{equation} oraz $r$ jest stosunkiem największej wartości własnej macierzy do najmniejszej.
 
 Orientacja punktów wyznaczana jest na podstawie jednego z obrazów gaussowskich, którego skala odpowiada skali danego punktu charakterystycznego. Dla każdej próbki obrazu $L(x, y)$ obliczane są moduł gradientu $m(x, y)$ oraz orientacja $\theta(x, y)$:
 \begin{equation} 
@@ -272,7 +270,7 @@ w = \frac{|L_{xy}(1.2)|_F |D_{yy}(9)|_F}{|L_{yy}(1.2)|_F |D_{xy}(9)|_F} = 0.912.
 
 Ze względu na teoretyczną dokładność, wagi $w$ powinny zmieniać się wraz ze skalą, jednakże w praktyce nie ma to dużego wpływu na precyzję wyników, w związku z tym przyjmuje się stałe $w$. Przybliżone wyznaczniki Hessianów reprezentują odpowiedź obszarów spójnych ({ang. blob}) w punkcie $x$.
 
-
+W przypadku algorytmu SIFT, w celu uzyskania odpowiedniej skali, filtrowaliśmy obraz iteracyjnie tym samym filtrem. W algorytmie SURF, dzięki zastosowaniu obrazów całkowych, można zastosować bezpośrednio na obrazie wejściowym filtr pudełkowy o odpowiednim rozmiarze. 
 
 \subsection{GIST}
 
