@@ -116,9 +116,9 @@ Wśród popularnych metod ekstrakcji cech, stosowanych do rozwiązania problemu 
 
 \subsection{SIFT - Scale-invariant Feature Transform}
 
-Algorytm SIFT służy do wykrywania oraz opisu lokalnych cech obrazu, został opublikowany przez Dawida Lowe w 1999 roku.\cite{SIFT99} Cechy ekstraktowane przez SIFT są niezależne od położenia, rotacji, skali, zmiany oświetlenia oraz są odporne na zakłócenia. Zastosowanie algorytmu SIFT do rozpoznawania obiektów pozwala na detekcję częściowo zasłoniętych obiektów. Jest to jeden z najpopularniejszych algorytmów do ekstrakcji punktów charakterystycznych.
+Algorytm SIFT służy do wykrywania oraz opisu lokalnych cech obrazu, został opublikowany przez Dawida Lowe w 1999 roku.\cite{SIFT99} Punkty charakterystyczne wykrywane przez SIFT są niezależne od położenia, rotacji, skali, zmiany oświetlenia oraz są odporne na zakłócenia. Zastosowanie algorytmu SIFT do rozpoznawania obiektów pozwala na detekcję częściowo zasłoniętych obiektów. Jest to jeden z najpopularniejszych algorytmów do ekstrakcji punktów charakterystycznych.
 
-Działanie algorytmu rozpoczyna się od wyszukiwania potencjalnych punktów poprzez przetworzenie obrazu filtrem Gaussa w różnych skalach. Wzór \ref{sift_scale_space} przedstawia postać obrazu po przetworzeniu:
+Działanie algorytmu rozpoczyna się od wyszukiwania potencjalnych punktów poprzez przetworzenie obrazu filtrem Gaussa w różnych skalach. Stanowi to implementację tzw. przestrzeni skal (\emph{ang. skale space}). Przestrzeń skal definiujemy jako funkcję $L(x, y, \sigma)$. Wzór \ref{sift_scale_space} przedstawia reprezentację przestrzeni skal po przetworzeniu obrazu:
 \begin{equation} 
 \label{sift_scale_space} 
 L(x, y, \sigma) = G(x, y, \sigma) \ast I(x, y)
@@ -127,6 +127,8 @@ L(x, y, \sigma) = G(x, y, \sigma) \ast I(x, y)
 \label{sift_gaussian} 
 G(x, y, \sigma) = \frac{1}{2\pi\sigma^2}e^{-(x^2+y^2)/2\sigma^2}
 \end{equation} 
+
+W celu optymalnego wykrywania stabilnych punktów charakterystycznych, zaproponowano użycie ekstremum przestrzeni skal dla funkcji DOG (\emph{ang. difference-of-Gaussian}) w splocie z obrazem, oznaczonej jako $D(x, y, \sigma)$.
 
 Różnicowy filtr Gaussa (DOG) dla dwóch skali rozdzielonych współczynnikiem $k$ można zapisać jako:
 \begin{equation} 
@@ -143,7 +145,10 @@ Stąd wynik spotu obrazu z filtrem DOG można zapisać jako:
 	\end{gathered}
 \end{equation}
 
-Na rys. \ref{fig:sift-gaussian-to-dog} przedstawiono efektywny sposób konstruowania $D(x, y, \sigma)$. Obraz wejściowy fitrowany jest filtrem Gaussa w różnych skalach rozdzielonych stałym współczynnikiem $k$, a następnie na obliczane są obrazy różnicowe DOG. Każda oktawa jest dzielona na liczbę całkowitą $s$, określającą liczbę interwałów, więc $k=2^{1/s}$. Należy zatem wyprodukować $s+3$ obrazy dla każdej oktawy, tak aby końcowe ekstremum pokrywało całą oktawę. Procedurę powtarza się próbkując obraz gaussowski poprzez usunięcie co drugiego wiersza i kolumny obrazu.\cite{LOWE04}
+Na rys. \ref{fig:sift-gaussian-to-dog} przedstawiono efektywny sposób konstruowania $D(x, y, \sigma)$. Obraz wejściowy fitrowany jest filtrem Gaussa w różnych skalach rozdzielonych stałym współczynnikiem $k$, a następnie na obliczane są obrazy różnicowe DOG. 
+
+
+Każda oktawa jest dzielona na liczbę całkowitą $s$, określającą liczbę interwałów, więc $k=2^{1/s}$. Należy zatem wyprodukować $s+3$ obrazy dla każdej oktawy, tak aby końcowe ekstremum pokrywało całą oktawę. Procedurę powtarza się próbkując obraz gaussowski poprzez usunięcie co drugiego wiersza i kolumny obrazu.\cite{LOWE04}
 
 \begin{figure}[h]
 	\centering
