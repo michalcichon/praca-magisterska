@@ -270,7 +270,11 @@ w = \frac{|L_{xy}(1.2)|_F |D_{yy}(9)|_F}{|L_{yy}(1.2)|_F |D_{xy}(9)|_F} = 0.912.
 
 Ze względu na teoretyczną dokładność, wagi $w$ powinny zmieniać się wraz ze skalą, jednakże w praktyce nie ma to dużego wpływu na precyzję wyników, w związku z tym przyjmuje się stałe $w$. Przybliżone wyznaczniki Hessianów reprezentują odpowiedź obszarów spójnych ({ang. blob}) w punkcie $x$.
 
-W przypadku algorytmu SIFT, w celu uzyskania odpowiedniej skali, filtrowaliśmy obraz iteracyjnie tym samym filtrem. W algorytmie SURF, dzięki zastosowaniu obrazów całkowych, można zastosować bezpośrednio na obrazie wejściowym filtr pudełkowy o odpowiednim rozmiarze. 
+W przypadku algorytmu SIFT, w celu uzyskania odpowiedniej skali, filtrowaliśmy obraz iteracyjnie tym samym filtrem. W algorytmie SURF, dzięki zastosowaniu obrazów całkowych, można zastosować bezpośrednio na obrazie wejściowym filtr pudełkowy o odpowiednim rozmiarze. Dzięki temu obrazy o różnych skalach można uzyskać nawet równolegle. 
+
+Konstrukcja przestrzeni skal rozpoczyna się od filtra 9x9, który oblicza odpowiedź obszaru spójnego obrazu dla najmniejszej skali. Każda oktawa jest dzielona na stałą liczbę poziomów skalowania. Ze względu na dyskretny charakter obrazów całkowych, minimalna różnica skali pomiędzy dwoma kolejnymi poziomami 
+
+
 
 \subsection{GIST}
 
