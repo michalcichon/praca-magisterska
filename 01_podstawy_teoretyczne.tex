@@ -283,7 +283,14 @@ Dla dwóch kolejnych poziomów wartość tą należy zwiększyć przynajmniej o 
 	\label{fig:surf-9to15}
 \end{figure}
 
+Dla kolejnych oktaw różnica pomiędzy poziomami jest zwiększana dwukrotnie, tj. wynosi 12 dla drugiej oktawy, 24 dla trzeciej, 48 dla czwartej itd. Algorytm może analizować wiele oktaw, jednak z każdą kolejną, ilość wykrytych punktów charakterystycznych maleje. Na rys. \ref{fig:surf-octaves} przedstawiono wielkości filtrów dla kilku kolejnych oktaw. Filtry w kolejnych oktawach nachodzą na siebie tak aby pokryć wszystkie możliwe skale.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{graphics/01_podstawy_teoretyczne/surf-octaves.pdf}
+	\caption{Wielkości filtrów dla kilku kolejnych oktaw ($\sigma = 1.2$) \cite{BAY08}}
+	\label{fig:surf-octaves}
+\end{figure}
 
 \subsection{GIST}
 
