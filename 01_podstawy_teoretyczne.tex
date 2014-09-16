@@ -303,8 +303,15 @@ Deskryptor SURF opisuje rozkład intensywności dla punktów charakterystycznych
 	\label{fig:surf-haar-wavelet}
 \end{figure}
 
+Odpowiedzi filtra Haara sa następnie filtrowane za pomocą filtra Gaussa z $\sigma = 2s$ w celu wyeliminowania odkształceń. Na podstawie otrzymanych punktów, obliczane są sumy odpowiedzi w oknach o wielkości $\frac{\pi}{2}$, a następnie najdłuższy wektor z wszystkich okien definiuje się jako orientację punktu charakterystycznego.
 
+Ekstrakcja rozpoczyna się od stworzenia kwadratowego obszaru wokół punktu charakterystycznego o wielkości $20s$. Obszar jest dzielony na podregiony 4x4, a następnie dla każdego podregionu, obliczane są odpowiedzi filtra Haara dla równo rozmieszczonych punktów w 5 rzędach i 5 kolumnach. Odpowiedzi  w kierunku $x$ oznaczane są jako $d_x$, natomiast odpowiedzi w kierunku $y$ oznaczane są jako $d_y$. Odpowiedzi $dx$ i $dy$ są następnie sumowane dla każdego podregionu i zostają umieszczone w wektorze cech. W celu określenia polaryzacji zmian intensywności, ekstraktuje się również sumę wartości bezwzględnych $|d_x|$ oraz $|d_y|$. W rezultacie każdy podregion otrzymuje czterowymiarowy wektor $\boldsymbol{v}$ określający strukturę intensywności.
+\begin{equation} 
+\label{surf_v_vector} 
+\boldsymbol{v} = (\sum{d_x}, \sum{d_y}, \sum{|d_x|}, \sum{|d_y|})
+\end{equation}
 
+W rezultacie otrzymujemy wektor o długości równej 64. Odpowiedzi filtra Haara są niezmienne względem oświetlenia, natomiast niezmienność względem kontrastu jest otrzymywana poprzez wyliczenie na podstawie deskryptora wektora jednostkowego.
 
 \subsection{GIST}
 
