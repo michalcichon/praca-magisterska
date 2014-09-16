@@ -248,7 +248,7 @@ O ile zastosowanie Gaussianów jest optymalne\cite{LINDENBERG90}, to jednak ma o
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=1.7]{graphics/01_podstawy_teoretyczne/surf-box-filters.pdf}
-	\caption{Porównanie filtra Gaussa z filtrem pudełkowym 9x9 ($\sigma = 1.2$) \cite{BAY08}}
+	\caption{Porównanie filtra Gaussa z filtrem pudełkowym 9x9 (skala $\sigma = 1.2$) \cite{BAY08}}
 	\label{fig:surf-box-filters}
 \end{figure}
 
@@ -268,7 +268,7 @@ w = \frac{|L_{xy}(1.2)|_F |D_{yy}(9)|_F}{|L_{yy}(1.2)|_F |D_{xy}(9)|_F} = 0.912.
 |A|_F = \sqrt{\sum\limits_{i=1}^m \sum\limits_{j=1}^n |a_{ij}|^2}
 \end{equation}
 
-Ze względu na teoretyczną dokładność, wagi $w$ powinny zmieniać się wraz ze skalą, jednakże w praktyce nie ma to dużego wpływu na precyzję wyników, w związku z tym przyjmuje się stałe $w$. Przybliżone wyznaczniki Hessianów reprezentują odpowiedź obszarów spójnych ({ang. blob}) w punkcie $x$.
+Ze względu na teoretyczną dokładność, wagi $w$ powinny zmieniać się wraz ze skalą, jednakże w praktyce nie ma to dużego wpływu na precyzję wyników, w związku z tym przyjmuje się stałe $w = 0.9$. Przybliżone wyznaczniki Hessianów reprezentują odpowiedź obszarów spójnych ({ang. blob}) w punkcie $x$.
 
 W przypadku algorytmu SIFT, w celu uzyskania odpowiedniej skali, filtrowaliśmy obraz iteracyjnie tym samym filtrem. W algorytmie SURF, dzięki zastosowaniu obrazów całkowych, można zastosować bezpośrednio na obrazie wejściowym filtr pudełkowy o odpowiednim rozmiarze. Dzięki temu obrazy o różnych skalach można uzyskać nawet równolegle. 
 
