@@ -315,11 +315,18 @@ W rezultacie otrzymujemy wektor o długości równej 64. Odpowiedzi filtra Haara
 
 \subsection{Modele GIST}
 
-Cecha GIST (\emph{ang. streszczenie}) jest globalną cechą obrazu, która charakteryzuje całą scenę obrazu. Globalne cechy oparte są na konfiguracji skal przestrzennych szacowanych bez użycia operacji grupowania ani segmentyzacji. Ekstrakcja cech GIST jest bardzo szybka. Podejście to nie jest alternatywą dla lokalnych cech obrazu ale może stanowić dodatkową pomoc przy rozpoznawaniu obiektów na nieuporządkowanej scenie.\cite{OLIVA06}
+Cecha GIST (\emph{ang. streszczenie}) jest globalną cechą obrazu, która charakteryzuje całą scenę obrazu. Ekstrakcja cech GIST jest na ogół bardzo szybka, gdyż nie wymaga przeprowadzania kosztownych operacji grupowania lub klastrowania. Podejście to nie jest alternatywą dla lokalnych cech obrazu ale może stanowić dodatkową pomoc przy rozpoznawaniu obiektów na nieuporządkowanej scenie.\cite{OLIVA06}
 
-Sensowność tego podejścia jest poparta badaniami ludzkiej percepcji\cite{SCHYNS94}, które wykazały, że człowiek jest w stanie rozpoznać znaczenie nawet bardzo skomplikowanej sceny w krótkim czasie, nawet wówczas gdy obraz ten jest nieostry.
+Sensowność tego podejścia jest poparta badaniami ludzkiej percepcji, które wykazały, że człowiek jest w stanie rozpoznać znaczenie nawet bardzo skomplikowanej sceny w krótkim czasie, nawet wówczas gdy obraz ten jest nieostry.\cite{SCHYNS94}
 
-Nie istnieje jeden model GIST. Oliva i Torralba w 2002 roku zaproponowali model, w którym rozkład przestrzenny widma został opisany przy pomocy okienkowej transformaty Fouriera (WFT).
+Nie istnieje jeden model GIST. Oliva i Torralba w 2000 roku zaproponowali model, w którym rozkład przestrzenny widma został opisany przy pomocy okienkowej transformaty Fouriera (WFT), a następnie otrzymany wektor cech został zredukowany poprzez zastosowanie analizy głównych składowych (\emph{ang. PCA - Principal Component Analysis}).\cite{OLIVA00} Okienkowa transformata Fouriera została określona przy pomocy wzoru \ref{gist_wft}:
+\begin{equation} 
+\label{gist_wft} 
+I(x, y, f_x, f_y) = \sum\limits_{x^\prime, y^\prime = 0}^{N-1} i(x^\prime, y^\prime)h_r(x^\prime - x, y^\prime - y)e^{-j2\pi(f_xx^\prime+f_yy^\prime)}
+\end{equation} gdzie $h_r(x^\prime, y^\prime)$ - okno czasowe Hamminga
+
+Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabora oraz ekstrakcji tekstonów.
+
 
 %Deskryptory GIST są obecnie coraz częściej stosowane w rozpoznawaniu sceny. 
 
