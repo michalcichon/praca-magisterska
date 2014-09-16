@@ -315,7 +315,7 @@ W rezultacie otrzymujemy wektor o długości równej 64. Odpowiedzi filtra Haara
 
 \subsection{Modele GIST}
 
-Cecha GIST (\emph{ang. streszczenie}) jest globalną cechą obrazu, która charakteryzuje całą scenę obrazu. Ekstrakcja cech GIST jest na ogół bardzo szybka, gdyż nie wymaga przeprowadzania kosztownych operacji grupowania lub klastrowania. Podejście to nie jest alternatywą dla lokalnych cech obrazu ale może stanowić dodatkową pomoc przy rozpoznawaniu obiektów na nieuporządkowanej scenie.\cite{OLIVA06}
+Cecha GIST (\emph{ang. streszczenie}) jest globalną cechą obrazu, która charakteryzuje całą scenę. Ekstrakcja cech GIST jest na ogół bardzo szybka, gdyż nie wymaga przeprowadzania kosztownych operacji grupowania lub klastrowania. Podejście to nie jest alternatywą dla lokalnych cech obrazu ale może stanowić dodatkową pomoc przy rozpoznawaniu obiektów na nieuporządkowanej scenie.\cite{OLIVA06}
 
 Sensowność tego podejścia jest poparta badaniami ludzkiej percepcji, które wykazały, że człowiek jest w stanie rozpoznać znaczenie nawet bardzo skomplikowanej sceny w krótkim czasie, nawet wówczas gdy obraz ten jest nieostry.\cite{SCHYNS94}
 
@@ -325,7 +325,7 @@ Nie istnieje jeden model GIST. Oliva i Torralba w 2000 roku zaproponowali model,
 I(x, y, f_x, f_y) = \sum\limits_{x^\prime, y^\prime = 0}^{N-1} i(x^\prime, y^\prime)h_r(x^\prime - x, y^\prime - y)e^{-j2\pi(f_xx^\prime+f_yy^\prime)}
 \end{equation} gdzie $h_r(x^\prime, y^\prime)$ - okno czasowe Hamminga
 
-Wyznaczenie cech dla pojedynczego obrazu jest bardzo szybkie i wynosi poniżej 1ms.
+Wyznaczenie cech dla pojedynczego obrazu jest dla metody Oliva i Torralba bardzo szybkie i wynosi poniżej 1ms.
 
 Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabora oraz ekstrakcji tekstonów. W zaproponowanym modelu wykorzystano pierwszą i drugą pochodną Gaussiana. Filtr składa się z dwóch faz - parzystej i nieparzystej jak we wzorze \ref{gist_gabor}.
 \begin{equation} 
