@@ -294,6 +294,14 @@ Dla kolejnych oktaw różnica pomiędzy poziomami jest zwiększana dwukrotnie, t
 
 W celu zlokalizowania punktów charakterystycznych wykorzystywana jest szybka metoda usuwania niemaksymalnych pikseli (\emph{ang. Non-Maximum Suppresion}) zaproponowana przez Neubecka i Van Goola\cite{NEUBECK06}. Podobnie jak w algorytmie SIFT, punkty te są wyszukiwane w otoczeniu 3x3x3.
 
+Deskryptor SURF opisuje rozkład intensywności dla punktów charakterystycznych. W celu czasu obliczeń zastosowano odpowiedzi falek Haara w kierunkach $x$ i $y$ dla otoczenia punktów charakterystycznych o promieniu $6s$, gdzie $s$ jest skalą na której został wykryty punkt charakterystyczny. Wielkości filtrów Haara są zależne od skali stąd ich wielkość została określona na $4s$. Na rys. \ref{fig:surf-haar-wavelet} przedstawiono filtr Haara dla kierunku $x$ (a) oraz $y$ (b).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.5]{graphics/01_podstawy_teoretyczne/surf-haar-wavelet.pdf}
+	\caption{Filtry falkowe Haara do obliczenia odpowiedzi w kierunku $x$ (a) oraz $y$ (b) \cite{BAY08}}
+	\label{fig:surf-haar-wavelet}
+\end{figure}
 
 
 
