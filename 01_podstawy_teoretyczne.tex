@@ -225,7 +225,7 @@ W celu rozpoznania obiektów za pomocą algorytmu SIFT należy najpierw wyznaczy
 
 SURF jest kolejnym algorytmem do wykrywania lokalnych cech obrazu. Został zaproponowany w 2006 roku przez Herberta Bay'a i jest częściowo wzorowany na algorytmie SIFT.\cite{BAY08} Algorytm jest odporny zarówno na zmiany skali jak i zmiany rotacji. Wykorzystywany jest do rozpoznawania obiektów jak i rekonstrukcji scen 3D. Typowa implementacja jest nawet kilka razy szybsza od algorytmu SIFT.\cite{SCHWEIGER09}
 
-W celu optymalizacji działania filtrów splotowych zastosowano obrazy całkowe (\emph{ang. integral images}). Pozycja w obrazie całkowym $I_{\Sigma}(\boldsymbol{x})$ w punkcie $\boldsymbol{x}=(x, y)^T$ reprezentuje sumę wszystkich pikseli wejściowego obrazu $I$ wewnątrz prostokąta pomiędzy początkiem układu współrzędnych a $x$.
+W celu optymalizacji działania filtrów splotowych zastosowano obrazy całkowe (\emph{ang. integral images}). Pozycja w obrazie całkowym $I_{\Sigma}(\boldsymbol{x})$ w punkcie $\boldsymbol{x}=(x, y)^T$ reprezentuje sumę intensywności wszystkich pikseli wejściowego obrazu $I$ wewnątrz prostokąta pomiędzy początkiem układu współrzędnych a $x$.
 \begin{equation} 
 \label{surf_integral_image} 
 I_{\Sigma}(\boldsymbol{x}) = \sum\limits_{i=0}^{i \leq x} \sum\limits_{j=0}^{j \leq y} I(i,j)
@@ -292,7 +292,9 @@ Dla kolejnych oktaw różnica pomiędzy poziomami jest zwiększana dwukrotnie, t
 	\label{fig:surf-octaves}
 \end{figure}
 
-W celu zlokalizowania punktów charakterystycznych wykorzystywana jest szybka metoda usuwania niemaksymalnych pikseli (\emph{ang. Non-Maximum Suppresion}) zaproponowana przez Neubecka i Van Goola\cite{NEUBECK06}.
+W celu zlokalizowania punktów charakterystycznych wykorzystywana jest szybka metoda usuwania niemaksymalnych pikseli (\emph{ang. Non-Maximum Suppresion}) zaproponowana przez Neubecka i Van Goola\cite{NEUBECK06}. Podobnie jak w algorytmie SIFT, punkty te są wyszukiwane w otoczeniu 3x3x3.
+
+
 
 
 
