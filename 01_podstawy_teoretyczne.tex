@@ -325,10 +325,20 @@ Nie istnieje jeden model GIST. Oliva i Torralba w 2000 roku zaproponowali model,
 I(x, y, f_x, f_y) = \sum\limits_{x^\prime, y^\prime = 0}^{N-1} i(x^\prime, y^\prime)h_r(x^\prime - x, y^\prime - y)e^{-j2\pi(f_xx^\prime+f_yy^\prime)}
 \end{equation} gdzie $h_r(x^\prime, y^\prime)$ - okno czasowe Hamminga
 
-Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabora oraz ekstrakcji tekstonów.
+Wyznaczenie cech dla pojedynczego obrazu jest bardzo szybkie i wynosi poniżej 1ms.
+
+Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabora oraz ekstrakcji tekstonów. W zaproponowanym modelu wykorzystano pierwszą i drugą pochodną Gaussiana. Filtr składa się z dwóch faz - parzystej i nieparzystej jak we wzorze \ref{gist_gabor}.
+\begin{equation} 
+\label{gist_gabor} 
+	\begin{gathered}
+		f_{odd}(x, y) = {G^\prime}_{\sigma_1}(y) G_{\sigma_2}(x) \\
+		f_{even}(x, y) = {G^{\prime\prime}}_{\sigma_1}(y) G_{\sigma_2}(x) 
+	\end{gathered}
+\end{equation} gdzie $G_\sigma(x)$ - Gaussian z odchyleniem standardowym $\sigma$
+
+Współczynniki $\sigma_1$ i $\sigma_2$ są miarą wydłużenia filtra. Filtry są budowane w 3 skalach dla selektywności częstotliwości oraz w 6 orientacjach dla selektywności orientacji. W rezultacie powstaje 36 filtrów. Podczas analizy tekstury, obliczany jest splot obrazu z zespołem filtrów, co w rezultacie daje wektor odpowiedzi $I \ast f(x_0, y_0)$ charakteryzujący fragment obrazu wyśrodkowany w $(x_0, y_0)$. Podobne tekstury na analizowanych obrazach powtarzają się bardzo często. W celu określenia jakie cechy są najbardziej powszechne użyto klastrowania K-średnich i otrzymano wektor składający się z 100 prototypowych odpowiedzi, które nazywamy uniwersalnymi tekstonami. Ze względu na konieczność wyliczenia tekstonów rozwiązanie to jest dużo wolniejsze i wyliczenie cech dla obrazu zajmuje ok. 7 sekund.\cite{VISWANATHAN08}
 
 
-%Deskryptory GIST są obecnie coraz częściej stosowane w rozpoznawaniu sceny. 
 
 
 \subsection{LBP - Local Binary Patterns}
