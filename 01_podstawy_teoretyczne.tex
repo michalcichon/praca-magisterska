@@ -143,9 +143,9 @@ Stąd wynik spotu obrazu z filtrem DOG można zapisać jako:
 	\end{gathered}
 \end{equation}
 
-Na rys. \ref{fig:sift-gaussian-to-dog} przedstawiono efektywny sposób konstruowania $D(x, y, \sigma)$. Obraz wejściowy fitrowany jest filtrem Gaussa w różnych skalach rozdzielonych stałym współczynnikiem $k$, a następnie na obliczane są obrazy różnicowe DOG. 
+Na rys. \ref{fig:sift-gaussian-to-dog} przedstawiono efektywny sposób konstruowania $D(x, y, \sigma)$. Obraz wejściowy fitrowany jest iteracyjnie filtrem Gaussa w różnych skalach rozdzielonych stałym współczynnikiem $k$ w celu wytworzenia obrazów oddalonych od siebie o współczynnik $k$ w przestrzeni skali (lewa kolumna).
 
-Przestrzeń skal jest dzielona na oktawy, które reprezentują serię map odpowiedzi filtra uzyskane przez obliczenie splotu obrazu z filtrem. Zwiększenie skali o oktawę oznacza zwiększenie wygładzania o 2. Każda oktawa jest dzielona na liczbę całkowitą $s$, określającą liczbę interwałów, więc $k=2^{1/s}$. Należy zatem wyprodukować $s+3$ obrazów dla każdej oktawy, tak aby końcowe ekstremum pokrywało całą oktawę. Procedurę powtarza się próbkując obraz gaussowski poprzez usunięcie co drugiego wiersza i kolumny obrazu.\cite{LOWE04}
+Przestrzeń skal jest dzielona na oktawy, które reprezentują serię map odpowiedzi filtra uzyskane przez obliczenie splotu obrazu z filtrem. Zwiększenie skali o oktawę oznacza zwiększenie wygładzania o 2. Każda oktawa jest dzielona na liczbę całkowitą $s$, określającą liczbę interwałów, więc $k=2^{1/s}$. Należy zatem wyprodukować $s+3$ obrazów dla każdej oktawy, tak aby końcowe ekstremum pokrywało całą oktawę. Obrazy z sąsiednich skal są następnie odejmowane od siebie w celu otrzymania różnicy gaussianów DOG. Procedurę powtarza się próbkując obraz gaussowski poprzez usunięcie co drugiego wiersza i kolumny obrazu.\cite{LOWE04}
 
 \begin{figure}[h]
 	\centering
