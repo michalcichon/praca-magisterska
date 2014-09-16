@@ -243,7 +243,7 @@ H(\boldsymbol{x}, \sigma) =
 	\end{bmatrix}
 \end{equation} gdzie $L_{xx}(\boldsymbol{x}, \sigma)$ - splot drugiej pochodnej Gaussiana $\frac{\partial^2}{\partial x^2} g(\sigma)$ z obrazem $I$ w punkcie $\boldsymbol{x}$.
 
-O ile zastosowanie Gaussianów jest optymalne\cite{LINDENBERG90}, to jednak ma obniżoną powtarzalność przy rotacji dla nieparzystych wielokrotności $\frac{\pi}{2}$. Korzystając z tych obserwacji, w algorytmie SURF zaproponowano przybliżenie oparte na filtrze pudełkowym, w celu zwiększenia wydajności. Na rys. \ref{fig:surf-box-filters} zostało przedstawione porównanie pochodnej drugiego rzędu w $L_{yy}$ (a), $L_{xy}$ (b), przybliżenie $D_{yy}$ (c) oraz $D_{xy}$ (d).
+O ile zastosowanie Gaussianów jest optymalne\cite{LINDENBERG90}, to jednak ma obniżoną powtarzalność przy rotacji dla nieparzystych wielokrotności $\frac{\pi}{2}$. Korzystając z tych obserwacji, w algorytmie SURF zaproponowano przybliżenie oparte na filtrze pudełkowym, w celu zwiększenia wydajności. Na rys. \ref{fig:surf-box-filters} zostało przedstawione porównanie laplacianów $L_{yy}$ (a), oraz $L_{xy}$ (b), oraz odpowiadające im przybliżenia: $D_{yy}$ (c) oraz $D_{xy}$ (d).
 
 \begin{figure}[h]
 	\centering
