@@ -274,13 +274,13 @@ W przypadku algorytmu SIFT, w celu uzyskania odpowiedniej skali, filtrowaliśmy 
 
 Konstrukcja przestrzeni skal rozpoczyna się od filtra 9x9, który oblicza odpowiedź obszaru spójnego obrazu dla najmniejszej skali. Każda oktawa jest dzielona na stałą liczbę poziomów skalowania. Ze względu na dyskretny charakter obrazów całkowych, minimalna różnica skali pomiędzy dwoma kolejnymi poziomami zależy od długości $l_0$, która określa rozmiar obszaru o jednakowych wartościach (1, -1, -2) na filtrze. W przypadku filtra 9x9 wartość ta wynosi 3.
 
-Dla dwóch kolejnych poziomów wartość tą należy zwiększyć przynajmniej o 2 piksele oraz zapewnić wystąpienie środkowego piksela, w rezultacie wielkość filtra zwiększa się o 6 pikseli pomiędzy poziomami. Porównanie filtrów 9x9 z filtrami 15x15 przedstawiono na rys. \ref{fig:surf-9to15}.
+Dla dwóch kolejnych poziomów wartość tą należy zwiększyć przynajmniej o 2 piksele oraz zapewnić wystąpienie środkowego piksela, w rezultacie wielkość filtra zwiększa się o 6 pikseli pomiędzy poziomami. Porównanie filtrów 9x9 z filtrami 15x15 przedstawiono na rys. \ref{fig:surf-9-to-15}.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.7]{graphics/01_podstawy_teoretyczne/surf-9to15.pdf}
+	\includegraphics[scale=1.5]{graphics/01_podstawy_teoretyczne/surf-9-to-15.pdf}
 	\caption{Porównanie filtru pudełkowego 9x9 z filtrami 15x15 ($\sigma = 1.2$) \cite{BAY08}}
-	\label{fig:surf-9to15}
+	\label{fig:surf-9-to-15}
 \end{figure}
 
 Dla kolejnych oktaw różnica pomiędzy poziomami jest zwiększana dwukrotnie, tj. wynosi 12 dla drugiej oktawy, 24 dla trzeciej, 48 dla czwartej itd. Algorytm może analizować wiele oktaw, jednak z każdą kolejną, ilość wykrytych punktów charakterystycznych maleje. Na rys. \ref{fig:surf-octaves} przedstawiono wielkości filtrów dla kilku kolejnych oktaw. Filtry w kolejnych oktawach nachodzą na siebie tak aby pokryć wszystkie możliwe skale.
