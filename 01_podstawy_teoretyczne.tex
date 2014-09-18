@@ -315,9 +315,11 @@ W rezultacie otrzymujemy wektor o długości równej 64. Odpowiedzi filtra Haara
 
 \subsection{Modele GIST}
 
-Cecha GIST (\emph{ang. streszczenie}) jest globalną cechą obrazu, która charakteryzuje całą scenę. Ekstrakcja cech GIST jest na ogół bardzo szybka, gdyż nie wymaga przeprowadzania kosztownych operacji grupowania lub klastrowania. Podejście to nie jest alternatywą dla lokalnych cech obrazu ale może stanowić dodatkową pomoc przy rozpoznawaniu obiektów na nieuporządkowanej scenie.\cite{OLIVA06}
+Studia nad percepcją pokazały, że obserwator jest w stanie jednym spojrzeniem rozpoznać scenę z realnego świata. W czasie tego szybkiego procesu, w układzie wzrokowym człowieka tworzona jest przestrzenna reprezentacja świata zewnętrznego, który jest na tyle bogaty, że pozwala zrozumieć sens sceny, rozpoznać kilka obiektów oraz zwrócić uwagę na istotne szczegóły. Ta reprezentacja, którą można odnieść zarówno do funkcji niskopoziomowych, takich jak kolor lub częstotliwość, jak i informacji wysokiego poziomu, takich jak obiekty lub aktywacja wiedzy semantycznej.
 
-Sensowność tego podejścia jest poparta badaniami ludzkiej percepcji, które wykazały, że człowiek jest w stanie rozpoznać znaczenie nawet bardzo skomplikowanej sceny w krótkim czasie, nawet wówczas gdy obraz ten jest nieostry.\cite{SCHYNS94}
+W czasie nie większym niż 100 ms, człowiek jest w stanie rozpoznać podstawowe kategorie obrazu, takie jak określenie miejsca, czy obraz przedstawia ulicę, wnętrze mieszkania, las\cite{POTTER76}, jak również jest w stanie układ przestrzenny zdjęcia, nawet jeśli jest ono nieostre.\cite{SCHYNS94} Potrafi także zapamiętać kilka obiektów, ich kontekst oraz niskopoziomową charakterystykę obszarów, które są najlepiej zauważalne.\cite{OLIVA05}
+
+Cecha GIST (\emph{ang. sedno}) jest globalną cechą obrazu, która charakteryzuje całą scenę. Ekstrakcja cech GIST jest na ogół bardzo szybka, gdyż nie wymaga przeprowadzania kosztownych operacji grupowania lub klastrowania. Podejście to nie jest alternatywą dla lokalnych cech obrazu ale może stanowić dodatkową pomoc przy rozpoznawaniu obiektów na nieuporządkowanej scenie.\cite{OLIVA06}
 
 Nie istnieje jeden model GIST. Oliva i Torralba w 2000 roku zaproponowali model, w którym rozkład przestrzenny widma został opisany przy pomocy okienkowej transformaty Fouriera (WFT), a następnie otrzymany wektor cech został zredukowany poprzez zastosowanie analizy głównych składowych (\emph{ang. PCA - Principal Component Analysis}).\cite{OLIVA00} Okienkowa transformata Fouriera została określona przy pomocy wzoru \ref{gist_wft}:
 \begin{equation} 
