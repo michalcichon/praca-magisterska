@@ -1,3 +1,3 @@
 #!/bin/sh
 echo "Removing temporary files"
-rm *.aux *.log
+rm *.aux *.log *.toc *.synctex.gz
