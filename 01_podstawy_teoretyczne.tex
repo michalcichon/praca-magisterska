@@ -363,10 +363,47 @@ Podejście Siegian i Itti polega na wykorzystaniu danych statystycznych pomiaró
 M_i(c) = Gabor(\theta_i, c)
 \end{equation}
 
+Kanały koloru i intensywności łączone są w celu stworzenia trzech par przeciwstawnych kolorów (\emph{ang. opponent colors}) z teorii barw przeciwstawnych Ewalda Heringa opisanej w \emph{Outlines of a Theory of the Light Sense}.\cite{HERING64} Hering opisał cztery podstawowe kolory: czerwony, zielony, niebieski i żółty, ponadto wyróżniono dodatkowy składnik określony jako intensywność. Poniżej przedstawiono wzory na wyliczenie reprezentacji poszczególnych kanałów:
+\begin{equation} 
+\label{gist_hering_R} 
+R = \frac{r - (g + b)}{2}
+\end{equation}
+\begin{equation} 
+\label{gist_hering_G} 
+G = \frac{g - (r + b)}{2}
+\end{equation}
+\begin{equation} 
+\label{gist_hering_B} 
+B = \frac{b - (r + g)}{2}
+\end{equation}
+\begin{equation} 
+\label{gist_hering_Y} 
+Y = r + g - 2 (|r - g| + b)
+\end{equation}
+\begin{equation} 
+\label{gist_hering_I} 
+I = \frac{r + g + b}{3}
+\end{equation}
+
+$R, G, B$ - kanały czerwony, zielony i niebieski według Heringa, $r, g, b$ - kanały czerwony, zielony i niebieski ze zdjęcia.
+
+Pary kolorów przeciwstawnych tworzą kanały: czerwony i zielony, niebieski i żółty, dodatkowo wyróżniona jest para kanałów: ciemny i jasny. Kolory przeciwstawne nigdy nie są postrzegane razem, tj. nie ma czerwonawej zieleni ani niebieskawej żółci. Kolory przeciwstawne zostały przedstawione na rys. \ref{fig:gist-opponent-colors}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/gist-opponent-colors.pdf}
+	\caption{ Pary kolorów przeciwstawnych (\emph{ang. opponent colors}) }
+	\label{fig:gist-opponent-colors}
+\end{figure}
+
+
+
+ 
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/gist-siagian.pdf}
-	\caption{ \cite{SIAGIAN07} }
+	\caption{ Ekstrakcja cech GIST według Siegian i Itti \cite{SIAGIAN07} }
 	\label{fig:gist-siagian}
 \end{figure}
 
