@@ -357,7 +357,11 @@ Podobne tekstury na analizowanych obrazach powtarzają się bardzo często. W ce
 %=================================================================================
 W 2007 roku Siegian i Itti zaproponowali model składający się z biologicznie wiarygodnych cech określających orientację, kolor oraz intensywność.\cite{SIAGIAN07} Metoda ta powstała na kanwie badań nad percepcją, które wykazały, że obserwator jest w stanie określić ogólne, semantyczne atrybuty zdjęcia na podstawie ekspozycji nie przekraczającej 100 ms. Natomiast odpowiedź na bardziej specyficzne pytania, takie jak czy na zdjęciu znajduje się zwierzę, obserwator jest w stanie określić w czasie 28 ms\cite{THORPE95}, nawet wówczas gdy jego uwaga jest skupiona na innym zadaniu. Gist obrazu może być określany w obszarach mózgu, które odpowiadają za \emph{miejsca}, rozumiane jako typy sceny z określonym układem przestrzennym.\cite{EPSTEIN00} Układ przestrzenny oraz kolor zostały zostały doświadczanie określone jako cechy obrazu wpływające na dostrzeganie gistu sceny.\cite{OLIVA-SCHYNS00}
 
-
+Podejście Siegian i Itti polega na wykorzystaniu danych statystycznych pomiarów koloru i tekstury w z góry określonych obszarach. Cechy te są niezależne od kształtu, ponieważ określają linie i obszary spójne. Dodatkowo wykorzystywany jest kanał orientacji tworzony za pomocą filtrów Gabbora na obrazie w skali szarości, w czterech różnych kątach $\theta_i = 0, 45, 90, 135^\circ$ oraz dla czterech różnych skalach przestrzennych $c = 0, 1, 2, 3$:
+\begin{equation} 
+\label{gist_siegian_gabor} 
+M_i(c) = Gabor(\theta_i, c)
+\end{equation}
 
 \begin{figure}[h]
 	\centering
