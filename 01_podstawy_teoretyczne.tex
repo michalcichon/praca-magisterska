@@ -357,9 +357,19 @@ Podobne tekstury na analizowanych obrazach powtarzają się bardzo często. W ce
 %=================================================================================
 W 2007 roku Siegian i Itti zaproponowali model składający się z biologicznie wiarygodnych cech określających orientację, kolor oraz intensywność.\cite{SIAGIAN07} Metoda ta powstała na kanwie badań nad percepcją, które wykazały, że obserwator jest w stanie określić ogólne, semantyczne atrybuty zdjęcia na podstawie ekspozycji nie przekraczającej 100 ms. Natomiast odpowiedź na bardziej specyficzne pytania, takie jak czy na zdjęciu znajduje się zwierzę, obserwator jest w stanie określić w czasie 28 ms\cite{THORPE95}, nawet wówczas gdy jego uwaga jest skupiona na innym zadaniu. Gist obrazu może być określany w obszarach mózgu, które odpowiadają za \emph{miejsca}, rozumiane jako typy sceny z określonym układem przestrzennym.\cite{EPSTEIN00} Układ przestrzenny oraz kolor zostały zostały doświadczanie określone jako cechy obrazu wpływające na dostrzeganie gistu sceny.\cite{OLIVA-SCHYNS00}
 
-Podejście Siegian i Itti polega na wykorzystaniu danych statystycznych pomiarów koloru i tekstury w z góry określonych obszarach. Cechy te są niezależne od kształtu, ponieważ określają linie i obszary spójne. Dodatkowo wykorzystywany jest kanał orientacji tworzony za pomocą filtrów Gabbora na obrazie w skali szarości, w czterech różnych kątach $\theta_i = 0, 45, 90, 135^\circ$ oraz dla czterech różnych skalach przestrzennych $c = 0, 1, 2, 3$:
+Model Siegiana i Itti opiera się na na \emph{saliency model} zaproponowanym wcześniej przez Itti. W modelu tym, obraz wejściowy jest filtrowany do wielu niskopoziomowych kanałów cech, w wielu skalach przestrzennych. Kanały takie jak kolor, orientacja i intensywność mają wiele podkanałów, które z kolei wyróżniają 9 poziomów skali od stosunku 1:1 (poziom 0) do 1:256 (poziom 8), wygładzone iteracyjnie filtrem Gaussa 5x5.
+
+Dla każdego podkanału $i$ wykonywane są operacje porównania wartości centralnego punktu z jego sąsiedztwem, pomiędzy mapami wyjściowymi dla filtrów $O_i(s)$ w różnych skalach $s$. Mapy cech określamy jako $M_i(c, s)$, gdzie $c \in \{2, 3, 4\}$ - skala centralna, $s = c + d$, $d \in \{3, 4\}$ - skala otaczająca. Różnica między skalami zapisywana jest jako $\ominus$ i jest realizowane przez interpolację do skali centralnej i wyliczenie różnicy bezwzględnej.
+
+Dla kanałów koloru i intensywności mamy:
 \begin{equation} 
-\label{gist_siegian_gabor} 
+\label{gist_siegian_color_intensity}
+M_i(c, s) = |O_i(c) \ominus O_i(s)| = |O_i(c) - Interp_{s-c}(O_i(s))|
+\end{equation}
+
+Kanał orientacji tworzony jest za pomocą filtrów Gabbora na obrazie w skali szarości, w czterech różnych kątach $\theta_i = 0, 45, 90, 135^\circ$ oraz dla czterech różnych skalach przestrzennych $c = 0, 1, 2, 3$. Mapy cech dla orientacji $M_i(c)$ określamy jako:
+\begin{equation} 
+\label{gist_siegian_orientation}
 M_i(c) = Gabor(\theta_i, c)
 \end{equation}
 
