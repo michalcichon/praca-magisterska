@@ -23,7 +23,7 @@ Uczeń otrzymuje od nauczyciela informację o tym jakiego komunikatu wyjścioweg
 
 Każdy przykład określany jest przez skończony oraz niepusty zbiór atrybutów $A=\lbrace a_{i}, a_{2}, \cdots, a_{n}\rbrace$. Atrybuty ze względu na rodzaj dziedziny możemy podzielić na: 
 \begin{compactitem}
-	\item nominalne, tj. takie, których dziedziny są zbiorami nieuporządkowanymi - dla dwóch wartości możliwe jest określenie jedynie czy są równe czy nierówne,
+	\item nominalne, tj. takie, których dziedziny są zbiorami nieuporządkowanymi -- dla dwóch wartości możliwe jest określenie jedynie czy są równe czy nierówne,
 	\item porządkowe, dla których dziedziny są zbiorami uporządkowanymi, czyli możliwe jest określenie relacji porządku liniowego na zbiorze wartości,
 	\item liczbowe, których dziedziny są zdefiniowane jako zbiór liczbowy.
 \end{compactitem}
@@ -76,17 +76,17 @@ W przypadku dużych i skomplikowanych obiektów, takich jak obrazy, proces uczen
 Wyselekcjonowane cechy powinny się charakteryzować następującymi właściwościami\cite{STRUMIL}:
 
 \begin{compactitem}
-	\item \emph{dyskryminacja} - cechy powinny przyjmować jak najbardziej odmienne wartości dla obiektów z różnych klas,
-	\item \emph{niezawodność} - cechy powinny przyjmować podobne wartości dla wszystkich obiektów danej klasy,
-	\item \emph{niezależność} - cechy powinny nie być ze sobą skorelowane,
-	\item \emph{małoliczność} - im mniejsza liczba cech tym złożoność systemu jest mniejsza.
+	\item \emph{dyskryminacja} -- cechy powinny przyjmować jak najbardziej odmienne wartości dla obiektów z różnych klas,
+	\item \emph{niezawodność} -- cechy powinny przyjmować podobne wartości dla wszystkich obiektów danej klasy,
+	\item \emph{niezależność} -- cechy powinny nie być ze sobą skorelowane,
+	\item \emph{małoliczność} -- im mniejsza liczba cech tym złożoność systemu jest mniejsza.
 \end{compactitem}
 
 Wzór \ref{correlation} przedstawia współczynnik korelacji cech $x$ i $y$. Jeśli współczynnik korelacji jest bliski $1$ lub $-1$ to cechy $x$ i $y$ są ze sobą silnie skorelowane i należy jedną z nich odrzucić.
 \begin{equation} 
 \label{correlation} 
 \hat{\sigma}_{xy}= \frac{\frac{1}{P}\sum\limits_{i=1}^P(x_i-\mu_x)(y_i-\mu_y)}{ \hat{\sigma}_x\hat{\sigma}_y }
-\end{equation} gdzie $P$ - liczba klasyfikowanych obiektów, $\mu$ - wartość średnia, $\sigma$ - odchylenie standardowe zbioru cech.
+\end{equation} gdzie $P$ -- liczba klasyfikowanych obiektów, $\mu$ -- wartość średnia, $\sigma$ -- odchylenie standardowe zbioru cech.
 
 Miarę separacji można określić jako:
 
@@ -112,7 +112,7 @@ Można wyróżnić wiele cech używanych w procesach przetwarzania obrazów, np.
 
 Wśród popularnych metod ekstrakcji cech, stosowanych do rozwiązania problemu klasyfikacji i kategoryzacji obrazów należy wymienić: SIFT (\emph{ang. Scale-invariant Feature Transform})\cite{SIFT99}, SURF (\emph{ang. Speeded Up Robust Features}), GIST\cite{GIST09}, LBP (\emph{ang. Local Binary Patterns}), HOG (\emph{ang. Histograms of Oriented Gradients}). Poszczególne algorytmy zostały opisane poniżej.
 
-\subsection{SIFT - Scale-invariant Feature Transform}
+\subsection{SIFT -- Scale-invariant Feature Transform}
 
 Algorytm SIFT służy do wykrywania oraz opisu lokalnych cech obrazu, został opublikowany przez Dawida Lowe w 1999 roku.\cite{SIFT99} Punkty charakterystyczne wykrywane przez SIFT są niezależne od położenia, rotacji, skali, zmiany oświetlenia oraz są odporne na zakłócenia. Zastosowanie algorytmu SIFT do rozpoznawania obiektów pozwala na detekcję częściowo zasłoniętych obiektów. Jest to jeden z najpopularniejszych algorytmów do ekstrakcji punktów charakterystycznych.
 
@@ -120,7 +120,7 @@ Działanie algorytmu rozpoczyna się od wyszukiwania potencjalnych punktów popr
 \begin{equation} 
 \label{sift_scale_space} 
 L(x, y, \sigma) = G(x, y, \sigma) \ast I(x, y)
-\end{equation} gdzie $G(x, y, \sigma)$ - Gaussian, $I(x, y)$ - obraz wejściowy, $\ast$ - operator splotu.
+\end{equation} gdzie $G(x, y, \sigma)$ -- Gaussian, $I(x, y)$ -- obraz wejściowy, $\ast$ -- operator splotu.
 \begin{equation} 
 \label{sift_gaussian} 
 G(x, y, \sigma) = \frac{1}{2\pi\sigma^2}e^{-(x^2+y^2)/2\sigma^2}
@@ -221,7 +221,7 @@ SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia 16
 
 W celu rozpoznania obiektów za pomocą algorytmu SIFT należy najpierw wyznaczyć punkty charakterystyczne i odpowiadające im wektory cech lokalnych, a następnie dopasować punkty charakterystyczne z obrazu wejściowego do punktów w bazie wzorców. Do identyfikacji grup dopasowanych punktów, które określają ten sam obiekt wykorzystuje się transformatę Hougha. Weryfikacji cech dokonuje się z wykorzystaniem metody najmniejszych kwadratów. W trakcie obliczeń wyznaczane są parametry związane z transformacją pomiędzy układem związanym z wzorcem a układem związanym z obiektem na badanym obrazie.
 
-\subsection{SURF - Speeded Up Robust Features}
+\subsection{SURF -- Speeded Up Robust Features}
 
 SURF jest kolejnym algorytmem do wykrywania lokalnych cech obrazu. Został zaproponowany w 2006 roku przez Herberta Bay'a i jest częściowo wzorowany na algorytmie SIFT.\cite{BAY08} Algorytm jest odporny zarówno na zmiany skali jak i zmiany rotacji. Wykorzystywany jest do rozpoznawania obiektów jak i rekonstrukcji scen 3D. Typowa implementacja jest nawet kilka razy szybsza od algorytmu SIFT.\cite{SCHWEIGER09}
 
@@ -241,7 +241,7 @@ H(\boldsymbol{x}, \sigma) =
 		L_{xx}(\boldsymbol{x}, \sigma) & L_{xy}(\boldsymbol{x}, \sigma) \\
 		L_{xy}(\boldsymbol{x}, \sigma) & L_{yy}(\boldsymbol{x}, \sigma)
 	\end{bmatrix}
-\end{equation} gdzie $L_{xx}(\boldsymbol{x}, \sigma)$ - splot drugiej pochodnej Gaussiana $\frac{\partial^2}{\partial x^2} g(\sigma)$ z obrazem $I$ w punkcie $\boldsymbol{x}$.
+\end{equation} gdzie $L_{xx}(\boldsymbol{x}, \sigma)$ -- splot drugiej pochodnej Gaussiana $\frac{\partial^2}{\partial x^2} g(\sigma)$ z obrazem $I$ w punkcie $\boldsymbol{x}$.
 
 O ile zastosowanie Gaussianów jest optymalne\cite{LINDENBERG90}, to jednak ma obniżoną powtarzalność przy rotacji dla nieparzystych wielokrotności $\frac{\pi}{2}$. Korzystając z tych obserwacji, w algorytmie SURF zaproponowano przybliżenie oparte na filtrze pudełkowym, w celu zwiększenia wydajności. Na rys. \ref{fig:surf-box-filters} zostało przedstawione porównanie laplacianów $L_{yy}$ (a), oraz $L_{xy}$ (b), oraz odpowiadające im przybliżenia: $D_{yy}$ (c) oraz $D_{xy}$ (d).
 
@@ -262,7 +262,7 @@ Waga odpowiedzi filtra $w$ służy do zrównoważenia wyrażenia, dla zachowania
 \begin{equation} 
 \label{surf_hessian_approx_w}
 w = \frac{|L_{xy}(1.2)|_F |D_{yy}(9)|_F}{|L_{yy}(1.2)|_F |D_{xy}(9)|_F} = 0.912... \simeq 0.9
-\end{equation} gdzie $|A|_F$ - norma Froberiusa (wzór \ref{surf_froberius}).
+\end{equation} gdzie $|A|_F$ -- norma Froberiusa (wzór \ref{surf_froberius}).
 \begin{equation} 
 \label{surf_froberius}
 |A|_F = \sqrt{\sum\limits_{i=1}^m \sum\limits_{j=1}^n |a_{ij}|^2}
@@ -330,24 +330,24 @@ Cecha GIST w założeniu jest niskopoziomową reprezentacją sceny, która nie w
 
 %-- Oliva Torralba 2000
 %=================================================================================
-Nie istnieje jeden model GIST. Oliva i Torralba w 2000 roku zaproponowali model, w którym rozkład przestrzenny widma został opisany przy pomocy okienkowej transformaty Fouriera (WFT), a następnie otrzymany wektor cech został zredukowany poprzez zastosowanie analizy głównych składowych (\emph{ang. PCA - Principal Component Analysis}).\cite{OLIVA00} Okienkowa transformata Fouriera została określona przy pomocy wzoru \ref{gist_wft}:
+Nie istnieje jeden model GIST. Oliva i Torralba w 2000 roku zaproponowali model, w którym rozkład przestrzenny widma został opisany przy pomocy okienkowej transformaty Fouriera (WFT), a następnie otrzymany wektor cech został zredukowany poprzez zastosowanie analizy głównych składowych (\emph{ang. PCA -- Principal Component Analysis}).\cite{OLIVA00} Okienkowa transformata Fouriera została określona przy pomocy wzoru \ref{gist_wft}:
 \begin{equation} 
 \label{gist_wft} 
 I(x, y, f_x, f_y) = \sum\limits_{x^\prime, y^\prime = 0}^{N-1} i(x^\prime, y^\prime)h_r(x^\prime - x, y^\prime - y)e^{-j2\pi(f_xx^\prime+f_yy^\prime)}
-\end{equation} gdzie $h_r(x^\prime, y^\prime)$ - okno czasowe Hamminga
+\end{equation} gdzie $h_r(x^\prime, y^\prime)$ -- okno czasowe Hamminga
 
 Wyznaczenie cech dla pojedynczego obrazu jest dla metody Oliva i Torralba bardzo szybkie i wynosi poniżej 1ms.
 
 %-- Renninger Malik 2004
 %=================================================================================
-Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabora oraz ekstrakcji tekstonów. W zaproponowanym modelu wykorzystano pierwszą i drugą pochodną Gaussiana. Filtr składa się z dwóch faz - parzystej i nieparzystej, opisanych we wzorze \ref{gist_gabor}.
+Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabora oraz ekstrakcji tekstonów. W zaproponowanym modelu wykorzystano pierwszą i drugą pochodną Gaussiana. Filtr składa się z dwóch faz -- parzystej i nieparzystej, opisanych we wzorze \ref{gist_gabor}.
 \begin{equation} 
 \label{gist_gabor} 
 	\begin{gathered}
 		f_{odd}(x, y) = {G^\prime}_{\sigma_1}(y) G_{\sigma_2}(x) \\
 		f_{even}(x, y) = {G^{\prime\prime}}_{\sigma_1}(y) G_{\sigma_2}(x) 
 	\end{gathered}
-\end{equation} gdzie $G_\sigma(x)$ - Gaussian z odchyleniem standardowym $\sigma$
+\end{equation} gdzie $G_\sigma(x)$ -- Gaussian z odchyleniem standardowym $\sigma$
 
 Współczynniki $\sigma_1$ i $\sigma_2$ są miarami wydłużenia filtra. Filtry są budowane w 3 skalach dla zachowania selektywności częstotliwości oraz w 6 orientacjach dla selektywności orientacji. W rezultacie powstaje 36 filtrów. Podczas analizy tekstury, obliczany jest splot obrazu z zespołem filtrów, co w rezultacie daje wektor odpowiedzi $I \ast f(x_0, y_0)$ charakteryzujący fragment obrazu wyśrodkowany w $(x_0, y_0)$. 
 
@@ -359,7 +359,7 @@ W 2007 roku Siegian i Itti zaproponowali model składający się z biologicznie 
 
 Model Siegiana i Itti opiera się na na \emph{saliency model} zaproponowanym wcześniej przez Itti. W modelu tym, obraz wejściowy jest filtrowany do wielu niskopoziomowych kanałów cech, w wielu skalach przestrzennych. Kanały takie jak kolor, orientacja i intensywność mają wiele podkanałów, które z kolei wyróżniają 9 poziomów skali od stosunku 1:1 (poziom 0) do 1:256 (poziom 8), wygładzone iteracyjnie filtrem Gaussa 5x5.
 
-Dla każdego podkanału $i$ wykonywane są operacje porównania wartości centralnego punktu z jego sąsiedztwem, pomiędzy mapami wyjściowymi dla filtrów $O_i(s)$ w różnych skalach $s$. Mapy cech określamy jako $M_i(c, s)$, gdzie $c \in \{2, 3, 4\}$ - skala centralna, $s = c + d$, $d \in \{3, 4\}$ - skala otaczająca. Różnica między skalami zapisywana jest jako $\ominus$ i jest realizowane przez interpolację do skali centralnej i wyliczenie różnicy bezwzględnej. Zastosowanie skal $s$ oraz $c$ umożliwia zachowanie niezmienniczości względem oświetlenia.
+Dla każdego podkanału $i$ wykonywane są operacje porównania wartości centralnego punktu z jego sąsiedztwem, pomiędzy mapami wyjściowymi dla filtrów $O_i(s)$ w różnych skalach $s$. Mapy cech określamy jako $M_i(c, s)$, gdzie $c \in \{2, 3, 4\}$ -- skala centralna, $s = c + d$, $d \in \{3, 4\}$ -- skala otaczająca. Różnica między skalami zapisywana jest jako $\ominus$ i jest realizowane przez interpolację do skali centralnej i wyliczenie różnicy bezwzględnej. Zastosowanie skal $s$ oraz $c$ umożliwia zachowanie niezmienniczości względem oświetlenia.
 
 Dla kanałów koloru i intensywności mamy:
 \begin{equation} 
@@ -395,7 +395,7 @@ Y = r + g - 2 (|r - g| + b)
 I = \frac{r + g + b}{3}
 \end{equation}
 
-$R, G, B$ - kanały czerwony, zielony i niebieski według Heringa, $r, g, b$ - kanały czerwony, zielony i niebieski ze zdjęcia.
+$R, G, B$ -- kanały czerwony, zielony i niebieski według Heringa, $r, g, b$ -- kanały czerwony, zielony i niebieski ze zdjęcia.
 
 Pary kolorów przeciwstawnych tworzą kanały: czerwony i zielony, niebieski i żółty, dodatkowo wyróżniona jest para kanałów: ciemny i jasny. Kolory przeciwstawne nigdy nie są postrzegane razem, tj. nie ma czerwonawej zieleni ani niebieskawej żółci. Kanały kolorów przeciwstawnych zostały przedstawione na rys. \ref{fig:gist-opponent-colors}.
 
@@ -423,13 +423,12 @@ I(c, s) = |I(c) \ominus I(s)|
 Każda z par jest używana do stworzenia sześciu kombinacji skal $s$ oraz $c$, co daje 18 kombinacji. Łącznie z kanałami orientacji otrzymujemy zatem 38 podkanałów.
 
 Dla każdego podkanału wyliczany jest wektor GIST z odpowiadających map cech. Mapy dzielone są na podregiony 4x4, a następnie dla każdego podregionu wykonywane są operacje uśredniające. Wzór \ref{gist_siegian_G_kli} przedstawia obliczenia jakie należy wykonać dla każdej z 16 cech GIST na mapę dla koloru i intensywności. Analogiczne obliczenia stosuje się do wyliczenia $G_i^{k,l}(c)$ z map orientacji $M_i(c)$.
-
 \begin{equation} 
 \label{gist_siegian_G_kli} 
 G_i^{k,l} = \frac{1}{16WH} \sum\limits_{u = \frac{kW}{4}}^{\frac{(k+1)W}{4} - 1} \sum\limits_{v = \frac{lH}{4}}^{\frac{(l+1)H}{4} - 1} [M_i(c, s)](u, v)
-\end{equation} gdzie $k$ i $l$ - indeksy poziomy i pionowy podregionu, $W$, $H$ - szerokość i wysokość całego obrazu.
+\end{equation} gdzie $k$ i $l$ -- indeksy poziomy i pionowy podregionu, $W$, $H$ -- szerokość i wysokość całego obrazu.
 
-Łącznie map cech jest 34, co przy podziale na 16 regionów daje wektor o 544 wymiarach. W celu zmniejszenia wymiarowości stosuje się analizy głównych składowych - PCA (\emph{ang. Principal Component Analysis}) oraz analizę składowych niezależnych - ICA (\emph{ang. Independent Component Analysis}). Dzięki temu otrzymuje się wektor 80 wymiarowy.
+Łącznie map cech jest 34, co przy podziale na 16 regionów daje wektor o 544 wymiarach. W celu zmniejszenia wymiarowości stosuje się analizy głównych składowych -- PCA (\emph{ang. Principal Component Analysis}) oraz analizę składowych niezależnych -- ICA (\emph{ang. Independent Component Analysis}). Dzięki temu otrzymuje się wektor 80 wymiarowy.
 
 Schemat procesu ekstrakcji cech GIST według Siegiana i Itti przedstawiono na rys. \ref{fig:gist-siagian}.
 
@@ -442,11 +441,11 @@ Schemat procesu ekstrakcji cech GIST według Siegiana i Itti przedstawiono na ry
 
 Szybkość obliczeń rozwiązania zaproponowanego przez Siegiana i Itti jest podobna do rozwiązania Olivy i Torralbala z 2000 roku.
 
-\subsection{LBP - Local Binary Patterns}
+\subsection{LBP -- Local Binary Patterns}
 
 Localne wzorce binarne (\emph{ang. Local Binary Patterns, LBP}) są cechami 
 
-\subsection{HOG - Histograms of Oriented Gradients}
+\subsection{HOG -- Histograms of Oriented Gradients}
 
 
 \section{Klasyfikacja}
