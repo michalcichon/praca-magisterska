@@ -315,12 +315,21 @@ W rezultacie otrzymujemy wektor o długości równej 64. Odpowiedzi filtra Haara
 
 \subsection{Modele GIST}
 
-Studia nad percepcją pokazały, że obserwator jest w stanie jednym spojrzeniem rozpoznać scenę z realnego świata. W czasie tego szybkiego procesu, w układzie wzrokowym człowieka tworzona jest przestrzenna reprezentacja świata zewnętrznego, która jest na tyle bogata, że pozwala zrozumieć sens sceny, rozpoznać kilka obiektów oraz zwrócić uwagę na istotne szczegóły. Ta reprezentacja, którą można odnieść zarówno do funkcji niskopoziomowych, takich jak kolor lub częstotliwość, jak i informacji wysokiego poziomu, takich jak obiekty lub aktywacja wiedzy semantycznej określana jest jako gist (istota, sedno).
+Studia nad percepcją pokazały, że obserwator jest w stanie jednym spojrzeniem rozpoznać scenę z realnego świata. W czasie tego szybkiego procesu, w układzie wzrokowym człowieka (rys. \ref{fig:gist-vision-system}) tworzona jest przestrzenna reprezentacja świata zewnętrznego, która jest na tyle bogata, że pozwala zrozumieć sens sceny, rozpoznać kilka obiektów oraz zwrócić uwagę na istotne szczegóły. Ta reprezentacja, którą można odnieść zarówno do funkcji niskopoziomowych, takich jak kolor lub częstotliwość, jak i informacji wysokiego poziomu, takich jak obiekty lub aktywacja wiedzy semantycznej określana jest jako gist (ang. istota, sedno).
 
-W czasie nie większym niż 100 ms, człowiek jest w stanie rozpoznać podstawowe kategorie obrazu, takie jak określenie miejsca, czy obraz przedstawia ulicę, wnętrze mieszkania, las\cite{POTTER76}, jak również jest w stanie układ przestrzenny zdjęcia, nawet jeśli jest ono nieostre.\cite{SCHYNS94} Potrafi także zapamiętać kilka obiektów, ich kontekst oraz niskopoziomową charakterystykę obszarów, które są najlepiej zauważalne.\cite{OLIVA05}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/gist-vision-system.pdf}
+	\caption{Układ wzrokowy człowieka \cite{GRAY18}}
+	\label{fig:gist-vision-system}
+\end{figure}
+
+W czasie nie większym niż 100 ms, człowiek jest w stanie rozpoznać podstawowe kategorie obrazu, takie jak określenie miejsca, tj. czy obraz przedstawia ulicę, wnętrze mieszkania, las lub inną lokalizację\cite{POTTER76}, jak również jest w stanie rozpoznać układ przestrzenny zdjęcia, nawet jeśli jest ono nieostre.\cite{SCHYNS94} Potrafi także zapamiętać kilka obiektów, ich kontekst oraz niskopoziomową charakterystykę obszarów, które są najlepiej zauważalne.\cite{OLIVA05}
 
 Cecha GIST w założeniu jest niskopoziomową reprezentacją sceny, która nie wymaga żadnej formy segmentacji. Podejście to nie jest alternatywą dla lokalnych cech obrazu ale może stanowić dodatkową pomoc przy rozpoznawaniu obiektów na nieuporządkowanej scenie.\cite{OLIVA06}
 
+%-- Oliva Torralba 2000
+%=================================================================================
 Nie istnieje jeden model GIST. Oliva i Torralba w 2000 roku zaproponowali model, w którym rozkład przestrzenny widma został opisany przy pomocy okienkowej transformaty Fouriera (WFT), a następnie otrzymany wektor cech został zredukowany poprzez zastosowanie analizy głównych składowych (\emph{ang. PCA - Principal Component Analysis}).\cite{OLIVA00} Okienkowa transformata Fouriera została określona przy pomocy wzoru \ref{gist_wft}:
 \begin{equation} 
 \label{gist_wft} 
@@ -329,7 +338,9 @@ I(x, y, f_x, f_y) = \sum\limits_{x^\prime, y^\prime = 0}^{N-1} i(x^\prime, y^\pr
 
 Wyznaczenie cech dla pojedynczego obrazu jest dla metody Oliva i Torralba bardzo szybkie i wynosi poniżej 1ms.
 
-Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabora oraz ekstrakcji tekstonów. W zaproponowanym modelu wykorzystano pierwszą i drugą pochodną Gaussiana. Filtr składa się z dwóch faz - parzystej i nieparzystej jak we wzorze \ref{gist_gabor}.
+%-- Renninger Malik 2004
+%=================================================================================
+Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabora oraz ekstrakcji tekstonów. W zaproponowanym modelu wykorzystano pierwszą i drugą pochodną Gaussiana. Filtr składa się z dwóch faz - parzystej i nieparzystej, opisanych we wzorze \ref{gist_gabor}.
 \begin{equation} 
 \label{gist_gabor} 
 	\begin{gathered}
@@ -338,9 +349,15 @@ Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabo
 	\end{gathered}
 \end{equation} gdzie $G_\sigma(x)$ - Gaussian z odchyleniem standardowym $\sigma$
 
-Współczynniki $\sigma_1$ i $\sigma_2$ są miarą wydłużenia filtra. Filtry są budowane w 3 skalach dla selektywności częstotliwości oraz w 6 orientacjach dla selektywności orientacji. W rezultacie powstaje 36 filtrów. Podczas analizy tekstury, obliczany jest splot obrazu z zespołem filtrów, co w rezultacie daje wektor odpowiedzi $I \ast f(x_0, y_0)$ charakteryzujący fragment obrazu wyśrodkowany w $(x_0, y_0)$. Podobne tekstury na analizowanych obrazach powtarzają się bardzo często. W celu określenia jakie cechy są najbardziej powszechne użyto klastrowania K-średnich i otrzymano wektor składający się z 100 prototypowych odpowiedzi, które nazywamy uniwersalnymi tekstonami. Ze względu na konieczność wyliczenia tekstonów rozwiązanie to jest dużo wolniejsze i wyliczenie cech dla obrazu zajmuje ok. 7 sekund.\cite{VISWANATHAN08}
+Współczynniki $\sigma_1$ i $\sigma_2$ są miarami wydłużenia filtra. Filtry są budowane w 3 skalach dla zachowania selektywności częstotliwości oraz w 6 orientacjach dla selektywności orientacji. W rezultacie powstaje 36 filtrów. Podczas analizy tekstury, obliczany jest splot obrazu z zespołem filtrów, co w rezultacie daje wektor odpowiedzi $I \ast f(x_0, y_0)$ charakteryzujący fragment obrazu wyśrodkowany w $(x_0, y_0)$. 
 
-W 2007 roku Siegan i Itti zaproponowali model składający się z biologicznie wiarygodnych cech określających orientację, kolor oraz intensywność.\cite{SIAGIAN07} 
+Podobne tekstury na analizowanych obrazach powtarzają się bardzo często. W celu określenia jakie cechy są najbardziej powszechne użyto klastrowania K-średnich i otrzymano wektor składający się z 100 prototypowych odpowiedzi, które nazywamy \emph{uniwersalnymi tekstonami}. Ze względu na konieczność wyliczenia tekstonów rozwiązanie to jest dużo wolniejsze i wyliczenie cech dla obrazu zajmuje ok. 7 sekund.\cite{VISWANATHAN08}
+
+%-- Siegian Itti 2007
+%=================================================================================
+W 2007 roku Siegian i Itti zaproponowali model składający się z biologicznie wiarygodnych cech określających orientację, kolor oraz intensywność.\cite{SIAGIAN07} Metoda ta powstała na kanwie badań nad percepcją, które wykazały, że obserwator jest w stanie określić ogólne, semantyczne atrybuty zdjęcia na podstawie ekspozycji nie przekraczającej 100 ms. Natomiast odpowiedź na bardziej specyficzne pytania, takie jak czy na zdjęciu znajduje się zwierzę, obserwator jest w stanie określić w czasie 28 ms\cite{THORPE95}, nawet wówczas gdy jego uwaga jest skupiona na innym zadaniu. Gist obrazu może być określany w obszarach mózgu, które odpowiadają za \emph{miejsca}, rozumiane jako typy sceny z określonym układem przestrzennym.\cite{EPSTEIN00} Układ przestrzenny oraz kolor zostały zostały doświadczanie określone jako cechy obrazu wpływające na dostrzeganie gistu sceny.\cite{OLIVA-SCHYNS00}
+
+
 
 \begin{figure}[h]
 	\centering
@@ -377,4 +394,9 @@ W 2007 roku Siegan i Itti zaproponowali model składający się z biologicznie w
 ...
 	
 \section{Ocena klasyfikatorów}
+...
+
+\section{Problemy kategoryzacji}
+% first shot category
+% ???
 ...
