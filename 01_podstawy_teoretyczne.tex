@@ -114,7 +114,7 @@ Wśród popularnych metod ekstrakcji cech, stosowanych do rozwiązania problemu 
 
 \subsection{SIFT -- Scale-invariant Feature Transform}
 
-Algorytm SIFT służy do wykrywania oraz opisu lokalnych cech obrazu, został opublikowany przez Dawida Lowe w 1999 roku.\cite{SIFT99} Punkty charakterystyczne wykrywane przez SIFT są niezależne od położenia, rotacji, skali, zmiany oświetlenia oraz są odporne na zakłócenia. Zastosowanie algorytmu SIFT do rozpoznawania obiektów pozwala na detekcję częściowo zasłoniętych obiektów. Jest to jeden z najpopularniejszych algorytmów do ekstrakcji punktów charakterystycznych.
+Algorytm SIFT służy do wykrywania oraz opisu lokalnych cech obrazu, został opublikowany przez Dawida Lowe w 1999 roku.\cite{SIFT99} Punkty charakterystyczne wykrywane przez SIFT są niezmiennicze względem położenia, rotacji, skali, zmiany oświetlenia oraz są odporne na zakłócenia. Zastosowanie algorytmu SIFT do rozpoznawania obiektów pozwala na detekcję częściowo zasłoniętych obiektów. Jest to jeden z najpopularniejszych algorytmów do ekstrakcji punktów charakterystycznych.
 
 Działanie algorytmu rozpoczyna się od wyszukiwania potencjalnych punktów poprzez przetworzenie obrazu filtrem Gaussa w różnych skalach. Stanowi to implementację tzw. przestrzeni skal (\emph{ang. skale space}). Przestrzeń skal definiujemy jako funkcję $L(x, y, \sigma)$. Wzór \ref{sift_scale_space} przedstawia reprezentację przestrzeni skal po przetworzeniu obrazu $I(x, y)$:
 \begin{equation} 
@@ -208,7 +208,7 @@ m(x, y) = \sqrt{(L(x + 1, y) - L(x - 1, y))^2 + (L(x, y + 1) - L(x, y - 1))^2}
 
 Na podstawie orientacji punktów, w otoczeniu punktu charakterystycznego budowany jest histogram orientacji. Maksimum w histogramie i lokalne maksima o wartościach powyżej 80\% największego maksimum lokalnego określają orientację punktu charakterystycznego. Przyjmuje się, że histogram posiada 36 pól, a dokładne położenie maksimum interpoluje się za pomocą paraboli korzystając z wartości sąsiednich histogramu.
 
-Dzięki temu, że wszystkie cechy punktów charakterystyczne są mierzone w odniesieniu do tak wyznaczonej orientacji,	opis jest niezależny od rotacji.
+Dzięki temu, że wszystkie cechy punktów charakterystyczne są mierzone w odniesieniu do tak wyznaczonej orientacji, opis jest niezmienniczy względem rotacji.
 
 SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia 16x16 dla danego punktu charakterystycznego. Obszar ten jest dzielony na podregiony 4x4, w których również wyznacza się wypadkowe histogramy orientacji. W każdym obszarze dla 8 orientacji wyznacza się wypadkowy moduł gradientu na podstawie modułów poszczególnych punktów. Na rys. \ref{fig:sift-descriptor} został przedstawiony przykład wyznaczenia wypadkowego gradientu dla otoczenia 8x8 i podregionów 2x2.
 
@@ -311,7 +311,7 @@ Ekstrakcja rozpoczyna się od stworzenia kwadratowego obszaru wokół punktu cha
 \boldsymbol{v} = (\sum{d_x}, \sum{d_y}, \sum{|d_x|}, \sum{|d_y|})
 \end{equation}
 
-W rezultacie otrzymujemy wektor o długości równej 64. Odpowiedzi filtra Haara są niezmienne względem oświetlenia, natomiast niezmienność względem kontrastu jest otrzymywana poprzez wyliczenie wektora jednostkowego dla deskryptora.
+W rezultacie otrzymujemy wektor o długości równej 64. Odpowiedzi filtra Haara są niezmiennicze względem oświetlenia, natomiast niezmienniczość względem kontrastu jest otrzymywana poprzez wyliczenie wektora jednostkowego dla deskryptora.
 
 \subsection{Modele GIST}
 
