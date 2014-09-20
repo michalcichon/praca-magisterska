@@ -150,7 +150,7 @@ Przestrzeń skal jest dzielona na oktawy, które reprezentują serię map odpowi
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.4]{graphics/01_podstawy_teoretyczne/sift-gaussian-to-dog.pdf}
-	\caption{Proces tworzenia różnicy Gaussianów \cite{LOWE04}}
+	\caption{Proces tworzenia różnicy Gaussianów w algorytmie SIFT \cite{LOWE04}}
 	\label{fig:sift-gaussian-to-dog}
 \end{figure}
 
@@ -215,7 +215,7 @@ SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia 16
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=1]{graphics/01_podstawy_teoretyczne/sift-descriptor.pdf}
-	\caption{Wyznaczenie deskryptora 2x2 z otoczenia 8x8 \cite{LOWE04}}
+	\caption{Wyznaczenie deskryptora SIFT o rozmiarze 2x2 z otoczenia 8x8 \cite{LOWE04}}
 	\label{fig:sift-descriptor}
 \end{figure}
 
@@ -248,7 +248,7 @@ O ile zastosowanie Gaussianów jest optymalne\cite{LINDENBERG90}, to jednak ma o
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=1.7]{graphics/01_podstawy_teoretyczne/surf-box-filters.pdf}
-	\caption{Porównanie filtra Gaussa z filtrem pudełkowym 9x9 (skala $\sigma = 1.2$) \cite{BAY08}}
+	\caption{Porównanie filtrów Gaussa z filtrami pudełkowymi 9x9 (skala $\sigma = 1.2$) \cite{BAY08}}
 	\label{fig:surf-box-filters}
 \end{figure}
 
@@ -279,7 +279,7 @@ Dla dwóch kolejnych poziomów wartość tą należy zwiększyć przynajmniej o 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=1.5]{graphics/01_podstawy_teoretyczne/surf-9-to-15.pdf}
-	\caption{Porównanie filtru pudełkowego 9x9 z filtrami 15x15 ($\sigma = 1.2$) \cite{BAY08}}
+	\caption{Porównanie filtrów pudełkowych 9x9 z filtrami 15x15: (a) $D_{yy}$, (b) $D_{xy}$ ($\sigma = 1.2$) \cite{BAY08}}
 	\label{fig:surf-9-to-15}
 \end{figure}
 
@@ -288,7 +288,7 @@ Dla kolejnych oktaw różnica pomiędzy poziomami jest zwiększana dwukrotnie, t
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.7]{graphics/01_podstawy_teoretyczne/surf-octaves.pdf}
-	\caption{Wielkości filtrów dla kilku kolejnych oktaw \cite{BAY08}}
+	\caption{Wielkości filtrów pudełkowych dla kilku kolejnych oktaw \cite{BAY08}}
 	\label{fig:surf-octaves}
 \end{figure}
 
@@ -320,7 +320,7 @@ Studia nad percepcją pokazały, że obserwator jest w stanie jednym spojrzeniem
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/gist-vision-system.pdf}
-	\caption{Układ wzrokowy człowieka \cite{GRAY18}}
+	\caption{Schemat układu wzrokowego człowieka \cite{GRAY18}}
 	\label{fig:gist-vision-system}
 \end{figure}
 
@@ -429,14 +429,14 @@ Dla każdego podkanału wyliczany jest wektor GIST z odpowiadających map cech. 
 G_i^{k,l} = \frac{1}{16WH} \sum\limits_{u = \frac{kW}{4}}^{\frac{(k+1)W}{4} - 1} \sum\limits_{v = \frac{lH}{4}}^{\frac{(l+1)H}{4} - 1} [M_i(c, s)](u, v)
 \end{equation} gdzie $k$ i $l$ - indeksy poziomy i pionowy podregionu, $W$, $H$ - szerokość i wysokość całego obrazu.
 
-Map cech jest 34, co przy podziale na 16 regionów daje wektor o 544 wymiarach. W celu zmniejszenia wymiarowości stosuje się analizy głównych składowych - PCA (\emph{ang. Principal Component Analysis}) oraz analizę składowych niezależnych - ICA (\emph{ang. Independent Component Analysis}). Dzięki temu otrzymuje się wektor 80 wymiarowy.
+Łącznie map cech jest 34, co przy podziale na 16 regionów daje wektor o 544 wymiarach. W celu zmniejszenia wymiarowości stosuje się analizy głównych składowych - PCA (\emph{ang. Principal Component Analysis}) oraz analizę składowych niezależnych - ICA (\emph{ang. Independent Component Analysis}). Dzięki temu otrzymuje się wektor 80 wymiarowy.
 
 Schemat procesu ekstrakcji cech GIST według Siegiana i Itti przedstawiono na rys. \ref{fig:gist-siagian}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/gist-siagian.pdf}
-	\caption{ Ekstrakcja cech GIST według Siegian i Itti \cite{SIAGIAN07} }
+	\caption{ Ekstrakcja cech GIST według Siegiana i Itti (2007) \cite{SIAGIAN07} }
 	\label{fig:gist-siagian}
 \end{figure}
 
