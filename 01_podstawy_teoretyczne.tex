@@ -359,7 +359,7 @@ W 2007 roku Siegian i Itti zaproponowali model składający się z biologicznie 
 
 Model Siegiana i Itti opiera się na na \emph{saliency model} zaproponowanym wcześniej przez Itti. W modelu tym, obraz wejściowy jest filtrowany do wielu niskopoziomowych kanałów cech, w wielu skalach przestrzennych. Kanały takie jak kolor, orientacja i intensywność mają wiele podkanałów, które z kolei wyróżniają 9 poziomów skali od stosunku 1:1 (poziom 0) do 1:256 (poziom 8), wygładzone iteracyjnie filtrem Gaussa 5x5.
 
-Dla każdego podkanału $i$ wykonywane są operacje porównania wartości centralnego punktu z jego sąsiedztwem, pomiędzy mapami wyjściowymi dla filtrów $O_i(s)$ w różnych skalach $s$. Mapy cech określamy jako $M_i(c, s)$, gdzie $c \in \{2, 3, 4\}$ - skala centralna, $s = c + d$, $d \in \{3, 4\}$ - skala otaczająca. Różnica między skalami zapisywana jest jako $\ominus$ i jest realizowane przez interpolację do skali centralnej i wyliczenie różnicy bezwzględnej.
+Dla każdego podkanału $i$ wykonywane są operacje porównania wartości centralnego punktu z jego sąsiedztwem, pomiędzy mapami wyjściowymi dla filtrów $O_i(s)$ w różnych skalach $s$. Mapy cech określamy jako $M_i(c, s)$, gdzie $c \in \{2, 3, 4\}$ - skala centralna, $s = c + d$, $d \in \{3, 4\}$ - skala otaczająca. Różnica między skalami zapisywana jest jako $\ominus$ i jest realizowane przez interpolację do skali centralnej i wyliczenie różnicy bezwzględnej. Zastosowanie skal $s$ oraz $c$ umożliwia zachowanie niezmienniczości względem oświetlenia.
 
 Dla kanałów koloru i intensywności mamy:
 \begin{equation} 
@@ -367,7 +367,7 @@ Dla kanałów koloru i intensywności mamy:
 M_i(c, s) = |O_i(c) \ominus O_i(s)| = |O_i(c) - Interp_{s-c}(O_i(s))|
 \end{equation}
 
-Kanał orientacji tworzony jest za pomocą filtrów Gabbora na obrazie w skali szarości, w czterech różnych kątach $\theta_i = 0, 45, 90, 135^\circ$ oraz dla czterech różnych skalach przestrzennych $c = 0, 1, 2, 3$. Mapy cech dla orientacji $M_i(c)$ określamy jako:
+Kanał orientacji tworzony jest za pomocą filtrów Gabbora na obrazie w skali szarości, w czterech różnych kątach $\theta_i \in \{0, 45, 90, 135^\circ\}$ oraz dla czterech różnych skalach przestrzennych $c \in \{0, 1, 2, 3\}$, co daje łącznie 16 podkanałów. Mapy cech dla orientacji $M_i(c)$ określamy jako:
 \begin{equation} 
 \label{gist_siegian_orientation}
 M_i(c) = Gabor(\theta_i, c)
@@ -406,9 +406,32 @@ Pary kolorów przeciwstawnych tworzą kanały: czerwony i zielony, niebieski i �
 	\label{fig:gist-opponent-colors}
 \end{figure}
 
+Poszczególne pary można zapisać w postaci:
+\begin{equation} 
+\label{gist_siegian_RG} 
+RG(c,s) = |(R(c) - G(c)) \ominus (R(s) - G(s))|
+\end{equation}
+\begin{equation} 
+\label{gist_siegian_BY} 
+BY(c, s) = |(B(c) - Y(c)) \ominus (B(s) - Y(s))|
+\end{equation}
+\begin{equation} 
+\label{gist_siegian_I} 
+I(c, s) = |I(c) \ominus I(s)|
+\end{equation}
 
+Każda z par jest używana do stworzenia sześciu kombinacji skal $s$ oraz $c$, co daje 18 kombinacji. Łącznie z kanałami orientacji otrzymujemy zatem 38 podkanałów.
 
- 
+Dla każdego podkanału wyliczany jest wektor GIST z odpowiadających map cech. Mapy dzielone są na podregiony 4x4, a następnie dla każdego podregionu wykonywane są operacje uśredniające. Wzór \ref{gist_siegian_G_kli} przedstawia obliczenia jakie należy wykonać dla każdej z 16 cech GIST na mapę dla koloru i intensywności. Analogiczne obliczenia stosuje się do wyliczenia $G_i^{k,l}(c)$ z map orientacji $M_i(c)$.
+
+\begin{equation} 
+\label{gist_siegian_G_kli} 
+G_i^{k,l} = \frac{1}{16WH} \sum\limits_{u = \frac{kW}{4}}^{\frac{(k+1)W}{4} - 1} \sum\limits_{v = \frac{lH}{4}}^{\frac{(l+1)H}{4} - 1} [M_i(c, s)](u, v)
+\end{equation} gdzie $k$ i $l$ - indeksy poziomy i pionowy podregionu, $W$, $H$ - szerokość i wysokość całego obrazu.
+
+Map cech jest 34, co przy podziale na 16 regionów daje wektor o 544 wymiarach. W celu zmniejszenia wymiarowości stosuje się analizy głównych składowych - PCA (\emph{ang. Principal Component Analysis}) oraz analizę składowych niezależnych - ICA (\emph{ang. Independent Component Analysis}). Dzięki temu otrzymuje się wektor 80 wymiarowy.
+
+Schemat procesu ekstrakcji cech GIST według Siegiana i Itti przedstawiono na rys. \ref{fig:gist-siagian}.
 
 \begin{figure}[h]
 	\centering
