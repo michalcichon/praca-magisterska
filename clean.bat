@@ -4,3 +4,4 @@ DEL *.aux
 DEL *.log
 DEL *.toc
 DEL *.synctex.gz
+DEL praca_magisterska.pdf
