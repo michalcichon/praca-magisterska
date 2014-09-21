@@ -485,16 +485,18 @@ Na rys. \ref{fig:lbp-pr-operator} przedstawiono rozszerzony operator LBP dla są
 	\label{fig:lbp-pr-operator}
 \end{figure}
 
-Ponadto zauważono, że większość informacji była zawarta w niewielkim podzbiorze wzorców LBP. Wzorce te zostały nazwane wzorcami jednolitymi (\emph{ang. uniform patterns}) i zawierają co najwyżej dwa przejścia z 0 na 1 lub z 1 na 0 dla kolejnych bitów we wzorcu. Dla przykładu $11111111$, $00000000$, $10000111$ i $00001110$ są wzorcami jednolitymi. Natomiast $00011011$, $10001101$, $01010101$ i $01001110$ nie są wzorcami jednolitymi. Przykłady wzorców jednolitych znajdują się również na rys. \ref{fig:lbp-uniform-patterns}.
+Ponadto zauważono, że większość informacji była zawarta w niewielkim podzbiorze wzorców LBP. Wzorce te zostały nazwane wzorcami jednolitymi (\emph{ang. uniform patterns}) i zawierają co najwyżej dwa przejścia z 0 na 1 lub z 1 na 0 dla kolejnych bitów we wzorcu. 
+
+Dla przykładu $11111111$, $00000000$, $10000111$ i $00001110$ są wzorcami jednolitymi. Natomiast $00011011$, $10001101$, $01010101$ i $01001110$ nie są wzorcami jednolitymi. Przykłady wzorców jednolitych znajdują się również na rys. \ref{fig:lbp-uniform-patterns}.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=2.0]{graphics/01_podstawy_teoretyczne/lbp-uniform-patterns.pdf}
+	\includegraphics[scale=1.7]{graphics/01_podstawy_teoretyczne/lbp-uniform-patterns.pdf}
 	\caption{ Przykładowe 8 bitowe wzorce jednolite }
 	\label{fig:lbp-uniform-patterns}
 \end{figure}
 
-Stąd nowa postać operatora można zapisać jako:
+Nową postać operatora można zapisać jako:
 \begin{equation} 
 \label{lbp_lbp_riu2} 
 LPR_{P, R}^{riu2} = 
@@ -502,7 +504,7 @@ LPR_{P, R}^{riu2} =
 		\sum\limits_{p=0}^{P-1} s(g_p - g_c) & \text{ jeżeli } U(LBP_{P, R}) \leq 2 \\
 		P + 1 & \text{ jeżeli } U(LBP_{P, R}) > 2
 	\end{cases}
-\end{equation} gdzie \begin{equation} 
+\end{equation} gdzie: \begin{equation} 
 \label{lbp_u_lbp} 
 U(LBP_{P, R}) = | s(g_{P-1} - g_c) -s(g_0 - g_c) | + \sum\limits_{p=1}^{P-1} | s(g_p - g_c) - s(g_{p-1} - g_c) |
 \end{equation}
