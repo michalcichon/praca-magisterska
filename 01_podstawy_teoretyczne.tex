@@ -443,7 +443,7 @@ Szybkość obliczeń rozwiązania zaproponowanego przez Siegiana i Itti jest pod
 
 \subsection{LBP -- Local Binary Patterns}
 
-Lokalny wzorzec binarny (\emph{ang. Local Binary Pattern, LBP}) jest bezparametrowym operatorem, który opisuje lokalną strukturę przestrzenną obrazu. Został zaproponowany po raz pierwszy przez Timo Ojala w \emph{A comparative study of texture measures with classification based on featured distributions}\cite{OJALA94} z 1994 roku, jako wysoce dyskryminujący dla klasyfikacji tekstur. Ze względu na jego niski koszt obliczeniowy, często wykorzystywany jest do rozwiązywania problemu rozpoznawania twarzy\cite{AHONEN04}\cite{HEUSCH06}\cite{MATURANA09}, wykrywania ruchu\cite{HEIKKILA04}, a także normalizacji obrazów\cite{JUST06}.
+Lokalny wzorzec binarny (\emph{ang. Local Binary Pattern, LBP}) jest bezparametrowym operatorem, który opisuje lokalną strukturę przestrzenną obrazu. Został zaproponowany po raz pierwszy przez Timo Ojala w \emph{A comparative study of texture measures with classification based on featured distributions}\cite{OJALA94} z 1994 roku, jako wysoce dyskryminujący dla klasyfikacji tekstur.
 
 LBP dla pozycji $(x_c, y_c)$ zdefiniowany jest jako uporządkowany zestaw binarnych porównań intensywności pikseli pomiędzy centralnym pikselem a ośmioma pikselami otaczającymi w masce 3x3. Przykładowy LBP zaprezentowano na rys. \ref{fig:lbp-operator}.
 
@@ -470,10 +470,10 @@ s(x) =
 
 Każdy bit LBP jest w takim samym stopniu ważny, ale dwa dodatnie bity mogą mieć całkowicie inne znaczenie. Operator LBP nie zmienia się poprzez zastosowanie jakichkolwiek monotonicznych transformacji na skali szarości, ponieważ zachowują one porządek intensywności pikseli w lokalnym sąsiedztwie.
 
-W 2002 roku, Ojala rozszerzył oryginalny operator LBP do okrągłego sąsiedztwa o różnych wielkościach promienia.\cite{OJALA02} Nową reprezentację określa się jako $LBP_{PR}$:
+W 2002 roku, Ojala rozszerzył oryginalny operator LBP do okrągłego sąsiedztwa o różnych wielkościach promienia.\cite{OJALA02} Nową reprezentację określa się jako $LBP_{P, R}$:
 \begin{equation} 
 \label{lbp_lbp_pr} 
-LBP_{PR} = \sum\limits_{p=0}^{P-1} s(g_p - g_c) 2^P
+LBP_{P, R} = \sum\limits_{p=0}^{P-1} s(g_p - g_c) 2^P
 \end{equation} gdzie $P$ -- ilość równo rozmieszczonych pikseli, $R$ -- promień, $g_c$ --  wartość centralnego piksela w skali szarości, $g_p (P = 0, \ldots, P-1)$ -- wartości pikseli z sąsiedztwa.
 
 Na rys. \ref{fig:lbp-pr-operator} przedstawiono rozszerzony operator LBP dla sąsiedztwa $(8, 2)$, tj. $P = 8$, $R = 2$.
@@ -491,7 +491,7 @@ Dla przykładu $11111111$, $00000000$, $10000111$ i $00001110$ są wzorcami jedn
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=1.7]{graphics/01_podstawy_teoretyczne/lbp-uniform-patterns.pdf}
+	\includegraphics[scale=1.8]{graphics/01_podstawy_teoretyczne/lbp-uniform-patterns.pdf}
 	\caption{ Przykładowe 8 bitowe wzorce jednolite }
 	\label{fig:lbp-uniform-patterns}
 \end{figure}
@@ -509,7 +509,7 @@ LPR_{P, R}^{riu2} =
 U(LBP_{P, R}) = | s(g_{P-1} - g_c) -s(g_0 - g_c) | + \sum\limits_{p=1}^{P-1} | s(g_p - g_c) - s(g_{p-1} - g_c) |
 \end{equation}
 
-
+Ze względu na jego niski koszt obliczeniowy, często wykorzystywany jest do rozwiązywania problemu rozpoznawania twarzy\cite{AHONEN04}\cite{HEUSCH06}\cite{MATURANA09}, wykrywania ruchu\cite{HEIKKILA04}, a także normalizacji obrazów\cite{JUST06}.
 
 
 \subsection{HOG -- Histograms of Oriented Gradients}
