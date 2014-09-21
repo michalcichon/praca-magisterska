@@ -454,6 +454,62 @@ LBP dla pozycji $(x_c, y_c)$ zdefiniowany jest jako uporządkowany zestaw binarn
 	\label{fig:lbp-operator}
 \end{figure}
 
+Wartość powstałego kodu LBP można wyrazić w postaci dziesiętnej jako:
+\begin{equation} 
+\label{lbp_lbp} 
+LBP(x_c, y_c) = \sum\limits_{n = 0}^7 s(i_n - i_c) 2^n
+\end{equation} gdzie $i_c$ -- wartość piksela $(x_c, y_c)$ w skali szarości, $i_n$ -- wartości 8 otaczających pikseli w skali szarości, natomiast funkcja $s$ zdefiniowana jest następująco:
+\begin{equation} 
+\label{lbp_s} 
+s(x) = 
+	\begin{cases}
+		1 & \text{ jeżeli } x \geq 0 \\
+		0 & \text{ jeżeli } x < 0
+	\end{cases} 
+\end{equation}
+
+Każdy bit LBP jest w takim samym stopniu ważny, ale dwa dodatnie bity mogą mieć całkowicie inne znaczenie. Operator LBP nie zmienia się poprzez zastosowanie jakichkolwiek monotonicznych transformacji na skali szarości, ponieważ zachowują one porządek intensywności pikseli w lokalnym sąsiedztwie.
+
+W 2002 roku, Ojala rozszerzył oryginalny operator LBP do okrągłego sąsiedztwa o różnych wielkościach promienia.\cite{OJALA02} Nową reprezentację określa się jako $LBP_{PR}$:
+\begin{equation} 
+\label{lbp_lbp_pr} 
+LBP_{PR} = \sum\limits_{p=0}^{P-1} s(g_p - g_c) 2^P
+\end{equation} gdzie $P$ -- ilość równo rozmieszczonych pikseli, $R$ -- promień, $g_c$ --  wartość centralnego piksela w skali szarości, $g_p (P = 0, \ldots, P-1)$ -- wartości pikseli z sąsiedztwa.
+
+Na rys. \ref{fig:lbp-pr-operator} przedstawiono rozszerzony operator LBP dla sąsiedztwa $(8, 2)$, tj. $P = 8$, $R = 2$.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=2.0]{graphics/01_podstawy_teoretyczne/lbp-pr-operator.pdf}
+	\caption{ Rozszerzony operator LBP z sąsiedztwem $(8, 2)$ \cite{HEUSCH06} }
+	\label{fig:lbp-pr-operator}
+\end{figure}
+
+Ponadto zauważono, że większość informacji była zawarta w niewielkim podzbiorze wzorców LBP. Wzorce te zostały nazwane wzorcami jednolitymi (\emph{ang. uniform patterns}) i zawierają co najwyżej dwa przejścia z 0 na 1 lub z 1 na 0 dla kolejnych bitów we wzorcu. Dla przykładu $11111111$, $00000000$, $10000111$ i $00001110$ są wzorcami jednolitymi. Natomiast $00011011$, $10001101$, $01010101$ i $01001110$ nie są wzorcami jednolitymi. Przykłady wzorców jednolitych znajdują się również na rys. \ref{fig:lbp-uniform-patterns}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=2.0]{graphics/01_podstawy_teoretyczne/lbp-uniform-patterns.pdf}
+	\caption{ Przykładowe 8 bitowe wzorce jednolite }
+	\label{fig:lbp-uniform-patterns}
+\end{figure}
+
+Stąd nowa postać operatora można zapisać jako:
+\begin{equation} 
+\label{lbp_lbp_riu2} 
+LPR_{P, R}^{riu2} = 
+	\begin{cases}
+		\sum\limits_{p=0}^{P-1} s(g_p - g_c) & \text{ jeżeli } U(LBP_{P, R}) \leq 2 \\
+		P + 1 & \text{ jeżeli } U(LBP_{P, R}) > 2
+	\end{cases}
+\end{equation} gdzie \begin{equation} 
+\label{lbp_u_lbp} 
+U(LBP_{P, R}) = | s(g_{P-1} - g_c) -s(g_0 - g_c) | + \sum\limits_{p=1}^{P-1} | s(g_p - g_c) - s(g_{p-1} - g_c) |
+\end{equation}
+
+
+
+
 \subsection{HOG -- Histograms of Oriented Gradients}
 
 
