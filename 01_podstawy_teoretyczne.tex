@@ -443,7 +443,16 @@ Szybkość obliczeń rozwiązania zaproponowanego przez Siegiana i Itti jest pod
 
 \subsection{LBP -- Local Binary Patterns}
 
-Lokalny wzorzec binarny (\emph{ang. Local Binary Pattern, LBP}) jest bezparametrowym operatorem, który opisuje lokalną strukturę przestrzenną obrazu. Został zaproponowany po raz pierwszy przez Timo Ojala w \emph{A comparative study of texture measures with classification based on featured distributions}\cite{OJALA94} z 1994 roku, jako wysoce dyskryminujący dla klasyfikacji tekstur. Jest również często wykorzystywany do rozwiązywania problemu rozpoznawania twarzy.\cite{AHONEN04}\cite{HEUSCH06}\cite{MATURANA09}
+Lokalny wzorzec binarny (\emph{ang. Local Binary Pattern, LBP}) jest bezparametrowym operatorem, który opisuje lokalną strukturę przestrzenną obrazu. Został zaproponowany po raz pierwszy przez Timo Ojala w \emph{A comparative study of texture measures with classification based on featured distributions}\cite{OJALA94} z 1994 roku, jako wysoce dyskryminujący dla klasyfikacji tekstur. Ze względu na jego niski koszt obliczeniowy, często wykorzystywany jest do rozwiązywania problemu rozpoznawania twarzy\cite{AHONEN04}\cite{HEUSCH06}\cite{MATURANA09}, wykrywania ruchu\cite{HEIKKILA04}, a także normalizacji obrazów\cite{JUST06}.
+
+LBP dla pozycji $(x_c, y_c)$ zdefiniowany jest jako uporządkowany zestaw binarnych porównań intensywności pikseli pomiędzy centralnym pikselem a ośmioma pikselami otaczającymi w masce 3x3. Przykładowy LBP zaprezentowano na rys. \ref{fig:lbp-operator}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/lbp-operator.pdf}
+	\caption{ Podstawowy operator LBP \cite{HEUSCH06} }
+	\label{fig:lbp-operator}
+\end{figure}
 
 \subsection{HOG -- Histograms of Oriented Gradients}
 
