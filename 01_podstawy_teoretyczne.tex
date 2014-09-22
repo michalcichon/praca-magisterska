@@ -518,8 +518,9 @@ Histogram zorientowanych gradientów (\emph{ang. Histogram of Oriented Gradients
 
 Gradient obrazu jest otrzymywany poprzez filtrowanie jednowymiarowymi filtrami $[-1, 0, 1]$ (poziomo) oraz $[-1, 0, 1]^T$ (pionowo). Próba zastosowania większych i bardziej skomplikowanych masek dawała gorsze rezultaty. Dla obrazów kolorowych gradienty są obliczane osobno dla każdego kanału.
 
+Następnym krokiem jest tworzenie histogramów gradientów dla komórek. Dla każdej komórki wyznacza się lokalny jednowymiarowy histogram gradientu -- orientację krawędzi w stosunku do wszystkich pikseli w komórce. Każdy gradient orientacji dzieli zakres kątów na z góry określony zestaw koszyków.
 
-
+ 
 
 
 \section{Klasyfikacja}
