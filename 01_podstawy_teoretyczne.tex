@@ -587,6 +587,20 @@ Naiwny klasyfikator bayesowski przypisuje rekord $X$ do klasy $C_i$, która maks
 C = \text{arg max } P(C = C_i) \prod\limits_{j = 1}^n P(A_j = x_j | C = C_j)
 \end{equation}
 
+Prawdopodobieństwo a priori $P(C = C_i)$ można oszacować jako stosunek liczby rekordów zbioru treningowego należących do klasy $C_i$ do liczby wszystkich rekordów zbioru treningowego, co zapisujemy jako:
+\begin{equation} 
+\label{bayes_C_n} 
+P(C = C_i) = \frac{s_i}{n}
+\end{equation}, gdzie $s_i$ -- ilość rekordów w klasie $C_i$, n -- ilość wszystkich rekordów.
+
+Metoda oszacowania prawdopodobieństwa warunkowego $P(A_j = x_j | C = C_i)$ zależy od typu atrybutu $A_j$. Jeżeli $A_j$ jest atrybutem kategorycznym to prawdopodobieństwo warunkowe szacujemy jako stosunek liczby rekordów zbioru treningowego należącego do klasy $C_i$, dla którego atrybut $A_j$ przyjmuje wartość $x_j$, do liczby rekordów zbioru treningowego należących do klasy $C_i$:
+\begin{equation} 
+\label{bayes_PAC} 
+P(A_j = x_j | C = C_j) = \frac{s_{ij}}{s_i}
+\end{equation} gdzie $s_{ij}$ -- liczba rekordów zbioru treningowego należących do klasy $C_i$, dla których atrybut $A_j$ przyjmuje wartość $x_j$, $s_i$ -- liczba rekordów zbioru treningowego należących do klasy $C_i$.
+
+Jeśli natomiast atrybut $A_j$ jest atrybutem ciągłym można zdyskredytować atrybuty ciągłe i zastąpić wartości atrybutu ciągłego odpowiadającym mu dyskretnym przedziałem wartości, lub założyć standardowy rozkład prawdopodobieństwa wartości atrybutu ciągłego i zastąpić prawdopodobieństwo warunkowe atrybutów odpowiednią funkcją gestości.
+
 	
 \subsection{Klasyfikator k-najbliższych sąsiadów}
 ...
