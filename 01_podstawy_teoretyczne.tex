@@ -591,7 +591,7 @@ Prawdopodobieństwo a priori $P(C = C_i)$ można oszacować jako stosunek liczby
 \begin{equation} 
 \label{bayes_C_n} 
 P(C = C_i) = \frac{s_i}{n}
-\end{equation}, gdzie $s_i$ -- ilość rekordów w klasie $C_i$, n -- ilość wszystkich rekordów.
+\end{equation} gdzie $s_i$ -- ilość rekordów w klasie $C_i$, n -- ilość wszystkich rekordów.
 
 Metoda oszacowania prawdopodobieństwa warunkowego $P(A_j = x_j | C = C_i)$ zależy od typu atrybutu $A_j$. Jeżeli $A_j$ jest atrybutem kategorycznym to prawdopodobieństwo warunkowe szacujemy jako stosunek liczby rekordów zbioru treningowego należącego do klasy $C_i$, dla którego atrybut $A_j$ przyjmuje wartość $x_j$, do liczby rekordów zbioru treningowego należących do klasy $C_i$:
 \begin{equation} 
@@ -601,6 +601,8 @@ P(A_j = x_j | C = C_j) = \frac{s_{ij}}{s_i}
 
 Jeśli natomiast atrybut $A_j$ jest atrybutem ciągłym można zdyskredytować atrybuty ciągłe i zastąpić wartości atrybutu ciągłego odpowiadającym mu dyskretnym przedziałem wartości, lub założyć standardowy rozkład prawdopodobieństwa wartości atrybutu ciągłego i zastąpić prawdopodobieństwo warunkowe atrybutów odpowiednią funkcją gestości.
 
+\subsection{Sztuczne sieci neuronowe}
+...
 	
 \subsection{Klasyfikator k-najbliższych sąsiadów}
 ...
