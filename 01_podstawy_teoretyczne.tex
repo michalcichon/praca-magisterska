@@ -557,9 +557,20 @@ Po normalizacji następuje łączenie histogramów z wszystkich bloków w jeden 
 Deskryptory HOG operują na komórkach o określonej lokalizacji, stąd metoda ta zachowuje niezmienniczość względem transformacji geometrycznych oraz fotometrycznych, z wyjątkiem orientacji obiektu.\cite{DALAL05}
 
 \section{Klasyfikacja}
-%https://www.youtube.com/watch?v=qdDHp29QVdw
-...
+Klasyfikacja jest jedną z najczęściej stosowanych metod analizy danych wywodząca się z uczenia maszynowego nadzorowanego. Jej celem jest znalezienie modelu klasyfikacyjnego na podstawie danych historycznych, a następnie zastosowanie odkrytego modelu do predykcji klas nowego obiektu dla którego klasa nie jest znana.
 
+Zbiorem danych wejściowych dla procesu klasyfikacji jest zbiór rekordów w postaci wektorów cech oraz atrybutu decyzyjnego. Atrybut decyzyjny jest atrybutem kategorycznym (nieciągłym). Wartości atrybutu decyzyjnego dzielą zbiór rekordów na predefiniowane klasy.
+
+Celem klasyfikacji jest znalezienie funkcji klasyfikacyjnej, określanej też jako model klasyfikacyjny, który odwzorowuje każdy rekord danych w etykietę klasy. Proces ten został pokazany na rys. \ref{fig:classification-model}. Model klasyfikacyjny często nazywamy też klasyfikatorem.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.7]{graphics/01_podstawy_teoretyczne/classification-model.pdf}
+	\caption{ Konstruowanie modelu klasyfikacyjnego }
+	\label{fig:classification-model}
+\end{figure}
+
+Do klasyfikacji obrazów najczęściej wykorzystywano: naiwny klasyfikator bayesowski, klasyfikator Ada Boost, maszynę wektorów wspierających (SVM) oraz k-najbliższych sąsiadów.
 	
 \subsection{Naiwny klasyfikator bayesowski}
 Naiwny klasyfikator bayesowski jest prostym probabilistycznym klasyfikatorem opartym na twierdzeniu Bayesa, który zakłada wzajemną niezależność zmiennych.
