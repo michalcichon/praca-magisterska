@@ -599,10 +599,25 @@ Metoda oszacowania prawdopodobieństwa warunkowego $P(A_j = x_j | C = C_i)$ zale
 P(A_j = x_j | C = C_j) = \frac{s_{ij}}{s_i}
 \end{equation} gdzie $s_{ij}$ -- liczba rekordów zbioru treningowego należących do klasy $C_i$, dla których atrybut $A_j$ przyjmuje wartość $x_j$, $s_i$ -- liczba rekordów zbioru treningowego należących do klasy $C_i$.
 
-Jeśli natomiast atrybut $A_j$ jest atrybutem ciągłym można zdyskredytować atrybuty ciągłe i zastąpić wartości atrybutu ciągłego odpowiadającym mu dyskretnym przedziałem wartości, lub założyć standardowy rozkład prawdopodobieństwa wartości atrybutu ciągłego i zastąpić prawdopodobieństwo warunkowe atrybutów odpowiednią funkcją gestości.
+Jeśli natomiast atrybut $A_j$ jest atrybutem ciągłym można zdyskredytować atrybuty ciągłe i zastąpić wartości atrybutu ciągłego odpowiadającym mu dyskretnym przedziałem wartości, lub założyć standardowy rozkład prawdopodobieństwa wartości atrybutu ciągłego i zastąpić prawdopodobieństwo warunkowe atrybutów odpowiednią funkcją gęstości.
 
 \subsection{Sztuczne sieci neuronowe}
-...
+W latach czterdziestych XX wieku zrodził się pomysł naśladowania sposobu przetwarzania i przesyłania informacji przez neurony, co dało początek sztucznym sieciom neuronowym. Podobnie jak w przypadku ich biologicznych odpowiedników, podstawowymi elementami, z których buduje się sztuczne sieci neuronowe, są sztuczne neurony, nazywane też dla uproszczenia neuronami.
+
+Zazwyczaj neurony są rozmieszczone w warstwach. Pierwsza warstwa nazywana jest warstwą wejściową i odpowiada za wprowadzanie danych do sieci. Liczba neuronów w tej warstwie jest równa liczbie wartości wprowadzanych jednocześnie do sieci.
+
+Ostatnia warstwa neuronów to warstwa wyjściowa, która służy do wyznaczania wartości wyjściowych sieci.
+
+Pomiędzy warstwą wejściową i wyjściową mogą znajdować się warstwy ukryte, w których realizowane są kolejne etapy przetwarzania informacji wejściowych w informacje wyjściowe.
+
+Neurony znajdujące się w sąsiednich warstwach są ze sobą połączone tworząc ścieżki, po których przesyłane są dane w sieci. Na rys. \ref{fig:ssn-przykladowa-siec} znajduje się przykładowa struktura sztucznej sieci neuronowej dwuwarstwowej. W nazwie sieci podaje się łączną liczbę warstw ukrytych i wyjściowych. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/ssn-przykladowa-siec.pdf}
+	\caption{ Przykładowa struktura sztucznej sieci neuronowej dwuwarstwowej }
+	\label{fig:ssn-przykladowa-siec}
+\end{figure}
 	
 \subsection{Klasyfikator k-najbliższych sąsiadów}
 ...
