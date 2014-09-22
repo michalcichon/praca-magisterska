@@ -106,7 +106,7 @@ Po poprawnej selekcji cech, możliwe powinno się stać stworzenie takiego model
 
 Obrazy w formie map bitowych reprezentowane są w pamięci komputera w postaci macierzy pikseli. Ilość danych jest dla klasyfikacji zbyt duża i zawiera wiele niepotrzebnych informacji. Dlatego przed przystąpieniem do procesu klasyfikacji należy wydobyć z obrazu pewne cechy. Proces przetwarzania obrazu w celu wydobycia cech określa się jako ekstrakcję cech (\emph{ang. feature extraction}).
 
-Można wyróżnić wiele cech używanych w procesach przetwarzania obrazów, np. rozkład kolorów w formie histogramu, obecność niektórych elementów lub kształtów, liczba występowania podobnych obiektów, wielkość kształtów, morfologia, tekstura. Przed ekstrakcją cech często warto przeprowadzić przetwarzanie wstępne (\emph{ang. preprocessing}) celem uzyskania obrazów o lepszych parametrach do ekstrakcji.
+Można wyróżnić wiele cech używanych w procesach przetwarzania obrazów, np. rozkład kolorów w formie histogramu, obecność niektórych elementów lub kształtów, liczba występowania podobnych obiektów, wielkość kształtów, morfologia, tekstura. Przed ekstrakcją cech często warto przeprowadzić przetwarzanie wstępne (\emph{ang. preprocessing}) celem uzyskania obrazów o lepszych parametrach do ekstrakcji. Często przy przetwarzaniu wstępnym wykorzystuje się normalizację kolorów oraz korekcję gamma.
 
 \section{Przegląd algorytmów do ekstrakcji cech}
 
@@ -515,6 +515,8 @@ Ze względu na jego niski koszt obliczeniowy, często wykorzystywany jest do roz
 \subsection{HOG -- Histograms of Oriented Gradients}
 
 Histogram zorientowanych gradientów (\emph{ang. Histogram of Oriented Gradients, HOG}) został zaproponowany przez Dalala jako jednowymiarowy histogram gradientów orientacji w lokalnych regionach obrazu i zastosowany do detekcji ludzi na fotografiach.\cite{DALAL05} HOG jest odporny na wpływ lokalnych warunków oświetleniowych oraz zmiany geometrii.\cite{YAMAUCHI11}
+
+Gradient obrazu jest otrzymywany poprzez filtrowanie jednowymiarowymi filtrami $[-1, 0, 1]$ (poziomo) oraz $[-1, 0, 1]^T$ (pionowo). Próba zastosowania większych i bardziej skomplikowanych masek dawała gorsze rezultaty. Dla obrazów kolorowych gradienty są obliczane osobno dla każdego kanału.
 
 
 
