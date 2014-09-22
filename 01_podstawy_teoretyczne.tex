@@ -520,7 +520,7 @@ Gradient obrazu jest otrzymywany poprzez filtrowanie jednowymiarowymi filtrami $
 
 Następnym krokiem jest tworzenie histogramów gradientów dla komórek. Dla każdego piksela w komórce wyznaczany jest ważony głos dla kanału gradientu orientacji, opartego na wartościach znalezionych w gradiencie dla danego punktu. Komórki mogą być zarówno prostokątne jak i okrągłe. Kanały gradientu mogą być równo rozłożone w zakresie od $0$ do $180$ stopni lub od $0$ do $360$ stopni. Według Dalala i Tiggsa zakres od $0$ do $180$ w połączeniu z zastosowaniem 9 kanałów histogramu sprawdza się najlepiej do rozwiązania problemu detekcji człowieka na zdjęciu.
 
-W celu normalizacji histogramów, komórki łączone są w bloki. Wyróżniamy bloki prostokątne R-HOG oraz okrągłe C-HOG. Bloki C-HOG mogą mieć dwa zasadnicze warianty w zależności od tego czy środkowa komórka jest podzielona czy nie. Na rys. \ref{fig:hog-blocks} przedstawiono przykładowe bloki HOG.
+W celu normalizacji histogramów, komórki łączone są w bloki. Wyróżniamy bloki prostokątne R-HOG oraz okrągłe C-HOG. Bloki C-HOG mogą mieć dwa zasadnicze warianty w zależności od tego czy środkowa komórka jest podzielona czy nie. Na rys. \ref{fig:hog-blocks} przedstawiono przykładowe bloki HOG. Zazwyczaj bloki nachodzą na siebie, tj. pojedynczy piksel może należeć do kilku bloków.
 
 \begin{figure}[h]
 	\centering
@@ -541,9 +541,18 @@ f = \frac{\boldsymbol{v}}{ {\Vert \boldsymbol{v} \Vert}_1 + e }
 \begin{equation} 
 \label{hog_l1_sqrt} 
 f = \sqrt{\frac{\boldsymbol{v}}{ {\Vert \boldsymbol{v} \Vert}_1 + e }}
-\end{equation}
+\end{equation} gdzie $\boldsymbol{v}$ -- nieznormalizowany wektor zawierający wszystkie histogramy w bloku, ${\Vert \boldsymbol{v} \Vert}_k$ -- norma, $k = 1, 2$, $e$ -- niewielka stała wartość.
 
 Oraz dodatkowym wariantem metody \ref{hog_l2_norm}, w którym maksymalna wartość $\boldsymbol{v}$ jest ograniczana do $0.2$ oraz ponownie normalizowana do długości jednostkowej.
+
+Po normalizacji następuje łączenie histogramów z wszystkich bloków w jeden histogram. Uproszczony schemat działania HOG znajduje się na rys. \ref{fig:hog-process}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.7]{graphics/01_podstawy_teoretyczne/hog-process.pdf}
+	\caption{ Tworzenie deskryptora HOG: (a) orientacja gradientów, (b) tworzenie histogramów dla bloków (c) tworzenie wektora cech }
+	\label{fig:hog-process}
+\end{figure}
 
 Deskryptory HOG operują na komórkach o określonej lokalizacji, stąd metoda ta zachowuje niezmienniczość względem transformacji geometrycznych oraz fotometrycznych, z wyjątkiem orientacji obiektu.\cite{DALAL05}
 
