@@ -16,6 +16,7 @@
 \contentsline {figure}{\numberline {1.15}{\ignorespaces Przyk\IeC {\l }adowe 8 bitowe wzorce jednolite \relax }}{31}
 \contentsline {figure}{\numberline {1.16}{\ignorespaces Bloki HOG: (a) R-HOG, (b) C-HOG z pojedyncz\IeC {\k a} centraln\IeC {\k a} kom\IeC {\'o}rk\IeC {\k a}, (c) C-HOG z centraln\IeC {\k a} kom\IeC {\'o}rk\IeC {\k a} podzielon\IeC {\k a} k\IeC {\k a}towo \relax }}{32}
 \contentsline {figure}{\numberline {1.17}{\ignorespaces Tworzenie deskryptora HOG: (a) orientacja gradient\IeC {\'o}w, (b) tworzenie histogram\IeC {\'o}w dla blok\IeC {\'o}w (c) tworzenie wektora cech \relax }}{33}
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Konstruowanie modelu klasyfikacyjnego \relax }}{34}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
