@@ -573,7 +573,20 @@ Celem klasyfikacji jest znalezienie funkcji klasyfikacyjnej, określanej też ja
 Do klasyfikacji obrazów najczęściej wykorzystywano: naiwny klasyfikator bayesowski, klasyfikator Ada Boost, maszynę wektorów wspierających (SVM) oraz k-najbliższych sąsiadów. Metody te zostały opisane w poniższych podrozdziałach.
 	
 \subsection{Naiwny klasyfikator bayesowski}
-Naiwny klasyfikator bayesowski jest prostym probabilistycznym klasyfikatorem opartym na twierdzeniu Bayesa, który zakłada wzajemną niezależność zmiennych.
+Naiwny klasyfikator bayesowski jest prostym probabilistycznym klasyfikatorem opartym na twierdzeniu Bayesa, który zakłada wzajemną niezależność predykatorów. Założenie o warunkowej niezależności atrybutów można sformułować następująco:
+\begin{equation} 
+\label{bayes_p_x_c} 
+P(X | C = C_i) = \prod\limits_{i = 1}^n P( A_i = x_i | C = C_i )
+\end{equation} gdzie $X = (A_1 = x_1, A_2 = x_2, \cdots, A_n = x_n)$ -- rekordy danych, $A = (A_1, A_2, \cdots, A_n)$ -- zbiór atrybutów warunkowych.
+
+Przyjęcie założenia o warunkowej niezależności atrybutów uwalnia klasyfikator bayesowski od kosztownego obliczania prawdopodobieństwa $P(X | C = C_i)$ dla wszystkich kombinacji wartości atrybutów warunkowych $A$. Obliczenia te zastępowane są oszacowaniem warunkowego prawdopodobieństwa wystąpienia wartości $x_j$ atrybutu $A_j, j = 1, \cdots, n$ dla danej klasy $C = C_i$. Obliczeniowo jest to znacznie prostsze i nie wymaga dużych zbiorów treningowych w celu uzyskania poprawnego estymatora prawdopodobieństwa $P(X | C = C_i)$.
+
+Naiwny klasyfikator bayesowski przypisuje rekord $X$ do klasy $C_i$, która maksymalizuje wartość iloczynu $P(X | C = C_i) P(C = C_i)$, co z założeniem o warunkowej niezależności atrybutów (\ref{bayes_p_x_c}) daje:
+\begin{equation} 
+\label{bayes_C} 
+C = \text{arg max } P(C = C_i) \prod\limits_{j = 1}^n P(A_j = x_j | C = C_j)
+\end{equation}
+
 	
 \subsection{Klasyfikator k-najbliższych sąsiadów}
 ...
