@@ -518,8 +518,7 @@ Histogram zorientowanych gradientów (\emph{ang. Histogram of Oriented Gradients
 
 Gradient obrazu jest otrzymywany poprzez filtrowanie jednowymiarowymi filtrami $[-1, 0, 1]$ (poziomo) oraz $[-1, 0, 1]^T$ (pionowo). Próba zastosowania większych i bardziej skomplikowanych masek dawała gorsze rezultaty. Dla obrazów kolorowych gradienty są obliczane osobno dla każdego kanału.
 
-Następnym krokiem jest tworzenie histogramów gradientów dla komórek. Dla każdej komórki wyznacza się lokalny jednowymiarowy histogram gradientu -- orientację krawędzi w stosunku do wszystkich pikseli w komórce. Każdy gradient orientacji dzieli zakres kątów na z góry określony zestaw koszyków.
-
+Następnym krokiem jest tworzenie histogramów gradientów dla komórek. Dla każdego piksela w komórce wyznaczany jest ważony głos dla gradientu orientacji, oparty na wartościach znalezionych w gradiencie. Komórki mogą być zarówno prostokątne jak i okrągłe. Kanały gradientu mogą być równo rozłożone w zakresie od $0$ do $180$ stopni lub od $0$ do $360$ stopni. Według Dalala i Tiggsa zakres od $0$ do $180$ w połączeniu z zastosowaniem 9 kanałów histogramu sprawdza się najlepiej do rozwiązania problemu detekcji człowieka na zdjęciu.
  
 
 
