@@ -520,9 +520,32 @@ Gradient obrazu jest otrzymywany poprzez filtrowanie jednowymiarowymi filtrami $
 
 Następnym krokiem jest tworzenie histogramów gradientów dla komórek. Dla każdego piksela w komórce wyznaczany jest ważony głos dla kanału gradientu orientacji, opartego na wartościach znalezionych w gradiencie dla danego punktu. Komórki mogą być zarówno prostokątne jak i okrągłe. Kanały gradientu mogą być równo rozłożone w zakresie od $0$ do $180$ stopni lub od $0$ do $360$ stopni. Według Dalala i Tiggsa zakres od $0$ do $180$ w połączeniu z zastosowaniem 9 kanałów histogramu sprawdza się najlepiej do rozwiązania problemu detekcji człowieka na zdjęciu.
 
+W celu normalizacji histogramów, komórki łączone są w bloki. Wyróżniamy bloki prostokątne R-HOG oraz okrągłe C-HOG. Bloki C-HOG mogą mieć dwa zasadnicze warianty w zależności od tego czy środkowa komórka jest podzielona czy nie. Na rys. \ref{fig:hog-blocks} przedstawiono przykładowe bloki HOG.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/hog-blocks.pdf}
+	\caption{ Bloki HOG: (a) R-HOG, (b) C-HOG z pojedynczą centralną komórką, (c) C-HOG z centralną komórką podzieloną kątowo }
+	\label{fig:hog-blocks}
+\end{figure}
 
+Bloki mogą być normalizowane z wykorzystaniem trzech metod:
+\begin{equation} 
+\label{hog_l2_norm} 
+f = \frac{\boldsymbol{v}}{\sqrt{ {\Vert \boldsymbol{v} \Vert}_2^2 + e^2 }}
+\end{equation}
+\begin{equation} 
+\label{hog_l1_norm} 
+f = \frac{\boldsymbol{v}}{ {\Vert \boldsymbol{v} \Vert}_1 + e }
+\end{equation}
+\begin{equation} 
+\label{hog_l1_sqrt} 
+f = \sqrt{\frac{\boldsymbol{v}}{ {\Vert \boldsymbol{v} \Vert}_1 + e }}
+\end{equation}
 
+Oraz dodatkowym wariantem metody \ref{hog_l2_norm}, w którym maksymalna wartość $\boldsymbol{v}$ jest ograniczana do $0.2$ oraz ponownie normalizowana do długości jednostkowej.
+
+Deskryptory HOG operują na komórkach o określonej lokalizacji, stąd metoda ta zachowuje niezmienniczość względem transformacji geometrycznych oraz fotometrycznych, z wyjątkiem orientacji obiektu.\cite{DALAL05}
 
 \section{Klasyfikacja}
 %TODO wymienic rozne rodzaje klasyfikatorow
