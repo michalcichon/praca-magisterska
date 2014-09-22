@@ -606,9 +606,7 @@ W latach czterdziestych XX wieku zrodził się pomysł naśladowania sposobu prz
 
 Zazwyczaj neurony są rozmieszczone w warstwach. Pierwsza warstwa nazywana jest warstwą wejściową i odpowiada za wprowadzanie danych do sieci. Liczba neuronów w tej warstwie jest równa liczbie wartości wprowadzanych jednocześnie do sieci.
 
-Ostatnia warstwa neuronów to warstwa wyjściowa, która służy do wyznaczania wartości wyjściowych sieci.
-
-Pomiędzy warstwą wejściową i wyjściową mogą znajdować się warstwy ukryte, w których realizowane są kolejne etapy przetwarzania informacji wejściowych w informacje wyjściowe.
+Ostatnia warstwa neuronów to warstwa wyjściowa, która służy do wyznaczania wartości wyjściowych sieci. Pomiędzy warstwą wejściową i wyjściową mogą znajdować się warstwy ukryte, w których realizowane są kolejne etapy przetwarzania informacji wejściowych w informacje wyjściowe.
 
 Neurony znajdujące się w sąsiednich warstwach są ze sobą połączone tworząc ścieżki, po których przesyłane są dane w sieci. Na rys. \ref{fig:ssn-przykladowa-siec} znajduje się przykładowa struktura sztucznej sieci neuronowej dwuwarstwowej. W nazwie sieci podaje się łączną liczbę warstw ukrytych i wyjściowych. 
 
@@ -618,6 +616,37 @@ Neurony znajdujące się w sąsiednich warstwach są ze sobą połączone tworz�
 	\caption{ Przykładowa struktura sztucznej sieci neuronowej dwuwarstwowej }
 	\label{fig:ssn-przykladowa-siec}
 \end{figure}
+
+Na rys. \ref{fig:ssn-neuron} przedstawiono model typowego neuronu. Neuron ten składa się z dwóch bloków: bloku sumowania $\Sigma$ oraz bloku aktywacji $F$.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/ssn-neuron.pdf}
+	\caption{ Model sztucznego neuronu }
+	\label{fig:ssn-neuron}
+\end{figure}
+
+Neuron przetwarza wektor $\boldsymbol{x} = [x_i]$ o wymiarze $n \times 1$, składający się z sygnałów wejściowych $x_i$, na jeden sygnał wyjściowy $y$. Na podstawie danych $x_i$, w bloku sumowania $\Sigma$ obliczana jest wartość $\phi = \vartheta(x)$ funkcji agregującej $\vartheta$, która w najprostszym przypadku jest kombinacją liniową sygnałów wejściowych $x_i$:
+\begin{equation} 
+\label{ssn_vartheta} 
+\vartheta(x) = \sum\limits_{i = 1}^n w_ix_i = \boldsymbol{w}^T\boldsymbol{x}
+\end{equation} gdzie $\boldsymbol{x} = [x_i]$ -- wektor $n \times 1$ sygnałów wejściowych, $\boldsymbol{w} = [w_i]$ -- wektor $n \times 1$ współczynników rzeczywistych, które nazywamy wagami. Wagi z jednej strony wyrażają stopień ważności informacji, a z drugiej stanowią pamięć neuronu.
+
+Następnie sygnał $\vartheta$ jest przetwarzany w bloku aktywacji $F$, który na wyjściu daje sygnał $y$. W najprostszym przypadku funkcja aktywacji przyjmuje postać:
+\begin{equation} 
+\label{ssn_y} 
+y = \begin{cases}
+		1 & \text{ jeżeli } \phi > \phi_k \\
+		0 & \text{ jeżeli } x \leq \phi_k
+	\end{cases} 
+\end{equation} gdzie $\phi_k$ -- wartość progowa.
+
+
+
+
+
+
+
 	
 \subsection{Klasyfikator k-najbliższych sąsiadów}
 ...

@@ -18,6 +18,7 @@
 \contentsline {figure}{\numberline {1.17}{\ignorespaces Tworzenie deskryptora HOG: (a) orientacja gradient\IeC {\'o}w, (b) tworzenie histogram\IeC {\'o}w dla blok\IeC {\'o}w (c) tworzenie wektora cech \relax }}{33}
 \contentsline {figure}{\numberline {1.18}{\ignorespaces Konstruowanie modelu klasyfikacyjnego \cite {MORZY13} \relax }}{34}
 \contentsline {figure}{\numberline {1.19}{\ignorespaces Przyk\IeC {\l }adowa struktura sztucznej sieci neuronowej dwuwarstwowej \relax }}{36}
+\contentsline {figure}{\numberline {1.20}{\ignorespaces Model sztucznego neuronu \relax }}{36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
