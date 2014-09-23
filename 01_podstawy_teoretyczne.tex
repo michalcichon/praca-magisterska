@@ -717,7 +717,7 @@ f^{(T)}(\cdot) = \sum_{t=1}^T \alpha^{(t)} h^{(t)}(\cdot)
 Klasyfikację $\boldsymbol{x}$ zapisujemy jako $f^{(T)}(\boldsymbol{x})$. Użyty w algorytmie symbol $\mathbbm{1}\{A\}$ oznacza funkcję charakterystyczną zbioru, która przyjmuje wartość $1$ gdy $A$ jest prawdziwe, a w przeciwnym przypadku wartość $0$.
 
 \subsection{Maszyna wektorów wspierających (SVM)}
-Maszyna wektorów nośnych (\emph{ang. Support Vector Machine, SVM}) to bardzo często wykorzystywany w zastosowaniach związanych z analizą obrazów klasyfikator, który wyznacza hiperpłaszczyznę rozdzielającą przykłady należące do dwóch klas z maksymalnym możliwym marginesem.
+Maszyny wektorów nośnych (\emph{ang. Support Vector Machines, SVM}) to bardzo często wykorzystywane w zastosowaniach związanych z analizą obrazów klasyfikatory, które wyznaczają hiperpłaszczyznę rozdzielającą przykłady należące do dwóch klas z maksymalnym możliwym marginesem.
 
 Pierwotnie metoda ta była wykorzystywana do klasyfikacji wyłącznie separowanych liniowo klas obiektów. Niech w przestrzeni danych $\Omega$ znajdują się wektory danych $\boldsymbol{x}$, stanowiące próbę uczącą $D$, należące do dwóch klas:
 \begin{equation} 
@@ -749,7 +749,7 @@ Na rys. \ref{fig:svm-margin} przedstawiono przykład hiperpłaszczyzny o maksyma
 	\label{fig:svm-margin}
 \end{figure}
 
-Hiperpłaszczyzny $H_1$ oraz $H_2$ są zdefiniowane przy pomocy obiektów znajdujących się na ich brzegach. Obiekty te nazywamy wektorami nośnymi \emph{ang. support vectors}.
+Hiperpłaszczyzny $H_1$ oraz $H_2$ są zdefiniowane przy pomocy obiektów znajdujących się na ich brzegach. Obiekty te nazywamy wektorami nośnymi (\emph{ang. support vectors}).
 
 SVM może być również stosowany do separacji klas, które nie mogą być separowane klasyfikatorem liniowym. W takich przypadkach, współrzędne obiektów są mapowane do przestrzeni cech, za pomocą nieliniowych funkcji, które nazywamy funkcjami cech (\emph{ang. feature functions}) i oznaczamy $\phi$. Przykład takiej transformacji został umieszczony na rys. \ref{fig:svm-phi}.
 
@@ -761,7 +761,9 @@ SVM może być również stosowany do separacji klas, które nie mogą być sepa
 \end{figure}
 
 Przestrzeń cech jest wielowymiarowa i określenie dla niej hiperpłaszczyzny jest bardzo trudne obliczeniowo. Zamiast tego stosuje się funkcje jądrowe (\emph{ang. kernel functions}). Rozwiązanie klasyfikacji jest wówczas sumą ważoną funkcji jądrowych oszacowanych w miejscu wektorów nośnych.
-	
+
+Maszyny wektorów nośnych zostały pierwotnie zaprojektowane do rozwiązywania problemów klasyfikacji binarnej, gdzie obiekty są przyporządkowane do dwóch klas. Zastosowanie tej metody do rozwiązywania problemów klasyfikowania dla wielu klas sprowadza się do zredukowania problemu klasyfikacji wieloklasowej do kilku problemów klasyfikacji binarnej.\cite{DUAN05}
+
 \section{Ocena klasyfikatorów}
 ...
 
