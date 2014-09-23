@@ -115,7 +115,7 @@ Po poprawnej selekcji cech, możliwe powinno się stać stworzenie takiego model
 
 Obrazy w formie map bitowych reprezentowane są w pamięci komputera w postaci macierzy pikseli. Ilość danych jest dla klasyfikacji zbyt duża i zawiera wiele niepotrzebnych informacji. Dlatego przed przystąpieniem do procesu klasyfikacji należy wydobyć z obrazu pewne cechy. Proces przetwarzania obrazu w celu wydobycia cech określa się jako ekstrakcję cech (\emph{ang. feature extraction}).
 
-Warto zauważyć, że ekstrakcja cech jest procesem odmiennym od omówionej wcześniej selekcji cech. Selekcja cech polegała na znalezieniu podzbioru cech, natomiast ekstrakcja cech polega na tworzeniu nowych cech z funkcji oryginalnych cech. Proces ekstrakcji może być skomplikowany i składać się ze znacznej liczby operacji na obrazie. Rezultat ekstrakcji cech często określany jest jako \emph{deskryptor cechy} lub \emph{wektor cechy}. 
+Warto zauważyć, że ekstrakcja cech jest procesem odmiennym od omówionej wcześniej selekcji cech. Selekcja cech polega na znalezieniu podzbioru cech, natomiast ekstrakcja cech na tworzeniu nowych cech z funkcji oryginalnych cech. Proces ekstrakcji może być skomplikowany i składać się ze znacznej liczby operacji na obrazie. Rezultat ekstrakcji cech często określany jest jako \emph{deskryptor cechy} lub \emph{wektor cechy}. 
 
 Można wyróżnić wiele cech używanych w procesach przetwarzania obrazów, np. rozkład kolorów w formie histogramu, obecność niektórych elementów lub kształtów, liczba występowania podobnych obiektów, wielkość kształtów, morfologia, tekstura. Przed ekstrakcją cech często warto przeprowadzić przetwarzanie wstępne (\emph{ang. preprocessing}) celem uzyskania obrazów o lepszych parametrach do ekstrakcji. Często przy przetwarzaniu wstępnym wykorzystuje się normalizację kolorów oraz korekcję gamma.
 
@@ -679,7 +679,9 @@ d(x, y) = \sum_j (x_j - y_j)^2
 Metodę k-NN łatwo jest zaprogramować i nie wymaga ona żadnej optymalizacji ani trenowania. Pozwala na łatwe zastosowanie opcji odrzucania, w której decyzja o klasyfikacji jest odraczana do momentu w którym będziemy wystarczająco przekonani co do przewidzianej klasy. Największa wada metody k-NN wynika z faktu, że nie jest budowany ogólny model klasyfikacyjny, a zamiast tego zapamiętywane są wszystkie punkty zbioru danych treningowych. Jeśli zatem zbiór treningowy jest duży, to przeszukiwanie go w celu znalezienia $k$ najbliższych punktów może okazać się trudne obliczeniowo.\cite{HAND01}
 
 \subsection{Metoda AdaBoost}
-Adaptive Boosting (w skrócie AdaBoost) jest meta-algorytmem zaproponowanym przez Yoava Freunda i Roberta Schapire, który pozwala z kilku słabych klasyfikatorów otrzymać jeden lepszy.
+Metoda wzmacniania klasyfikatorów (\emph{ang. boosting}) polega na łączeniu odpowiedzi kilku słabych klasyfikatorów w celu stworzenia jednego silnego klasyfikatora. Jednym z popularnych algorytmów realizujących to zadanie jest Adaptive Boosting (w skrócie AdaBoost), meta-algorytm zaproponowany przez Yoava Freunda i Roberta Schapire.
+
+
 
 
 
