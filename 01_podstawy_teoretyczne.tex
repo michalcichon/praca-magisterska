@@ -685,22 +685,22 @@ Metoda wzmacniania klasyfikatorów (\emph{ang. boosting}) polega na łączeniu o
 \begin{algorithm}
 	\caption{AdaBoost}
 	\begin{algorithmic}[1]
-		\STATE $w \leftarrow (1/n, ..., 1/n)$ \COMMENT{wagi początkowe}
-		\FOR{$t = 1$ \TO $T$}
-			\STATE $h^{(t)} \leftarrow \text{Base}(\mathcal{D}_n, \boldsymbol{w}^{(t)})$ \COMMENT{klasyfikator bazowy}
-			\STATE $\varepsilon^{(t)} \leftarrow \sum\limits_{i = 1}^n w_i^{(t)} \mathbbm{1} \{ h^{t}(\boldsymbol{x}_i) \neq y_i \}$ \COMMENT{błąd ważony klasyfikatora bazowego}
-			\STATE $\alpha^{(t)} \leftarrow \frac{1}{2} \ln( \frac{1-\varepsilon^{(t)}}{\varepsilon^{(t)}} )$ \COMMENT{współczynnik klasyfikatora bazowego}
-			\FOR{$i = 1$ \TO $n$} 
-				\COMMENT{ponowne ważenie punktów treningowych}
-				\IF{$h^{(t)}(\boldsymbol{x}_i \neq y_i$}
-					\STATE $w_i^{(t+1)} \leftarrow \frac{w_i^{(t)}}{2\varepsilon^{(t)}}$ 
-				\ELSE 
-					\STATE $w_i^{(t+1)} \leftarrow \frac{w_i^{(t)}}{ 2(1 - \varepsilon^{(t)} )}$
-				\ENDIF
-			\ENDFOR
-		\ENDFOR
-		\RETURN $f^{(T)}(\cdot) = \sum\limits_{t = 1}^T \alpha^{(t)}h^{(t)}(\cdot)$
-		
+		\Procedure{AdaBoost}{$\mathcal{D}_n, \text{Base}(\cdot, \cdot), T$}
+			\State $w \gets (1/n, ..., 1/n)$ 
+			\For{$t \gets 1, T$}
+				\State $h^{(t)} \gets \text{Base}(\mathcal{D}_n, \boldsymbol{w}^{(t)})$ \Comment{klasyfikator bazowy}
+				\State $\varepsilon^{(t)} \gets \sum\limits_{i = 1}^n w_i^{(t)} \mathbbm{1} \{ h^{t}(\boldsymbol{x}_i) \neq y_i \}$ \Comment{błąd ważony klasyfikatora bazowego}
+				\State $\alpha^{(t)} \gets \frac{1}{2} \ln( \frac{1-\varepsilon^{(t)}}{\varepsilon^{(t)}} )$ \Comment{współczynnik klasyfikatora bazowego}
+				\For{$i = 1$, $n$} \Comment{ponowne ważenie punktów treningowych}
+					\If{$h^{(t)}(\boldsymbol{x}_i \neq y_i$} \Comment{błąd}
+						\State $w_i^{(t+1)} \leftarrow \frac{w_i^{(t)}}{2\varepsilon^{(t)}}$ \Comment{zwiększenie wagi}
+					\Else \Comment{prawidłowa klasyfikacja}
+						\State $w_i^{(t+1)} \leftarrow \frac{w_i^{(t)}}{ 2(1 - \varepsilon^{(t)} )}$ \Comment{zmniejszenie wagi}
+					\EndIf
+				\EndFor
+			\EndFor
+			\State \textbf{return} $f^{(T)}(\cdot) = \sum\limits_{t = 1}^T \alpha^{(t)}h^{(t)}(\cdot)$ \Comment{głosowanie ważone klasyfikatorów bazowych}
+		\EndProcedure
     \end{algorithmic}
 \end{algorithm}
 
