@@ -733,18 +733,31 @@ g(\boldsymbol{x}) = \boldsymbol{w}^T \boldsymbol{x} + b
 \begin{equation} 
 \label{svm-gx} 
 \begin{cases}
-	g(\boldsymbol{x}_i > 0 & \text{ jeżeli } \boldsymbol{x} \in 1 \\
-	g(\boldsymbol{x}_i < 0 & \text{ jeżeli } \boldsymbol{x} \in -1
+	g(\boldsymbol{x}_i) > 0 & \text{ jeżeli } \boldsymbol{x} \in 1 \\
+	g(\boldsymbol{x}_i) < 0 & \text{ jeżeli } \boldsymbol{x} \in -1
 \end{cases}
 \end{equation}
 
+Na rys. \ref{fig:svm-margin} przedstawiono przykład hiperpłaszczyzny o maksymalnej separacji, z maksymalnym marginesem separacji $\delta$. 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/svm-margin.pdf}
-	\caption{  }
+	\caption{ Maksymalna separacja hiperpłaszczyzny }
 	\label{fig:svm-margin}
 \end{figure}
+
+Hiperpłaszczyzny $H_1$ oraz $H_2$ są zdefiniowane przy pomocy obiektów znajdujących się na ich brzegach. Obiekty te nazywamy wektorami nośnymi \emph{ang. support vectors}.
+
+SVM może być również stosowany do separacji klas, które nie mogą być separowane klasyfikatorem liniowym. W takich przypadkach, współrzędne obiektów są mapowane do wielowymiarowej przestrzeni cech, za pomocą nieliniowych funkcji, które nazywamy funkcjami cech (\emph{ang. feature functions}) i oznaczamy $\phi$. Przykład takiej transformacji został umieszczony na rys. \ref{fig:svm-phi}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/svm-phi.pdf}
+	\caption{ Liniowa separacja w przestrzeni cech }
+	\label{fig:svm-phi}
+\end{figure}
+
 	
 \section{Ocena klasyfikatorów}
 ...
