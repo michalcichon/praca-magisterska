@@ -681,9 +681,13 @@ Metodę k-NN łatwo jest zaprogramować i nie wymaga ona żadnej optymalizacji a
 \subsection{Metoda AdaBoost}
 Metoda wzmacniania klasyfikatorów (\emph{ang. boosting}) polega na łączeniu odpowiedzi kilku słabych klasyfikatorów w celu stworzenia jednego silnego klasyfikatora. Najpopularniejszym algorytmem realizujących to zadanie jest Adaptive Boosting (w skrócie AdaBoost), meta-algorytm zaproponowany przez Yoava Freunda i Roberta Schapire.\cite{FREUND97} Algorytm ten ma solidne podstawy teoretyczne i wyróżnia się bardzo dobrą predykcją oraz prostotą. Schapire zwykł mawiać, że do jego napisania "wystarczy 10 linii kodu".
 
+Z każdą iteracją, AdaBoost wywołuje prosty algorytm uczący, który zwraca klasyfikator i przypisuje współczynniki wagowe do klasyfikatorów. Końcowa klasyfikacja jest tworzona na podstawie ważonego głosowania klasyfikatorów bazowych. Im mniejszy błąd klasyfikatora bazowego, tym wyższa jego waga w końcowym głosowaniu. Klasyfikatory bazowe muszą być tylko nieznacznie lepsze niż przypadkowe odgadnięcie prawidłowej klasy.\cite{KEGL09}
+
+Algorytm \ref{alg:adaboost} zawiera procedurę AdaBoost przyjmującą zbiór treningowy $\mathcal{D}_n=\{(\boldsymbol{x}_1, y_1),\cdots,\allowbreak(\boldsymbol{x}_n, y_n)\}$, algorytm uczący $\text{Base}(\cdot, \cdot)$ oraz ustaloną liczbę iteracji $T$.\cite{KEGL09}
 
 \begin{algorithm}
 	\caption{AdaBoost}
+	\label{alg:adaboost}
 	\begin{algorithmic}[1]
 		\Procedure{AdaBoost}{$\mathcal{D}_n, \text{Base}(\cdot, \cdot), T$}
 			\State $w \gets (1/n, ..., 1/n)$ 
@@ -691,8 +695,8 @@ Metoda wzmacniania klasyfikatorów (\emph{ang. boosting}) polega na łączeniu o
 				\State $h^{(t)} \gets \text{Base}(\mathcal{D}_n, \boldsymbol{w}^{(t)})$ \Comment{klasyfikator bazowy}
 				\State $\varepsilon^{(t)} \gets \sum\limits_{i = 1}^n w_i^{(t)} \mathbbm{1} \{ h^{t}(\boldsymbol{x}_i) \neq y_i \}$ \Comment{błąd ważony klasyfikatora bazowego}
 				\State $\alpha^{(t)} \gets \frac{1}{2} \ln( \frac{1-\varepsilon^{(t)}}{\varepsilon^{(t)}} )$ \Comment{współczynnik klasyfikatora bazowego}
-				\For{$i = 1$, $n$} \Comment{ponowne ważenie punktów treningowych}
-					\If{$h^{(t)}(\boldsymbol{x}_i \neq y_i$} \Comment{błąd}
+				\For{$i \gets 1$, $n$} \Comment{ponowne ważenie punktów treningowych}
+					\If{$h^{(t)}(\boldsymbol{x}_i) \neq y_i$} \Comment{błąd}
 						\State $w_i^{(t+1)} \leftarrow \frac{w_i^{(t)}}{2\varepsilon^{(t)}}$ \Comment{zwiększenie wagi}
 					\Else \Comment{prawidłowa klasyfikacja}
 						\State $w_i^{(t+1)} \leftarrow \frac{w_i^{(t)}}{ 2(1 - \varepsilon^{(t)} )}$ \Comment{zmniejszenie wagi}
@@ -703,6 +707,14 @@ Metoda wzmacniania klasyfikatorów (\emph{ang. boosting}) polega na łączeniu o
 		\EndProcedure
     \end{algorithmic}
 \end{algorithm}
+
+Dla każdej iteracji $t = 1, \cdots, T$, wybieramy klasyfikator $h^{(t)}$ ze zbioru $\mathcal{H}$ klasyfikatorów oraz wyznaczamy współczynnik $\alpha^{(t)}$. W najprostszej wersji tego algorytmu, $\mathcal{H}$ jest skończonym zbiorem binarnych klasyfikatorów w postaci $h = \mathbb{R}^d \rightarrow \{ -1, 1 \}$. Procedura na wyjściu dostarcza funkcję dyskryminującą postaci:
+\begin{equation} 
+\label{adaboost-discriminant} 
+f^{(T)}(\cdot) = \sum_{t=1}^T \alpha^{(t)} h^{(t)}(\cdot)
+\end{equation}
+
+Klasyfikację $\boldsymbol{x}$ zapisujemy jako $f^{(T)}(\boldsymbol{x})$. Użyty w algorytmie symbol $\mathbbm{1}\{A\}$ oznacza funkcję charakterystyczną zbioru, która przyjmuje wartość $1$ gdy $A$ jest prawdziwe, a w przeciwnym przypadku wartość $0$.
 
 
 
