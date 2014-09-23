@@ -681,10 +681,27 @@ Metodę k-NN łatwo jest zaprogramować i nie wymaga ona żadnej optymalizacji a
 \subsection{Metoda AdaBoost}
 Metoda wzmacniania klasyfikatorów (\emph{ang. boosting}) polega na łączeniu odpowiedzi kilku słabych klasyfikatorów w celu stworzenia jednego silnego klasyfikatora. Najpopularniejszym algorytmem realizujących to zadanie jest Adaptive Boosting (w skrócie AdaBoost), meta-algorytm zaproponowany przez Yoava Freunda i Roberta Schapire.\cite{FREUND97} Algorytm ten ma solidne podstawy teoretyczne i wyróżnia się bardzo dobrą predykcją oraz prostotą. Schapire zwykł mawiać, że do jego napisania "wystarczy 10 linii kodu".
 
-\begin{algorithm}{AdaBoost}{
-	\label{algo:adaboost}
-	\qinput Zbiór danych $\mathcal{D} = \{(\boldsymbol{x}_1, y_1), (\boldsymbol{x}_2, y_2), \cdots, (\boldsymbol{x}_m, y_m)\} $, podstawowy algorytm uczący $\mathcal{L}$, liczba rund uczących $T$ }
-	$D_1(i)$ \qlet $1/m$ \\	
+
+\begin{algorithm}
+	\caption{AdaBoost}
+	\begin{algorithmic}[1]
+		\STATE $w \leftarrow (1/n, ..., 1/n)$ \COMMENT{wagi początkowe}
+		\FOR{$t = 1$ \TO $T$}
+			\STATE $h^{(t)} \leftarrow \text{Base}(\mathcal{D}_n, \boldsymbol{w}^{(t)})$ \COMMENT{klasyfikator bazowy}
+			\STATE $\varepsilon^{(t)} \leftarrow \sum\limits_{i = 1}^n w_i^{(t)} \mathbbm{1} \{ h^{t}(\boldsymbol{x}_i) \neq y_i \}$ \COMMENT{błąd ważony klasyfikatora bazowego}
+			\STATE $\alpha^{(t)} \leftarrow \frac{1}{2} \ln( \frac{1-\varepsilon^{(t)}}{\varepsilon^{(t)}} )$ \COMMENT{współczynnik klasyfikatora bazowego}
+			\FOR{$i = 1$ \TO $n$} 
+				\COMMENT{ponowne ważenie punktów treningowych}
+				\IF{$h^{(t)}(\boldsymbol{x}_i \neq y_i$}
+					\STATE $w_i^{(t+1)} \leftarrow \frac{w_i^{(t)}}{2\varepsilon^{(t)}}$ 
+				\ELSE 
+					\STATE $w_i^{(t+1)} \leftarrow \frac{w_i^{(t)}}{ 2(1 - \varepsilon^{(t)} )}$
+				\ENDIF
+			\ENDFOR
+		\ENDFOR
+		\RETURN $f^{(T)}(\cdot) = \sum\limits_{t = 1}^T \alpha^{(t)}h^{(t)}(\cdot)$
+		
+    \end{algorithmic}
 \end{algorithm}
 
 
