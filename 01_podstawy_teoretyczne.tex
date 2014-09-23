@@ -718,6 +718,33 @@ Klasyfikację $\boldsymbol{x}$ zapisujemy jako $f^{(T)}(\boldsymbol{x})$. Użyty
 
 \subsection{Maszyna wektorów wspierających (SVM)}
 Maszyna wektorów nośnych (\emph{ang. Support Vector Machine, SVM}) to bardzo często wykorzystywany w zastosowaniach związanych z analizą obrazów klasyfikator, który wyznacza hiperpłaszczyznę rozdzielającą przykłady należące do dwóch klas z maksymalnym możliwym marginesem.
+
+Pierwotnie metoda ta była wykorzystywana do klasyfikacji wyłącznie separowanych liniowo klas obiektów. Niech w przestrzeni danych $\Omega$ znajdują się wektory danych $\boldsymbol{x}$, stanowiące próbę uczącą $D$, należące do dwóch klas:
+\begin{equation} 
+\label{svm-D-of-two-classes} 
+D = {\{ (\boldsymbol{x}_i, c_i) \in \mathbb{R}^p, c_i \in \{-1, 1\}  \}}_{i=1}^N
+\end{equation}
+
+Dwie klasy są liniowo separowane wówczas, gdy istnieje hiperpłaszczyzna $H$ postaci $g(x)$:
+\begin{equation} 
+\label{svm-linear-separate} 
+g(\boldsymbol{x}) = \boldsymbol{w}^T \boldsymbol{x} + b
+\end{equation} oraz przyjmuje wartości:
+\begin{equation} 
+\label{svm-gx} 
+\begin{cases}
+	g(\boldsymbol{x}_i > 0 & \text{ jeżeli } \boldsymbol{x} \in 1 \\
+	g(\boldsymbol{x}_i < 0 & \text{ jeżeli } \boldsymbol{x} \in -1
+\end{cases}
+\end{equation}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/svm-margin.pdf}
+	\caption{  }
+	\label{fig:svm-margin}
+\end{figure}
 	
 \section{Ocena klasyfikatorów}
 ...
