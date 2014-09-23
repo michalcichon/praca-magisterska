@@ -725,6 +725,8 @@ Pierwotnie metoda ta była wykorzystywana do klasyfikacji wyłącznie separowany
 D = {\{ (\boldsymbol{x}_i, c_i) \in \mathbb{R}^p, c_i \in \{-1, 1\}  \}}_{i=1}^N
 \end{equation}
 
+Szukamy klasyfikatora pozwalającego na podział całej przestrzeni $\Omega$ na dwa rozłączne obszary odpowiadające klasom $\{-1, 1\}$ oraz pozwalającego jak najlepiej klasyfikować nowe obiekty $x$ do klas. 
+
 Dwie klasy są liniowo separowane wówczas, gdy istnieje hiperpłaszczyzna $H$ postaci $g(x)$:
 \begin{equation} 
 \label{svm-linear-separate} 
@@ -749,7 +751,7 @@ Na rys. \ref{fig:svm-margin} przedstawiono przykład hiperpłaszczyzny o maksyma
 
 Hiperpłaszczyzny $H_1$ oraz $H_2$ są zdefiniowane przy pomocy obiektów znajdujących się na ich brzegach. Obiekty te nazywamy wektorami nośnymi \emph{ang. support vectors}.
 
-SVM może być również stosowany do separacji klas, które nie mogą być separowane klasyfikatorem liniowym. W takich przypadkach, współrzędne obiektów są mapowane do wielowymiarowej przestrzeni cech, za pomocą nieliniowych funkcji, które nazywamy funkcjami cech (\emph{ang. feature functions}) i oznaczamy $\phi$. Przykład takiej transformacji został umieszczony na rys. \ref{fig:svm-phi}.
+SVM może być również stosowany do separacji klas, które nie mogą być separowane klasyfikatorem liniowym. W takich przypadkach, współrzędne obiektów są mapowane do przestrzeni cech, za pomocą nieliniowych funkcji, które nazywamy funkcjami cech (\emph{ang. feature functions}) i oznaczamy $\phi$. Przykład takiej transformacji został umieszczony na rys. \ref{fig:svm-phi}.
 
 \begin{figure}[h]
 	\centering
@@ -758,6 +760,7 @@ SVM może być również stosowany do separacji klas, które nie mogą być sepa
 	\label{fig:svm-phi}
 \end{figure}
 
+Przestrzeń cech jest wielowymiarowa i określenie dla niej hiperpłaszczyzny jest bardzo trudne obliczeniowo. Zamiast tego stosuje się funkcje jądrowe (\emph{ang. kernel functions}). Rozwiązanie klasyfikacji jest wówczas sumą ważoną funkcji jądrowych oszacowanych w miejscu wektorów nośnych.
 	
 \section{Ocena klasyfikatorów}
 ...
