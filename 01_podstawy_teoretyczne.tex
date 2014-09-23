@@ -679,8 +679,13 @@ d(x, y) = \sum_j (x_j - y_j)^2
 Metodę k-NN łatwo jest zaprogramować i nie wymaga ona żadnej optymalizacji ani trenowania. Pozwala na łatwe zastosowanie opcji odrzucania, w której decyzja o klasyfikacji jest odraczana do momentu w którym będziemy wystarczająco przekonani co do przewidzianej klasy. Największa wada metody k-NN wynika z faktu, że nie jest budowany ogólny model klasyfikacyjny, a zamiast tego zapamiętywane są wszystkie punkty zbioru danych treningowych. Jeśli zatem zbiór treningowy jest duży, to przeszukiwanie go w celu znalezienia $k$ najbliższych punktów może okazać się trudne obliczeniowo.\cite{HAND01}
 
 \subsection{Metoda AdaBoost}
-Metoda wzmacniania klasyfikatorów (\emph{ang. boosting}) polega na łączeniu odpowiedzi kilku słabych klasyfikatorów w celu stworzenia jednego silnego klasyfikatora. Jednym z popularnych algorytmów realizujących to zadanie jest Adaptive Boosting (w skrócie AdaBoost), meta-algorytm zaproponowany przez Yoava Freunda i Roberta Schapire.
+Metoda wzmacniania klasyfikatorów (\emph{ang. boosting}) polega na łączeniu odpowiedzi kilku słabych klasyfikatorów w celu stworzenia jednego silnego klasyfikatora. Najpopularniejszym algorytmem realizujących to zadanie jest Adaptive Boosting (w skrócie AdaBoost), meta-algorytm zaproponowany przez Yoava Freunda i Roberta Schapire.\cite{FREUND97} Algorytm ten ma solidne podstawy teoretyczne i wyróżnia się bardzo dobrą predykcją oraz prostotą. Schapire zwykł mawiać, że do jego napisania "wystarczy 10 linii kodu".
 
+\begin{algorithm}{AdaBoost}{
+	\label{algo:adaboost}
+	\qinput Zbiór danych $\mathcal{D} = \{(\boldsymbol{x}_1, y_1), (\boldsymbol{x}_2, y_2), \cdots, (\boldsymbol{x}_m, y_m)\} $, podstawowy algorytm uczący $\mathcal{L}$, liczba rund uczących $T$ }
+	$D_1(i)$ \qlet $1/m$ \\	
+\end{algorithm}
 
 
 
