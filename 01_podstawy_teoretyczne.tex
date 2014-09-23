@@ -762,7 +762,18 @@ SVM może być również stosowany do separacji klas, które nie mogą być sepa
 
 Przestrzeń cech jest wielowymiarowa i określenie dla niej hiperpłaszczyzny jest bardzo trudne obliczeniowo. Zamiast tego stosuje się funkcje jądrowe (\emph{ang. kernel functions}). Rozwiązanie klasyfikacji jest wówczas sumą ważoną funkcji jądrowych oszacowanych w miejscu wektorów nośnych.
 
-Maszyny wektorów nośnych zostały pierwotnie zaprojektowane do rozwiązywania problemów klasyfikacji binarnej, gdzie obiekty są przyporządkowane do dwóch klas. Zastosowanie tej metody do rozwiązywania problemów klasyfikowania dla wielu klas sprowadza się do zredukowania problemu klasyfikacji wieloklasowej do kilku problemów klasyfikacji binarnej.\cite{DUAN05}
+Maszyny wektorów nośnych zostały pierwotnie zaprojektowane do rozwiązywania problemów klasyfikacji binarnej, gdzie obiekty są przyporządkowane do dwóch klas. Zastosowanie tej metody do rozwiązywania problemów klasyfikowania dla wielu klas sprowadza się do zredukowania problemu klasyfikacji wieloklasowej do kilku problemów klasyfikacji binarnej.\cite{DUAN05} Redukcji tej można dokonać na kilka sposobów:
+
+\begin{compactitem}
+	\item Zbudowanie klasyfikatorów binarnych, które przeciwstawiają jedną z klas reszcie klas (\emph{ang. one vs all}). Klasyfikacja nowych przypadków odbywa się z zastosowaniem strategii \emph{winner-takes-all}, w której klasyfikator z najwyższą funkcją wyjściową przypisuje klasę
+	\item Zbudowanie klasyfikatorów binarnych, które przeciwstawiają sobie każdą parę klas (\emph{ang. one vs one}), gdzie klasyfikacja odbywa się poprzez strategię głosowania \emph{max-wins}, gdzie każdy klasyfikator przypisuje przypadek do jednej z dwóch klas, a następnie głos dla przypisanej klasy jest zwiększany o jeden. Ostatecznie, klasa z największą ilością głosów determinuje przypisanie do klasy.
+	\item Zastosowanie skierowanego, acyklicznego grafu SVM (DAGSVM)
+	\item Zastosowanie kodów korekcji błędów wyjściowych
+\end{compactitem}
+
+Zastosowanie SVM do rozwiązania problemu klasyfikacji ma wiele zalet. Pozwala na dobrą generalizację ze względu na wielowymiarowość przestrzeni cech. Podczas znajdowania minimum globalnego minimalizujemy funkcję kwadratową, co gwarantuje znalezienie minimum. Algorytm jest wydajny i generuje prawie optymalny klasyfikator, który nie jest czuły na przetrenowanie. Poprzez użycie odpowiedniej funkcji jądra daje dużą skuteczność w praktyce.\cite{WOLTER07}
+
+Do wad SVM można zaliczyć m.in. to, że trening trwa stosunkowo długo, szczególnie dla dużej ilości danych treningowych. Rozwiązania generowane przez SVM są też stosunkowo skomplikowane, ponieważ zazwyczaj powyżej 60\% użytych do nauki staje się wektorami wspierającymi.\cite{WOLTER07}
 
 \section{Ocena klasyfikatorów}
 ...
