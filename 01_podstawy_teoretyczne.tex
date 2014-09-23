@@ -646,9 +646,26 @@ Wykorzystanie sztucznej sieci neuronowej do rozwiązywania problemu np. rozpozna
 Sztuczne sieci neuronowe można wykorzystać do uczenia nadzorowanego poprzez porównywanie otrzymanych wartości z wartościami oczekiwanymi. Wyliczony w ten sposób błąd jest następnie minimalizowany za pomocą algorytmu uczącego, np. z zastosowaniem propagacji wstecznej. Metoda ta polega na przesyłaniu błędów uczenia powstałych na wyjściu sieci od warstwy wyjściowej do wejściowej.
 	
 \subsection{Klasyfikator k-najbliższych sąsiadów}
-Klasyfikator k-najbliższych sąsiadów należy do leniwych metod uczących, jest to zarazem jeden z najprostszych algorytmów uczenia maszynowego. W procesie uczenia nie jest budowany ogólny model klasyfikacyjny, natomiast do klasyfikacji nowego obiektu, o wejściowym wektorze $y$, analizowane są $k$ najbliższe obiekty, a następnie $y$ jest przydzielany do klasy, w której jest większość spośród $k$ obiektów.
+Klasyfikator k-najbliższych sąsiadów (\emph{ang. k-nearest neighbors, k-NN}) należy do leniwych metod uczących, jest to zarazem jeden z najprostszych algorytmów uczenia maszynowego. W procesie uczenia nie jest budowany ogólny model klasyfikacyjny, natomiast do klasyfikacji nowego obiektu, o wejściowym wektorze $y$, analizowane są $k$ najbliższe obiekty, a następnie $y$ jest przydzielany do klasy, w której jest większość spośród $k$ obiektów.\cite{HAND01}
 
+Przykład klasyfikacji k-NN dla różnych wartości $k$ znajduje się na rys. \ref{fig:knn-example}. Dla $k=3$ (przerywalna linia), obiekt zostaje zaklasyfikowany do klasy czerwonych trójkątów, ponieważ wśród trzech najbliższych obiektów najwięcej jest czerwonych trójkątów. Analogicznie dla $k=5$, obiekt zostaje zaklasyfikowany do niebieskich kwadratów.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/knn-example.pdf}
+	\caption{ Klasyfikacja k-NN dla dwóch różnych wartości $k$ \cite{AJANKI07} }
+	\label{fig:knn-example}
+\end{figure}
+
+Wynik klasyfikacji k-NN zależy mocno od dwóch czynników: od tego jaką przyjmujemy miarę odległości oraz od tego w jaki sposób dokonujemy transformacji obiektu do reprezentacji w przestrzeni wzorców.
+
+W wielu zastosowaniach przyjmowana jest metryka euklidesowa, tj. jeśli $\boldsymbol{y}$ jest wejściowym wektorem elementu, który ma być sklasyfikowany, a $\boldsymbol{x}$ jest wektorem wejściowym dla elementu ze zbioru treningowego, to wówczas odległość euklidesowa pomiędzy nimi wynosi:
+\begin{equation} 
+\label{knn-euclides} 
+d = \sum_j (x_j - y_j)^2
+\end{equation}
+
+Metodę k-NN łatwo jest zaprogramować i nie wymaga ona żadnej optymalizacji ani trenowania. Pozwala na łatwe zastosowanie opcji odrzucania, w której decyzja o klasyfikacji jest odraczana do momentu w którym będziemy wystarczająco przekonani co do przewidzianej klasy. Największa wada metody k-NN wynika faktu, że nie budowany jest ogólny model klasyfikacyjny, a zamiast tego zapamiętywane są wszystkie punkty zbioru danych treningowych. Jeśli zatem zbiór treningowy jest duży, to przeszukiwanie go w celu znalezienia $k$ najbliższych punktów może okazać się problematyczne.
 
 \subsection{Ada Boost}
 ...
