@@ -767,8 +767,8 @@ Maszyny wektorów nośnych zostały pierwotnie zaprojektowane do rozwiązywania 
 \begin{compactitem}
 	\item Zbudowanie klasyfikatorów binarnych, które przeciwstawiają jedną z klas reszcie klas (\emph{ang. one vs all}). Klasyfikacja nowych przypadków odbywa się z zastosowaniem strategii \emph{winner-takes-all}, w której klasyfikator z najwyższą funkcją wyjściową przypisuje klasę
 	\item Zbudowanie klasyfikatorów binarnych, które przeciwstawiają sobie każdą parę klas (\emph{ang. one vs one}), gdzie klasyfikacja odbywa się poprzez strategię głosowania \emph{max-wins}, gdzie każdy klasyfikator przypisuje przypadek do jednej z dwóch klas, a następnie głos dla przypisanej klasy jest zwiększany o jeden. Ostatecznie, klasa z największą ilością głosów determinuje przypisanie do klasy.
-	\item Zastosowanie skierowanego, acyklicznego grafu SVM (DAGSVM)
-	\item Zastosowanie kodów korekcji błędów wyjściowych
+	\item Zastosowanie skierowanego, acyklicznego grafu SVM (DAGSVM)\cite{PLATT00}
+	\item Zastosowanie kodów korekcji błędów wyjściowych\cite{DIETTERICH94}
 \end{compactitem}
 
 Zastosowanie SVM do rozwiązania problemu klasyfikacji ma wiele zalet. Pozwala na dobrą generalizację ze względu na wielowymiarowość przestrzeni cech. Podczas znajdowania minimum globalnego minimalizujemy funkcję kwadratową, co gwarantuje znalezienie minimum. Algorytm jest wydajny i generuje prawie optymalny klasyfikator, który nie jest czuły na przetrenowanie. Poprzez użycie odpowiedniej funkcji jądra daje dużą skuteczność w praktyce.\cite{WOLTER07}
