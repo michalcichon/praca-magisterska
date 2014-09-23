@@ -65,6 +65,15 @@ x_n
 
 Zbiór wzorców charakteryzujący się podobnymi wektorami cech nazywamy klasą wzorców i oznaczamy jako $\omega_1, \omega_2, \cdots, \omega_{W}$, gdzie dolny indeks określa numer klasy, a $W$ określa ilość klas. Jako rozpoznanie wzorca $\omega$ określa się przyporządkowanie wzorcowi jego klasy: $\overrightarrow{x} \rightarrow \omega$. Przestrzeń wektorów cech $X$ zostaje przekształcona w przestrzeń klas wzorców $\Omega$.
 
+Zazwyczaj systemy rozpoznawania wzorców składają się z dwóch części: ekstraktora cech oraz klasyfikatora (rys. \ref{fig:pattern-recongnition}). Procesy ekstrakcji oraz klasyfikacji zostaną omówione w następnym podrozdziałach.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/pattern-recongnition}
+	\caption{ Budowa systemu rozpoznawania wzorców, składającego się z ekstraktora cech oraz klasyfikatora \cite{FUKUNAGA90} }
+	\label{fig:pattern-recongnition}
+\end{figure}
+
 W systemach analizy obrazów możemy oprócz rozpoznania zdefiniować również dwa inne pojęcia: identyfikację oraz weryfikację. Gdy nie dysponujemy opisami klas wzorców, a jedynie przechowujemy wzorce referencyjne, celem systemu jest porównanie aktualnego wzorca z bazą referencyjną. Jeśli na podstawie określonej odległości pomiędzy parami wzorców system jest w stanie dokonać wyboru dokładnie jednego wzorca referencyjnego, to określamy takie rozwiązanie jako identyfikację. Natomiast jeśli możemy wybrać przynajmniej jeden ze wzorców referencyjnych to określamy takie rozwiązanie jako weryfikację.
 
 \section{Selekcja cech}
@@ -105,6 +114,8 @@ Po poprawnej selekcji cech, możliwe powinno się stać stworzenie takiego model
 \section{Ekstrakcja cech}
 
 Obrazy w formie map bitowych reprezentowane są w pamięci komputera w postaci macierzy pikseli. Ilość danych jest dla klasyfikacji zbyt duża i zawiera wiele niepotrzebnych informacji. Dlatego przed przystąpieniem do procesu klasyfikacji należy wydobyć z obrazu pewne cechy. Proces przetwarzania obrazu w celu wydobycia cech określa się jako ekstrakcję cech (\emph{ang. feature extraction}).
+
+Warto zauważyć, że ekstrakcja cech jest procesem odmiennym od omówionej wcześniej selekcji cech. Selekcja cech polegała na znalezieniu podzbioru cech, natomiast ekstrakcja cech polega na tworzeniu nowych cech z funkcji oryginalnych cech. Proces ekstrakcji może być skomplikowany i składać się ze znacznej liczby operacji na obrazie. Rezultat ekstrakcji cech często określany jest jako \emph{deskryptor cechy} lub \emph{wektor cechy}. 
 
 Można wyróżnić wiele cech używanych w procesach przetwarzania obrazów, np. rozkład kolorów w formie histogramu, obecność niektórych elementów lub kształtów, liczba występowania podobnych obiektów, wielkość kształtów, morfologia, tekstura. Przed ekstrakcją cech często warto przeprowadzić przetwarzanie wstępne (\emph{ang. preprocessing}) celem uzyskania obrazów o lepszych parametrach do ekstrakcji. Często przy przetwarzaniu wstępnym wykorzystuje się normalizację kolorów oraz korekcję gamma.
 
@@ -657,7 +668,7 @@ Przykład klasyfikacji k-NN dla różnych wartości $k$ znajduje się na rys. \r
 	\label{fig:knn-example}
 \end{figure}
 
-Wynik klasyfikacji k-NN zależy mocno od dwóch czynników: od tego jaką przyjmujemy miarę odległości oraz od tego w jaki sposób dokonujemy transformacji obiektu do reprezentacji w przestrzeni wzorców.
+Wynik klasyfikacji k-NN zależy mocno od dwóch czynników: od tego jaką przyjmujemy miarę odległości oraz od tego w jaki sposób dokonujemy transformacji obiektu do reprezentacji w przestrzeni wzorców.\cite{MORZY13}
 
 W wielu zastosowaniach przyjmowana jest metryka euklidesowa, tj. jeśli $\boldsymbol{y}$ jest wejściowym wektorem elementu, który ma być sklasyfikowany, a $\boldsymbol{x}$ jest wektorem wejściowym dla elementu ze zbioru treningowego, to wówczas odległość euklidesowa pomiędzy nimi wynosi:
 \begin{equation} 
@@ -668,7 +679,9 @@ d(x, y) = \sum_j (x_j - y_j)^2
 Metodę k-NN łatwo jest zaprogramować i nie wymaga ona żadnej optymalizacji ani trenowania. Pozwala na łatwe zastosowanie opcji odrzucania, w której decyzja o klasyfikacji jest odraczana do momentu w którym będziemy wystarczająco przekonani co do przewidzianej klasy. Największa wada metody k-NN wynika z faktu, że nie jest budowany ogólny model klasyfikacyjny, a zamiast tego zapamiętywane są wszystkie punkty zbioru danych treningowych. Jeśli zatem zbiór treningowy jest duży, to przeszukiwanie go w celu znalezienia $k$ najbliższych punktów może okazać się trudne obliczeniowo.\cite{HAND01}
 
 \subsection{Metoda AdaBoost}
-Adaptive Boosting (w skrócie AdaBoost) jest meta-algorytmem zaproponowanym przez Yoava Freunda i Roberta Schapire.
+Adaptive Boosting (w skrócie AdaBoost) jest meta-algorytmem zaproponowanym przez Yoava Freunda i Roberta Schapire, który pozwala z kilku słabych klasyfikatorów otrzymać jeden lepszy.
+
+
 
 \subsection{Maszyna wektorów wspierających (SVM)}
 ...

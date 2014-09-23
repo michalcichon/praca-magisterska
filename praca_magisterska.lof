@@ -1,25 +1,26 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Uczenie maszynowe z nauczycielem \cite {CICHOSZ00}\relax }}{14}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Uczenie maszynowe nienadzorowane \cite {CASEY}\relax }}{15}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Proces tworzenia r\IeC {\'o}\IeC {\.z}nicy Gaussian\IeC {\'o}w w algorytmie SIFT \cite {LOWE04}\relax }}{19}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Por\IeC {\'o}wnanie punktu z s\IeC {\k a}siadami \cite {LOWE04}\relax }}{19}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Wyznaczenie deskryptora SIFT o rozmiarze 2x2 z otoczenia 8x8 \cite {LOWE04}\relax }}{21}
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Por\IeC {\'o}wnanie filtr\IeC {\'o}w Gaussa z filtrami pude\IeC {\l }kowymi 9x9 (skala $\sigma = 1.2$) \cite {BAY08}\relax }}{22}
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Por\IeC {\'o}wnanie filtr\IeC {\'o}w pude\IeC {\l }kowych 9x9 z filtrami 15x15: (a) $D_{yy}$, (b) $D_{xy}$ ($\sigma = 1.2$) \cite {BAY08}\relax }}{23}
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Wielko\IeC {\'s}ci filtr\IeC {\'o}w pude\IeC {\l }kowych dla kilku kolejnych oktaw \cite {BAY08}\relax }}{24}
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Filtry falkowe Haara do obliczenia odpowiedzi w kierunku $x$ (a) oraz $y$ (b) \cite {BAY08}\relax }}{24}
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Schemat uk\IeC {\l }adu wzrokowego cz\IeC {\l }owieka \cite {GRAY18}\relax }}{26}
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Pary kana\IeC {\l }\IeC {\'o}w kolor\IeC {\'o}w przeciwstawnych (\emph {ang. opponent colors}) \relax }}{28}
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Ekstrakcja cech GIST wed\IeC {\l }ug Siegiana i Itti (2007) \cite {SIAGIAN07} \relax }}{29}
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Podstawowy operator LBP \cite {HEUSCH06} \relax }}{30}
-\contentsline {figure}{\numberline {1.14}{\ignorespaces Rozszerzony operator LBP z s\IeC {\k a}siedztwem $(8, 2)$ \cite {HEUSCH06} \relax }}{31}
-\contentsline {figure}{\numberline {1.15}{\ignorespaces Przyk\IeC {\l }adowe 8 bitowe wzorce jednolite \relax }}{31}
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Bloki HOG: (a) R-HOG, (b) C-HOG z pojedyncz\IeC {\k a} centraln\IeC {\k a} kom\IeC {\'o}rk\IeC {\k a}, (c) C-HOG z centraln\IeC {\k a} kom\IeC {\'o}rk\IeC {\k a} podzielon\IeC {\k a} k\IeC {\k a}towo \relax }}{32}
-\contentsline {figure}{\numberline {1.17}{\ignorespaces Tworzenie deskryptora HOG: (a) orientacja gradient\IeC {\'o}w, (b) tworzenie histogram\IeC {\'o}w dla blok\IeC {\'o}w (c) tworzenie wektora cech \relax }}{33}
-\contentsline {figure}{\numberline {1.18}{\ignorespaces Konstruowanie modelu klasyfikacyjnego \cite {MORZY13} \relax }}{34}
-\contentsline {figure}{\numberline {1.19}{\ignorespaces Przyk\IeC {\l }adowa struktura sztucznej sieci neuronowej dwuwarstwowej \relax }}{36}
-\contentsline {figure}{\numberline {1.20}{\ignorespaces Model sztucznego neuronu \relax }}{36}
-\contentsline {figure}{\numberline {1.21}{\ignorespaces Klasyfikacja k-NN dla dw\IeC {\'o}ch r\IeC {\'o}\IeC {\.z}nych warto\IeC {\'s}ci $k$ \cite {AJANKI07} \relax }}{37}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Budowa systemu rozpoznawania wzorc\IeC {\'o}w, sk\IeC {\l }adaj\IeC {\k a}cego si\IeC {\k e} z ekstraktora cech oraz klasyfikatora \cite {FUKUNAGA90} \relax }}{16}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Proces tworzenia r\IeC {\'o}\IeC {\.z}nicy Gaussian\IeC {\'o}w w algorytmie SIFT \cite {LOWE04}\relax }}{19}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Por\IeC {\'o}wnanie punktu z s\IeC {\k a}siadami \cite {LOWE04}\relax }}{20}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Wyznaczenie deskryptora SIFT o rozmiarze 2x2 z otoczenia 8x8 \cite {LOWE04}\relax }}{21}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Por\IeC {\'o}wnanie filtr\IeC {\'o}w Gaussa z filtrami pude\IeC {\l }kowymi 9x9 (skala $\sigma = 1.2$) \cite {BAY08}\relax }}{22}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Por\IeC {\'o}wnanie filtr\IeC {\'o}w pude\IeC {\l }kowych 9x9 z filtrami 15x15: (a) $D_{yy}$, (b) $D_{xy}$ ($\sigma = 1.2$) \cite {BAY08}\relax }}{24}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Wielko\IeC {\'s}ci filtr\IeC {\'o}w pude\IeC {\l }kowych dla kilku kolejnych oktaw \cite {BAY08}\relax }}{25}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Filtry falkowe Haara do obliczenia odpowiedzi w kierunku $x$ (a) oraz $y$ (b) \cite {BAY08}\relax }}{25}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Schemat uk\IeC {\l }adu wzrokowego cz\IeC {\l }owieka \cite {GRAY18}\relax }}{26}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Pary kana\IeC {\l }\IeC {\'o}w kolor\IeC {\'o}w przeciwstawnych (\emph {ang. opponent colors}) \relax }}{28}
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Ekstrakcja cech GIST wed\IeC {\l }ug Siegiana i Itti (2007) \cite {SIAGIAN07} \relax }}{30}
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Podstawowy operator LBP \cite {HEUSCH06} \relax }}{31}
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Rozszerzony operator LBP z s\IeC {\k a}siedztwem $(8, 2)$ \cite {HEUSCH06} \relax }}{31}
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Przyk\IeC {\l }adowe 8 bitowe wzorce jednolite \relax }}{31}
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Bloki HOG: (a) R-HOG, (b) C-HOG z pojedyncz\IeC {\k a} centraln\IeC {\k a} kom\IeC {\'o}rk\IeC {\k a}, (c) C-HOG z centraln\IeC {\k a} kom\IeC {\'o}rk\IeC {\k a} podzielon\IeC {\k a} k\IeC {\k a}towo \relax }}{33}
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Tworzenie deskryptora HOG: (a) orientacja gradient\IeC {\'o}w, (b) tworzenie histogram\IeC {\'o}w dla blok\IeC {\'o}w (c) tworzenie wektora cech \relax }}{33}
+\contentsline {figure}{\numberline {1.19}{\ignorespaces Konstruowanie modelu klasyfikacyjnego \cite {MORZY13} \relax }}{34}
+\contentsline {figure}{\numberline {1.20}{\ignorespaces Przyk\IeC {\l }adowa struktura sztucznej sieci neuronowej dwuwarstwowej \relax }}{36}
+\contentsline {figure}{\numberline {1.21}{\ignorespaces Model sztucznego neuronu \relax }}{36}
+\contentsline {figure}{\numberline {1.22}{\ignorespaces Klasyfikacja k-NN dla dw\IeC {\'o}ch r\IeC {\'o}\IeC {\.z}nych warto\IeC {\'s}ci $k$ \cite {AJANKI07} \relax }}{38}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
