@@ -232,6 +232,15 @@ SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia 16
 
 W celu rozpoznania obiektów za pomocą algorytmu SIFT należy najpierw wyznaczyć punkty charakterystyczne i odpowiadające im wektory cech lokalnych, a następnie dopasować punkty charakterystyczne z obrazu wejściowego do punktów w bazie wzorców. Do identyfikacji grup dopasowanych punktów, które określają ten sam obiekt wykorzystuje się transformatę Hougha. Weryfikacji cech dokonuje się z wykorzystaniem metody najmniejszych kwadratów. W trakcie obliczeń wyznaczane są parametry związane z transformacją pomiędzy układem związanym z wzorcem a układem związanym z obiektem na badanym obrazie.
 
+Na rys. \ref{fig:sift-keypoints} przedstawiono rezultat działania algorytmu SIFT w postaci punktów charakterystycznych nałożonych na obraz. Dodatkowo na punktach została zaznaczona ich orientacja.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{graphics/01_podstawy_teoretyczne/sift-keypoints.pdf}
+	\caption{ Efekt działania algorytmu SIFT: (a) obraz oryginalny, (b) obraz z nałożonymi punktami charakterystycznymi. }
+	\label{fig:sift-keypoints}
+\end{figure}
+
 \subsection{SURF -- Speeded Up Robust Features}
 
 SURF jest kolejnym algorytmem do wykrywania lokalnych cech obrazu. Został zaproponowany w 2006 roku przez Herberta Bay'a i jest częściowo wzorowany na algorytmie SIFT.\cite{BAY08} Algorytm jest odporny zarówno na zmiany skali jak i zmiany rotacji. Wykorzystywany jest do rozpoznawania obiektów jak i rekonstrukcji scen 3D. Typowa implementacja jest nawet kilka razy szybsza od algorytmu SIFT.\cite{SCHWEIGER09}
@@ -323,6 +332,17 @@ Ekstrakcja rozpoczyna się od stworzenia kwadratowego obszaru wokół punktu cha
 \end{equation}
 
 W rezultacie otrzymujemy wektor o długości równej 64. Odpowiedzi filtra Haara są niezmiennicze względem oświetlenia, natomiast niezmienniczość względem kontrastu jest otrzymywana poprzez wyliczenie wektora jednostkowego dla deskryptora.
+
+Na rys. \ref{fig:surf-keypoints} przedstawiono efekt działania algorytmu SURF w postaci punktów charakterystycznych nałożonych na obraz. Dla zachowania czytelności ograniczono ilość punktów do 50 najbardziej istotnych punktów.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{graphics/01_podstawy_teoretyczne/surf-keypoints.pdf}
+	\caption{ Efekt działania algorytmu SURF: (a) obraz oryginalny, (b) obraz z nałożonymi punktami charakterystycznymi. }
+	\label{fig:surf-keypoints}
+\end{figure}
+
+W algorytmie SURF dodano wiele funkcji, które wpływają na zwiększenie szybkości działania. Potrafi być nawet trzy razy szybszy od algorytmu SIFT, przy podobnej wydajności. SURF nadaje się do działania na rozmazanych oraz poobracanych obrazach, nie jest jednak najlepszym wyborem dla analizy obrazów przedstawiających obiekty z różnych perspektyw lub różniących się oświetleniem. 
 
 \subsection{Modele GIST}
 
