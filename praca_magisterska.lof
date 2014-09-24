@@ -10,7 +10,7 @@
 \contentsline {figure}{\numberline {1.9}{\ignorespaces Por\IeC {\'o}wnanie filtr\IeC {\'o}w pude\IeC {\l }kowych 9x9 z filtrami 15x15: (a) $D_{yy}$, (b) $D_{xy}$ ($\sigma = 1.2$) \cite {BAY08}\relax }}{24}
 \contentsline {figure}{\numberline {1.10}{\ignorespaces Wielko\IeC {\'s}ci filtr\IeC {\'o}w pude\IeC {\l }kowych dla kilku kolejnych oktaw \cite {BAY08}\relax }}{25}
 \contentsline {figure}{\numberline {1.11}{\ignorespaces Filtry falkowe Haara do obliczenia odpowiedzi w kierunku $x$ (a) oraz $y$ (b) \cite {BAY08}\relax }}{25}
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Efekt dzia\IeC {\l }ania algorytmu SIFT: (a) obraz oryginalny, (b) obraz z na\IeC {\l }o\IeC {\.z}onymi punktami charakterystycznymi. \relax }}{26}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Efekt dzia\IeC {\l }ania algorytmu SURF: (a) obraz oryginalny, (b) obraz z na\IeC {\l }o\IeC {\.z}onymi punktami charakterystycznymi. \relax }}{26}
 \contentsline {figure}{\numberline {1.13}{\ignorespaces Schemat uk\IeC {\l }adu wzrokowego cz\IeC {\l }owieka \cite {GRAY18}\relax }}{27}
 \contentsline {figure}{\numberline {1.14}{\ignorespaces Pary kana\IeC {\l }\IeC {\'o}w kolor\IeC {\'o}w przeciwstawnych (\emph {ang. opponent colors}) \relax }}{30}
 \contentsline {figure}{\numberline {1.15}{\ignorespaces Ekstrakcja cech GIST wed\IeC {\l }ug Siegiana i Itti (2007) \cite {SIAGIAN07} \relax }}{31}
