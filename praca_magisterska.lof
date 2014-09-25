@@ -19,12 +19,13 @@
 \contentsline {figure}{\numberline {1.18}{\ignorespaces Przyk\IeC {\l }adowe 8 bitowe wzorce jednolite \relax }}{33}
 \contentsline {figure}{\numberline {1.19}{\ignorespaces Bloki HOG: (a) R-HOG, (b) C-HOG z pojedyncz\IeC {\k a} centraln\IeC {\k a} kom\IeC {\'o}rk\IeC {\k a}, (c) C-HOG z centraln\IeC {\k a} kom\IeC {\'o}rk\IeC {\k a} podzielon\IeC {\k a} k\IeC {\k a}towo \relax }}{34}
 \contentsline {figure}{\numberline {1.20}{\ignorespaces Tworzenie deskryptora HOG: (a) orientacja gradient\IeC {\'o}w, (b) tworzenie histogram\IeC {\'o}w dla blok\IeC {\'o}w (c) tworzenie wektora cech \relax }}{34}
-\contentsline {figure}{\numberline {1.21}{\ignorespaces Konstruowanie modelu klasyfikacyjnego \cite {MORZY13} \relax }}{35}
-\contentsline {figure}{\numberline {1.22}{\ignorespaces Przyk\IeC {\l }adowa struktura sztucznej sieci neuronowej dwuwarstwowej \relax }}{37}
-\contentsline {figure}{\numberline {1.23}{\ignorespaces Model sztucznego neuronu \relax }}{37}
-\contentsline {figure}{\numberline {1.24}{\ignorespaces Klasyfikacja k-NN dla dw\IeC {\'o}ch r\IeC {\'o}\IeC {\.z}nych warto\IeC {\'s}ci $k$ \cite {AJANKI07} \relax }}{39}
-\contentsline {figure}{\numberline {1.25}{\ignorespaces Maksymalna separacja hiperp\IeC {\l }aszczyzny \relax }}{41}
-\contentsline {figure}{\numberline {1.26}{\ignorespaces Liniowa separacja w przestrzeni cech \relax }}{42}
+\contentsline {figure}{\numberline {1.21}{\ignorespaces Efekt dzia\IeC {\l }ania algorytmu HOG \relax }}{35}
+\contentsline {figure}{\numberline {1.22}{\ignorespaces Konstruowanie modelu klasyfikacyjnego \cite {MORZY13} \relax }}{36}
+\contentsline {figure}{\numberline {1.23}{\ignorespaces Przyk\IeC {\l }adowa struktura sztucznej sieci neuronowej dwuwarstwowej \relax }}{38}
+\contentsline {figure}{\numberline {1.24}{\ignorespaces Model sztucznego neuronu \relax }}{38}
+\contentsline {figure}{\numberline {1.25}{\ignorespaces Klasyfikacja k-NN dla dw\IeC {\'o}ch r\IeC {\'o}\IeC {\.z}nych warto\IeC {\'s}ci $k$ \cite {AJANKI07} \relax }}{39}
+\contentsline {figure}{\numberline {1.26}{\ignorespaces Maksymalna separacja hiperp\IeC {\l }aszczyzny \relax }}{42}
+\contentsline {figure}{\numberline {1.27}{\ignorespaces Liniowa separacja w przestrzeni cech \relax }}{42}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
