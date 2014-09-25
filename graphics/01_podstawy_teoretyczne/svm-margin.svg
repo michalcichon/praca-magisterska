@@ -7,21 +7,20 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="268px"
-   height="275px"
+   width="288px"
+   height="274px"
    version="1.1"
-   id="svg2"
+   id="svg3107"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="svm-margin.pdf">
+   sodipodi:docname="svm-margin.svg">
   <metadata
-     id="metadata82">
+     id="metadata3189">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -34,346 +33,363 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1018"
-     id="namedview80"
+     inkscape:window-width="1676"
+     inkscape:window-height="1006"
+     id="namedview3187"
      showgrid="false"
-     inkscape:zoom="2.4273047"
-     inkscape:cx="48.080562"
-     inkscape:cy="121.82138"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:zoom="2.9562044"
+     inkscape:cx="181.66129"
+     inkscape:cy="161.88007"
+     inkscape:window-x="4"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g6" />
+     inkscape:current-layer="g3111" />
   <defs
-     id="defs4" />
+     id="defs3109" />
   <g
      transform="translate(0.5,0.5)"
-     id="g6">
+     id="g3111">
     <path
-       d="M 1 232 L 181 2"
+       d="M 1 231 L 181 1"
        fill="none"
        stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path8" />
+       id="path3113"
+       style="stroke-width:1;stroke-miterlimit:10;stroke-dasharray:2,1;stroke-dashoffset:0" />
     <path
-       d="M 51 272 L 231 42"
+       d="M 61 271 L 241 41"
        fill="none"
        stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path10" />
+       id="path3115"
+       style="stroke:#000000;stroke-opacity:1;stroke-width:1;stroke-miterlimit:10;stroke-dasharray:2,2;stroke-dashoffset:0" />
     <path
-       d="M 201 71 L 221 81 L 201 91 Z"
+       d="M 221 90 L 241 100 L 221 110 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,211,81)"
+       transform="rotate(-90,231,100)"
        pointer-events="none"
-       id="path12" />
+       id="path3117" />
     <path
-       d="M 214 116 L 234 126 L 214 136 Z"
+       d="M 234 135 L 254 145 L 234 155 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,224,126)"
+       transform="rotate(-90,244,145)"
        pointer-events="none"
-       id="path14" />
+       id="path3119" />
     <path
-       d="M 186 107 L 206 117 L 186 127 Z"
+       d="M 199 120 L 219 130 L 199 140 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,196,117)"
+       transform="rotate(-90,209,130)"
        pointer-events="none"
-       id="path16" />
+       id="path3121" />
     <path
-       d="M 204 150 L 224 160 L 204 170 Z"
+       d="M 224 169 L 244 179 L 224 189 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,214,160)"
+       transform="rotate(-90,234,179)"
        pointer-events="none"
-       id="path18" />
+       id="path3123" />
     <path
-       d="M 170 138 L 190 148 L 170 158 Z"
+       d="M 184 157 L 204 167 L 184 177 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,180,148)"
+       transform="rotate(-90,194,167)"
        pointer-events="none"
-       id="path20" />
+       id="path3125" />
     <path
-       d="M 176 177 L 196 187 L 176 197 Z"
+       d="M 196 196 L 216 206 L 196 216 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,186,187)"
+       transform="rotate(-90,206,206)"
        pointer-events="none"
-       id="path22" />
+       id="path3127" />
     <path
-       d="M 137 175 L 157 185 L 137 195 Z"
+       d="M 152 190 L 172 200 L 152 210 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,147,185)"
+       transform="rotate(-90,162,200)"
        pointer-events="none"
-       id="path24" />
+       id="path3129" />
     <path
-       d="M 147 214 L 167 224 L 147 234 Z"
+       d="M 167 233 L 187 243 L 167 253 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,157,224)"
+       transform="rotate(-90,177,243)"
        pointer-events="none"
-       id="path26" />
+       id="path3131" />
     <path
-       d="M 112 209 L 132 219 L 112 229 Z"
+       d="M 132 228 L 152 238 L 132 248 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,122,219)"
+       transform="rotate(-90,142,238)"
        pointer-events="none"
-       id="path28" />
+       id="path3133" />
     <path
-       d="M 176 207 L 196 217 L 176 227 Z"
+       d="M 196 226 L 216 236 L 196 246 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,186,217)"
+       transform="rotate(-90,206,236)"
        pointer-events="none"
-       id="path30" />
+       id="path3135" />
     <path
-       d="M 215 184 L 235 194 L 215 204 Z"
+       d="M 235 203 L 255 213 L 235 223 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,225,194)"
+       transform="rotate(-90,245,213)"
        pointer-events="none"
-       id="path32" />
+       id="path3137" />
     <path
-       d="M 245 89 L 265 99 L 245 109 Z"
+       d="M 265 108 L 285 118 L 265 128 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,255,99)"
+       transform="rotate(-90,275,118)"
        pointer-events="none"
-       id="path34" />
+       id="path3139" />
     <path
-       d="M 246 137 L 266 147 L 246 157 Z"
+       d="M 266 156 L 286 166 L 266 176 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,256,147)"
+       transform="rotate(-90,276,166)"
        pointer-events="none"
-       id="path36" />
+       id="path3141" />
     <path
-       d="M 217 214 L 237 224 L 217 234 Z"
+       d="M 237 233 L 257 243 L 237 253 Z"
        fill="#00cc00"
        stroke="none"
-       transform="rotate(-90,227,224)"
+       transform="rotate(-90,247,243)"
        pointer-events="none"
-       id="path38" />
+       id="path3143" />
     <rect
-       x="96"
-       y="42"
+       x="94"
+       y="41"
        width="20"
        height="20"
        fill="#0000cc"
        stroke="none"
        pointer-events="none"
-       id="rect40" />
+       id="rect3145" />
     <rect
        x="76"
-       y="72"
+       y="71"
        width="20"
        height="20"
        fill="#0000cc"
        stroke="none"
        pointer-events="none"
-       id="rect42" />
+       id="rect3147" />
     <rect
-       x="46"
-       y="102"
+       x="45"
+       y="98"
        width="20"
        height="20"
        fill="#0000cc"
        stroke="none"
        pointer-events="none"
-       id="rect44" />
+       id="rect3149" />
     <rect
        x="33"
-       y="130"
+       y="129"
        width="20"
        height="20"
        fill="#0000cc"
        stroke="none"
        pointer-events="none"
-       id="rect46" />
+       id="rect3151" />
     <rect
-       x="18"
-       y="162"
+       x="8"
+       y="155"
        width="20"
        height="20"
        fill="#0000cc"
        stroke="none"
        pointer-events="none"
-       id="rect48" />
+       id="rect3153" />
     <rect
        x="5"
+       y="100"
+       width="20"
+       height="20"
+       fill="#0000cc"
+       stroke="none"
+       pointer-events="none"
+       id="rect3155" />
+    <rect
+       x="35"
+       y="60"
+       width="20"
+       height="20"
+       fill="#0000cc"
+       stroke="none"
+       pointer-events="none"
+       id="rect3157" />
+    <rect
+       x="15"
+       y="30"
+       width="20"
+       height="20"
+       fill="#0000cc"
+       stroke="none"
+       pointer-events="none"
+       id="rect3159" />
+    <rect
+       x="58"
+       y="30"
+       width="20"
+       height="20"
+       fill="#0000cc"
+       stroke="none"
+       pointer-events="none"
+       id="rect3161" />
+    <rect
+       x="100"
+       y="2"
+       width="20"
+       height="20"
+       fill="#0000cc"
+       stroke="none"
+       pointer-events="none"
+       id="rect3163" />
+    <rect
+       x="37"
+       y="3"
+       width="20"
+       height="20"
+       fill="#0000cc"
+       stroke="none"
+       pointer-events="none"
+       id="rect3165" />
+    <path
+       d="M 91 231 L 36 195"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path3167" />
+    <path
+       d="M 32 192 L 40 193 L 36 195 L 36 198 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path3169" />
+    <path
+       d="M 31 191 L 86 227"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path3171" />
+    <path
+       d="M 90 230 L 82 229 L 86 227 L 86 224 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path3173" />
+    <path
+       d="M 153 128 L 173 138 L 153 148 Z"
+       fill="#ffffff"
+       stroke="#00cc00"
+       stroke-miterlimit="10"
+       transform="rotate(-90,163,138)"
+       pointer-events="none"
+       id="path3175" />
+    <path
+       d="M 118 172 L 138 182 L 118 192 Z"
+       fill="#ffffff"
+       stroke="#00cc00"
+       stroke-miterlimit="10"
+       transform="rotate(-90,128,182)"
+       pointer-events="none"
+       id="path3177" />
+    <rect
+       x="84"
        y="101"
        width="20"
        height="20"
-       fill="#0000cc"
-       stroke="none"
+       fill="#ffffff"
+       stroke="#0000cc"
        pointer-events="none"
-       id="rect50" />
+       id="rect3179" />
     <rect
-       x="35"
-       y="61"
+       x="123"
+       y="52"
        width="20"
        height="20"
-       fill="#0000cc"
-       stroke="none"
+       fill="#ffffff"
+       stroke="#0000cc"
        pointer-events="none"
-       id="rect52" />
+       id="rect3181" />
     <rect
-       x="15"
-       y="31"
+       x="60"
+       y="132"
        width="20"
        height="20"
-       fill="#0000cc"
-       stroke="none"
+       fill="#ffffff"
+       stroke="#0000cc"
        pointer-events="none"
-       id="rect54" />
-    <rect
-       x="55"
-       y="31"
-       width="20"
-       height="20"
-       fill="#0000cc"
-       stroke="none"
-       pointer-events="none"
-       id="rect56" />
-    <rect
-       x="95"
-       y="1"
-       width="20"
-       height="20"
-       fill="#0000cc"
-       stroke="none"
-       pointer-events="none"
-       id="rect58" />
-    <rect
-       x="37"
-       y="4"
-       width="20"
-       height="20"
-       fill="#0000cc"
-       stroke="none"
-       pointer-events="none"
-       id="rect60" />
+       id="rect3183" />
     <path
-       d="M 81 232 L 36 196"
+       d="M 31 251 L 211 21"
        fill="none"
        stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path62" />
-    <path
-       d="M 32 193 L 40 194 L 36 196 L 35 200 Z"
-       fill="#000000"
-       stroke="#000000"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path64" />
-    <path
-       d="M 31 192 L 76 228"
-       fill="none"
-       stroke="#000000"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path66" />
-    <path
-       d="M 80 231 L 72 230 L 76 228 L 77 224 Z"
-       fill="#000000"
-       stroke="#000000"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path68" />
-    <path
-       d="M 157 112 L 177 122 L 157 132 Z"
-       fill="#336600"
-       stroke="none"
-       transform="rotate(-90,167,122)"
-       pointer-events="none"
-       id="path70"
-       style="fill:#00cc00;fill-opacity:1;stroke:#ff6800;stroke-opacity:1" />
-    <path
-       d="M 108 173 L 128 183 L 108 193 Z"
-       fill="#336600"
-       stroke="none"
-       transform="rotate(-90,118,183)"
-       pointer-events="none"
-       id="path72"
-       style="fill:#00cc00;fill-opacity:1;stroke:#ff6800;stroke-opacity:1" />
-    <rect
-       x="84"
-       y="102"
-       width="20"
-       height="20"
-       fill="#0066cc"
-       stroke="none"
-       pointer-events="none"
-       id="rect74"
-       style="fill:#0000cc;fill-opacity:1;stroke:#ff6800;stroke-opacity:1" />
-    <rect
-       x="124"
-       y="53"
-       width="20"
-       height="20"
-       fill="#0066cc"
-       stroke="none"
-       pointer-events="none"
-       id="rect76"
-       style="fill:#0000cc;fill-opacity:1;stroke:#ff6800;stroke-opacity:1" />
-    <rect
-       x="63"
-       y="133"
-       width="20"
-       height="20"
-       fill="#0066cc"
-       stroke="none"
-       pointer-events="none"
-       id="rect78"
-       style="fill:#0000cc;fill-opacity:1;stroke:#ff6800;stroke-opacity:1" />
+       id="path3185" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="52.27037"
+       y="-175.81969"
+       id="text3967"
+       sodipodi:linespacing="125%"
+       transform="scale(1,-1)"><tspan
+         sodipodi:role="line"
+         id="tspan3969"
+         x="52.27037"
+         y="-175.81969"
+         style="font-size:24px;font-family:Times New Roman;-inkscape-font-specification:Times New Roman" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="47.534573"
+       y="201.10988"
+       id="text3971"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3973"
+         x="47.534573"
+         y="201.10988"
+         style="font-size:24px;font-family:Times New Roman;-inkscape-font-specification:Times New Roman">δ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="138.50494"
+       y="19.707407"
+       id="text3975"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3977"
+         x="138.50494"
+         y="19.707407">H<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan3979">1</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="237.3642"
+       y="66.727158"
+       id="text3981"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3983"
+         x="237.3642"
+         y="66.727158">H<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan3985">2</tspan></tspan></text>
   </g>
-  <text
-     xml:space="preserve"
-     style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     x="62.923729"
-     y="205.08475"
-     id="text3059"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan3061"
-       x="62.923729"
-       y="205.08475"
-       style="font-size:20px;font-family:Times New Roman;-inkscape-font-specification:Times New Roman">δ</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     x="189.11864"
-     y="27.635593"
-     id="text3063"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan3065"
-       x="189.11864"
-       y="27.635593"
-       style="font-size:20px;font-family:Times New Roman;-inkscape-font-specification:Times New Roman">H<tspan
-   style="font-size:65%;baseline-shift:sub"
-   id="tspan3090">1</tspan></tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-     x="246.13455"
-     y="61.715439"
-     id="text3063-1"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan3065-7"
-       x="246.13455"
-       y="61.715439"
-       style="font-size:20px;font-family:Times New Roman;-inkscape-font-specification:Times New Roman">H<tspan
-   style="font-size:65%;baseline-shift:sub"
-   id="tspan3088">2</tspan></tspan></text>
 </svg>
