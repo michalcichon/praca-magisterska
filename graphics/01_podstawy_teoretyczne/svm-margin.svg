@@ -33,15 +33,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1676"
-     inkscape:window-height="1006"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
      id="namedview3187"
      showgrid="false"
      inkscape:zoom="2.9562044"
      inkscape:cx="181.66129"
      inkscape:cy="161.88007"
-     inkscape:window-x="4"
-     inkscape:window-y="0"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="g3111" />
   <defs
@@ -357,13 +357,13 @@
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        x="47.534573"
-       y="201.10988"
+       y="199.10988"
        id="text3971"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3973"
          x="47.534573"
-         y="201.10988"
+         y="199.10988"
          style="font-size:24px;font-family:Times New Roman;-inkscape-font-specification:Times New Roman">δ</tspan></text>
     <text
        xml:space="preserve"
@@ -391,5 +391,16 @@
          y="66.727158">H<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
    id="tspan3985">2</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="223.0679"
+       y="26.92963"
+       id="text3029"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3031"
+         x="223.0679"
+         y="26.92963">H</tspan></text>
   </g>
 </svg>
