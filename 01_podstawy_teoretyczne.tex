@@ -816,9 +816,27 @@ Do wad SVM można zaliczyć m.in. to, że trening trwa stosunkowo długo, szczeg
 \section{Ocena klasyfikatorów}
 W celu określenia jakości klasyfikatora i porównania go z innymi klasyfikatorami często stosuje się macierze pomyłek (\emph{ang. confusion matrix}). Są to macierze o wymiarach $m \times m$, gdzie $m$ to liczba etykiet klas. Wiersze odpowiadają rzeczywistym etykietom klas rekordów testowych, natomiast kolumny odpowiadają etykietom klas przypisanym przez klasyfikator. Element $f_{ij}$ macierzy oznacza liczbę rekordów testowych z klasy $C_i$ przypisanej przez klasyfikator do klasy $C_j$.
 
-W szczególności dla przypadku klasyfikacji binarnej, gdzie obiekty przypisujemy do jednej z dwóch klas, otrzymujemy macierz $2\times 2$.
+W szczególności dla przypadku klasyfikacji binarnej, gdzie obiekty przypisujemy do jednej z dwóch klas, otrzymujemy macierz $2\times 2$. Na rys. \ref{fig:confusion-matrix} przedstawiono schemat macierzy pomyłek $2 \times 2$. Elementy TN, FP, FN i TP opisują następujące przypadki:
 
+\begin{compactitem}
+	\item \emph{TP} (\emph{ang. true positive}) -- liczba pozytywnych rekordów testowych zaklasyfikowanych do klasy pozytywnej,
+	\item \emph{TN} (\emph{ang. true negative}) -- liczba negatywnych rekordów testowych zaklasyfikowanych do klasy negatywnej,
+	\item \emph{FP} (\emph{ang. true positive}) -- liczba negatywnych rekordów testowych zaklasyfikowanych do klasy pozytywnej,
+	\item \emph{FN} (\emph{ang. true positive}) -- liczba pozytywnych rekordów testowych zaklasyfikowanych do klasy negatywnej.
+\end{compactitem}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.0]{graphics/01_podstawy_teoretyczne/confusion-matrix.pdf}
+	\caption{ Schemat macierz pomyłek dla klasyfikacji binarnej \cite{KOHAVI98} }
+	\label{fig:confusion-matrix}
+\end{figure}
+
+Na podstawie elementów macierzy można wyznaczyć następujące miary wydajności:
+\begin{equation} 
+\label{cm_accuracy} 
+\text{Trafność} = (a + d) / (a + b + c + d) = (TN+TP) / \text{wszystkie}
+\end{equation}
 
 \section{Problemy kategoryzacji}
 % entry-level categories
