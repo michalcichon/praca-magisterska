@@ -835,19 +835,33 @@ W szczególności dla przypadku klasyfikacji binarnej, gdzie obiekty przypisujem
 Na podstawie elementów macierzy można wyznaczyć następujące miary wydajności\cite{HLAVAC}:
 \begin{equation}
 \label{cm_accuracy} 
-\text{Trafność (\emph{ang. accuracy})} = (a + d) / (a + b + c + d) = (TN+TP) / \text{wszystkie}
+\begin{split} 
+\text{Trafność (\emph{ang. accuracy})} & = (a + d) / (a + b + c + d) \\ & = (TN+TP) / \text{wszystkie}
+\end{split}
+\end{equation}
+\begin{equation}
+\label{cm_error} 
+\begin{split} 
+\text{Błąd klasyfikacji (\emph{ang. error rate})} & = (b + c) / (a + b + c + d) \\ & = (FN + FP) / \text{wszystkie}
+\end{split}
 \end{equation}
 \begin{equation} 
 \label{cm_recall} 
-\text{Zwrot (\emph{ang. recall})} = d / (c + d) = TP / \text{rzeczywiście pozytywne}
+\begin{split} 
+\text{Zwrot (\emph{ang. recall})} & = d / (c + d) \\ & = TP / \text{rzeczywiście pozytywne}
+\end{split}
 \end{equation}
 \begin{equation} 
 \label{cm_specificity} 
-\text{Specyficzność (\emph{ang. specificity})} = a / (a + b) = TN / \text{rzeczywiście negatywne}
+\begin{split} 
+\text{Specyficzność (\emph{ang. specificity})} & = a / (a + b) \\ & = TN / \text{rzeczywiście negatywne}
+\end{split}
 \end{equation}
 \begin{equation} 
 \label{cm_precision} 
-\text{Precyzja (\emph{ang. precision})} = d / (b + d) = TP / \text{przewidywane pozytywne}
+\begin{split} 
+\text{Precyzja (\emph{ang. precision})} & = d / (b + d) \\ & = TP / \text{przewidywane pozytywne}
+\end{split}
 \end{equation}
 \begin{equation} 
 \label{cm_false_alarm} 
@@ -861,6 +875,20 @@ Na podstawie elementów macierzy można wyznaczyć następujące miary wydajnoś
 \text{Współczynnik FN (\emph{ang. false negative rate})} & = c / (c + d) \\ & =  FN / \text{rzeczywiście pozytywne} = 1 - \text{Specyficzność}
 \end{split}
 \end{equation}
+
+Celem algorytmów klasyfikacyjnych jest znalezienie modelu klasyfikacyjnego, który zapewnia największą możliwą trafność (\emph{ang. accuracy}).
+
+Dla przypadku klasyfikacji do wielu klas można użyć następujących generalizacji\cite{SOKOLOVA09}:
+\begin{equation}
+\label{cm_accuracy_multi} 
+\text{Średnia trafność (\emph{ang. average accuracy})} = \frac{\sum\limits_{i=1}^l \frac{tp_i + tn_i}{tp_i + fn_i + fp_i + tn_i}}{l}
+\end{equation}
+\begin{equation}
+\label{cm_error_multi} 
+\text{Średnia trafność (\emph{ang. average accuracy})} = \frac{\sum\limits_{i=1}^l \frac{fp_i + fn_i}{tp_i + fn_i + fp_i + tn_i}}{l}
+\end{equation}
+
+
 
 \section{Problemy kategoryzacji}
 % entry-level categories
