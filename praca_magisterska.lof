@@ -14,9 +14,9 @@
 \contentsline {figure}{\numberline {1.13}{\ignorespaces Schemat uk\IeC {\l }adu wzrokowego cz\IeC {\l }owieka \cite {GRAY18}\relax }}{27}
 \contentsline {figure}{\numberline {1.14}{\ignorespaces Pary kana\IeC {\l }\IeC {\'o}w kolor\IeC {\'o}w przeciwstawnych (\emph {ang. opponent colors}) \relax }}{30}
 \contentsline {figure}{\numberline {1.15}{\ignorespaces Ekstrakcja cech GIST wed\IeC {\l }ug Siegiana i Itti (2007) \cite {SIAGIAN07} \relax }}{31}
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Podstawowy operator LBP \cite {HEUSCH06} \relax }}{31}
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Podstawowy operator LBP \cite {HEUSCH06} \relax }}{32}
 \contentsline {figure}{\numberline {1.17}{\ignorespaces Rozszerzony operator LBP z s\IeC {\k a}siedztwem $(8, 2)$ \cite {HEUSCH06} \relax }}{32}
-\contentsline {figure}{\numberline {1.18}{\ignorespaces Przyk\IeC {\l }adowe 8 bitowe wzorce jednolite \relax }}{33}
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Przyk\IeC {\l }adowe 8 bitowe wzorce jednolite \relax }}{32}
 \contentsline {figure}{\numberline {1.19}{\ignorespaces Zastosowanie LBP do wykrywania punkt\IeC {\'o}w charakteryzuj\IeC {\k a}cych: (a) rogi, (b) kraw\IeC {\k e}dzie, (c) p\IeC {\l }aszczyzny. \relax }}{33}
 \contentsline {figure}{\numberline {1.20}{\ignorespaces Bloki HOG: (a) R-HOG, (b) C-HOG z pojedyncz\IeC {\k a} centraln\IeC {\k a} kom\IeC {\'o}rk\IeC {\k a}, (c) C-HOG z centraln\IeC {\k a} kom\IeC {\'o}rk\IeC {\k a} podzielon\IeC {\k a} k\IeC {\k a}towo \relax }}{34}
 \contentsline {figure}{\numberline {1.21}{\ignorespaces Tworzenie deskryptora HOG: (a) orientacja gradient\IeC {\'o}w, (b) tworzenie histogram\IeC {\'o}w dla blok\IeC {\'o}w (c) tworzenie wektora cech \relax }}{35}
@@ -28,7 +28,6 @@
 \contentsline {figure}{\numberline {1.27}{\ignorespaces Maksymalna separacja hiperp\IeC {\l }aszczyzny \relax }}{42}
 \contentsline {figure}{\numberline {1.28}{\ignorespaces Liniowa separacja w przestrzeni cech \relax }}{42}
 \contentsline {figure}{\numberline {1.29}{\ignorespaces Schemat macierz pomy\IeC {\l }ek dla klasyfikacji binarnej \cite {KOHAVI98} \relax }}{44}
-\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
