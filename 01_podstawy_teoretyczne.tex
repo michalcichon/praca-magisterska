@@ -292,7 +292,7 @@ Ze względu na teoretyczną dokładność, wagi $w$ powinny zmieniać się wraz 
 
 W przypadku algorytmu SIFT, w celu uzyskania odpowiedniej skali, filtrowaliśmy obraz iteracyjnie tym samym filtrem. W algorytmie SURF, dzięki zastosowaniu obrazów całkowych, można zastosować bezpośrednio na obrazie wejściowym filtr pudełkowy o odpowiednim rozmiarze. Dzięki temu obrazy o różnych skalach można uzyskać nawet równolegle. 
 
-Konstrukcja przestrzeni skal rozpoczyna się od filtra 9x9, który oblicza odpowiedź obszaru spójnego obrazu dla najmniejszej skali. Każda oktawa jest dzielona na stałą liczbę poziomów skalowania. Ze względu na dyskretny charakter obrazów całkowych, minimalna różnica skali pomiędzy dwoma kolejnymi poziomami zależy od długości $l_0$, która określa rozmiar obszaru o jednakowych wartościach (1, -1, -2) na filtrze. W przypadku filtra $9 \times 9$ wartość ta wynosi 3.
+Konstrukcja przestrzeni skal rozpoczyna się od filtra $9 \times 9$, który oblicza odpowiedź obszaru spójnego obrazu dla najmniejszej skali. Każda oktawa jest dzielona na stałą liczbę poziomów skalowania. Ze względu na dyskretny charakter obrazów całkowych, minimalna różnica skali pomiędzy dwoma kolejnymi poziomami zależy od długości $l_0$, która określa rozmiar obszaru o jednakowych wartościach (1, -1, -2) na filtrze. W przypadku filtra $9 \times 9$ wartość ta wynosi 3.
 
 Dla dwóch kolejnych poziomów wartość tą należy zwiększyć przynajmniej o 2 piksele oraz zapewnić wystąpienie środkowego piksela, w rezultacie wielkość filtra zwiększa się o 6 pikseli pomiędzy poziomami. Porównanie filtrów $9 \times 9$ z filtrami $15 \times 15$ przedstawiono na rys. \ref{fig:surf-9-to-15}.
 
