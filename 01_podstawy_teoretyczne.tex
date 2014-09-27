@@ -833,9 +833,33 @@ W szczególności dla przypadku klasyfikacji binarnej, gdzie obiekty przypisujem
 \end{figure}
 
 Na podstawie elementów macierzy można wyznaczyć następujące miary wydajności:
-\begin{equation} 
+\begin{equation}
 \label{cm_accuracy} 
-\text{Trafność} = (a + d) / (a + b + c + d) = (TN+TP) / \text{wszystkie}
+\text{Trafność (\emph{ang. accuracy})} = (a + d) / (a + b + c + d) = (TN+TP) / \text{wszystkie}
+\end{equation}
+\begin{equation} 
+\label{cm_recall} 
+\text{Zwrot (\emph{ang. recall})} = d / (c + d) = TP / \text{rzeczywiście pozytywne}
+\end{equation}
+\begin{equation} 
+\label{cm_specificity} 
+\text{Specyficzność (\emph{ang. specificity})} = a / (a + b) = TN / \text{rzeczywiście negatywne}
+\end{equation}
+\begin{equation} 
+\label{cm_precision} 
+\text{Precyzja (\emph{ang. precision})} = d / (b + d) = TP / \text{przewidywane pozytywne}
+\end{equation}
+\begin{equation} 
+\label{cm_false_alarm} 
+\begin{split} 
+\text{Fałszywy alarm (\emph{ang. false alarm})} & = b / (a + b) \\ & = FP / \text{rzeczywiście negatywne} = 1 - \text{Specyficzność}
+\end{split}
+\end{equation}
+\begin{equation} 
+\label{cm_fn_rate}
+\begin{split} 
+\text{Współczynnik FN (\emph{ang. false negative rate})} & = c / (c + d) \\ & =  FN / \text{rzeczywiście pozytywne} = 1 - \text{Specyficzność}
+\end{split}
 \end{equation}
 
 \section{Problemy kategoryzacji}
