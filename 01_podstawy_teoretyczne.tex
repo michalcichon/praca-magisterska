@@ -41,7 +41,7 @@ Na rys. \ref{fig:unsupervised-learning} przedstawiono uproszczony schemat mechan
 	\label{fig:unsupervised-learning}
 \end{figure}
 
-Dane wejściowe z etapu walidacji mogą się różnić od przykładowych danych służących do wytrenowania systemu. Umiejętność udzielania poprawnej odpowiedzi na komunikaty, które różnią się od przykładowych danych określamy jako generalizacja.\cite{BISHOP06}
+Dane wejściowe z etapu walidacji powinny się różnić od przykładowych danych służących do wytrenowania systemu. Umiejętność udzielania poprawnej odpowiedzi na komunikaty, które różnią się od przykładowych danych określamy jako generalizacja.\cite{BISHOP06}
 %TODO napisac o tym w kontekscie pracy, co raczej sie nadaje a co raczej nie
 
 Wśród dostępnych publikacji na temat kategoryzacji obrazów przeważają rozwiązania oparte na uczeniu nadzorowanym lub pół-nadzorowanym.\cite{MELE06}\cite{CHEN04}\cite{Vitaladevuni13}\cite{LUO11} Istnieje jednak kilka rozwiązań opartych na uczeniu nienadzorowanym, m.in. w  Dai D., Wu T., Zhu S-c., \emph{Discovering Scene Categories by Information Projection and Cluster Sampling}\cite{DAI10} gdzie zaprezentowano metodę kategoryzacji sceny opartą na uczeniu nienadzorowanym, lub Huang Y., Liu Q., Lv F., Gong Y., Dimitris N., \emph{Unsupervised Image Categorization by Hypergraph Partition}\cite{HUANG11}, gdzie klastrowanie obrazów sformowano jako problem podziału hipergrafu.
@@ -876,8 +876,6 @@ Na podstawie elementów macierzy można wyznaczyć następujące miary wydajnoś
 \end{split}
 \end{equation}
 
-Celem algorytmów klasyfikacyjnych jest znalezienie modelu klasyfikacyjnego, który zapewnia największą możliwą trafność (\emph{ang. accuracy}).
-
 Dla przypadku klasyfikacji do wielu klas można użyć następujących generalizacji\cite{SOKOLOVA09}:
 \begin{equation}
 \label{cm_accuracy_multi} 
@@ -888,9 +886,7 @@ Dla przypadku klasyfikacji do wielu klas można użyć następujących generaliz
 \text{Średnia trafność (\emph{ang. average accuracy})} = \frac{\sum\limits_{i=1}^l \frac{fp_i + fn_i}{tp_i + fn_i + fp_i + tn_i}}{l}
 \end{equation}
 
-
+Celem algorytmów klasyfikacyjnych jest znalezienie modelu klasyfikacyjnego, który zapewnia największą możliwą trafność (\emph{ang. accuracy}).
 
 \section{Problemy kategoryzacji}
-% entry-level categories
-% ???
-...
+
