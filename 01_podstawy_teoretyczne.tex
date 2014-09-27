@@ -165,7 +165,7 @@ Przestrzeń skal jest dzielona na oktawy, które reprezentują serię map odpowi
 	\label{fig:sift-gaussian-to-dog}
 \end{figure}
 
-W celu wykrycia lokalnych ekstremów, punkty są porównywane z sąsiadami w otoczeniu 3x3x3, tj. po dziewięć sąsiadów w skalach poniżej i powyżej oraz z ośmioma sąsiadami w aktualnej skali. Punkt jest przyjmowany jako kandydat na punkt charakterystyczny tylko wówczas gdy ma wartość mniejszą lub większą od wszystkich 26 punktów sąsiednich.\cite{LOWE04} Rys. \ref{fig:sift-gaussian-min-max} przedstawia porównanie punktu, oznaczonego na schemacie za pomocą "X", z punktami sąsiednimi.
+W celu wykrycia lokalnych ekstremów, punkty są porównywane z sąsiadami w otoczeniu $3 \times 3 \times 3$, tj. po dziewięć sąsiadów w skalach poniżej i powyżej oraz z ośmioma sąsiadami w aktualnej skali. Punkt jest przyjmowany jako kandydat na punkt charakterystyczny tylko wówczas gdy ma wartość mniejszą lub większą od wszystkich 26 punktów sąsiednich.\cite{LOWE04} Rys. \ref{fig:sift-gaussian-min-max} przedstawia porównanie punktu, oznaczonego na schemacie za pomocą "X", z punktami sąsiednimi.
 
 \begin{figure}[h]
 	\centering
@@ -268,7 +268,7 @@ O ile zastosowanie Gaussianów jest optymalne\cite{LINDENBERG90}, to jednak ma o
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=1.7]{graphics/01_podstawy_teoretyczne/surf-box-filters.pdf}
-	\caption{Porównanie filtrów Gaussa z filtrami pudełkowymi 9x9 (skala $\sigma = 1.2$) \cite{BAY08}}
+	\caption{Porównanie filtrów Gaussa z filtrami pudełkowymi $9 \times 9$ (skala $\sigma = 1.2$) \cite{BAY08}}
 	\label{fig:surf-box-filters}
 \end{figure}
 
@@ -325,7 +325,7 @@ Deskryptor SURF opisuje rozkład intensywności dla punktów charakterystycznych
 
 Odpowiedzi filtra Haara sa następnie filtrowane za pomocą filtra Gaussa z $\sigma = 2s$ w celu wyeliminowania odkształceń. Na podstawie otrzymanych punktów, obliczane są sumy odpowiedzi w oknach o wielkości $\frac{\pi}{2}$, a następnie najdłuższy wektor z wszystkich okien definiuje się jako orientację punktu charakterystycznego.
 
-Ekstrakcja rozpoczyna się od stworzenia kwadratowego obszaru wokół punktu charakterystycznego o wielkości $20s$. Obszar jest dzielony na podregiony 4x4, a następnie dla każdego podregionu, obliczane są odpowiedzi filtra Haara dla równo rozmieszczonych punktów w 5 rzędach i 5 kolumnach. Odpowiedzi  w kierunku $x$ oznaczane są jako $d_x$, natomiast odpowiedzi w kierunku $y$ oznaczane są jako $d_y$. Odpowiedzi $dx$ i $dy$ są następnie sumowane dla każdego podregionu i zostają umieszczone w wektorze cech. W celu określenia polaryzacji zmian intensywności, ekstraktuje się również sumę wartości bezwzględnych $|d_x|$ oraz $|d_y|$. W rezultacie każdy podregion otrzymuje czterowymiarowy wektor $\boldsymbol{v}$ określający strukturę intensywności.
+Ekstrakcja rozpoczyna się od stworzenia kwadratowego obszaru wokół punktu charakterystycznego o wielkości $20s$. Obszar jest dzielony na podregiony $4 \times 4$, a następnie dla każdego podregionu, obliczane są odpowiedzi filtra Haara dla równo rozmieszczonych punktów w 5 rzędach i 5 kolumnach. Odpowiedzi  w kierunku $x$ oznaczane są jako $d_x$, natomiast odpowiedzi w kierunku $y$ oznaczane są jako $d_y$. Odpowiedzi $dx$ i $dy$ są następnie sumowane dla każdego podregionu i zostają umieszczone w wektorze cech. W celu określenia polaryzacji zmian intensywności, ekstraktuje się również sumę wartości bezwzględnych $|d_x|$ oraz $|d_y|$. W rezultacie każdy podregion otrzymuje czterowymiarowy wektor $\boldsymbol{v}$ określający strukturę intensywności.
 \begin{equation} 
 \label{surf_v_vector} 
 \boldsymbol{v} = (\sum{d_x}, \sum{d_y}, \sum{|d_x|}, \sum{|d_y|})
@@ -476,7 +476,7 @@ Szybkość obliczeń rozwiązania zaproponowanego przez Siegiana i Itti jest pod
 
 Lokalny wzorzec binarny (\emph{ang. Local Binary Pattern, LBP}) jest bezparametrowym operatorem, który opisuje lokalną strukturę przestrzenną obrazu. Został zaproponowany po raz pierwszy przez Timo Ojala w \emph{A comparative study of texture measures with classification based on featured distributions}\cite{OJALA94} z 1994 roku, jako wysoce dyskryminujący dla klasyfikacji tekstur.
 
-LBP dla pozycji $(x_c, y_c)$ zdefiniowany jest jako uporządkowany zestaw binarnych porównań intensywności pikseli pomiędzy centralnym pikselem a ośmioma pikselami otaczającymi w masce 3x3. Przykładowy LBP zaprezentowano na rys. \ref{fig:lbp-operator}.
+LBP dla pozycji $(x_c, y_c)$ zdefiniowany jest jako uporządkowany zestaw binarnych porównań intensywności pikseli pomiędzy centralnym pikselem a ośmioma pikselami otaczającymi w masce $3 \times 3$. Przykładowy LBP zaprezentowano na rys. \ref{fig:lbp-operator}.
 
 \begin{figure}[h]
 	\centering
