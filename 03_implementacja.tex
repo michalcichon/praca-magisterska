@@ -13,11 +13,13 @@ Początkowo do realizacji zadania miał zostać wykorzystany język Python, ze w
 	\item \emph{silne typowanie} -- w przeciwieństwie do Pythona, język C++ jest silnie typowany, co w ocenie autora niniejszej pracy ma wpływ na zachowanie porządku w kodzie źródłowym
 \end{compactitem}
 
-Microsoft Visual Studio jest zintegrowanym środowiskiem programistycznym rozwijanym przez firmę Microsoft. 
+Microsoft Visual Studio jest zintegrowanym środowiskiem programistycznym rozwijanym przez firmę Microsoft. W skład pakietu wchodzą kompilatory kilku języków: C$\sharp$, J$\sharp$, Visual Basic, F$\sharp$, C++ oraz zintegrowany debugger, który działa na poziomie kodu źródłowego, jak i maszyny. Pierwsze wydanie pakietu pojawiło się w 1995 i obecnie najnowszą wersją jest wersja 12 z 2013 roku. 
+
+Kompilator Visual C++ wchodzący w skład pakietu jest specjalną wersją kompilatora języka C++, dostosowana do systemu Windows. Z tego powodu zawiera wiele dedykowanych bibliotek dla tego systemu operacyjnego, które nie mają swoich odpowiednikach w systemach Linux, Unix lub Mac OS X. Dodatkowo Microsoft wydając ten kompilator stworzył swój własny standard języka, który do wersji Visual Studio 2013 nie był w pełni zgodny z ISO. Co za tym idzie, kod silnika powstały w wersji Visual Studio 2010 nie musi być zgodny z ISO.
 
 \section{OpenCV}
 
-
+Do ekstrakcji cech oraz do klasyfikacji wykorzystano OpenCV. Jest to biblioteka do przetwarzania obrazów napisana w języku C, oparta na otwartym kodzie i zapoczątkowana przez firmę Intel. Charakteryzuje się wieloplatformowością, gdyż istnieją wersje na systemy operacyjne Windows, Mac OS X oraz Linux. Umożliwia ponadto, dzięki zastosowaniu odpowiednich nakładek, na tworzenie kodu w różnych językach programowania: C++, C$\sharp$ oraz Python.
 
 
 \section{Architektura systemu}
