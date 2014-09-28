@@ -892,5 +892,20 @@ Celem algorytmów klasyfikacyjnych jest znalezienie modelu klasyfikacyjnego, kt�
 
 %TODO więcej referencji
 
-Problemy związane z kategoryzacją mogą wynikać z wyboru kategorii lub z działania klasyfikatorów. Nazwy kategorii są na ogół definiowane z użyciem języka naturalnego. W zależności od stopnia abstrakcji kategorii, możemy mówić o kategoriach ogólnych, takich jak np. \emph{wakacje}, \emph{zima}, \emph{dom}, \emph{ogród}, \emph{zoo}, które dają nam pewne wyobrażenie o scenie jaka charakteryzuje obrazy z danej kategorii. Możemy też równie dobrze zdefiniować bardzo szczegółowe kategorie, które np. charakteryzują pojedynczy gatunek zwierzęcia lub nawet kategorie techniczne takie jak np. zestaw kategorii, które określają przewagę jakiegoś koloru na histogramie i które nie wymagają skomplikowanego procesu uczenia maszynowego. 
+Problemy związane z kategoryzacją mogą wynikać z wyboru kategorii lub z działania klasyfikatorów.  
+
+\subsection{Wybór kategorii}
+
+Nazwy kategorii są na ogół definiowane z użyciem języka naturalnego. W zależności od stopnia abstrakcji kategorii, możemy mówić o kategoriach ogólnych, takich jak np. \emph{wakacje}, \emph{zima}, \emph{dom}, \emph{ogród}, \emph{zoo}, które dają nam pewne wyobrażenie o scenie jaka charakteryzuje obrazy z danej kategorii. Możemy też równie dobrze zdefiniować bardzo szczegółowe kategorie, które np. charakteryzują pojedynczy gatunek zwierzęcia lub nawet kategorie techniczne takie jak np. zestaw kategorii, które określają przewagę jakiegoś koloru na histogramie i które nie wymagają skomplikowanego procesu uczenia maszynowego. 
+
+Zatem wybór kategorii jest kluczowy i określa stopień skomplikowania zadania, które staramy się rozwiązać. Kategorie powinny być od siebie w odpowiedni sposób odseparowane, tak aby dwie dowolne kategorie nie określały tej samej podgrupy obiektów.
+
+Ciekawym zagadnieniem związanym z wyborem kategorii jest badanie kategorii bazowych (\emph{ang. entry-level categories}).\cite{ORDONEZ13} Zagadnienie to zostało po raz pierwszy zdefiniowane przez psychologów w latach 80. XX wieku. Kategoria bazowa to etykieta, której do nazwania obiektu używają ludzie. Na rys. \ref{fig:dolphin} znajduje się zdjęcie przedstawiające \emph{Tursiops australis}, wodnego ssaka z rzędu waleni. W systemie kategoryzacyjnym mogłaby istnieć kategoria, która określa ten gatunek, jednakże większość ludzi nazwałaby ten obiekt delfinem. W związku z tym \emph{entry-level category} tego zdjęcia to \emph{delfin}. Problem zbyt skomplikowanych kategorii rozwiązuje się poprzez zbudowanie drzewa określającego hierarchię pomiędzy pojęciami, a następnie dokonuje się mapowania pomiędzy zbyt dokładną kategorią na kategorię bardziej ogólną.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.3]{graphics/01_podstawy_teoretyczne/dolphin.pdf}
+	\caption{ Problem określenia kategorii bazowej \cite{CHARLTON11} }
+	\label{fig:dolphin}
+\end{figure}
 
