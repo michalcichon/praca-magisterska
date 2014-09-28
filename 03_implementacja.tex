@@ -1,7 +1,24 @@
 \chapter{Implementacja}
 
-\section{Wybór technologii}
-...
+Silnik kategoryzacyjny został zaimplementowany w języku C++, z użyciem środowiska Visual Studio w wersji 2010 Express, która jest czasowo ograniczona i bezpłatna do zastosowań niekomercyjnych.
+
+\section{Język C++ i Visual Studio}
+
+Język C++ jest językiem programowania ogólnego przeznaczenia. Jest językiem wieloparadygmatowym, czyli umożliwia stosowanie różnych paradygmatów programowania: proceduralnego, obiektowego i generycznego. Został zaprojektowany przez Bjarne Stroustrupa jako rozszerzenie języka C i użyty po raz pierwszy w 1979 roku. Charakteryzuje się obiektowymi mechanizmami abstrakcji danych oraz silną statyczną kontrolą typów.
+
+Początkowo do realizacji zadania miał zostać wykorzystany język Python, ze względu na bogactwo bibliotek do uczenia maszynowego oraz przetwarzania obrazów. Warto wspomnieć szczególnie o dwóch bibliotekach: scikit-learn oraz scikit-image, które pozwalają na rozwiązanie wielu problemów związanych z klasyfikacją obrazów, klastrowaniem lub ekstrakcją cech. Zdecydowano o użyciu języka C++ z dwóch powodów:
+
+\begin{compactitem}
+	\item \emph{szybkość działania} -- kod jest kompilowany do kodu maszynowego, natomiast Python jest językiem interpretowanym i przez to czas potrzebny na osiągnięcie podobnych wyników jest większy
+	\item \emph{silne typowanie} -- w przeciwieństwie do Pythona, język C++ jest silnie typowany, co w ocenie autora niniejszej pracy ma wpływ na zachowanie porządku w kodzie źródłowym
+\end{compactitem}
+
+Microsoft Visual Studio jest zintegrowanym środowiskiem programistycznym rozwijanym przez firmę Microsoft. 
+
+\section{OpenCV}
+
+
+
 
 \section{Architektura systemu}
 ...
