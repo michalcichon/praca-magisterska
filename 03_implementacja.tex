@@ -50,8 +50,66 @@ Projekt składa się z następujących klas:
 \end{compactitem}
 
 \section{Konfiguracja środowiska}
-Aby uruchomić program w środowisku Windows, należy w pierwszej kolejności zainstalować Microsoft Visual Studio 2010 Express oraz OpenCV w wersji 2.2.0.
-
+Aby uruchomić program w środowisku Windows, należy w pierwszej kolejności zainstalować Microsoft Visual Studio 2010 Express oraz OpenCV w wersji 2.2.0. Domyślnie biblioteka OpenCV instalowana jest w lokalizacji \emph{C:\textbackslash OpenCV2.2}. Przed uruchomieniem projektu wymagane jest wykonanie następujących kroków:
+\begin{enumerate}
+  \item Dodanie do zmiennej systemowej PATH lokalizacji biblioteki OpenCV. Można to zrobić w Panelu sterowania systemu Windows wchodząc do opcji "System" w Panelu sterowania, a następnie wybierając "Zaawansowane ustawienia systemu" i klikając na guzik "Zmienne Środowiskowe...". Następnie na liście "Zmienne systemowe" należy odnaleźć zmienną "Path" i kliknąć na "Edytuj...". W oknie edycji należy dopisać do końca listy \emph{C:\textbackslash OpenCV2.2} upewniając się, że poprzedni wpis został oddzielony za pomocą znaku ';' (\ref{fig:ustawienia-path}).
+  
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=1.0]{graphics/03_implementacja/ustawienia-path.pdf}
+		\caption{ Ustawienie zmiennej środowiskowej PATH w systemie Windows }
+		\label{fig:ustawienia-path}
+	\end{figure}
+  
+  \item Następnie należy otworzyć projekt w programie Visual C++ 2010 Express i przejść do ustawień projektu klikając prawym przyciskiem myszy na ikonę reprezentującą projekt w "Solution Explorer" i wybierając opcję "Properties".
+  \item W zakładce "VC++ Directories" należy edytować "Include Directories" i dodać do listy katalogów lokalizacje \emph{C:\textbackslash OpenCV2.2\textbackslash include} oraz \emph{C:\textbackslash OpenCV2.2\textbackslash include\textbackslash opencv}, a następnie kliknąć na przycisk "OK" (\ref{fig:ustawienia-include-dirs}).
+  
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.4]{graphics/03_implementacja/ustawienia-include-dirs.pdf}
+		\caption{ Ustawienie dołączania katalogów OpenCV }
+		\label{fig:ustawienia-include-dirs}
+	\end{figure}
+	
+	\item Pozostając w ustawieniach "VC++ Directories" należy w podobny sposób edytować "Library Directories", dodając ścieżkę \emph{C:\textbackslash OpenCV2.2\textbackslash lib} (\ref{fig:ustawienia-lib-dirs}).
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.4]{graphics/03_implementacja/ustawienia-lib-dirs.pdf}
+		\caption{ Ustawienie dołączania katalogów OpenCV }
+		\label{fig:ustawienia-lib-dirs}
+	\end{figure}
+	
+	\item Następnie należy przejść do ustawień konsolidatora \emph{ang. linker} wybierając z listy opcję "Linker" a następnie "Input". W oknie należy umieścić listę potrzebnych bibliotek pakietu OpenCV (\ref{fig:ustawienia-linker}):
+	
+		\begin{compactitem}
+			\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_core220d.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_highgui220d.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_video220d.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_ml220d.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_legacy220d.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_imgproc220d.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_objdetect220d.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_objdetect220.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_features2d220.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_features2d220d.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_flann220.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_flann220d.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_calib3d220.lib
+		\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_calib3d220d.lib
+		\end{compactitem}
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=0.4]{graphics/03_implementacja/ustawienia-linker.pdf}
+			\caption{ Ustawienie dołączania katalogów OpenCV }
+			\label{fig:ustawienia-linker}
+		\end{figure}
+	
+	Po umieszczeniu listy wymaganych bibliotek należy kliknąć przycisk "OK", a następnie wyjść z ustawień projektu klikając ponownie na "OK".
+	
+	\item Projekt można uruchomić poprzez naciśnięcie przycisku F5 na klawiaturze.
+\end{enumerate}
 
 \section{Opis API}
 ...
