@@ -911,3 +911,14 @@ Ciekawym zagadnieniem związanym z wyborem kategorii jest badanie kategorii bazo
 
 \subsection{Przeuczenie i niedouczenie klasyfikatora}
 
+Na jakość klasyfikacji może mieć wpływ zarówno niedouczenie jak i przeuczenie klasyfikatora. Niedouczenie, nazywane też niewystarczającym dopasowaniem (\emph{ang. underfitting}) występuje wówczas gdy posługujemy się zbyt ogólnym, uproszczonym modelem. Zbyt mała ilość wykorzystanych do budowy modelu danych utrudnia skuteczne określenie przynależności obiektów do poprawnych klas.
+
+Także przeuczenie czyli nadmierne dopasowanie (\emph{ang. overfitting}) jest niekorzystne. Gdy mamy zbyt mało przypadków uczących, klasyfikator może znaleźć prawidłowości tam gdzie ich nie ma i wykorzystać je do budowy modelu. Nadmiernie dopasowany model ogranicza generalizację na danych testowych, stąd kategoryzacja dla nowych danych daje gorsze rezultaty. Na rys. \ref{fig:overfitting} przedstawiono porównanie nadmiernego oraz niewystarczającego dopasowania oraz przypadek dobrego dopasowania.\cite{HLAVAC}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.48]{graphics/01_podstawy_teoretyczne/overfitting.pdf}
+	\caption{ Przykłady dopasowania modelu: (a) dopasowanie niewystarczające, (b) dobre dopasowanie, (c) dopasowanie nadmierne\cite{HLAVAC} }
+	\label{fig:overfitting}
+\end{figure}
+
