@@ -80,7 +80,7 @@ Aby uruchomić program w środowisku Windows, należy w pierwszej kolejności za
 		\label{fig:ustawienia-lib-dirs}
 	\end{figure}
 	
-	\item Następnie należy przejść do ustawień konsolidatora \emph{ang. linker} wybierając z listy opcję "Linker" a następnie "Input". W oknie należy umieścić listę potrzebnych bibliotek pakietu OpenCV (\ref{fig:ustawienia-linker}):
+	\item Następnie należy przejść do ustawień konsolidatora \emph{ang. linker} wybierając z listy opcję "Linker" a następnie "Input" i "Additional Dependencies". W oknie należy umieścić listę potrzebnych bibliotek pakietu OpenCV (\ref{fig:ustawienia-linker}):
 	
 		\begin{compactitem}
 			\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_core220d.lib
@@ -113,8 +113,17 @@ Aby uruchomić program w środowisku Windows, należy w pierwszej kolejności za
 
 \section{Opis API}
 
-Klasa \emph{ImageCategorizationAPI} umożliwia wykonywanie następujących zadań związanych z kategoryzacją obrazów:
+Klasa \emph{ImageCategorizationAPI} zawiera następujące metody umożliwiające wykonywanie zadań związanych z kategoryzacją obrazów:
 
 \begin{compactitem}
-	\item odświeżenie modelu kategoryzacyjnego -- 
+	\item \texttt{void refreshModel(string path)} -- umożliwia zbudowanie modelu kategoryzacyjnego. Parametr \texttt{path} powinien zawierać ścieżkę do zbioru obrazów służących do zbudowania modelu. Zbiór ten powinien składać się z katalogów, których nazwy odpowiadają kategoriom. W każdym z tych katalogów należy umieścić obrazy służące do uczenia klasyfikatora w podkatalogu \texttt{learn} oraz obrazy służące do testowania klasyfikatora w katalogu \texttt{test}. Przykładowe drzewo katalogów znajduje się na rys. \ref{fig:api-directory-tree}.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=1.0]{graphics/03_implementacja/api-directory-tree.pdf}
+		\caption{ Pryzkładowe drzewo katalogów służące do wytrenowania klasyfikatora }
+		\label{fig:api-directory-tree}
+	\end{figure}
+	
+	\item \texttt{string getCategory(string path)} -- zwraca nazwę kategorii przewidzianą przez silnik kategoryzacyjny, np. \emph{airplanes}, \emph{buterfly}.
 \end{compactitem}
