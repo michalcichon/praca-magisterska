@@ -4,7 +4,7 @@ W celu określenia jakości działania silnika kategoryzacyjnego przeprowadzono 
 
 Caltech-101 jest zbiorem obrazów przygotowanych na Kalifornijskim Uniwersytecie Technicznym (w skrócie \emph{Caltech}) przez Fei-Fei Li, Marca Andreetto oraz Marca Aurelio Ranzato. Zawiera obrazy nieobciążone ograniczeniami licencyjnymi podzielone na 101 kategorii.
 
-Testy zostały przeprowadzone dla 2, 4 oraz 8 kategorii, dla zbiorów zawierających 1, 5, 10, 15, 20, 30 oraz 40 obrazów na kategorię. Poniżej znajdują się wykresy trafności dla poszczególnych przypadków. Liczbę klastrów ustalono na 1500. Kategorie testowe były następujące: samoloty, samochody, lampart, motocykle, budda, żyrandol, pianino.
+Obrazy zostały podzielone na zbiory treningowe i testowe w stosunku 50\% na 50\%. Testy zostały przeprowadzone dla 2, 4 oraz 8 kategorii, dla zbiorów treningowych zawierających 1, 5, 10, 15, 20, 30 oraz 40 obrazów na kategorię. Poniżej znajdują się wykresy trafności dla poszczególnych przypadków. Liczbę klastrów ustalono na 1500. Kategorie testowe były następujące: samoloty, samochody, lampart, motocykle, budda, żyrandol, pianino. 
 
 \begin{figure}[h]
 	\centering
@@ -48,7 +48,7 @@ Testy zostały przeprowadzone dla 2, 4 oraz 8 kategorii, dla zbiorów zawierają
 	\label{fig:result-surf-8}
 \end{figure}
 
-Wyniki dla algorytmów SURF i SIFT są zbliżone, jednakże dużo większa czasochłonność algorytmu SIFT jest zauważalna. Widać przewagę SIFT nad SURF w przypadku kategoryzacji dla 2 kategorii. Dokładności dla 2 oraz 4 kategorii są bardzo dobre: odpowiednio ok 90\% i ok. 80\% dla zbiorów uczących o czterdziestu elementach. Zauważalny jest spadek dokładności dla przypadku 8 kategorii, najlepszy wynik dla tego przypadku wyniósł 67.19\%. 
+Wyniki dla algorytmów SURF i SIFT są zbliżone, jednakże dużo większa czasochłonność algorytmu SIFT jest zauważalna. Widać przewagę SIFT nad SURF w przypadku kategoryzacji dla 2 kategorii. Dokładności dla 2 oraz 4 kategorii są bardzo dobre: odpowiednio ok 90\% i ok. 80\% dla zbiorów treningowych o czterdziestu elementach. Zauważalny jest spadek dokładności dla przypadku 8 kategorii, najlepszy wynik dla tego przypadku wyniósł 67.19\%. 
 
 Dla przypadków 4 i 8 kategorii widoczny jest wzrost dokładności wraz ze wzrostem przykładów w zbiorze uczącym. Dla przypadku 2 kategorii doszło najprawdopodobniej do zjawiska zbytniego dopasowania klasyfikatora, ponieważ do pewnego momentu klasyfikator daje dobre rezultaty, a potem wraz ze wzrostem ilości przykładów, dokładność maleje.
 
@@ -75,4 +75,4 @@ Niezbyt dobre wyniki dla przypadku 8 kategorii mogły być związane z niewłaś
 	\label{fig:result-surf-8-1500-500}
 \end{figure}
 
-Zauważono znaczną poprawę dla przypadku 4 kategorii, niestety nie udało się poprawić wyniku dla 8 kategorii.
+Zauważono znaczną poprawę dla przypadku 4 kategorii, niestety nie udało się poprawić wyniku dla 8 kategorii, co może wynikać ze zbyt małej liczności zbioru treningowego.
