@@ -4,7 +4,12 @@ Różnorodność technik służących zarówno do ekstrakcji cech obrazów jak i
 
 Narzędzie do kategoryzacji zdjęć zaproponowane w niniejszej pracy zostało oparte na metodzie \emph{Bag of Visual Words} i daje bardzo dobre wyniki dla 2 lub 4 kategorii. Wyniki przeprowadzonych testów pozwalają mieć nadzieję na to, że skuteczność metody dla przypadku większej ilości kategorii można poprawić poprzez dostrojenie parametrów maszyny wektorów nośnych oraz powiększenie zbiorów treningowych.
 
-
+Zaproponowane API jest bardzo proste i umożliwia wykonanie podstawowych operacji na modelu oraz kategoryzację dowolnego obrazu. Silnik umożliwia też testowanie jakości kategoryzacji poprzez wskazanie trafności dla przykładowego scenariusza testowego. 
 
 \section{Możliwe dalsze kierunki rozwoju}
 
+W trakcie pisania niniejszej pracy magisterskiej pojawiło się kilka pomysłów, w jaki sposób można by było rozszerzyć zaproponowane rozwiązanie tak aby jego skuteczność była większa.
+
+Zastosowanie dodatkowych deskryptorów, które są nieskorelowane z SIFT lub SURF mogłoby podnieść jakość kategoryzacji. Sensowne wydaje się zastosowanie technik GIST, niejako z definicji nie służące zastąpieniu deskryptorów SIFT/SURF ale mogące dodatkowo wesprzeć klasyfikator.
+
+Dodatkowo wyznaczanie parametrów maszyny wektorów nośnych za pomocą prób i błędów można by zastąpić bardziej wyrafinowanymi sposobem opartym na walidacji krzyżowej.
