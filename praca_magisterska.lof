@@ -33,11 +33,11 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces G\IeC {\l }\IeC {\'o}wne okno \IeC {\'s}rodowiska programistycznego Micsoroft Visual Studio 2010 Express \relax }}{48}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Schemat dzia\IeC {\l }ania metody \emph {Bag of Keypoints} \relax }}{49}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ustawienie zmiennej \IeC {\'s}rodowiskowej PATH w systemie Windows \relax }}{50}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Ustawienie do\IeC {\l }\IeC {\k a}czania katalog\IeC {\'o}w OpenCV \relax }}{51}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Ustawienie do\IeC {\l }\IeC {\k a}czania bibliotek OpenCV \relax }}{52}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ustawienie zmiennej \IeC {\'s}rodowiskowej PATH w systemie Windows \relax }}{51}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ustawienie do\IeC {\l }\IeC {\k a}czania katalog\IeC {\'o}w OpenCV \relax }}{52}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ustawienie do\IeC {\l }\IeC {\k a}czania bibliotek OpenCV \relax }}{53}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Ustawienie konsolidatora \relax }}{53}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Pryzk\IeC {\l }adowe drzewo katalog\IeC {\'o}w s\IeC {\l }u\IeC {\.z}\IeC {\k a}ce do wytrenowania klasyfikatora \relax }}{53}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Pryzk\IeC {\l }adowe drzewo katalog\IeC {\'o}w s\IeC {\l }u\IeC {\.z}\IeC {\k a}ce do wytrenowania klasyfikatora \relax }}{54}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 2 kategorii (SIFT), k=1500 \relax }}{56}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 4 kategorii (SIFT), k=1500 \relax }}{57}
