@@ -63,7 +63,7 @@ x_n
 \end{bmatrix}
 \end{equation}
 
-Zbiór wzorców charakteryzujący się podobnymi wektorami cech nazywamy klasą wzorców i oznaczamy jako $\omega_1, \omega_2, \cdots, \omega_{W}$, gdzie dolny indeks określa numer klasy, a $W$ określa ilość klas. Jako rozpoznanie wzorca $\omega$ określa się przyporządkowanie wzorcowi jego klasy: $\overrightarrow{x} \rightarrow \omega$. Przestrzeń wektorów cech $X$ zostaje przekształcona w przestrzeń klas wzorców $\Omega$.
+Zbiór wzorców charakteryzujący się podobnymi wektorami cech nazywamy klasą wzorców i~oznaczamy jako $\omega_1, \omega_2, \cdots, \omega_{W}$, gdzie dolny indeks określa numer klasy, a $W$ określa ilość klas. Jako rozpoznanie wzorca $\omega$ określa się przyporządkowanie wzorcowi jego klasy: $\overrightarrow{x} \rightarrow \omega$. Przestrzeń wektorów cech $X$ zostaje przekształcona w przestrzeń klas wzorców $\Omega$.
 
 Zazwyczaj systemy rozpoznawania wzorców składają się z dwóch części: ekstraktora cech oraz klasyfikatora (rys. \ref{fig:pattern-recongnition}). Procesy ekstrakcji oraz klasyfikacji zostaną omówione w następnym podrozdziałach.
 
@@ -121,7 +121,7 @@ Można wyróżnić wiele cech używanych w procesach przetwarzania obrazów, np.
 
 \section{Przegląd algorytmów do ekstrakcji cech}
 
-Wśród popularnych metod ekstrakcji cech, stosowanych do rozwiązania problemu klasyfikacji i kategoryzacji obrazów należy wymienić: SIFT (\emph{ang. Scale-invariant Feature Transform})\cite{SIFT99}, SURF (\emph{ang. Speeded Up Robust Features}), GIST\cite{GIST09}, LBP (\emph{ang. Local Binary Patterns}), HOG (\emph{ang. Histograms of Oriented Gradients}). Poszczególne algorytmy zostały opisane poniżej.
+Wśród popularnych metod ekstrakcji cech, stosowanych do rozwiązania problemu klasyfikacji i~kategoryzacji obrazów należy wymienić: SIFT (\emph{ang. Scale-invariant Feature Transform})\cite{SIFT99}, SURF (\emph{ang. Speeded Up Robust Features}), GIST\cite{GIST09}, LBP (\emph{ang. Local Binary Patterns}), HOG (\emph{ang. Histograms of Oriented Gradients}). Poszczególne algorytmy zostały opisane poniżej.
 
 \subsection{SIFT -- Scale-invariant Feature Transform}
 
@@ -217,11 +217,11 @@ m(x, y) = \sqrt{(L(x + 1, y) - L(x - 1, y))^2 + (L(x, y + 1) - L(x, y - 1))^2}
 \theta(x, y) = \tan^{-1}((L(x, y + 1) - L(x, y - 1))/L(x + 1, y) - L(x - 1, y)))
 \end{equation}
 
-Na podstawie orientacji punktów, w otoczeniu punktu charakterystycznego budowany jest histogram orientacji. Maksimum w histogramie i lokalne maksima o wartościach powyżej 80\% największego maksimum lokalnego określają orientację punktu charakterystycznego. Przyjmuje się, że histogram posiada 36 pól, a dokładne położenie maksimum interpoluje się za pomocą paraboli korzystając z wartości sąsiednich histogramu.
+Na podstawie orientacji punktów, w otoczeniu punktu charakterystycznego budowany jest histogram orientacji. Maksimum w histogramie i lokalne maksima o wartościach powyżej 80\% największego maksimum lokalnego określają orientację punktu charakterystycznego. Przyjmuje się, że histogram posiada 36 pól, a dokładne położenie maksimum interpoluje się za pomocą paraboli korzystając z wartości sąsiednich histogramu.\cite{LOWE04}
 
 Dzięki temu, że wszystkie cechy punktów charakterystyczne są mierzone w odniesieniu do tak wyznaczonej orientacji, opis jest niezmienniczy względem rotacji.
 
-SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia $16 \times 16$ dla danego punktu charakterystycznego. Obszar ten jest dzielony na podregiony $4 \times 4$, w których również wyznacza się wypadkowe histogramy orientacji. W każdym obszarze dla 8 orientacji wyznacza się wypadkowy moduł gradientu na podstawie modułów poszczególnych punktów. Na rys. \ref{fig:sift-descriptor} został przedstawiony przykład wyznaczenia wypadkowego gradientu dla otoczenia $8 \times 8$ i podregionów $2 \times 2$.
+SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia $16 \times 16$ dla danego punktu charakterystycznego. Obszar ten jest dzielony na podregiony $4 \times 4$, w których również wyznacza się wypadkowe histogramy orientacji. W każdym obszarze dla 8 orientacji wyznacza się wypadkowy moduł gradientu na podstawie modułów poszczególnych punktów. Na rys. \ref{fig:sift-descriptor} został przedstawiony przykład wyznaczenia wypadkowego gradientu dla otoczenia $8 \times 8$ i podregionów $2 \times 2$.\cite{LOWE04}
 
 \begin{figure}[h]
 	\centering
@@ -230,7 +230,7 @@ SIFT do opisu cech wykorzystuje moduł gradientu oraz orientację z otoczenia $1
 	\label{fig:sift-descriptor}
 \end{figure}
 
-W celu rozpoznania obiektów za pomocą algorytmu SIFT należy najpierw wyznaczyć punkty charakterystyczne i odpowiadające im wektory cech lokalnych, a następnie dopasować punkty charakterystyczne z obrazu wejściowego do punktów w bazie wzorców. Do identyfikacji grup dopasowanych punktów, które określają ten sam obiekt wykorzystuje się transformatę Hougha. Weryfikacji cech dokonuje się z wykorzystaniem metody najmniejszych kwadratów. W trakcie obliczeń wyznaczane są parametry związane z transformacją pomiędzy układem związanym z wzorcem a układem związanym z obiektem na badanym obrazie.
+W celu rozpoznania obiektów za pomocą algorytmu SIFT należy najpierw wyznaczyć punkty charakterystyczne i odpowiadające im wektory cech lokalnych, a następnie dopasować punkty charakterystyczne z obrazu wejściowego do punktów w bazie wzorców. Do identyfikacji grup dopasowanych punktów, które określają ten sam obiekt wykorzystuje się transformatę Hougha. Weryfikacji cech dokonuje się z wykorzystaniem metody najmniejszych kwadratów. W trakcie obliczeń wyznaczane są parametry związane z transformacją pomiędzy układem związanym z wzorcem a układem związanym z obiektem na badanym obrazie.\cite{LOWE04}
 
 Na rys. \ref{fig:sift-keypoints} przedstawiono rezultat działania algorytmu SIFT w postaci punktów charakterystycznych nałożonych na obraz. Dodatkowo na punktach została zaznaczona ich orientacja.
 
@@ -288,11 +288,11 @@ w = \frac{|L_{xy}(1.2)|_F |D_{yy}(9)|_F}{|L_{yy}(1.2)|_F |D_{xy}(9)|_F} = 0.912.
 |A|_F = \sqrt{\sum\limits_{i=1}^m \sum\limits_{j=1}^n |a_{ij}|^2}
 \end{equation}
 
-Ze względu na teoretyczną dokładność, wagi $w$ powinny zmieniać się wraz ze skalą, jednakże w praktyce nie ma to dużego wpływu na precyzję wyników, w związku z tym przyjmuje się stałe $w = 0.9$. Przybliżone wyznaczniki Hessianów reprezentują odpowiedź obszarów spójnych ({ang. blob}) w punkcie $x$. Odpowiedzi filtra są normalizowane tak aby zachować stałą normę Frobeniusa dla każdego rozmiaru filtra.
+Ze względu na teoretyczną dokładność, wagi $w$ powinny zmieniać się wraz ze skalą, jednakże w praktyce nie ma to dużego wpływu na precyzję wyników, w związku z tym przyjmuje się stałe $w = 0.9$. Przybliżone wyznaczniki Hessianów reprezentują odpowiedź obszarów spójnych ({ang. blob}) w punkcie $x$. Odpowiedzi filtra są normalizowane tak aby zachować stałą normę Frobeniusa dla każdego rozmiaru filtra.\cite{BAY08}
 
 W przypadku algorytmu SIFT, w celu uzyskania odpowiedniej skali, filtrowaliśmy obraz iteracyjnie tym samym filtrem. W algorytmie SURF, dzięki zastosowaniu obrazów całkowych, można zastosować bezpośrednio na obrazie wejściowym filtr pudełkowy o odpowiednim rozmiarze. Dzięki temu obrazy o różnych skalach można uzyskać nawet równolegle. 
 
-Konstrukcja przestrzeni skal rozpoczyna się od filtra $9 \times 9$, który oblicza odpowiedź obszaru spójnego obrazu dla najmniejszej skali. Każda oktawa jest dzielona na stałą liczbę poziomów skalowania. Ze względu na dyskretny charakter obrazów całkowych, minimalna różnica skali pomiędzy dwoma kolejnymi poziomami zależy od długości $l_0$, która określa rozmiar obszaru o jednakowych wartościach (1, -1, -2) na filtrze. W przypadku filtra $9 \times 9$ wartość ta wynosi 3.
+Konstrukcja przestrzeni skal rozpoczyna się od filtra $9 \times 9$, który oblicza odpowiedź obszaru spójnego obrazu dla najmniejszej skali. Każda oktawa jest dzielona na stałą liczbę poziomów skalowania. Ze względu na dyskretny charakter obrazów całkowych, minimalna różnica skali pomiędzy dwoma kolejnymi poziomami zależy od długości $l_0$, która określa rozmiar obszaru o jednakowych wartościach (1, -1, -2) na filtrze. W przypadku filtra $9 \times 9$ wartość ta wynosi 3.\cite{BAY08}
 
 Dla dwóch kolejnych poziomów wartość tą należy zwiększyć przynajmniej o 2 piksele oraz zapewnić wystąpienie środkowego piksela, w rezultacie wielkość filtra zwiększa się o 6 pikseli pomiędzy poziomami. Porównanie filtrów $9 \times 9$ z filtrami $15 \times 15$ przedstawiono na rys. \ref{fig:surf-9-to-15}.
 
@@ -303,7 +303,7 @@ Dla dwóch kolejnych poziomów wartość tą należy zwiększyć przynajmniej o 
 	\label{fig:surf-9-to-15}
 \end{figure}
 
-Dla kolejnych oktaw różnica pomiędzy poziomami jest zwiększana dwukrotnie, tj. wynosi 12 dla drugiej oktawy, 24 dla trzeciej, 48 dla czwartej itd. Algorytm może analizować wiele oktaw, jednak z każdą kolejną, ilość wykrytych punktów charakterystycznych maleje. Na rys. \ref{fig:surf-octaves} przedstawiono wielkości filtrów dla kilku kolejnych oktaw. Filtry w kolejnych oktawach nachodzą na siebie tak aby pokryć wszystkie możliwe skale.
+Dla kolejnych oktaw różnica pomiędzy poziomami jest zwiększana dwukrotnie, tj. wynosi 12 dla drugiej oktawy, 24 dla trzeciej, 48 dla czwartej itd. Algorytm może analizować wiele oktaw, jednak z każdą kolejną, ilość wykrytych punktów charakterystycznych maleje.\cite{BAY08} Na rys. \ref{fig:surf-octaves} przedstawiono wielkości filtrów dla kilku kolejnych oktaw. Filtry w kolejnych oktawach nachodzą na siebie tak aby pokryć wszystkie możliwe skale.
 
 \begin{figure}[h]
 	\centering
@@ -314,7 +314,7 @@ Dla kolejnych oktaw różnica pomiędzy poziomami jest zwiększana dwukrotnie, t
 
 W celu zlokalizowania punktów charakterystycznych wykorzystywana jest szybka metoda usuwania niemaksymalnych pikseli (\emph{ang. Non-Maximum Suppresion}) zaproponowana przez Neubecka i Van Goola\cite{NEUBECK06}. Podobnie jak w algorytmie SIFT, punkty te są wyszukiwane w otoczeniu $3 \times 3 \times 3$.
 
-Deskryptor SURF opisuje rozkład intensywności dla punktów charakterystycznych. W celu czasu obliczeń zastosowano odpowiedzi falek Haara w kierunkach $x$ i $y$ dla otoczenia punktów charakterystycznych o promieniu $6s$, gdzie $s$ jest skalą na której został wykryty punkt charakterystyczny. Wielkości filtrów Haara są zależne od skali stąd ich wielkość została określona na $4s$. Na rys. \ref{fig:surf-haar-wavelet} przedstawiono filtr Haara dla kierunku $x$ (a) oraz $y$ (b).
+Deskryptor SURF opisuje rozkład intensywności dla punktów charakterystycznych. W celu zmniejszenia czasu obliczeń zastosowano odpowiedzi falek Haara w kierunkach $x$ i $y$ dla otoczenia punktów charakterystycznych o promieniu $6s$, gdzie $s$ jest skalą na której został wykryty punkt charakterystyczny. Wielkości filtrów Haara są zależne od skali stąd ich wielkość została określona na $4s$. Na rys. \ref{fig:surf-haar-wavelet} przedstawiono filtr Haara dla kierunku $x$ (a) oraz $y$ (b).
 
 \begin{figure}[h]
 	\centering
@@ -323,15 +323,15 @@ Deskryptor SURF opisuje rozkład intensywności dla punktów charakterystycznych
 	\label{fig:surf-haar-wavelet}
 \end{figure}
 
-Odpowiedzi filtra Haara sa następnie filtrowane za pomocą filtra Gaussa z $\sigma = 2s$ w celu wyeliminowania odkształceń. Na podstawie otrzymanych punktów, obliczane są sumy odpowiedzi w oknach o wielkości $\frac{\pi}{2}$, a następnie najdłuższy wektor z wszystkich okien definiuje się jako orientację punktu charakterystycznego.
+Odpowiedzi filtra Haara są następnie filtrowane za pomocą filtra Gaussa z $\sigma = 2s$ w celu wyeliminowania odkształceń. Na podstawie otrzymanych punktów, obliczane są sumy odpowiedzi w oknach o wielkości $\frac{\pi}{2}$, a następnie najdłuższy wektor z wszystkich okien definiuje się jako orientację punktu charakterystycznego.\cite{BAY08}
 
-Ekstrakcja rozpoczyna się od stworzenia kwadratowego obszaru wokół punktu charakterystycznego o wielkości $20s$. Obszar jest dzielony na podregiony $4 \times 4$, a następnie dla każdego podregionu, obliczane są odpowiedzi filtra Haara dla równo rozmieszczonych punktów w 5 rzędach i 5 kolumnach. Odpowiedzi  w kierunku $x$ oznaczane są jako $d_x$, natomiast odpowiedzi w kierunku $y$ oznaczane są jako $d_y$. Odpowiedzi $dx$ i $dy$ są następnie sumowane dla każdego podregionu i zostają umieszczone w wektorze cech. W celu określenia polaryzacji zmian intensywności, ekstraktuje się również sumę wartości bezwzględnych $|d_x|$ oraz $|d_y|$. W rezultacie każdy podregion otrzymuje czterowymiarowy wektor $\boldsymbol{v}$ określający strukturę intensywności.
+Ekstrakcja rozpoczyna się od stworzenia kwadratowego obszaru wokół punktu charakterystycznego o wielkości $20s$. Obszar jest dzielony na podregiony $4 \times 4$, a następnie dla każdego podregionu, obliczane są odpowiedzi filtra Haara dla równo rozmieszczonych punktów w 5 rzędach i 5 kolumnach. Odpowiedzi  w kierunku $x$ oznaczane są jako $d_x$, natomiast odpowiedzi w kierunku $y$ oznaczane są jako $d_y$. Odpowiedzi $dx$ i $dy$ są następnie sumowane dla każdego podregionu i zostają umieszczone w wektorze cech. W celu określenia polaryzacji zmian intensywności, ekstraktuje się również sumę wartości bezwzględnych $|d_x|$ oraz $|d_y|$. W rezultacie każdy podregion otrzymuje czterowymiarowy wektor $\boldsymbol{v}$ określający strukturę intensywności.\cite{BAY08}
 \begin{equation} 
 \label{surf_v_vector} 
 \boldsymbol{v} = (\sum{d_x}, \sum{d_y}, \sum{|d_x|}, \sum{|d_y|})
 \end{equation}
 
-W rezultacie otrzymujemy wektor o długości równej 64. Odpowiedzi filtra Haara są niezmiennicze względem oświetlenia, natomiast niezmienniczość względem kontrastu jest otrzymywana poprzez wyliczenie wektora jednostkowego dla deskryptora.
+W rezultacie otrzymujemy wektor o długości równej 64. Odpowiedzi filtra Haara są niezmiennicze względem oświetlenia, natomiast niezmienniczość względem kontrastu jest otrzymywana poprzez wyliczenie wektora jednostkowego dla deskryptora.\cite{BAY08}
 
 Na rys. \ref{fig:surf-keypoints} przedstawiono efekt działania algorytmu SURF w postaci punktów charakterystycznych nałożonych na obraz. Dla zachowania czytelności ograniczono ilość punktów do 50 najbardziej istotnych punktów.
 
@@ -346,7 +346,7 @@ W algorytmie SURF dodano wiele funkcji, które wpływają na zwiększenie szybko
 
 \subsection{Modele GIST}
 
-Studia nad percepcją pokazały, że obserwator jest w stanie jednym spojrzeniem rozpoznać scenę z realnego świata. W czasie tego szybkiego procesu, w układzie wzrokowym człowieka (rys. \ref{fig:gist-vision-system}) tworzona jest przestrzenna reprezentacja świata zewnętrznego, która jest na tyle bogata, że pozwala zrozumieć sens sceny, rozpoznać kilka obiektów oraz zwrócić uwagę na istotne szczegóły. Ta reprezentacja, którą można odnieść zarówno do funkcji niskopoziomowych, takich jak kolor lub częstotliwość, jak i informacji wysokiego poziomu, takich jak obiekty lub aktywacja wiedzy semantycznej określana jest jako gist (ang. istota, sedno).
+Studia nad percepcją pokazały, że obserwator jest w stanie jednym spojrzeniem rozpoznać scenę z realnego świata.\cite{OLIVA05} W czasie tego szybkiego procesu, w układzie wzrokowym człowieka (rys. \ref{fig:gist-vision-system}) tworzona jest przestrzenna reprezentacja świata zewnętrznego, która jest na tyle bogata, że pozwala zrozumieć sens sceny, rozpoznać kilka obiektów oraz zwrócić uwagę na istotne szczegóły. Ta reprezentacja, którą można odnieść zarówno do funkcji niskopoziomowych, takich jak kolor lub częstotliwość, jak i informacji wysokiego poziomu, takich jak obiekty lub aktywacja wiedzy semantycznej określana jest jako gist (ang. istota, sedno).
 
 \begin{figure}[h]
 	\centering
@@ -371,7 +371,7 @@ Wyznaczenie cech dla pojedynczego obrazu jest dla metody Oliva i Torralba bardzo
 
 %-- Renninger Malik 2004
 %=================================================================================
-Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabora oraz ekstrakcji tekstonów. W zaproponowanym modelu wykorzystano pierwszą i drugą pochodną Gaussiana. Filtr składa się z dwóch faz -- parzystej i nieparzystej, opisanych we wzorze \ref{gist_gabor}.
+Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabora oraz ekstrakcji tekstonów.\cite{RENNINGER04} W zaproponowanym modelu wykorzystano pierwszą i drugą pochodną Gaussiana. Filtr składa się z dwóch faz -- parzystej i nieparzystej, opisanych we wzorze \ref{gist_gabor}.
 \begin{equation} 
 \label{gist_gabor} 
 	\begin{gathered}
@@ -380,17 +380,17 @@ Renninger i Malik w 2004 zaproponowali inne rozwiązanie oparte na filtrach Gabo
 	\end{gathered}
 \end{equation} gdzie $G_\sigma(x)$ -- Gaussian z odchyleniem standardowym $\sigma$
 
-Współczynniki $\sigma_1$ i $\sigma_2$ są miarami wydłużenia filtra. Filtry są budowane w 3 skalach dla zachowania selektywności częstotliwości oraz w 6 orientacjach dla selektywności orientacji. W rezultacie powstaje 36 filtrów. Podczas analizy tekstury, obliczany jest splot obrazu z zespołem filtrów, co w rezultacie daje wektor odpowiedzi $I \ast f(x_0, y_0)$ charakteryzujący fragment obrazu wyśrodkowany w $(x_0, y_0)$. 
+Współczynniki $\sigma_1$ i $\sigma_2$ są miarami wydłużenia filtra. Filtry są budowane w 3 skalach dla zachowania selektywności częstotliwości oraz w 6 orientacjach dla selektywności orientacji. W rezultacie powstaje 36 filtrów. Podczas analizy tekstury, obliczany jest splot obrazu z zespołem filtrów, co w rezultacie daje wektor odpowiedzi $I \ast f(x_0, y_0)$ charakteryzujący fragment obrazu wyśrodkowany w $(x_0, y_0)$.\cite{RENNINGER04}
 
 Podobne tekstury na analizowanych obrazach powtarzają się bardzo często. W celu określenia jakie cechy są najbardziej powszechne użyto klastrowania K-średnich i otrzymano wektor składający się z 100 prototypowych odpowiedzi, które nazywamy \emph{uniwersalnymi tekstonami}. Ze względu na konieczność wyliczenia tekstonów rozwiązanie to jest dużo wolniejsze i wyliczenie cech dla obrazu zajmuje ok. 7 sekund.\cite{VISWANATHAN08}
 
 %-- Siegian Itti 2007
 %=================================================================================
-W 2007 roku Siegian i Itti zaproponowali model składający się z biologicznie wiarygodnych cech określających orientację, kolor oraz intensywność.\cite{SIAGIAN07} Metoda ta powstała na kanwie badań nad percepcją, które wykazały, że obserwator jest w stanie określić ogólne, semantyczne atrybuty zdjęcia na podstawie ekspozycji nie przekraczającej 100~ms. Natomiast odpowiedź na bardziej specyficzne pytania, takie jak czy na zdjęciu znajduje się zwierzę, obserwator jest w stanie określić w czasie 28~ms\cite{THORPE95}, nawet wówczas gdy jego uwaga jest skupiona na innym zadaniu. Gist obrazu może być określany w obszarach mózgu, które odpowiadają za \emph{miejsca}, rozumiane jako typy sceny z określonym układem przestrzennym.\cite{EPSTEIN00} Układ przestrzenny oraz kolor zostały zostały doświadczanie określone jako cechy obrazu wpływające na dostrzeganie gistu sceny.\cite{OLIVA-SCHYNS00}
+W 2007 roku Siegian i Itti zaproponowali model składający się z biologicznie wiarygodnych cech określających orientację, kolor oraz intensywność.\cite{SIAGIAN07} Metoda ta powstała na kanwie badań nad percepcją, które wykazały, że obserwator jest w stanie określić ogólne, semantyczne atrybuty zdjęcia na podstawie ekspozycji nie przekraczającej 100~ms. Natomiast odpowiedź na bardziej specyficzne pytania, takie jak czy na zdjęciu znajduje się zwierzę, obserwator jest w stanie określić w czasie 28~ms\cite{THORPE95}, nawet wówczas gdy jego uwaga jest skupiona na innym zadaniu. Gist obrazu może być określany w obszarach mózgu, które odpowiadają za \emph{miejsca}, rozumiane jako typy sceny z określonym układem przestrzennym.\cite{EPSTEIN00} Układ przestrzenny oraz kolor zostały zostały doświadczalnie określone jako cechy obrazu wpływające na dostrzeganie gistu sceny.\cite{OLIVA-SCHYNS00}
 
-Model Siegiana i Itti opiera się na na \emph{saliency model} zaproponowanym wcześniej przez Itti. W modelu tym, obraz wejściowy jest filtrowany do wielu niskopoziomowych kanałów cech, w wielu skalach przestrzennych. Kanały takie jak kolor, orientacja i intensywność mają wiele podkanałów, które z kolei wyróżniają 9 poziomów skali od stosunku 1:1 (poziom 0) do 1:256 (poziom 8), wygładzone iteracyjnie filtrem Gaussa $5 \times 5$.
+Model Siegiana i Itti opiera się na na \emph{saliency model} zaproponowanym wcześniej przez Itti. W modelu tym, obraz wejściowy jest filtrowany do wielu niskopoziomowych kanałów cech, w wielu skalach przestrzennych. Kanały takie jak kolor, orientacja i intensywność mają wiele podkanałów, które z kolei wyróżniają 9 poziomów skali od stosunku 1:1 (poziom 0) do 1:256 (poziom 8), wygładzone iteracyjnie filtrem Gaussa $5 \times 5$.\cite{SIAGIAN07}
 
-Dla każdego podkanału $i$ wykonywane są operacje porównania wartości centralnego punktu z jego sąsiedztwem, pomiędzy mapami wyjściowymi dla filtrów $O_i(s)$ w różnych skalach $s$. Mapy cech określamy jako $M_i(c, s)$, gdzie $c \in \{2, 3, 4\}$ -- skala centralna, $s = c + d$, $d \in \{3, 4\}$ -- skala otaczająca. Różnica między skalami zapisywana jest jako $\ominus$ i jest realizowane przez interpolację do skali centralnej i wyliczenie różnicy bezwzględnej. Zastosowanie skal $s$ oraz $c$ umożliwia zachowanie niezmienniczości względem oświetlenia.
+Dla każdego podkanału $i$ wykonywane są operacje porównania wartości centralnego punktu z jego sąsiedztwem, pomiędzy mapami wyjściowymi dla filtrów $O_i(s)$ w różnych skalach $s$. Mapy cech określamy jako $M_i(c, s)$, gdzie $c \in \{2, 3, 4\}$ -- skala centralna, $s = c + d$, $d \in \{3, 4\}$ -- skala otaczająca. Różnica między skalami zapisywana jest jako $\ominus$ i jest realizowana przez interpolację do skali centralnej i wyliczenie różnicy bezwzględnej. Zastosowanie skal $s$ oraz $c$ umożliwia zachowanie niezmienniczości względem oświetlenia.\cite{SIAGIAN07}
 
 Dla kanałów koloru i intensywności mamy:
 \begin{equation} 
@@ -398,7 +398,7 @@ Dla kanałów koloru i intensywności mamy:
 M_i(c, s) = |O_i(c) \ominus O_i(s)| = |O_i(c) - Interp_{s-c}(O_i(s))|
 \end{equation}
 
-Kanał orientacji tworzony jest za pomocą filtrów Gabbora na obrazie w skali szarości, w czterech różnych kątach $\theta_i \in \{0, 45, 90, 135^\circ\}$ oraz dla czterech różnych skalach przestrzennych $c \in \{0, 1, 2, 3\}$, co daje łącznie 16 podkanałów. Mapy cech dla orientacji $M_i(c)$ określamy jako:
+Kanał orientacji tworzony jest za pomocą filtrów Gabbora na obrazie w skali szarości, dla czterech różnych kątów $\theta_i \in \{0, 45, 90, 135^\circ\}$ oraz dla czterech różnych skalach przestrzennych $c \in \{0, 1, 2, 3\}$, co daje łącznie 16 podkanałów. Mapy cech dla orientacji $M_i(c)$ określamy jako\cite{SIAGIAN07}:
 \begin{equation} 
 \label{gist_siegian_orientation}
 M_i(c) = Gabor(\theta_i, c)
@@ -453,13 +453,13 @@ I(c, s) = |I(c) \ominus I(s)|
 
 Każda z par jest używana do stworzenia sześciu kombinacji skal $s$ oraz $c$, co daje 18 kombinacji. Łącznie z kanałami orientacji otrzymujemy zatem 38 podkanałów.
 
-Dla każdego podkanału wyliczany jest wektor GIST z odpowiadających map cech. Mapy dzielone są na podregiony $4 \times 4$, a następnie dla każdego podregionu wykonywane są operacje uśredniające. Wzór \ref{gist_siegian_G_kli} przedstawia obliczenia jakie należy wykonać dla każdej z 16 cech GIST na mapę dla koloru i intensywności. Analogiczne obliczenia stosuje się do wyliczenia $G_i^{k,l}(c)$ z map orientacji $M_i(c)$.
+Dla każdego podkanału wyliczany jest wektor GIST z odpowiadających map cech. Mapy dzielone są na podregiony $4 \times 4$, a następnie dla każdego podregionu wykonywane są operacje uśredniające. Wzór \ref{gist_siegian_G_kli} przedstawia obliczenia jakie należy wykonać dla każdej z 16 cech GIST na mapę dla koloru i intensywności. Analogiczne obliczenia stosuje się do wyliczenia $G_i^{k,l}(c)$ z map orientacji $M_i(c)$.\cite{SIAGIAN07}
 \begin{equation} 
 \label{gist_siegian_G_kli} 
 G_i^{k,l} = \frac{1}{16WH} \sum\limits_{u = \frac{kW}{4}}^{\frac{(k+1)W}{4} - 1} \sum\limits_{v = \frac{lH}{4}}^{\frac{(l+1)H}{4} - 1} [M_i(c, s)](u, v)
 \end{equation} gdzie $k$ i $l$ -- indeksy poziomy i pionowy podregionu, $W$, $H$ -- szerokość i wysokość całego obrazu.
 
-Łącznie map cech jest 34, co przy podziale na 16 regionów daje wektor o 544 wymiarach. W celu zmniejszenia wymiarowości stosuje się analizę głównych składowych -- PCA (\emph{ang. Principal Component Analysis}) oraz analizę składowych niezależnych -- ICA (\emph{ang. Independent Component Analysis}). Dzięki temu otrzymuje się wektor 80 wymiarowy.
+Łącznie map cech jest 34, co przy podziale na 16 regionów daje wektor o 544 wymiarach. W celu zmniejszenia wymiarowości stosuje się analizę głównych składowych -- PCA (\emph{ang. Principal Component Analysis}) oraz analizę składowych niezależnych -- ICA (\emph{ang. Independent Component Analysis}). Dzięki temu otrzymuje się wektor 80 wymiarowy.\cite{SIAGIAN07}
 
 Schemat procesu ekstrakcji cech GIST według Siegiana i Itti przedstawiono na rys. \ref{fig:gist-siagian}.
 
