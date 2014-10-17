@@ -56,7 +56,7 @@ Projekt składa się z następujących klas:
 \section{Konfiguracja środowiska}
 Aby uruchomić program w środowisku Windows, należy w pierwszej kolejności zainstalować Microsoft Visual Studio 2010 Express oraz OpenCV w wersji 2.2.0. Domyślnie biblioteka OpenCV instalowana jest w lokalizacji \emph{C:\textbackslash OpenCV2.2}. Przed uruchomieniem projektu wymagane jest wykonanie następujących kroków:
 \begin{enumerate}
-  \item Wypakowanie pakietu Boost w wersji 1.52. Pakiet należy wypakować w lokalizacji, w której chcemy z niego docelowo korzystać. Warto wybrać lokalizację blisko głównego katalogu systemowego (\emph{np. C:\textbackslash}) gdyż skrypt służący do kompilowania nie działa poprawnie dla długich ścieżek.
+  \item Wypakowanie pakietu Boost w wersji 1.52. Pakiet należy wypakować w lokalizacji, w której chcemy z niego docelowo korzystać. Warto wybrać lokalizację bliską głównego katalogu systemowego (\emph{np. C:\textbackslash}) gdyż skrypt służący do kompilowania nie działa poprawnie dla długich ścieżek. Na potrzeby realizacja projektu wykorzystano lokalizację \emph{C:\textbackslash boost\_1\_52\_0}.
   \item Otworzenie konsoli programu Visual Studio poprzez wybór opcji \emph{Open Visual Studio Command Prompt (2010)} z menu Start.
   \item Przejście do katalogu Boost poprzez wydanie komendy: \texttt{cd C:\textbackslash boost\_1\_52\_0} oraz przygotowanie kompilacji pakietu Boost poprzez wydanie komendy \texttt{bootstrap} (rys. \ref{fig:boost-1}).
   
@@ -115,7 +115,7 @@ Aby uruchomić program w środowisku Windows, należy w pierwszej kolejności za
 	
 	\item Analogicznie należy dodać ścieżkę \emph{C:\textbackslash boost\_1\_52\_0\textbackslash stage\textbackslash lib}.
 	
-	\item Następnie należy przejść do ustawień konsolidatora \emph{ang. linker} wybierając z listy opcję "Linker" a następnie "Input" i "Additional Dependencies". W oknie należy umieścić listę potrzebnych bibliotek pakietu OpenCV (rys. \ref{fig:ustawienia-linker}):
+	\item Następnie należy przejść do ustawień konsolidatora (\emph{ang. linker}) wybierając z listy opcję "Linker" a następnie "Input" i "Additional Dependencies". W oknie należy umieścić listę potrzebnych bibliotek pakietu OpenCV (rys. \ref{fig:ustawienia-linker}):
 	
 		\begin{compactitem}
 			\item C:\textbackslash OpenCV2.2\textbackslash lib\textbackslash opencv\_core220d.lib

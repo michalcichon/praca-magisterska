@@ -312,7 +312,7 @@ Dla kolejnych oktaw różnica pomiędzy poziomami jest zwiększana dwukrotnie, t
 	\label{fig:surf-octaves}
 \end{figure}
 
-W celu zlokalizowania punktów charakterystycznych wykorzystywana jest szybka metoda usuwania niemaksymalnych pikseli (\emph{ang. Non-Maximum Suppresion}) zaproponowana przez Neubecka i Van Goola\cite{NEUBECK06}. Podobnie jak w algorytmie SIFT, punkty te są wyszukiwane w otoczeniu $3 \times 3 \times 3$.
+W celu zlokalizowania punktów charakterystycznych wykorzystywana jest szybka metoda usuwania niemaksymalnych pikseli (\emph{ang. Non-Maximum Suppresion}) zaproponowana przez Neubecka i~Van Goola\cite{NEUBECK06}. Podobnie jak w algorytmie SIFT, punkty te są wyszukiwane w otoczeniu $3 \times 3 \times 3$.
 
 Deskryptor SURF opisuje rozkład intensywności dla punktów charakterystycznych. W celu zmniejszenia czasu obliczeń zastosowano odpowiedzi falek Haara w kierunkach $x$ i $y$ dla otoczenia punktów charakterystycznych o promieniu $6s$, gdzie $s$ jest skalą na której został wykryty punkt charakterystyczny. Wielkości filtrów Haara są zależne od skali stąd ich wielkość została określona na $4s$. Na rys. \ref{fig:surf-haar-wavelet} przedstawiono filtr Haara dla kierunku $x$ (a) oraz $y$ (b).
 
@@ -386,9 +386,9 @@ Podobne tekstury na analizowanych obrazach powtarzają się bardzo często. W ce
 
 %-- Siegian Itti 2007
 %=================================================================================
-W 2007 roku Siegian i Itti zaproponowali model składający się z biologicznie wiarygodnych cech określających orientację, kolor oraz intensywność.\cite{SIAGIAN07} Metoda ta powstała na kanwie badań nad percepcją, które wykazały, że obserwator jest w stanie określić ogólne, semantyczne atrybuty zdjęcia na podstawie ekspozycji nie przekraczającej 100~ms. Natomiast odpowiedź na bardziej specyficzne pytania, takie jak czy na zdjęciu znajduje się zwierzę, obserwator jest w stanie określić w czasie 28~ms\cite{THORPE95}, nawet wówczas gdy jego uwaga jest skupiona na innym zadaniu. Gist obrazu może być określany w obszarach mózgu, które odpowiadają za \emph{miejsca}, rozumiane jako typy sceny z określonym układem przestrzennym.\cite{EPSTEIN00} Układ przestrzenny oraz kolor zostały zostały doświadczalnie określone jako cechy obrazu wpływające na dostrzeganie gistu sceny.\cite{OLIVA-SCHYNS00}
+W 2007 roku Siegian i Itti zaproponowali model składający się z biologicznie wiarygodnych cech określających orientację, kolor oraz intensywność.\cite{SIAGIAN07} Metoda ta powstała na kanwie badań nad percepcją, które wykazały, że obserwator jest w stanie określić ogólne, semantyczne atrybuty zdjęcia na podstawie ekspozycji nie przekraczającej 100~ms. Natomiast odpowiedź na bardziej specyficzne pytania, takie jak czy na zdjęciu znajduje się zwierzę, obserwator jest w stanie określić w czasie 28~ms\cite{THORPE95}, nawet wówczas gdy jego uwaga jest skupiona na innym zadaniu. Gist obrazu może być określany w obszarach mózgu, które odpowiadają za \emph{miejsca}, rozumiane jako typy sceny z określonym układem przestrzennym.\cite{EPSTEIN00} Układ przestrzenny oraz kolor zostały doświadczalnie określone jako cechy obrazu wpływające na dostrzeganie gistu sceny.\cite{OLIVA-SCHYNS00}
 
-Model Siegiana i Itti opiera się na na \emph{saliency model} zaproponowanym wcześniej przez Itti. W modelu tym, obraz wejściowy jest filtrowany do wielu niskopoziomowych kanałów cech, w wielu skalach przestrzennych. Kanały takie jak kolor, orientacja i intensywność mają wiele podkanałów, które z kolei wyróżniają 9 poziomów skali od stosunku 1:1 (poziom 0) do 1:256 (poziom 8), wygładzone iteracyjnie filtrem Gaussa $5 \times 5$.\cite{SIAGIAN07}
+Model Siegiana i Itti opiera się na \emph{saliency model} zaproponowanym wcześniej przez Itti. W modelu tym, obraz wejściowy jest filtrowany do wielu niskopoziomowych kanałów cech, w wielu skalach przestrzennych. Kanały takie jak kolor, orientacja i intensywność mają wiele podkanałów, które z kolei wyróżniają 9 poziomów skali od stosunku 1:1 (poziom 0) do 1:256 (poziom 8), wygładzone iteracyjnie filtrem Gaussa $5 \times 5$.\cite{SIAGIAN07}
 
 Dla każdego podkanału $i$ wykonywane są operacje porównania wartości centralnego punktu z jego sąsiedztwem, pomiędzy mapami wyjściowymi dla filtrów $O_i(s)$ w różnych skalach $s$. Mapy cech określamy jako $M_i(c, s)$, gdzie $c \in \{2, 3, 4\}$ -- skala centralna, $s = c + d$, $d \in \{3, 4\}$ -- skala otaczająca. Różnica między skalami zapisywana jest jako $\ominus$ i jest realizowana przez interpolację do skali centralnej i wyliczenie różnicy bezwzględnej. Zastosowanie skal $s$ oraz $c$ umożliwia zachowanie niezmienniczości względem oświetlenia.\cite{SIAGIAN07}
 
@@ -622,7 +622,7 @@ Celem klasyfikacji jest znalezienie funkcji klasyfikacyjnej, określanej też ja
 Do klasyfikacji obrazów najczęściej wykorzystywano: naiwny klasyfikator bayesowski, klasyfikator Ada Boost, maszynę wektorów wspierających (SVM) oraz k-najbliższych sąsiadów. Metody te zostały opisane w poniższych podrozdziałach.
 	
 \subsection{Naiwny klasyfikator bayesowski}
-Naiwny klasyfikator bayesowski jest prostym probabilistycznym klasyfikatorem opartym na twierdzeniu Bayesa, który zakłada wzajemną niezależność predykatorów. Założenie o warunkowej niezależności atrybutów można sformułować następująco:
+Naiwny klasyfikator bayesowski jest prostym probabilistycznym klasyfikatorem opartym na twierdzeniu Bayesa, który zakłada wzajemną niezależność predykatorów. Założenie o warunkowej niezależności atrybutów można sformułować następująco:\cite{MORZY13}
 \begin{equation} 
 \label{bayes_p_x_c} 
 P(X | C = C_i) = \prod\limits_{i = 1}^n P( A_i = x_i | C = C_i )
@@ -646,7 +646,7 @@ Metoda oszacowania prawdopodobieństwa warunkowego $P(A_j = x_j | C = C_i)$ zale
 \begin{equation} 
 \label{bayes_PAC} 
 P(A_j = x_j | C = C_j) = \frac{s_{ij}}{s_i}
-\end{equation} gdzie $s_{ij}$ -- liczba rekordów zbioru treningowego należących do klasy $C_i$, dla których atrybut $A_j$ przyjmuje wartość $x_j$, $s_i$ -- liczba rekordów zbioru treningowego należących do klasy $C_i$.
+\end{equation} gdzie $s_{ij}$ -- liczba rekordów zbioru treningowego należących do klasy $C_i$, dla których atrybut $A_j$ przyjmuje wartość $x_j$, $s_i$ -- liczba rekordów zbioru treningowego należących do klasy $C_i$.\cite{MORZY13}
 
 Jeśli natomiast atrybut $A_j$ jest atrybutem ciągłym można zdyskredytować atrybuty ciągłe i zastąpić wartości atrybutu ciągłego odpowiadającym mu dyskretnym przedziałem wartości, lub założyć standardowy rozkład prawdopodobieństwa wartości atrybutu ciągłego i zastąpić prawdopodobieństwo warunkowe atrybutów odpowiednią funkcją gęstości.
 
