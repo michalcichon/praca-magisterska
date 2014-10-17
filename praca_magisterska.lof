@@ -41,6 +41,7 @@
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Ustawienie do\IeC {\l }\IeC {\k a}czania bibliotek OpenCV \relax }}{55}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Ustawienie konsolidatora \relax }}{55}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Przyk\IeC {\l }adowe drzewo katalog\IeC {\'o}w s\IeC {\l }u\IeC {\.z}\IeC {\k a}ce do wytrenowania klasyfikatora \relax }}{56}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Struktura kategorii zapisana w formacie YAML \relax }}{56}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 2 kategorii (SIFT), k=1500 \relax }}{58}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 4 kategorii (SIFT), k=1500 \relax }}{59}
