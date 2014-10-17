@@ -85,3 +85,40 @@ Niezbyt dobre wyniki dla przypadku 8 kategorii mogły być związane z niewłaś
 \end{figure}
 
 Zauważono znaczną poprawę dla przypadku 4 kategorii, niestety nie udało się poprawić wyniku dla 8 kategorii, co może wynikać ze zbyt małej liczności zbioru treningowego. Najprawdopodobniej lepsze wyniki można byłoby osiągnąć dla większej liczny przykładów. Większa ilość przykładów powinna skutkować zwiększeniem ilości słów, co za tym idzie należałoby uwzględnić korektę parametrów takich jak $C$ oraz ilość klastrów $k$.
+
+Dla przypadku 2, 4 i 8 kategorii przeprowadzono obliczenia macierzy pomyłek dla kategoryzacji 40 obrazów. Wykorzystano następujące kategorie:
+ 0 -- samoloty (\emph{ang. airplanes}),
+ 1 -- bonsai,
+ 2 -- buddha,
+ 3 -- motyle (\emph{ang. butterfly}),
+ 4 -- samochody (\emph{ang. car}),
+ 5 -- żyrandole (\emph{ang. chandelier}),
+ 6 -- twarze (\emph{ang. face}),
+ 7 -- pianina (\emph{ang. piano}).
+
+Na wykresach (rys. \ref{fig:confusion-matrix-2}, \ref{fig:confusion-matrix-4}, \ref{fig:confusion-matrix-8}) oś pionowa oznacza kategorie rzeczywiste, natomiast oś pozioma kategorie przypisane przez silnik kategoryzacyjny.
+
+Dla przypadku 2 kategorii, kategoryzacja działa poprawnie dla min. 95\% przypadków. Dla 4 kategorii, kategoryzacja działa poprawnie dla min. 65\% przypadków, zauważono również predyspozycję silnika kategoryzacyjnego do błędnego przypisywania obrazów z kategorii nr. 2 (buddha) do kategorii nr. 1 (bonsai) na dość wysokim poziomie 27.5\% oraz kategorii nr. 3 (motyle) do kategorii nr 1 na również wysokim poziomie 17.5\%.
+
+Dla przypadku 8 kategorii zauważono dość dobrą pozytywnie poprawną kategoryzację dla niektórych kategorii (bonsai, pianina, samoloty), na poziomie odpowiednio 80\%, 72.5\% oraz 70\%. Dla niektórych kategorii takich jak motyle oraz buddha liczba pozytywnie skategoryzowanych obrazów jest niewielka i wynosi odpowiednio 35\% oraz 45\%.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{graphics/04_interpretacja_wynikow/confusion-matrix-2.png}
+	\caption{ Macierz pomyłek dla przypadku 2 kategorii }
+	\label{fig:confusion-matrix-2}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{graphics/04_interpretacja_wynikow/confusion-matrix-4.png}
+	\caption{ Macierz pomyłek dla przypadku 4 kategorii }
+	\label{fig:confusion-matrix-4}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{graphics/04_interpretacja_wynikow/confusion-matrix-8.png}
+	\caption{ Macierz pomyłek dla przypadku 8 kategorii }
+	\label{fig:confusion-matrix-8}
+\end{figure}
