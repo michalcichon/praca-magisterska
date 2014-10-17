@@ -14,7 +14,7 @@ set output 'confusion-matrix-2.png'
 
 set tics scale 0
 unset cbtics
-set cblabel 'Dokladnosc'
+set cblabel 'Dokładność'
 unset key
 
 set xtics 1
