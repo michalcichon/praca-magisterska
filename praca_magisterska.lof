@@ -32,21 +32,24 @@
 \contentsline {figure}{\numberline {1.31}{\ignorespaces Przyk\IeC {\l }ady dopasowania modelu: (a) dopasowanie niewystarczaj\IeC {\k a}ce, (b) dobre dopasowanie, (c) dopasowanie nadmierne\cite {HLAVAC} \relax }}{46}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces G\IeC {\l }\IeC {\'o}wne okno \IeC {\'s}rodowiska programistycznego Micsoroft Visual Studio 2010 Express \relax }}{48}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Schemat dzia\IeC {\l }ania metody \emph {Bag of Keypoints} \relax }}{49}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ustawienie zmiennej \IeC {\'s}rodowiskowej PATH w systemie Windows \relax }}{51}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Ustawienie do\IeC {\l }\IeC {\k a}czania katalog\IeC {\'o}w OpenCV \relax }}{52}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Ustawienie do\IeC {\l }\IeC {\k a}czania bibliotek OpenCV \relax }}{53}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Ustawienie konsolidatora \relax }}{53}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Pryzk\IeC {\l }adowe drzewo katalog\IeC {\'o}w s\IeC {\l }u\IeC {\.z}\IeC {\k a}ce do wytrenowania klasyfikatora \relax }}{54}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Schemat dzia\IeC {\l }ania metody \emph {Bag of Keypoints} \relax }}{50}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Przygotowanie pakietu Boost \relax }}{51}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Kompilacja biblioteki serialization \relax }}{52}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Zako\IeC {\'n}czenie instalacji biblioteki serialization \relax }}{53}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Ustawienie zmiennej \IeC {\'s}rodowiskowej PATH w systemie Windows \relax }}{54}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Ustawienie do\IeC {\l }\IeC {\k a}czania katalog\IeC {\'o}w OpenCV \relax }}{54}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Ustawienie do\IeC {\l }\IeC {\k a}czania bibliotek OpenCV \relax }}{55}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Ustawienie konsolidatora \relax }}{55}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Przyk\IeC {\l }adowe drzewo katalog\IeC {\'o}w s\IeC {\l }u\IeC {\.z}\IeC {\k a}ce do wytrenowania klasyfikatora \relax }}{56}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 2 kategorii (SIFT), k=1500 \relax }}{56}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 4 kategorii (SIFT), k=1500 \relax }}{57}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 8 kategorii (SIFT), k=1500 \relax }}{57}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 2 kategorii (SURF), k=1500 \relax }}{58}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 4 kategorii (SURF), k=1500 \relax }}{58}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 8 kategorii (SURF), k=1500 \relax }}{59}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 2 kategorii (SURF), k=1500, k=500 \relax }}{59}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 4 kategorii (SURF), k=1500, k=500 \relax }}{60}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 8 kategorii (SURF), k=1500, k=500 \relax }}{60}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 2 kategorii (SIFT), k=1500 \relax }}{58}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 4 kategorii (SIFT), k=1500 \relax }}{59}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 8 kategorii (SIFT), k=1500 \relax }}{59}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 2 kategorii (SURF), k=1500 \relax }}{60}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 4 kategorii (SURF), k=1500 \relax }}{60}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 8 kategorii (SURF), k=1500 \relax }}{61}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 2 kategorii (SURF), k=1500, k=500 \relax }}{61}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 4 kategorii (SURF), k=1500, k=500 \relax }}{62}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Wykres trafno\IeC {\'s}ci dla uczenia 8 kategorii (SURF), k=1500, k=500 \relax }}{62}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

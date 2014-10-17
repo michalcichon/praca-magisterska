@@ -4,7 +4,7 @@ Silnik kategoryzacyjny został zaimplementowany w języku C++, z użyciem środo
 
 \section{Język C++ i Visual Studio}
 
-Język C++ jest językiem programowania ogólnego przeznaczenia. Jest językiem wieloparadygmatowym, czyli umożliwia stosowanie różnych paradygmatów programowania: proceduralnego, obiektowego i generycznego. Został zaprojektowany przez Bjarne Stroustrupa jako rozszerzenie języka C i użyty po raz pierwszy w 1979 roku. Charakteryzuje się obiektowymi mechanizmami abstrakcji danych oraz silną statyczną kontrolą typów.
+Język C++ jest językiem programowania ogólnego przeznaczenia. Jest językiem wieloparadygmatowym, czyli umożliwia stosowanie różnych paradygmatów programowania: proceduralnego, obiektowego i generycznego. Został zaprojektowany przez Bjarne Stroustrupa jako rozszerzenie języka C i użyty po raz pierwszy w 1979 roku. Charakteryzuje się obiektowymi mechanizmami abstrakcji danych oraz silną statyczną kontrolą typów.\cite{GREBOSZ06}
 
 Początkowo do realizacji zadania miał zostać wykorzystany język Python, ze względu na bogactwo bibliotek do uczenia maszynowego oraz przetwarzania obrazów. Warto wspomnieć szczególnie o dwóch bibliotekach: scikit-learn oraz scikit-image, które pozwalają na rozwiązanie wielu problemów związanych z klasyfikacją obrazów, klastrowaniem lub ekstrakcją cech. Zdecydowano o użyciu języka C++ z dwóch powodów:
 
@@ -13,9 +13,9 @@ Początkowo do realizacji zadania miał zostać wykorzystany język Python, ze w
 	\item \emph{silne typowanie} -- w przeciwieństwie do Pythona, język C++ jest silnie typowany, co w ocenie autora niniejszej pracy ma wpływ na zachowanie porządku w kodzie źródłowym.
 \end{compactitem}
 
-Microsoft Visual Studio jest zintegrowanym środowiskiem programistycznym rozwijanym przez firmę Microsoft. W skład pakietu wchodzą kompilatory kilku języków: C\#, J\#, Visual Basic, F\#, C++ oraz zintegrowany debugger, który działa na poziomie kodu źródłowego, jak i maszyny. Pierwsze wydanie pakietu pojawiło się w 1995 i obecnie najnowszą wersją jest wersja 12 z 2013 roku. 
+Microsoft Visual Studio jest zintegrowanym środowiskiem programistycznym rozwijanym przez firmę Microsoft. W skład pakietu wchodzą kompilatory kilku języków: C\#, J\#, Visual Basic, F\#, C++ oraz zintegrowany debugger, który działa na poziomie kodu źródłowego, jak i maszyny. Pierwsze wydanie pakietu pojawiło się w 1995 i obecnie najnowszą wersją jest wersja 12 z 2013 roku.\cite{MSDN13}
 
-Kompilator Visual C++ wchodzący w skład pakietu jest specjalną wersją kompilatora języka C++, dostosowana do systemu Windows. Z tego powodu zawiera wiele dedykowanych bibliotek dla tego systemu operacyjnego, które nie mają swoich odpowiednikach w systemach Linux, Unix lub Mac OS X. Dodatkowo Microsoft wydając ten kompilator stworzył swój własny standard języka, który do wersji Visual Studio 2013 nie był w pełni zgodny z ISO. Co za tym idzie, kod silnika powstały w wersji Visual Studio 2010 nie musi być zgodny z ISO. Na rys. \ref{fig:visual-studio-main-window} przedstawiono widok głównego okna środowiska Visual Studio 2010 Express.
+Kompilator Visual C++ wchodzący w skład pakietu jest specjalną wersją kompilatora języka C++, dostosowana do systemu Windows. Z tego powodu zawiera wiele dedykowanych bibliotek dla tego systemu operacyjnego, które nie mają swoich odpowiedników w systemach Linux, Unix lub Mac OS X. Dodatkowo Microsoft wydając ten kompilator stworzył swój własny standard języka, który do wersji Visual Studio 2013 nie był w pełni zgodny z ISO. Co za tym idzie, kod silnika powstały w wersji Visual Studio 2010 nie musi być zgodny z ISO. Na rys. \ref{fig:visual-studio-main-window} przedstawiono widok głównego okna środowiska Visual Studio 2010 Express.\cite{MSDN13}
 
 \begin{figure}[h]
 	\centering
@@ -26,7 +26,11 @@ Kompilator Visual C++ wchodzący w skład pakietu jest specjalną wersją kompil
 
 \section{OpenCV}
 
-Do ekstrakcji cech oraz do klasyfikacji wykorzystano OpenCV. Jest to biblioteka do przetwarzania obrazów napisana w języku C, oparta na otwartym kodzie i zapoczątkowana przez firmę Intel. Charakteryzuje się wieloplatformowością, gdyż istnieją wersje na systemy operacyjne Windows, Mac OS X oraz Linux. Umożliwia ponadto, dzięki zastosowaniu odpowiednich nakładek, na tworzenie kodu w różnych językach programowania: C++, C\# oraz Python. Do realizacji zadania wykorzystano OpenCV w wersji 2.2.0.
+Do ekstrakcji cech oraz do klasyfikacji wykorzystano OpenCV. Jest to biblioteka do przetwarzania obrazów napisana w języku C, oparta na otwartym kodzie i zapoczątkowana przez firmę Intel. Charakteryzuje się wieloplatformowością, gdyż istnieją wersje na systemy operacyjne Windows, Mac OS X oraz Linux. Umożliwia ponadto, dzięki zastosowaniu odpowiednich nakładek, na tworzenie kodu w różnych językach programowania: C++, C\# oraz Python. Do realizacji zadania wykorzystano OpenCV w wersji 2.2.0.\cite{OPENCV}
+
+\section{Boost}
+
+Podczas procesu uczenia powstają duże ilości danych, które poddano procesowi serializacji tak aby nie trzeba było ich obliczać podczas każdego uruchomienia programu. Do serializacji wykorzystano bibliotekę \emph{serialization} z pakietu Boost. Boost jest to pakiet bibliotek napisanych w języku C++, które służą do rozwiązywania różnych rodzajów zadań takich jak algebra liniowa, generowanie liczb pseudolosowych, wielowątkowość, przetwarzanie obrazów, wyrażenia regularne oraz testowanie jednostkowe. Biblioteki Boost można wykorzystywać nieodpłatnie zarówno w projektach komercyjnych jak i niekomercyjnych.\cite{BOOST} 
 
 \section{Architektura systemu}
 Zaproponowany system do kategoryzacji obrazów wykorzystuje podejście \emph{Bag of Keypoints}\cite{CSURKA04}. Metoda ta opiera się na kwantyzacji wektorowej deskryptorów i odpowiada histogramowi przypadków występowania poszczególnych wzorców na obrazie. Metoda ta adaptuje podejście \emph{Bag of Words}, które było wcześniej używane do kategoryzacji tekstowej\cite{TONG00}, na potrzeby kategoryzacji obrazów. Do zalet tej metody należy zaliczyć prostotę, wydajność obliczeniową oraz niezależność od przekształceń afinicznych oraz oświetlenia.\cite{CSURKA04} Często metoda ta jest również nazywana metodą \emph{Bag of Words}\cite{TENG11} (tak samo jak w przypadku kategoryzacji tekstu) lub \emph{Bag of Visual Words}\cite{KESORN12}.
@@ -52,7 +56,34 @@ Projekt składa się z następujących klas:
 \section{Konfiguracja środowiska}
 Aby uruchomić program w środowisku Windows, należy w pierwszej kolejności zainstalować Microsoft Visual Studio 2010 Express oraz OpenCV w wersji 2.2.0. Domyślnie biblioteka OpenCV instalowana jest w lokalizacji \emph{C:\textbackslash OpenCV2.2}. Przed uruchomieniem projektu wymagane jest wykonanie następujących kroków:
 \begin{enumerate}
-  \item Dodanie do zmiennej systemowej PATH lokalizacji biblioteki OpenCV. Można to zrobić w Panelu sterowania systemu Windows wchodząc do opcji "System" w Panelu sterowania, a następnie wybierając "Zaawansowane ustawienia systemu" i klikając na guzik "Zmienne Środowiskowe...". Następnie na liście "Zmienne systemowe" należy odnaleźć zmienną "Path" i kliknąć na "Edytuj...". W oknie edycji należy dopisać do końca listy \emph{C:\textbackslash OpenCV2.2} upewniając się, że poprzedni wpis został oddzielony za pomocą znaku ';' (rys. \ref{fig:ustawienia-path}).
+  \item Wypakowanie pakietu Boost w wersji 1.52. Pakiet należy wypakować w lokalizacji, w której chcemy z niego docelowo korzystać. Warto wybrać lokalizację blisko głównego katalogu systemowego (\emph{np. C:\textbackslash}) gdyż skrypt służący do kompilowania nie działa poprawnie dla długich ścieżek.
+  \item Otworzenie konsoli programu Visual Studio poprzez wybór opcji \emph{Open Visual Studio Command Prompt (2010)} z menu Start.
+  \item Przejście do katalogu Boost poprzez wydanie komendy: \texttt{cd C:\textbackslash boost\_1\_52\_0} oraz przygotowanie kompilacji pakietu Boost poprzez wydanie komendy \texttt{bootstrap} (rys. \ref{fig:boost-1}).
+  
+  \begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.85]{graphics/03_implementacja/boost-1.pdf}
+		\caption{ Przygotowanie pakietu Boost }
+		\label{fig:boost-1}
+	\end{figure}
+
+  \item Kompilacja biblioteki \emph{serialization} z pominięciem pozostałych bibliotek dokonuje się poprzez wydanie komendy \texttt{.\textbackslash b2 --with-serialization } (rys. \ref{fig:boost-2}). Kompilacja powinna zająć kilka minut i zakończyć się komunikatem \emph{The Boost C++ Libraries were successfully built!} oraz informacją na temat dodania potrzebnych ścieżek do ustawień kompilatora i konsolidatora (rys. \ref{fig:boost-3}).
+  
+  \begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.85]{graphics/03_implementacja/boost-2.pdf}
+		\caption{ Kompilacja biblioteki serialization }
+		\label{fig:boost-2}
+	\end{figure}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.85]{graphics/03_implementacja/boost-3.pdf}
+		\caption{ Zakończenie instalacji biblioteki serialization }
+		\label{fig:boost-3}
+	\end{figure}
+  
+  \item Dodanie do zmiennej systemowej PATH lokalizacji biblioteki OpenCV. Można to zrobić w Panelu sterowania systemu Windows wchodząc do opcji "System" w Panelu sterowania, a następnie wybierając "Zaawansowane ustawienia systemu" i klikając na przycisk "Zmienne Środowiskowe...". Następnie na liście "Zmienne systemowe" należy odnaleźć zmienną "Path" i kliknąć na "Edytuj...". W oknie edycji należy dopisać do końca listy \emph{C:\textbackslash OpenCV2.2} upewniając się, że poprzedni wpis został oddzielony za pomocą znaku ';' (rys. \ref{fig:ustawienia-path}).
   
 	\begin{figure}[h]
 		\centering
@@ -71,6 +102,8 @@ Aby uruchomić program w środowisku Windows, należy w pierwszej kolejności za
 		\label{fig:ustawienia-include-dirs}
 	\end{figure}
 	
+	\item Analogicznie należy dodać ścieżkę \emph{C:\textbackslash boost\_1\_52\_0} pakietu Boost. 
+	
 	\item Pozostając w ustawieniach "VC++ Directories" należy w podobny sposób edytować "Library Directories", dodając ścieżkę \emph{C:\textbackslash OpenCV2.2\textbackslash lib} (rys. \ref{fig:ustawienia-lib-dirs}).
 	
 	\begin{figure}[h]
@@ -79,6 +112,8 @@ Aby uruchomić program w środowisku Windows, należy w pierwszej kolejności za
 		\caption{ Ustawienie dołączania bibliotek OpenCV }
 		\label{fig:ustawienia-lib-dirs}
 	\end{figure}
+	
+	\item Analogicznie należy dodać ścieżkę \emph{C:\textbackslash boost\_1\_52\_0\textbackslash stage\textbackslash lib}.
 	
 	\item Następnie należy przejść do ustawień konsolidatora \emph{ang. linker} wybierając z listy opcję "Linker" a następnie "Input" i "Additional Dependencies". W oknie należy umieścić listę potrzebnych bibliotek pakietu OpenCV (rys. \ref{fig:ustawienia-linker}):
 	
@@ -112,14 +147,17 @@ Aby uruchomić program w środowisku Windows, należy w pierwszej kolejności za
 Klasa \emph{ImageCategorizationAPI}\footnote{API - Application Programming Interface; ściśle określony zestaw reguł i ich opisów, w jaki programy komunikują się między sobą.} zawiera następujące metody umożliwiające wykonywanie zadań związanych z kategoryzacją obrazów:
 
 \begin{compactitem}
-	\item \texttt{void refreshModel(string path)} -- umożliwia zbudowanie modelu kategoryzacyjnego. Parametr \texttt{path} powinien zawierać ścieżkę do zbioru obrazów służących do zbudowania modelu. Zbiór ten powinien składać się z katalogów, których nazwy odpowiadają kategoriom. W każdym z tych katalogów należy umieścić obrazy służące do uczenia klasyfikatora w podkatalogu \texttt{learn} oraz obrazy służące do testowania klasyfikatora w katalogu \texttt{test}. Przykładowe drzewo katalogów znajduje się na rys. \ref{fig:api-directory-tree}.
+	\item \texttt{void refreshModel(string path)} -- umożliwia zbudowanie modelu kategoryzacyjnego. Parametr \texttt{path} powinien zawierać ścieżkę do zbioru obrazów służących do zbudowania modelu. Zbiór ten powinien składać się z katalogów, których nazwy odpowiadają kategoriom. W każdym z tych katalogów należy umieścić obrazy służące do uczenia klasyfikatora w podkatalogu \texttt{learn} oraz obrazy służące do testowania klasyfikatora w katalogu \texttt{test}. Przykładowe drzewo katalogów znajduje się na rys. \ref{fig:api-directory-tree},
 	
 	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=1.0]{graphics/03_implementacja/api-directory-tree.pdf}
-		\caption{ Pryzkładowe drzewo katalogów służące do wytrenowania klasyfikatora }
+		\caption{ Przykładowe drzewo katalogów służące do wytrenowania klasyfikatora }
 		\label{fig:api-directory-tree}
 	\end{figure}
 	
-	\item \texttt{string getCategory(string path)} -- zwraca nazwę kategorii przewidzianą przez silnik kategoryzacyjny, np. \emph{airplanes}, \emph{buterfly}. Parametr \texttt{path} powinien być prawidłową ścieżką do obrazu, który chcemy skategoryzować.
+	\item \texttt{string getCategory(string path)} -- zwraca nazwę kategorii przewidzianą przez silnik kategoryzacyjny, np. \emph{airplanes}, \emph{buterfly}. Parametr \texttt{path} powinien być prawidłową ścieżką do obrazu, który chcemy skategoryzować,
+	\item \texttt{vector<string> getCategories()} -- zwraca listę dostępnych kategorii w formie wektora łańcuchów znakowych,
+	\item \texttt{string getCategoriesString()} -- zwraca listę dostępnych kategorii w formacie: $\allowbreak[kategoria1, kategoria2, kategoria3]$.
 \end{compactitem}
+	
