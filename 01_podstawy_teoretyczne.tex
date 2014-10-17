@@ -516,7 +516,7 @@ Na rys. \ref{fig:lbp-pr-operator} przedstawiono rozszerzony operator LBP dla są
 	\label{fig:lbp-pr-operator}
 \end{figure}
 
-Ponadto zauważono, że większość informacji była zawarta w niewielkim podzbiorze wzorców LBP. Wzorce te zostały nazwane wzorcami jednolitymi (\emph{ang. uniform patterns}) i zawierają co najwyżej dwa przejścia z 0 na 1 lub z 1 na 0 dla kolejnych bitów we wzorcu. 
+Ponadto zauważono, że większość informacji była zawarta w niewielkim podzbiorze wzorców LBP.\cite{OJALA02} Wzorce te zostały nazwane wzorcami jednolitymi (\emph{ang. uniform patterns}) i zawierają co najwyżej dwa przejścia z 0 na 1 lub z 1 na 0 dla kolejnych bitów we wzorcu. 
 
 Dla przykładu $11111111$, $00000000$, $10000111$ i $00001110$ są wzorcami jednolitymi. Natomiast $00011011$, $10001101$, $01010101$ i $01001110$ nie są wzorcami jednolitymi. Przykłady wzorców jednolitych znajdują się również na rys. \ref{fig:lbp-uniform-patterns}.
 
@@ -545,7 +545,7 @@ Na rys. \ref{fig:lbp-features} przedstawiono efekt działania LBP do wykrywania 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.39]{graphics/01_podstawy_teoretyczne/lbp-features.pdf}
-	\caption{ Zastosowanie LBP do wykrywania punktów charakteryzujących: (a) rogi, (b) krawędzie, (c) płaszczyzny.  }
+	\caption{ Zastosowanie LBP do wykrywania punktów charakteryzujących: (a) rogi, (b) krawędzie, (c) płaszczyzny. }
 	\label{fig:lbp-features}
 \end{figure}
 
@@ -556,9 +556,9 @@ Ze względu na jego niski koszt obliczeniowy, często wykorzystywany jest do roz
 
 Histogram zorientowanych gradientów (\emph{ang. Histogram of Oriented Gradients, HOG}) został zaproponowany przez Dalala jako jednowymiarowy histogram gradientów orientacji w lokalnych regionach obrazu i zastosowany do detekcji ludzi na fotografiach.\cite{DALAL05} HOG jest odporny na wpływ lokalnych warunków oświetleniowych oraz zmiany geometrii.\cite{YAMAUCHI11}
 
-Gradient obrazu jest otrzymywany poprzez filtrowanie jednowymiarowymi filtrami $[-1, 0, 1]$ (poziomo) oraz $[-1, 0, 1]^T$ (pionowo). Próba zastosowania większych i bardziej skomplikowanych masek dawała gorsze rezultaty. Dla obrazów kolorowych gradienty są obliczane osobno dla każdego kanału.
+Gradient obrazu jest otrzymywany poprzez filtrowanie jednowymiarowymi filtrami $[-1, 0, 1]$ (poziomo) oraz $[-1, 0, 1]^T$ (pionowo). Próba zastosowania większych i bardziej skomplikowanych masek dawała gorsze rezultaty.\cite{DALAL05} Dla obrazów kolorowych gradienty są obliczane osobno dla każdego kanału.
 
-Następnym krokiem jest tworzenie histogramów gradientów dla komórek. Dla każdego piksela w komórce wyznaczany jest ważony głos dla kanału gradientu orientacji, opartego na wartościach znalezionych w gradiencie dla danego punktu. Komórki mogą być zarówno prostokątne jak i okrągłe. Kanały gradientu mogą być równo rozłożone w zakresie od $0$ do $180$ stopni lub od $0$ do $360$ stopni. Według Dalala i Tiggsa zakres od $0$ do $180$ w połączeniu z zastosowaniem 9 kanałów histogramu sprawdza się najlepiej do rozwiązania problemu detekcji człowieka na zdjęciu.
+Następnym krokiem jest tworzenie histogramów gradientów dla komórek. Dla każdego piksela w komórce wyznaczany jest ważony głos dla kanału gradientu orientacji, opartego na wartościach znalezionych w gradiencie dla danego punktu. Komórki mogą być zarówno prostokątne jak i okrągłe. Kanały gradientu mogą być równo rozłożone w zakresie od $0$ do $180$ stopni lub od $0$ do $360$ stopni. Według Dalala i Tiggsa zakres od $0$ do $180$ w połączeniu z zastosowaniem 9 kanałów histogramu sprawdza się najlepiej do rozwiązania problemu detekcji człowieka na zdjęciu.\cite{DALAL05}
 
 W celu normalizacji histogramów, komórki łączone są w bloki. Wyróżniamy bloki prostokątne R-HOG oraz okrągłe C-HOG. Bloki C-HOG mogą mieć dwa zasadnicze warianty w zależności od tego czy środkowa komórka jest podzielona czy nie. Na rys. \ref{fig:hog-blocks} przedstawiono przykładowe bloki HOG. Zazwyczaj bloki nachodzą na siebie, tj. pojedynczy piksel może należeć do kilku bloków.
 
@@ -651,13 +651,13 @@ P(A_j = x_j | C = C_j) = \frac{s_{ij}}{s_i}
 Jeśli natomiast atrybut $A_j$ jest atrybutem ciągłym można zdyskredytować atrybuty ciągłe i zastąpić wartości atrybutu ciągłego odpowiadającym mu dyskretnym przedziałem wartości, lub założyć standardowy rozkład prawdopodobieństwa wartości atrybutu ciągłego i zastąpić prawdopodobieństwo warunkowe atrybutów odpowiednią funkcją gęstości.
 
 \subsection{Sztuczne sieci neuronowe}
-W latach czterdziestych XX wieku zrodził się pomysł naśladowania sposobu przetwarzania i przesyłania informacji przez neurony, co dało początek sztucznym sieciom neuronowym. Podobnie jak w przypadku ich biologicznych odpowiedników, podstawowymi elementami, z których buduje się sztuczne sieci neuronowe, są sztuczne neurony, nazywane też dla uproszczenia neuronami.
+W latach czterdziestych XX wieku zrodził się pomysł naśladowania sposobu przetwarzania i przesyłania informacji przez neurony, co dało początek sztucznym sieciom neuronowym. Podobnie jak w przypadku ich biologicznych odpowiedników, podstawowymi elementami, z których buduje się sztuczne sieci neuronowe, są sztuczne neurony, nazywane też dla uproszczenia neuronami.\cite{KORBICZ94}
 
-Zazwyczaj neurony są rozmieszczone w warstwach. Pierwsza warstwa nazywana jest warstwą wejściową i odpowiada za wprowadzanie danych do sieci. Liczba neuronów w tej warstwie jest równa liczbie wartości wprowadzanych jednocześnie do sieci.
+Zazwyczaj neurony są rozmieszczone w warstwach. Pierwsza warstwa nazywana jest warstwą wejściową i odpowiada za wprowadzanie danych do sieci. Liczba neuronów w tej warstwie jest równa liczbie wartości wprowadzanych jednocześnie do sieci.\cite{AMBROCH}
 
-Ostatnia warstwa neuronów to warstwa wyjściowa, która służy do wyznaczania wartości wyjściowych sieci. Pomiędzy warstwą wejściową i wyjściową mogą znajdować się warstwy ukryte, w których realizowane są kolejne etapy przetwarzania informacji wejściowych w informacje wyjściowe.
+Ostatnia warstwa neuronów to warstwa wyjściowa, która służy do wyznaczania wartości wyjściowych sieci. Pomiędzy warstwą wejściową i wyjściową mogą znajdować się warstwy ukryte, w których realizowane są kolejne etapy przetwarzania informacji wejściowych w informacje wyjściowe.\cite{AMBROCH}
 
-Neurony znajdujące się w sąsiednich warstwach są ze sobą połączone tworząc ścieżki, po których przesyłane są dane w sieci. Na rys. \ref{fig:ssn-przykladowa-siec} znajduje się przykładowa struktura sztucznej sieci neuronowej dwuwarstwowej. W nazwie sieci podaje się łączną liczbę warstw ukrytych i wyjściowych. 
+Neurony znajdujące się w sąsiednich warstwach są ze sobą połączone tworząc ścieżki, po których przesyłane są dane w sieci. Na rys. \ref{fig:ssn-przykladowa-siec} znajduje się przykładowa struktura sztucznej sieci neuronowej dwuwarstwowej. W nazwie sieci podaje się łączną liczbę warstw ukrytych i wyjściowych.\cite{AMBROCH}
 
 \begin{figure}[h]
 	\centering
@@ -708,7 +708,7 @@ Przykład klasyfikacji k-NN dla różnych wartości $k$ znajduje się na rys. \r
 
 Wynik klasyfikacji k-NN zależy mocno od dwóch czynników: od tego jaką przyjmujemy miarę odległości oraz od tego w jaki sposób dokonujemy transformacji obiektu do reprezentacji w przestrzeni wzorców.\cite{MORZY13}
 
-W wielu zastosowaniach przyjmowana jest metryka euklidesowa, tj. jeśli $\boldsymbol{y}$ jest wejściowym wektorem elementu, który ma być sklasyfikowany, a $\boldsymbol{x}$ jest wektorem wejściowym dla elementu ze zbioru treningowego, to wówczas odległość euklidesowa pomiędzy nimi wynosi:
+W wielu zastosowaniach przyjmowana jest metryka euklidesowa\cite{HAND01}, tj. jeśli $\boldsymbol{y}$ jest wejściowym wektorem elementu, który ma być sklasyfikowany, a $\boldsymbol{x}$ jest wektorem wejściowym dla elementu ze zbioru treningowego, to wówczas odległość euklidesowa pomiędzy nimi wynosi:
 \begin{equation} 
 \label{knn-euclides} 
 d(x, y) = \sum_j (x_j - y_j)^2
@@ -787,7 +787,7 @@ Na rys. \ref{fig:svm-margin} przedstawiono przykład hiperpłaszczyzny o maksyma
 	\label{fig:svm-margin}
 \end{figure}
 
-Hiperpłaszczyzny $H_1$ oraz $H_2$ są zdefiniowane przy pomocy obiektów znajdujących się na ich brzegach. Obiekty te nazywamy wektorami nośnymi (\emph{ang. support vectors}).
+Hiperpłaszczyzny $H_1$ oraz $H_2$ są zdefiniowane przy pomocy obiektów znajdujących się na ich brzegach. Obiekty te nazywamy wektorami nośnymi (\emph{ang. support vectors}).\cite{IVANCIUC07}
 
 SVM może być również stosowany do separacji klas, które nie mogą być separowane klasyfikatorem liniowym. W takich przypadkach, współrzędne obiektów są mapowane do przestrzeni cech, za pomocą nieliniowych funkcji, które nazywamy funkcjami cech (\emph{ang. feature functions}) i oznaczamy $\phi$. Przykład takiej transformacji został umieszczony na rys. \ref{fig:svm-phi}.
 
@@ -798,15 +798,15 @@ SVM może być również stosowany do separacji klas, które nie mogą być sepa
 	\label{fig:svm-phi}
 \end{figure}
 
-Przestrzeń cech jest wielowymiarowa i określenie dla niej hiperpłaszczyzny jest bardzo trudne obliczeniowo. Zamiast tego stosuje się funkcje jądrowe (\emph{ang. kernel functions}). Rozwiązanie klasyfikacji jest wówczas sumą ważoną funkcji jądrowych oszacowanych w miejscu wektorów nośnych.
+Przestrzeń cech jest wielowymiarowa i określenie dla niej hiperpłaszczyzny jest bardzo trudne obliczeniowo. Zamiast tego stosuje się funkcje jądrowe (\emph{ang. kernel functions}). Rozwiązanie klasyfikacji jest wówczas sumą ważoną funkcji jądrowych oszacowanych w miejscu wektorów nośnych.\cite{IVANCIUC07}
 
 Maszyny wektorów nośnych zostały pierwotnie zaprojektowane do rozwiązywania problemów klasyfikacji binarnej, gdzie obiekty są przyporządkowane do dwóch klas. Zastosowanie tej metody do rozwiązywania problemów klasyfikowania dla wielu klas sprowadza się do zredukowania problemu klasyfikacji wieloklasowej do kilku problemów klasyfikacji binarnej.\cite{DUAN05} Redukcji tej można dokonać na kilka sposobów:
 
 \begin{compactitem}
-	\item Zbudowanie klasyfikatorów binarnych, które przeciwstawiają jedną z klas reszcie klas (\emph{ang. one vs all}). Klasyfikacja nowych przypadków odbywa się z zastosowaniem strategii \emph{winner-takes-all}, w której klasyfikator z najwyższą funkcją wyjściową przypisuje klasę
+	\item Zbudowanie klasyfikatorów binarnych, które przeciwstawiają jedną z klas reszcie klas (\emph{ang. one vs all}). Klasyfikacja nowych przypadków odbywa się z zastosowaniem strategii \emph{winner-takes-all}, w której klasyfikator z najwyższą funkcją wyjściową przypisuje klasę.
 	\item Zbudowanie klasyfikatorów binarnych, które przeciwstawiają sobie każdą parę klas (\emph{ang. one vs one}), gdzie klasyfikacja odbywa się poprzez strategię głosowania \emph{max-wins}, gdzie każdy klasyfikator przypisuje przypadek do jednej z dwóch klas, a następnie głos dla przypisanej klasy jest zwiększany o jeden. Ostatecznie, klasa z największą ilością głosów determinuje przypisanie do klasy.
-	\item Zastosowanie skierowanego, acyklicznego grafu SVM (DAGSVM)\cite{PLATT00}
-	\item Zastosowanie kodów korekcji błędów wyjściowych\cite{DIETTERICH94}
+	\item Zastosowanie skierowanego, acyklicznego grafu SVM (DAGSVM).\cite{PLATT00}
+	\item Zastosowanie kodów korekcji błędów wyjściowych.\cite{DIETTERICH94}
 \end{compactitem}
 
 Zastosowanie SVM do rozwiązania problemu klasyfikacji ma wiele zalet. Pozwala na dobrą generalizację ze względu na wielowymiarowość przestrzeni cech. Podczas znajdowania minimum globalnego minimalizujemy funkcję kwadratową, co gwarantuje znalezienie minimum. Algorytm jest wydajny i generuje prawie optymalny klasyfikator, który nie jest czuły na przetrenowanie. Poprzez użycie odpowiedniej funkcji jądra daje dużą skuteczność w praktyce.\cite{WOLTER07}
@@ -816,7 +816,7 @@ Do wad SVM można zaliczyć m.in. to, że trening trwa stosunkowo długo, szczeg
 \section{Ocena klasyfikatorów}
 W celu określenia jakości klasyfikatora i porównania go z innymi klasyfikatorami często stosuje się macierze pomyłek (\emph{ang. confusion matrix}). Są to macierze o wymiarach $m \times m$, gdzie $m$ to liczba etykiet klas. Wiersze odpowiadają rzeczywistym etykietom klas rekordów testowych, natomiast kolumny odpowiadają etykietom klas przypisanym przez klasyfikator. Element $f_{ij}$ macierzy oznacza liczbę rekordów testowych z klasy $C_i$ przypisanej przez klasyfikator do klasy $C_j$.
 
-W szczególności dla przypadku klasyfikacji binarnej, gdzie obiekty przypisujemy do jednej z dwóch klas, otrzymujemy macierz $2\times 2$. Na rys. \ref{fig:confusion-matrix} przedstawiono schemat macierzy pomyłek $2 \times 2$. Elementy TN, FP, FN i TP opisują następujące przypadki:
+W szczególności dla przypadku klasyfikacji binarnej, gdzie obiekty przypisujemy do jednej z dwóch klas, otrzymujemy macierz $2\times 2$. Na rys. \ref{fig:confusion-matrix} przedstawiono schemat macierzy pomyłek $2 \times 2$. Elementy TN, FP, FN i TP opisują następujące przypadki\cite{MORZY13}:
 
 \begin{compactitem}
 	\item \emph{TP} (\emph{ang. true positive}) -- liczba pozytywnych rekordów testowych zaklasyfikowanych do klasy pozytywnej,
@@ -911,7 +911,7 @@ Ciekawym zagadnieniem związanym z wyborem kategorii jest badanie kategorii bazo
 
 \subsection{Przeuczenie i niedouczenie klasyfikatora}
 
-Na jakość klasyfikacji może mieć wpływ zarówno niedouczenie jak i przeuczenie klasyfikatora. Niedouczenie, nazywane też niewystarczającym dopasowaniem (\emph{ang. underfitting}) występuje wówczas gdy posługujemy się zbyt ogólnym, uproszczonym modelem. Zbyt mała ilość wykorzystanych do budowy modelu danych utrudnia skuteczne określenie przynależności obiektów do poprawnych klas.
+Na jakość klasyfikacji może mieć wpływ zarówno niedouczenie jak i przeuczenie klasyfikatora. Niedouczenie, nazywane też niewystarczającym dopasowaniem (\emph{ang. underfitting}) występuje wówczas gdy posługujemy się zbyt ogólnym, uproszczonym modelem. Zbyt mała ilość wykorzystanych do budowy modelu danych utrudnia skuteczne określenie przynależności obiektów do poprawnych klas.\cite{HLAVAC}
 
 Także przeuczenie czyli nadmierne dopasowanie (\emph{ang. overfitting}) jest niekorzystne. Gdy mamy zbyt mało przypadków uczących, klasyfikator może znaleźć prawidłowości tam gdzie ich nie ma i wykorzystać je do budowy modelu. Nadmiernie dopasowany model ogranicza generalizację na danych testowych, stąd kategoryzacja dla nowych danych daje gorsze rezultaty. Na rys. \ref{fig:overfitting} przedstawiono porównanie nadmiernego oraz niewystarczającego dopasowania oraz przypadek dobrego dopasowania.\cite{HLAVAC}
 
