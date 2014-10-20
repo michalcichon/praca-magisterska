@@ -9,18 +9,18 @@ set encoding utf8
 set autoscale fix
 set palette defined (0 'white', 1 'green')
 
-set terminal png size 640,480 
-set output 'confusion-matrix-8.png'
+set term pdfcairo
+set output 'confusion-matrix-8.pdf'
 
 set tics scale 0
 unset cbtics
-set cblabel 'Dokladnosc'
+set cblabel 'Trafność'
 unset key
 
 set xtics 1
 set ytics 1
 
-set title "Dokładność dla 8 kategorii"
+set title "Macierz pomyłek dla 8 kategorii"
 
 plot 'confusion_matrix_8.txt' matrix with image,\
      '' matrix using 1:2:(sprintf('%.3f', $3)) with labels font ',10'
