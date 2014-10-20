@@ -154,7 +154,7 @@ Stąd wynik spotu obrazu z filtrem DOG można zapisać jako:
 	\end{gathered}
 \end{equation}
 
-Na rys. \ref{fig:sift-gaussian-to-dog} przedstawiono efektywny sposób konstruowania $D(x, y, \sigma)$. Obraz wejściowy fitrowany jest iteracyjnie filtrem Gaussa w różnych skalach rozdzielonych stałym współczynnikiem $k$ w celu wytworzenia obrazów oddalonych od siebie o współczynnik $k$ w przestrzeni skali (lewa kolumna).
+Na rys. \ref{fig:sift-gaussian-to-dog} przedstawiono efektywny sposób konstruowania $D(x, y, \sigma)$. Obraz wejściowy filtrowany jest iteracyjnie filtrem Gaussa w różnych skalach rozdzielonych stałym współczynnikiem $k$ w celu wytworzenia obrazów oddalonych od siebie o współczynnik $k$ w przestrzeni skali (lewa kolumna).
 
 Przestrzeń skal jest dzielona na oktawy, które reprezentują serię map odpowiedzi filtra uzyskane przez obliczenie splotu obrazu z filtrem. Zwiększenie skali o oktawę oznacza zwiększenie wygładzania o 2. Każda oktawa jest dzielona na liczbę całkowitą $s$, określającą liczbę interwałów, więc $k=2^{1/s}$. Należy zatem wyprodukować $s+3$ obrazów dla każdej oktawy, tak aby końcowe ekstremum pokrywało całą oktawę. Obrazy z sąsiednich skal są następnie odejmowane od siebie w celu otrzymania różnicy gaussianów DOG. Procedurę powtarza się próbkując obraz gaussowski poprzez usunięcie co drugiego wiersza i kolumny obrazu.\cite{LOWE04}
 
@@ -282,9 +282,9 @@ Waga odpowiedzi filtra $w$ służy do zrównoważenia wyrażenia, dla zachowania
 \begin{equation} 
 \label{surf_hessian_approx_w}
 w = \frac{|L_{xy}(1.2)|_F |D_{yy}(9)|_F}{|L_{yy}(1.2)|_F |D_{xy}(9)|_F} = 0.912... \simeq 0.9
-\end{equation} gdzie $|A|_F$ -- norma Froberiusa (wzór \ref{surf_froberius}).
+\end{equation} gdzie $|A|_F$ -- norma Frobeniusa (wzór \ref{surf_frobenius}).
 \begin{equation} 
-\label{surf_froberius}
+\label{surf_frobenius}
 |A|_F = \sqrt{\sum\limits_{i=1}^m \sum\limits_{j=1}^n |a_{ij}|^2}
 \end{equation}
 
