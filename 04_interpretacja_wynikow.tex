@@ -57,7 +57,7 @@ Poniżej znajdują się wykresy trafności dla poszczególnych przypadków. Licz
 	\label{fig:result-surf-8}
 \end{figure}
 
-Wyniki dla algorytmów SURF i SIFT są zbliżone, jednakże dużo większa czasochłonność algorytmu SIFT jest zauważalna. Widać przewagę SIFT nad SURF w przypadku kategoryzacji dla 2 kategorii. Dokładności dla 2 oraz 4 kategorii są bardzo dobre: odpowiednio ok 90\% i ok. 80\% dla zbiorów treningowych o czterdziestu elementach. Zauważalny jest spadek dokładności dla przypadku 8 kategorii, najlepszy wynik dla tego przypadku wyniósł 67.19\%. 
+Wyniki dla algorytmów SURF i SIFT są zbliżone, jednakże dużo większa czasochłonność algorytmu SIFT jest zauważalna. Widać przewagę SIFT nad SURF w przypadku kategoryzacji dla 2 kategorii. Dokładności dla 2 oraz 4 kategorii są bardzo dobre: odpowiednio ok. 90\% i ok. 80\% dla zbiorów treningowych o czterdziestu elementach. Zauważalny jest spadek dokładności dla przypadku 8 kategorii, najlepszy wynik dla tego przypadku wyniósł 67.19\%. 
 
 Dla przypadków 4 i 8 kategorii widoczny jest wzrost dokładności wraz ze wzrostem przykładów w zbiorze uczącym. Dla przypadku 2 kategorii doszło najprawdopodobniej do zjawiska zbytniego dopasowania klasyfikatora, ponieważ do pewnego momentu klasyfikator daje dobre rezultaty, a potem wraz ze wzrostem ilości przykładów, dokładność maleje.
 
@@ -84,7 +84,7 @@ Niezbyt dobre wyniki dla przypadku 8 kategorii mogły być związane z niewłaś
 	\label{fig:result-surf-8-1500-500}
 \end{figure}
 
-Zauważono znaczną poprawę dla przypadku 4 kategorii, niestety nie udało się poprawić wyniku dla 8 kategorii, co może wynikać ze zbyt małej liczności zbioru treningowego. Najprawdopodobniej lepsze wyniki można byłoby osiągnąć dla większej liczny przykładów. Większa ilość przykładów powinna skutkować zwiększeniem ilości słów, co za tym idzie należałoby uwzględnić korektę parametrów takich jak $C$ oraz ilość klastrów $k$.
+Zauważono znaczną poprawę dla przypadku 4 kategorii, niestety nie udało się poprawić wyniku dla 8 kategorii, co może wynikać ze zbyt małej liczności zbioru treningowego. Najprawdopodobniej lepsze wyniki można byłoby osiągnąć dla większej liczby przykładów. Większa liczba przykładów powinna skutkować zwiększeniem ilości słów, co za tym idzie należałoby uwzględnić korektę parametrów takich jak $C$ oraz ilość klastrów $k$.
 
 Dla przypadku 2, 4 i 8 kategorii przeprowadzono obliczenia macierzy pomyłek dla kategoryzacji 40 obrazów. Wykorzystano następujące kategorie:
  0 -- samoloty (\emph{ang. airplanes}),
@@ -98,7 +98,7 @@ Dla przypadku 2, 4 i 8 kategorii przeprowadzono obliczenia macierzy pomyłek dla
 
 Na wykresach (rys. \ref{fig:confusion-matrix-2}, \ref{fig:confusion-matrix-4}, \ref{fig:confusion-matrix-8}) oś pionowa oznacza kategorie rzeczywiste, natomiast oś pozioma kategorie przypisane przez silnik kategoryzacyjny.
 
-Dla przypadku 2 kategorii, kategoryzacja działa poprawnie dla min. 95\% przypadków. Dla 4 kategorii, kategoryzacja działa poprawnie dla min. 65\% przypadków. Zauważono również predyspozycję silnika kategoryzacyjnego do błędnego przypisywania obrazów z kategorii nr. 2 (budda) do kategorii nr. 1 (bonsai) na dość wysokim poziomie 27.5\% oraz kategorii nr. 3 (motyle) do kategorii nr 1 na również wysokim poziomie 17.5\%.
+Dla przypadku 2 kategorii, kategoryzacja działa poprawnie dla min. 95\% przykładów. Dla 4 kategorii, kategoryzacja działa poprawnie dla min. 65\% przykładów. Zauważono również predyspozycję silnika kategoryzacyjnego do błędnego przypisywania obrazów z kategorii nr. 2 (budda) do kategorii nr. 1 (bonsai) na dość wysokim poziomie 27.5\% oraz kategorii nr. 3 (motyle) do kategorii nr 1 na również wysokim poziomie 17.5\%.
 
 Dla przypadku 8 kategorii zauważono dość dobrą pozytywnie poprawną kategoryzację dla niektórych kategorii (bonsai, pianina, samoloty), na poziomie odpowiednio 80\%, 72.5\% oraz 70\%. Dla niektórych kategorii takich jak motyle oraz budda liczba pozytywnie skategoryzowanych obrazów jest niższa i wynosi odpowiednio 35\% oraz 45\%.
 
